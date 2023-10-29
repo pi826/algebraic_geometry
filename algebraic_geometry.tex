@@ -102,7 +102,45 @@ pdfkeywords={}
 \clearpage
 
 %--------本文---------%
+\section{代数多様体}
 
+\subsection{代数的集合}
 
-
+代数幾何学は代数方程式で定められる図形の幾何学である.一番素朴な形では,体$k$の元を係数とする連立方程式
+\begin{equation}
+  f_{\alpha}(x_{1},x_{2},\cdots,x_{n})=0\quad \alpha = 1,2,\cdots,l
+\end{equation}
+の解全体を幾何学的に考察することに他ならない.\\
+しばらく,体$k$を代数的閉体と仮定して話を進める.体$k$の元の$n$個の組$(a_{1},a_{2},\cdots,a_{n})$の全体を
+$k^n$と記し,体$k$上の$n$次元\textgt{アフィン空間}(affine space)と呼ぶ、$k^n$は体$k$上の$n$次元ベクトル空間の構造を持つ.\\
+さて,連立方程式(1.1)の体$k$での解の全体を$V(f_{1},f_{2},\cdots,f_{l})$としるし,連立方程式(1.1)が定める\textgt{代数的集合}(algebraic set)または
+\textgt{アフィン代数的集合}(affine algebraic set)と呼ぶ,すなわち
+\begin{equation*}
+  V(f_{1},f_{2},\cdots,f_{l})=\{(a_{1},a_{2},\cdots,a_{n})\in k^{n}\ |\ f_{\alpha}(a_{1},a_{2},\cdots,a_{n})=0,\ \alpha = 1,2,\cdots,l\}
+\end{equation*}
+一方,$\ f_{1},f_{2},\cdots,f_{l}$より生成される$n$変数多項式環$k[x_{1},x_{2},\cdots,x_{n}]$のイデアル$(f_{1},f_{2},\cdots,f_{l})$の任意の元$f(x_{1},x_{2},\cdots,x_{n})$に対して,
+$(a_{1},a_{2},\cdots,a_{n})\in V(f_{1},f_{2},\cdots,f_{l})$であれば,
+\begin{equation*}
+  f(a_{1},a_{2},\cdots,a_{n})=0
+\end{equation*}
+が成り立つ.\\
+多項式環$k[x_{1},x_{2},\cdots,x_{n}]$のイデアル$I$に対して
+\begin{equation*}
+  V(I)=\{(a_{1},a_{2},\cdots,a_{n})\in k^{n}\ |\ \forall f\in I:f(a_{1},a_{2},\cdots,a_{n})=0\}
+\end{equation*}
+と定義し,$V(I)$をイデアル$I$が定める代数的集合またはアフィン代数的集合という.すると,次の補題が成り立つ.
+\begin{tcolorbox}[title = 補題1.1,upperbox = visible]
+  $I=(f_{1},f_{2},\cdots,f_{l})$のとき
+  \begin{equation*}
+    V(I)=V(f_{1},f_{2},\cdots,f_{l})
+  \end{equation*}
+  \tcblower
+  \textgt{証明}\\
+  $V(f_{1},f_{2},\cdots,f_{l})\subset V(I)$は上で示した.逆に$(a_{1},a_{2},\cdots,a_{n})\in V(I)$であれば,\\
+  $f_{\alpha}\in I(\alpha = 1,2,\cdots,l)$より
+  \begin{equation*}
+    f_{\alpha}(a_{1},a_{2},\cdots,a_{n})=0
+  \end{equation*}
+  が成り立ち,$V(I)\subset V(f_{1},f_{2},\cdots,f_{l})$がわかる.
+\end{tcolorbox}
 \end{document}
