@@ -143,4 +143,97 @@ $(a_{1},a_{2},\cdots,a_{n})\in V(f_{1},f_{2},\cdots,f_{l})$であれば,
   \end{equation*}
   が成り立ち,$V(I)\subset V(f_{1},f_{2},\cdots,f_{l})$がわかる.
 \end{tcolorbox}
+よって,今後は連立方程式(1.1)の代わりにイデアル$I$から定まる代数的集合$V(I)$を考えることにする.
+\clearpage
+ところで,零イデアル$(0)$に対して$V((0))=k^n$であるので$k^n$もアフィン代数的集合と考えることができる.
+そこで,以下体$k$上の$n$次元アフィン空間を$\mathbb{A}^{n}_{k}$と記すことにする.また,体$k$が文脈的に明らかであれば$\mathbb{A}^n$と記すことが多い.\\
+さて,このようにイデアルが定めるアフィン代数的集合を考えても,実際は連立方程式を考えることと本質的に同じであることは、\textgt{Hilbertの基底定理}(Hilbert's basis theorem)が保証する.
+\begin{tcolorbox}[title = 定理1.2(Hilbertの基底定理)]
+  多項式環$k[x_{1},x_{2},\cdots,x_{n}]$のイデアルは有限生成である.すなわち,イデアル$I$は
+  \begin{equation*}
+    I=(f_{1},f_{2},\cdots,f_{n})
+  \end{equation*}
+  と表すことができる.
+\end{tcolorbox}
+\begin{tcolorbox}[title = 命題1.3]
+  体$k$上の多項式環$k[x_{1},x_{2},\cdots,x_{n}]$のイデアル$I,J,I_{\lambda}(\lambda\in \Lambda)$($\Lambda$は無限集合でもよい)に関して以下が成り立つ.
+  \begin{itemize}
+    \item[(1)] $V(I)\cup V(J)=V(I\cap J)$
+    \item[(2)] $\bigcap_{\lambda\in \Lambda} V(I_{\lambda})=V(\sum_{\lambda\in \Lambda}I_{\lambda})$ 
+    \item[(3)] $\sqrt{I}\subset \sqrt{J}$ならば$V(I)\supset V(J)$
+  \end{itemize}
+\end{tcolorbox}
+\begin{tcolorbox}[title = 証明(1)]
+  (1)$I\subset J$であれば$V(I)\supset V(J)$であることに注意すると,
+  \begin{equation*}
+    V(I\cap J) \supset V(I),\quad V(I\cap J)\supset V(J)
+  \end{equation*}
+  がわかる.したがって,
+  \begin{equation*}
+    V(I)\cup V(J)\subset V(I\cap J)
+  \end{equation*}
+  が成り立つ.逆に$(a_{1},a_{2},\cdots,a_{n})\in V(I\cap J)$を考える.もし$(a_{1},a_{2},\cdots,a_{n})\notin V(I)$であれば,
+  \begin{equation*}
+    f(a_{1},a_{2},\cdots,a_{n})\neq0
+  \end{equation*}
+  を満たす$f\in I$がある.このとき,任意の元$g(x_{1},x_{2},\cdots,x_{n})\in J$に対して$h=fg\in I\cap J$であるので,
+  \begin{equation*}
+    h(a_{1},a_{2},\cdots,a_{n})=f(a_{1},a_{2},\cdots,a_{n})g(a_{1},a_{2},\cdots,a_{n})=0
+  \end{equation*}
+  であり,
+  \begin{equation*}
+    g(a_{1},a_{2},\cdots,a_{n})=0
+  \end{equation*}
+  が成り立つ.よって$(a_{1},a_{2},\cdots,a_{n})\in V(J)$である.したがって
+  \begin{equation*}
+    V(I\cap J)\subset V(I)\cup V(J)
+  \end{equation*}
+  が成り立ち(1)がわかる.
+\end{tcolorbox}
+\begin{tcolorbox}[title = 証明(2)]
+  $I_{\mu}\subset \sum_{\lambda\in \Lambda}I_{\lambda}(\mu \in \Lambda)$であるので
+  \begin{equation*}
+    V(I_{\mu})\supset V(\sum_{\lambda\in \Lambda}I_{\lambda})
+  \end{equation*}
+  が成り立ち,したがって
+  \begin{equation*}
+    \bigcap_{\lambda \in \Lambda}V(\lambda)\supset V(\sum_{\lambda\in \Lambda}I_{\lambda})
+  \end{equation*}
+  が成り立つことがわかる.各$\lambda$に対して
+  \begin{equation*}
+    I_{\lambda}=(h_{\lambda 1},h_{\lambda 2},\cdots,h_{\lambda m_{\lambda}})
+  \end{equation*}
+  とすると,$(a_{1},a_{2},\cdots,a_{n})\in \bigcap_{\lambda \in \Lambda}V(I_{\lambda})$であれば
+  \begin{equation*}
+    h_{\lambda j}(a_{1},a_{2},\cdots,a_{n})=0,\quad j=1,2,\cdots,m_{\lambda}
+  \end{equation*}
+  が成り立つ.\\
+  一方$\{h_{\lambda j}\}_{\lambda \in \Lambda,\ 1\leq j\leq m_{\lambda}}$はイデアル$\sum_{\lambda \in \Lambda}I_{\lambda}$を生成するので,
+  $(a_{1},a_{2},\cdots,a_{n})\in V(\sum_{\lambda\in \Lambda}I_{\lambda})$が成り立つ.
+\end{tcolorbox}
+\begin{tcolorbox}[title = 証明(3)]
+  $V(\sqrt{I})=V(I)$を示せば十分である.$\sqrt{I}\supset I$であるので
+  \begin{equation*}
+    V(\sqrt{I})\subset V(I)
+  \end{equation*}
+  が成り立つ.一方$f\in \sqrt{I}$であれば$f^{m}\in I$となる正整数$m$が存在する.\\
+  $(a_{1},a_{2},\cdots,a_{n})\in V(I)$であれば
+  \begin{equation*}
+    (f(a_{1},a_{2},\cdots,a_{n}))^{m}=0
+  \end{equation*}
+  となり,したがって
+  \begin{equation*}
+    f(a_{1},a_{2},\cdots,a_{n})=0
+  \end{equation*}
+  が成り立つ.これは$(a_{1},a_{2},\cdots,a_{n})\in V(\sqrt{I})$を意味する.よって
+  \begin{equation*}
+    V(\sqrt{I})\supset V(I)
+  \end{equation*}
+\end{tcolorbox}
+\begin{tcolorbox}[title = 系1.4]
+  $k[x_{1},x_{2},\cdots,x_{n}]$の有限個のイデアル$I_{1},I_{2},\cdots,I_{s}$に関して
+  \begin{equation*}
+    \bigcup_{j=1}^{s}V(I_{j})=V(\bigcap_{j=1}^{s}I_{j})
+  \end{equation*}
+\end{tcolorbox}
 \end{document}
