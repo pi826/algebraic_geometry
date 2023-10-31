@@ -236,4 +236,64 @@ $(a_{1},a_{2},\cdots,a_{n})\in V(f_{1},f_{2},\cdots,f_{l})$であれば,
     \bigcup_{j=1}^{s}V(I_{j})=V(\bigcap_{j=1}^{s}I_{j})
   \end{equation*}
 \end{tcolorbox}
+
+\subsection{Hilbertの零点定理}
+
+$n$次元アフィン空間$\mathbb{A}^{n}_{k}$内の代数的集合が幾何的な意味を持つには$V(I)\neq \varnothing$である必要がある.
+次の\textgt{弱い形のHilbertの零点定理}(week Hilbert's Nullstellensatz)と呼ばれる定理はこれを保証する.
+\begin{tcolorbox}[title = 定理1.5,upperbox = visible]
+  代数的閉体$k$上の多項式環$k[x_{1},x_{2},\cdots,x_{n}]$のイデアル$I$が単位元を含まない,すなわち
+  $I\neq k[x_{1},x_{2},\cdots,x_{n}]$であれば
+  \begin{equation*}
+    V(I)\neq \varnothing
+  \end{equation*}
+  \tcblower
+  \textgt{証明}\\
+  $I\neq k[x_{1},x_{2},\cdots,x_{n}]$であればイデアル$I$は必ずある極大イデアル$\mathfrak{m}$に含まれる.
+  $I\subset \mathfrak{m}$より$V(I)\supset V(\mathfrak{m})$である.
+  したがって$V(\mathfrak{m})$が空でなければ十分である.ゆえに$I=\mathfrak{m}$の時を考える.
+  極大イデアル$\mathfrak{m}$に対して剰余環$k[x_{1},x_{2},\cdots,x_{n}]/\mathfrak{m}$は$k$を含む体である.
+  $k$は代数的閉体であるので,下の補題1.7より$k[x_{1},x_{2},\cdots,x_{n}]/\mathfrak{m}=k$でなければならない.
+  よって$x_{j}$の$\mathfrak{m}$に関する剰余類$\overline{x_{j}}$は$k$の元$a_{j}$を定める.
+  すなわち$x_{j}-a_{j}\equiv 0\ (\! \bmod \mathfrak{m}\, )$であるので,$x_{j}-a_{j}\in \mathfrak{m}$である.
+  これは$(x_{1}-a_{1},x_{2}-a_{2},\cdots,x_{n}-a_{n})\subset \mathfrak{m}$を意味するが$(x_{1}-a_{1},x_{2}-a_{2},\cdots,x_{n}-a_{n})$は極大イデアルなので
+  \begin{equation*}
+    (x_{1}-a_{1},x_{2}-a_{2},\cdots,x_{n}-a_{n})=\mathfrak{m}
+  \end{equation*}
+  となり,
+  \begin{equation*}
+    V(\mathfrak{m})=\{(a_{1},a_{2},\cdots,a_{n})\}
+  \end{equation*}
+  がわかる.
+\end{tcolorbox}
+\begin{tcolorbox}[title = 系1.6]
+  代数的閉体$k$上の多項式環$k[x_{1},x_{2},\cdots,x_{n}]$の極大イデアルは
+  \begin{equation*}
+    (x_{1}-a_{1},x_{2}-a_{2},\cdots,x_{n}-a_{n}),\quad a_{j}\in k,\quad j = 1,2,\cdots,n
+  \end{equation*}
+  の形をしている.
+\end{tcolorbox}
+定理1.5,系1.6どちらも体$k$が代数的閉体であることが本質的である.$\mathbf{R}$上では成り立たない.
+
+\begin{tcolorbox}[title = 補題1.7,upperbox = visible]
+  体$k$上有限生成の整域$R$が体であれば,$R$の各元は$k$上代数的である.
+  \tcblower
+  \textgt{証明}\\
+  仮定より
+  \begin{equation}
+    R=k[z_{1},z_{2},\cdots,z_{m}]
+  \end{equation}
+  となる$z_{1},z_{2},\cdots,z_{m}\in R$が存在する.$z_{1},z_{2},\cdots,z_{m}$が$k$上代数的であることを示せばよい.
+  このことを生成元の個数$m$に関する帰納法で示す.$m=1$のときは,もし$z_{1}$が$k$上代数的でなければ$k$上超越的であり,
+  $k[z_{1}]$は$k$上の多項式環と同型であり体ではない.これは$R=k[z_{1}]$が体であるという仮定に反する.よって$z_{1}$は$k$上代数的である.
+  次に$m\geq 2$と仮定する.$z_{1}\in R$に対して$k$の拡大体$k(z_{1})$は$R$の部分体である.よって
+  \begin{equation*}
+    R=k(z_{1})[z_{2},z_{3},\cdots,z_{m}]
+  \end{equation*}
+  
+\end{tcolorbox}
+
+
+
+
 \end{document}
