@@ -1,12 +1,20 @@
-\documentclass[dvipdfmx,a4paper,11pt]{jsarticle}
+\documentclass[dvipdfmx,a4paper,11pt]{jsbook}
 
 
 % 数式
 \usepackage{amsmath,amsfonts}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{xcoffins,calc}
 \usepackage{bm}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{pgf}
 \usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{ifthen}
+\usepackage{mathrsfs}
+
 % 画像
 % \usepackage[dvipdfmx]{graphicx,color}
 
@@ -31,46 +39,327 @@ pdfkeywords={}
 \usetikzlibrary{intersections,calc,arrows.meta}
 \usepackage[truedimen,top=25truemm,bottom=30truemm,hmargin=25truemm]{geometry}
 \usepackage{calc}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 
+
+\pagestyle{fancy}
+\fancyhf{} % 全てのヘッダーとフッターをクリア
+\fancyhead[LE,RO]{\thepage} % 左側の偶数ページと右側の奇数ページにページ番号を表示
+\fancyhead[RE]{\leftmark} % 右側の偶数ページに章名を表示
+\fancyhead[LO]{\rightmark} % 左側の奇数ページに節名を表示
+\renewcommand{\headrulewidth}{0.4pt} % ヘッダーの線の太さを設定
+\renewcommand{\footrulewidth}{0pt} % フッターの線の太さを定
+
+% \makeatletter
+% \let\old@rule\@rule
+% \def\@rule[#1]#2#3{\textcolor{blue}{\old@rule[#1]{#2}{#3}}}
+% \makeatother
+% \newtcolorbox{mybox}[2][]{enhanced,skin=enhancedlast jigsaw,
+% attach boxed title to top left={xshift=-4mm,yshift=-0.5mm},
+% fonttitle=\bfseries\sffamily,varwidth boxed title=0.7\linewidth,
+% colbacktitle=blue!45!white,colframe=red!50!black,
+% interior style={top color=blue!10!white,bottom color=red!10!white},
+% boxed title style={empty,arc=0pt,outer arc=0pt,boxrule=0pt},
+% underlay boxed title={
+% \fill[blue!45!white] (title.north west) -- (title.north east)
+% -- +(\tcboxedtitleheight-1mm,-\tcboxedtitleheight+1mm)
+% -- ([xshift=4mm,yshift=0.5mm]frame.north east) -- +(0mm,-1mm)
+% -- (title.south west) -- cycle;
+% \fill[blue!45!white!50!black] ([yshift=-0.5mm]frame.north west)
+% -- +(-0.4,0) -- +(0,-0.3) -- cycle;
+% \fill[blue!45!white!50!black] ([yshift=-0.5mm]frame.north east)
+% -- +(0,-0.3) -- +(0.4,0) -- cycle; },
+% title={#2},#1}
+
+% chapter 
+\titleformat{\chapter}[block]
+{}{}{0pt}{
+  \fontsize{27pt}{30pt}\selectfont\filleft
+}[
+  \ifthenelse{\value{chapter}=0}{\hrule}{\titleline{
+  \hspace{250pt}
+  \begin{tikzpicture}
+    \draw [line width = 0.4pt] (0,0) -- (6.5cm,0);
+    % \draw [line width = 0.4pt] (6.5cm,1cm) -- (6.5cm,-1cm);
+  \end{tikzpicture}}}
+  \Large{\filleft \ifthenelse{\value{chapter}=0}{}{第 \thechapter 章}}
+]
+
+\makeatletter
+\def\Section{\@ifstar{\@Section[2pt]}{\@Section[\z@]}}
+%
+\def\@Section[#1]#2{\ifdim #1<1pt\refstepcounter{section}\fi%
+\section*{\nopagebreak[4] \vskip.5pc%
+\ifdim #1<1pt%
+\addcontentsline{toc}{section}{\protect\numberline{\thesection}#2}%
+\quad \textbf{\thesection~} \fi \raisebox{-1.5ex}[0pt][0pt]{\color[rgb]{0.6,0.8,1}{\rule{3mm}{2em}}} #2\nopagebreak[4]%
+\vskip.25pc \hrule\@height 1pt\nopagebreak[4] \vskip1pc}}
+\makeatother
+
+% % 定理環境の設定
+\tcbuselibrary{skins, breakable, theorems}
+\usepackage{cleveref}
+% \newcommand{\kara}{}
+% \newtcolorbox[auto counter, number within = section, crefname = {Def.}{Defs.}]{definition}[3][]{enhanced, breakable = true, fonttitle = \bfseries,title = Def.~\thetcbcounter~\if #2\kara \else (#2) \fi, #1, label = the:#3, boxrule=0pt, frame hidden, borderline west={4pt}{0pt}{green!75!black},
+% colback=green!10!white,sharp corners}
+
+
+
+% \newtheorem{theorem}{Theorem}[section]
+% \tcolorboxenvironment{theorem}{
+%   colback=blue!5!white,
+%   boxrule=0pt,
+%   boxsep=1pt,
+%   left=2pt,right=2pt,top=2pt,bottom=2pt,
+%   oversize=2pt,
+%   sharp corners,
+%   before skip=\topsep,
+%   after skip=\topsep,
+% }
+
+
+
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newcommand{\Claim}[1]{\underline{\textbf{Claim#1.}}}
+
+\newcommand{\kara}{}%
+\newcounter{totalcounter}
+\renewcommand{\thetotalcounter}{\thechapter.\thesection.\arabic{totalcounter}}
+\newcounter{defcounter}
+\renewcommand{\thedefcounter}{\thechapter.\thesection.\arabic{defcounter}}
+
+\NewTotalTColorBox[use counter = defcounter, number within = section]{\Definition}{ +m }{ 
+    notitle,
+    colback=green!5!white,
+    frame hidden,
+    boxrule=0pt,
+    enhanced,
+    sharp corners,
+    borderline west={4pt}{0pt}{green!50!black},
+    breakable = true,
+    label = {Def:\thedefcounter},
+}{
+    \textcolor{green!50!black}{
+        \sffamily
+        \textbf{Definition~\thetcbcounter.}%k
+    }%
+    #1
+}
+
+\NewTotalTColorBox{\Remark}{ +m +m }{ 
+    notitle,
+    colback=yellow!5!white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{yellow!50!black},
+    %fontupper=\sffamily,
+    breakable = true,
+    label = {Rem:\thetotalcounter},
+}{
+    \textcolor{yellow!50!black}{
+        \sffamily
+        \textbf{Remark~.}%
+    }%
+    #1
+    \if #2\kara \else 
+    \tcblower%
+    \textcolor{yellow!50!black}{
+        \sffamily
+        \textbf{Proof.}%
+    }%
+    #2
+    \qedsymbol
+    \fi
+}
+
+\NewTotalTColorBox[use counter = totalcounter, number within = section]{\Lemma}{ +m +m }{ 
+    notitle,
+    colback=orange!5!white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{orange!50!black},
+    fontupper=\sffamily,
+    breakable = true,
+    label = {Lem:\thetotalcounter},
+}{
+    \textcolor{orange!50!black}{
+        \sffamily
+        \textbf{Lemma~\thetcbcounter.}%
+    }%
+    #1
+    \if #2\kara \else 
+    \tcblower%
+    \textcolor{orange!50!black}{
+        \sffamily
+        \textbf{Proof.}%
+    }%
+    #2
+    \qedsymbol
+    \fi
+}
+
+
+\NewTotalTColorBox[use counter = totalcounter, number within = section]{\Theorem}{ +m +m }{ 
+    notitle,
+    colback=blue!5!white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{blue!50!black},
+    fontupper=\sffamily,
+    breakable = true,
+    label = {Thm:\thetotalcounter},
+}{
+    \textcolor{blue!50!black}{
+        \sffamily
+        \textbf{Theorem~\thetcbcounter.}%
+    }%
+    #1
+    \if #2\kara \else 
+    \tcblower%
+    \textcolor{blue!50!black}{
+        \sffamily
+        \textbf{Proof.}%
+    }%
+    #2
+    \qedsymbol
+    \fi
+}
+
+\NewTotalTColorBox[use counter = totalcounter, number within = section]{\Example}{ +m +m }{ 
+    notitle,
+    colback=cyan!5!white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{cyan!50!black},
+    %fontupper=\sffamily,
+    breakable = true,
+    label = {Ex:\thetotalcounter},
+}{
+    \textcolor{cyan!50!black}{
+        \sffamily
+        \textbf{Example~\thetcbcounter.}%
+    }%
+    #1
+    \if #2\kara \else
+    \tcblower%
+    \textcolor{cyan!50!black}{
+        \sffamily
+        \textbf{Proof.}%
+    }%
+    #2
+    \qedsymbol
+    \fi
+}
+
+\NewTotalTColorBox[use counter = totalcounter, number within = section]{\Proposition}{ +m +m }{ 
+    notitle,
+    colback=red!5!white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{red!50!black},
+    fontupper=\sffamily,
+    breakable = true,
+    label = {Prop:\thetotalcounter},
+}{
+    \textcolor{red!50!black}{
+        \sffamily
+        \textbf{Proposition~\thetcbcounter.}%
+    }%
+    #1
+    \if #2\kara \else 
+    \tcblower%
+    \textcolor{red!50!black}{
+        \sffamily
+        \textbf{Proof.}%
+    }%
+    #2
+    \qedsymbol
+    \fi
+}
+\NewTotalTColorBox[use counter = totalcounter, number within = section]{\Corollary}{ +m +m }{ 
+    notitle,
+    colback=darkgray!5!white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{darkgray!50!black},
+    fontupper=\sffamily,
+    breakable = true,
+    label = {Cor:\thetotalcounter},
+}{
+    \textcolor{darkgray!50!black}{
+        \sffamily
+        \textbf{Corollary~\thetcbcounter.}%
+    }%
+    #1
+    \if #2\kara \else 
+    \tcblower%
+    \textcolor{darkgray!50!black}{
+        \sffamily
+        \textbf{Proof.}%
+    }%
+    #2
+    \qedsymbol
+    \fi
+}
+
+% \newtcbtheorem[use counter from = theorem]{mythm}{Theorem}%
+% {
+%   colback=white, % ボックス内の背景色
+%   colframe=black, % フレームの色
+%   fonttitle=\bfseries, % タイトルのフォント
+% }{thm}
+
+% % 証明環境の設定
+% \newtcbtheorem[use counter from = theorem]{mypf}{Proof}%
+% {
+%   colback=white, 
+%   colframe=black, 
+%   fonttitle=\bfseries
+% }{prf}
+
+% % 定義環境の設定
+% \newtcbtheorem[use counter from = theorem]{mydef}{Definition}%
+% {
+%   colback=white, 
+%   colframe=black, 
+%   fonttitle=\bfseries
+% }{def}
+
+\newtcolorbox{mybox}{
+  enhanced,
+  boxrule=0pt,frame hidden,
+  borderline west={4pt}{0pt}{green!75!black},
+  colback=green!10!white,
+  sharp corners
+}
 
 \begin{document}
-\theoremstyle{plain}
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{conj}[thm]{Conjecture}
-
-\theoremstyle{definition}
-\newtheorem{ass}[thm]{Assumption}
-\newtheorem{dfn}[thm]{Definition}
-
-\theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
-
-\theoremstyle{plain}
-\newtheorem*{thm*}{Theorem}
-\newtheorem*{lem*}{Lemma}
-\newtheorem*{prop*}{Proposition}
-\newtheorem*{cor*}{Corollary}
-\newtheorem*{conj*}{Conjecture}
-
-\theoremstyle{definition}
-\newtheorem*{ass*}{Assumption}
-\newtheorem*{dfn*}{Definition}
-
-\theoremstyle{remark}
-\newtheorem*{Proof}{Proof}
-
-\numberwithin{equation}{section}
-
-\theoremstyle{remark}
-\newtheorem*{rem*}{Remark}
 
 % \setlength{\topmargin}{-20truemm}
 % \setlength{\headheight}{0pt}
 % \setlength{\headsep}{0pt}
 \setlength{\footskip}{20truemm}
+
 
 
 % \setlength{\@tempdima}{1pt*\ratio{\dimexpr\textheight/\@lines}{\baselineskip}}
@@ -94,146 +383,88 @@ pdfkeywords={}
 
 % ↑は貼り付けただけなのでわからない。
 
-\title{代数幾何}
-\date{}
+
+
+\title{代数幾何まとめノート}
+\date{\today}
 \author{Fefr}
 \maketitle
-\tableofcontents
+
+
+
+
+\tableofcontents 
 \clearpage
+%--------------------本文--------------------%
 
-%--------本文---------%
-\section{代数多様体}
-
-\subsection{代数的集合}
-
-代数幾何学は代数方程式で定められる図形の幾何学である.一番素朴な形では,体$k$の元を係数とする連立方程式
-\begin{equation}
-  f_{\alpha}(x_{1},x_{2},\cdots,x_{n})=0\quad \alpha = 1,2,\cdots,l
-\end{equation}
-の解全体を幾何学的に考察することに他ならない.\\
-しばらく,体$k$を代数的閉体と仮定して話を進める.体$k$の元の$n$個の組$(a_{1},a_{2},\cdots,a_{n})$の全体を
-$k^n$と記し,体$k$上の$n$次元\textgt{アフィン空間}(affine space)と呼ぶ、$k^n$は体$k$上の$n$次元ベクトル空間の構造を持つ.\\
-さて,連立方程式(1.1)の体$k$での解の全体を$V(f_{1},f_{2},\cdots,f_{l})$としるし,連立方程式(1.1)が定める\textgt{代数的集合}(algebraic set)または
-\textgt{アフィン代数的集合}(affine algebraic set)と呼ぶ,すなわち
-\begin{equation*}
-  V(f_{1},f_{2},\cdots,f_{l})=\{(a_{1},a_{2},\cdots,a_{n})\in k^{n}\ |\ f_{\alpha}(a_{1},a_{2},\cdots,a_{n})=0,\ \alpha = 1,2,\cdots,l\}
-\end{equation*}
-一方,$\ f_{1},f_{2},\cdots,f_{l}$より生成される$n$変数多項式環$k[x_{1},x_{2},\cdots,x_{n}]$のイデアル$(f_{1},f_{2},\cdots,f_{l})$の任意の元$f(x_{1},x_{2},\cdots,x_{n})$に対して,
-$(a_{1},a_{2},\cdots,a_{n})\in V(f_{1},f_{2},\cdots,f_{l})$であれば,
-\begin{equation*}
-  f(a_{1},a_{2},\cdots,a_{n})=0
-\end{equation*}
-が成り立つ.\\
-多項式環$k[x_{1},x_{2},\cdots,x_{n}]$のイデアル$I$に対して
-\begin{equation*}
-  V(I)=\{(a_{1},a_{2},\cdots,a_{n})\in k^{n}\ |\ \forall f\in I:f(a_{1},a_{2},\cdots,a_{n})=0\}
-\end{equation*}
-と定義し,$V(I)$をイデアル$I$が定める代数的集合またはアフィン代数的集合という.すると,次の補題が成り立つ.
-\begin{tcolorbox}[title = 補題1.1,upperbox = visible]
-  $I=(f_{1},f_{2},\cdots,f_{l})$のとき
-  \begin{equation*}
-    V(I)=V(f_{1},f_{2},\cdots,f_{l})
-  \end{equation*}
-  \tcblower
-  \textgt{証明}\\
-  $V(f_{1},f_{2},\cdots,f_{l})\subset V(I)$は上で示した.逆に$(a_{1},a_{2},\cdots,a_{n})\in V(I)$であれば,\\
-  $f_{\alpha}\in I(\alpha = 1,2,\cdots,l)$より
-  \begin{equation*}
-    f_{\alpha}(a_{1},a_{2},\cdots,a_{n})=0
-  \end{equation*}
-  が成り立ち,$V(I)\subset V(f_{1},f_{2},\cdots,f_{l})$がわかる.
-\end{tcolorbox}
-よって,今後は連立方程式(1.1)の代わりにイデアル$I$から定まる代数的集合$V(I)$を考えることにする.
-\clearpage
-ところで,零イデアル$(0)$に対して$V((0))=k^n$であるので$k^n$もアフィン代数的集合と考えることができる.
-そこで,以下体$k$上の$n$次元アフィン空間を$\mathbb{A}^{n}_{k}$と記すことにする.また,体$k$が文脈的に明らかであれば$\mathbb{A}^n$と記すことが多い.\\
-さて,このようにイデアルが定めるアフィン代数的集合を考えても,実際は連立方程式を考えることと本質的に同じであることは、\textgt{Hilbertの基底定理}(Hilbert's basis theorem)が保証する.
-\begin{tcolorbox}[title = 定理1.2(Hilbertの基底定理)]
-  多項式環$k[x_{1},x_{2},\cdots,x_{n}]$のイデアルは有限生成である.すなわち,イデアル$I$は
-  \begin{equation*}
-    I=(f_{1},f_{2},\cdots,f_{n})
-  \end{equation*}
-  と表すことができる.
-\end{tcolorbox}
-\begin{tcolorbox}[title = 命題1.3]
-  体$k$上の多項式環$k[x_{1},x_{2},\cdots,x_{n}]$のイデアル$I,J,I_{\lambda}(\lambda\in \Lambda)$($\Lambda$は無限集合でもよい)に関して以下が成り立つ.
+\chapter{Scheme}
+\Section{Zariski Topology}
+atodekakuyo
+\Section{Algebraic Sets}
+atodekakuyo
+\Section{Sheaves}
+\Definition{
+  $X$を位相空間とする。$X$上の(アーベル群の)\textbf{前層}(presheaf)$\, \mathcal{F}$とは
+  次のデータ
+  \begin{center}
+    \begin{itemize}
+      \item[---] $U$を任意の$X$の開集合に対して$\mathcal{F}(U)$はアーベル群。
+      \item[---] 制限写像(restriction map)と言われる群準同型
+      $\rho_{U,V}:\mathcal{F}(U) \to \mathcal{F}(V)$が任意の開集合$V\subset U$に対して存在する。 
+    \end{itemize}
+  \end{center}
+  そして次の条件を満たす。
   \begin{itemize}
-    \item[(1)] $V(I)\cup V(J)=V(I\cap J)$
-    \item[(2)] $\bigcap_{\lambda\in \Lambda} V(I_{\lambda})=V(\sum_{\lambda\in \Lambda}I_{\lambda})$ 
-    \item[(3)] $\sqrt{I}\subset \sqrt{J}$ならば$V(I)\supset V(J)$
+    \item[(1)] $\mathcal{F}(\varnothing) = 0$
+    \item[(2)] $\rho_{U,U} = \text{id}_{\mathcal{F}(U)}$
+    \item[(3)] 任意の開集合$W\subset V \subset U$に対して$\rho_{U,W}=\rho_{V,W}\circ \rho_{U,V}$となる。  
   \end{itemize}
-\end{tcolorbox}
-\begin{tcolorbox}[title = 証明(1)]
-  (1)$I\subset J$であれば$V(I)\supset V(J)$であることに注意すると,
+}
+$s\in \mathcal{F}(U)$を$U$上の$\mathcal{F}$の\textbf{切断}(section)という。
+また、$\rho_{U,V}(s)\in \mathcal{F}(V)$を$s|_{V}$と書いて$s$の$V$への制限という。
+
+\Definition{
+  前層$\mathcal{F}$が層(sheaf)とは次の条件を満たすことをいう。
+  \begin{itemize}
+    \item[(4)] (Uniqueness) $U$を$X$の開集合とし$\{U_{i}\}_{i}$をその開被覆とする。
+                $s\in \mathcal{F}(U)$が任意の$i$に対して$s|_{U_{i}}=0$ならば$s=0$
+    \item[(5)] (Glueing local sections) 上の状況で、$s_i \in \mathcal{F}(U_i)$が
+                $s_{i}|_{U_{i} \cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}$を満たすならば、$s|_{U_{i}} = s_{i}$を満たす$s\in \mathcal{F}(U)$が存在する。
+  \end{itemize}
+}
+\Remark{
+  $\mathcal{B}$を位相空間$X$の開基で有限交叉で閉じているものとする。(つまり任意の$U,V\in \mathcal{B}$に対して$U\cap V \in \mathcal{B}$.\ e.g. $\text{Spec}\, A$の開基$\{D(f)\}_f$)
+  このとき$\mathcal{B}$-前層($\mathcal{B}\text{-presheaf}$)\\$\mathcal{F}_0$とは
+  \begin{itemize}
+    \item[---] $U\in \mathcal{B}$に対して$\mathcal{F}_0(U)$はアーベル群。
+    \item[---] $V\subset U \in \mathcal{B}$に対して群準同型$\rho_{U,V}:\mathcal{F}_0(U) \to \mathcal{F}_0(V)$が定まる。
+  \end{itemize}
+  としたもの。\\
+  $\mathcal{B}$-層($\mathcal{B}\text{-sheaf}$)$\mathcal{F}_0$から$X$上の層$\mathcal{F}$を作ることができる。\\
+  位相空間$X$の任意の開集合$U$をとり、$\{U_{i}\}_{i}$をその開被覆とする。($U_{i} \in \mathcal{B}$)
   \begin{equation*}
-    V(I\cap J) \supset V(I),\quad V(I\cap J)\supset V(J)
+    \mathcal{F}(U):=\left\{(s_{i})_{i} \in \prod_{i}\mathcal{F}_0(U_{i})\ \Biggl|\ 任意のi,jに対してs_{i}|_{U_{i} \cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}\right\}
   \end{equation*}
-  がわかる.したがって,
-  \begin{equation*}
-    V(I)\cup V(J)\subset V(I\cap J)
-  \end{equation*}
-  が成り立つ.逆に$(a_{1},a_{2},\cdots,a_{n})\in V(I\cap J)$を考える.もし$(a_{1},a_{2},\cdots,a_{n})\notin V(I)$であれば,
-  \begin{equation*}
-    f(a_{1},a_{2},\cdots,a_{n})\neq0
-  \end{equation*}
-  を満たす$f\in I$がある.このとき,任意の元$g(x_{1},x_{2},\cdots,x_{n})\in J$に対して$h=fg\in I\cap J$であるので,
-  \begin{equation*}
-    h(a_{1},a_{2},\cdots,a_{n})=f(a_{1},a_{2},\cdots,a_{n})g(a_{1},a_{2},\cdots,a_{n})=0
-  \end{equation*}
-  であり,
-  \begin{equation*}
-    g(a_{1},a_{2},\cdots,a_{n})=0
-  \end{equation*}
-  が成り立つ.よって$(a_{1},a_{2},\cdots,a_{n})\in V(J)$である.したがって
-  \begin{equation*}
-    V(I\cap J)\subset V(I)\cup V(J)
-  \end{equation*}
-  が成り立ち(1)がわかる.
-\end{tcolorbox}
-\begin{tcolorbox}[title = 証明(2)]
-  $I_{\mu}\subset \sum_{\lambda\in \Lambda}I_{\lambda}(\mu \in \Lambda)$であるので
-  \begin{equation*}
-    V(I_{\mu})\supset V(\sum_{\lambda\in \Lambda}I_{\lambda})
-  \end{equation*}
-  が成り立ち,したがって
-  \begin{equation*}
-    \bigcap_{\lambda \in \Lambda}V(\lambda)\supset V(\sum_{\lambda\in \Lambda}I_{\lambda})
-  \end{equation*}
-  が成り立つことがわかる.各$\lambda$に対して
-  \begin{equation*}
-    I_{\lambda}=(h_{\lambda 1},h_{\lambda 2},\cdots,h_{\lambda m_{\lambda}})
-  \end{equation*}
-  とすると,$(a_{1},a_{2},\cdots,a_{n})\in \bigcap_{\lambda \in \Lambda}V(I_{\lambda})$であれば
-  \begin{equation*}
-    h_{\lambda j}(a_{1},a_{2},\cdots,a_{n})=0,\quad j=1,2,\cdots,m_{\lambda}
-  \end{equation*}
-  が成り立つ.\\
-  一方$\{h_{\lambda j}\}_{\lambda \in \Lambda,\ 1\leq j\leq m_{\lambda}}$はイデアル$\sum_{\lambda \in \Lambda}I_{\lambda}$を生成するので,
-  $(a_{1},a_{2},\cdots,a_{n})\in V(\sum_{\lambda\in \Lambda}I_{\lambda})$が成り立つ.
-\end{tcolorbox}
-\begin{tcolorbox}[title = 証明(3)]
-  $V(\sqrt{I})=V(I)$を示せば十分である.$\sqrt{I}\supset I$であるので
-  \begin{equation*}
-    V(\sqrt{I})\subset V(I)
-  \end{equation*}
-  が成り立つ.一方$f\in \sqrt{I}$であれば$f^{m}\in I$となる正整数$m$が存在する.\\
-  $(a_{1},a_{2},\cdots,a_{n})\in V(I)$であれば
-  \begin{equation*}
-    (f(a_{1},a_{2},\cdots,a_{n}))^{m}=0
-  \end{equation*}
-  となり,したがって
-  \begin{equation*}
-    f(a_{1},a_{2},\cdots,a_{n})=0
-  \end{equation*}
-  が成り立つ.これは$(a_{1},a_{2},\cdots,a_{n})\in V(\sqrt{I})$を意味する.よって
-  \begin{equation*}
-    V(\sqrt{I})\supset V(I)
-  \end{equation*}
-\end{tcolorbox}
-\begin{tcolorbox}[title = 系1.4]
-  $k[x_{1},x_{2},\cdots,x_{n}]$の有限個のイデアル$I_{1},I_{2},\cdots,I_{s}$に関して
-  \begin{equation*}
-    \bigcup_{j=1}^{s}V(I_{j})=V(\bigcap_{j=1}^{s}I_{j})
-  \end{equation*}
-\end{tcolorbox}
+  と定義する。するとこれは開被覆によらない。実際$\mathcal{F}(U)_{U_i}$を開被覆$\{U_{i}\}_{i}$による$\mathcal{F}(U)$とし、$\{V_{j}\}_{j}$を別の開被覆とすると、
+  $\{U_{i}\cap V_{j}\}_{i,j}$はこれら2つの細分である。$\mathcal{F}(U)_{U_i} \to \mathcal{F}(U)_{U_{i}\cap V_{j}}$なる群準同型を
+  $(s_{i})_{i}\mapsto (s_{i}|_{U_{i}\cap V_{j}})_{i,j}$で定義できる。実際
+  \begin{align*}
+    s_{i} |_{U_{i} \cap V_{j}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})} 
+    &= s_{i} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}\\
+    &= s_{i} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}\\
+    &= s_{i'} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})} \quad (\because (s_{i})_{i} \in \mathcal{F}(U)_{U_{i}})\\
+    &= s_{i'} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}\\
+    &= s_{i'} |_{U_{i'} \cap V_{j'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}
+  \end{align*}
+  より$(s_{i}|_{U_{i}\cap V_{j}})_{i,j}\in \mathcal{F}(U)_{U_{i} \cap V_{j}}$\\
+  また、$(s_{ij})_{ij}\in \mathcal{F}(U)_{U_{i}\cap V_{j}}$を取ると、
+  $(s_{ij})_{ij} = (s_{i}|_{U_{i} \cap V_{j}})$と出来るので全射(？？？？？)\\
+  Kernelを計算すると
+  \begin{align*}
+    &s_{i}|_{U_{i}\cap V_{j}} = 0 \quad (\forall i,j)\\
+    &s_{i}|_{U_{i}}=s_{i} = 0 \quad (\forall i) \quad (\because (4))
+  \end{align*}
+  よってKernelが自明なので単射。
+  % $\mathcal{U}=\{U_{i}\}_{i}$を$X$の部分開集合族とする。$U=\cup_{i}U_{i},U_{ij}=U_{i}\cap U_{j}$
+}{}
 \end{document}
