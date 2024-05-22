@@ -353,6 +353,15 @@ pdfkeywords={}
   sharp corners
 }
 
+\newcommand{\mysetminusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
+\newcommand{\mysetminusT}{\mysetminusD}
+\newcommand{\mysetminusS}{\hbox{\tikz{\draw[line width=0.45pt,line cap=round] (2pt,0) -- (0,4pt);}}}
+\newcommand{\mysetminusSS}{\hbox{\tikz{\draw[line width=0.4pt,line cap=round] (1.5pt,0) -- (0,3pt);}}}
+
+\newcommand{\mysetminus}{\mathbin{\mathchoice{\mysetminusD}{\mysetminusT}{\mysetminusS}{\mysetminusSS}}}
+
+
+
 \begin{document}
 
 % \setlength{\topmargin}{-20truemm}
@@ -467,4 +476,90 @@ $s\in \mathcal{F}(U)$を$U$上の$\mathcal{F}$の\textbf{切断}(section)とい�
   よってKernelが自明なので単射。
   % $\mathcal{U}=\{U_{i}\}_{i}$を$X$の部分開集合族とする。$U=\cup_{i}U_{i},U_{ij}=U_{i}\cap U_{j}$
 }{}
+
+
+\Definition{
+  位相空間$X$上の前層$\mathcal{F}$と$x\in X$に対して、$x$での$\mathcal{F}$の\textbf{茎(stalk)}$\mathcal{F}_{x}$という群が定義できる。
+  \begin{equation*}
+    \mathcal{F}_{x} = \varinjlim_{U \ni x}\mathcal{F}(U)
+  \end{equation*}
+  ただし、$U$は$x$の開近傍をすべてを回る。$U$上の切断$s\in \mathcal{F}(U)$に対して
+  $x\in U$の茎$\mathcal{F}_{x}$への自然な群準同型の像を$s_{x}$と書いて、$x$での$s$の\textbf{芽(germ)}という。
+}
+\Lemma{
+  $\mathcal{F}$を$X$上の層とする。$s,t \in \mathcal{F}(X)$が任意の$x \in X$に対して$s_{x} = t_{x}$ならば$s=t$
+}{
+  差を考えれば$t=0$のときを考えればいい。$s_{x}=0\ (\forall x\in X)$とすると、$x$の開近傍$U_{x}$があって$s|_{U_{x}}=0$となる。$\{U_{x}\}_{x\in U_{x}}$は$X$の開被覆なので、$s=0$となる。
+}
+\Definition{
+  $X$上の2つの前層$\mathcal{F,G}$とする。\textbf{前層の射}$\alpha:\mathcal{F} \to \mathcal{G}$
+  とは、$X$の開集合$U$に対して群準同型$\alpha(U):\mathcal{F}(U) \to \mathcal{G}(U)$があって、
+  任意の開集合の組$V\subset U$に対して$\alpha(V)\circ \rho_{U,V}^{\mathcal{F}} = \rho_{U,V}^{\mathcal{G}}\circ \alpha(U)$を満たすことをいう。\\
+  $X$の任意の開集合$U$に対して$\alpha(U)$が単射ならば$\alpha$は単射であるという。(全射はうまくいかんっぽい？)
+}
+$\alpha:\mathcal{F} \to \mathcal{G}$を$X$上の前層の射とする。任意の$x \in X$に対して
+$\alpha$から自然に誘導される群準同型$\alpha_{x}:\mathcal{F}_{x} \to \mathcal{G}_{x}$で
+$(\alpha(U)(s))_{x} = \alpha_{x}(s_{x})$が$X$の任意の開集合$U,s\in \mathcal{F}(U),x\in U$で
+成り立つものが取れる。\\
+$\alpha_{x}$が任意の$x\in X$で全射なら$\alpha$が全射であるという。
+\Example{
+  $X=\mathbf{C} \mysetminus \{0\}$とし$\mathcal{F}$を$X$上の正則関数がなす層とし、
+  $\mathcal{G}$を$X$上の双正則関数のなす層とする。今、任意の開集合$U$と任意の$f\in \mathcal{F}(U)$に対して$\alpha(U)(f) = \exp(f)$で定義される層の射$\alpha:\mathcal{F} \to \mathcal{G}$
+  が全射であることはよく知られている。しかし$\alpha(X):\mathcal{F}(X) \to \mathcal{G}(X)$は
+  全射ではない。例えば恒等写像は$\exp(f)$と書けない。
+}{}
+\Proposition{
+  $\alpha:\mathcal{F} \to \mathcal{G}$を$X$上の層の射とする。
+  \begin{center}
+    $\alpha$が同型$\Leftrightarrow$ $\alpha_{x}$が同型$(\forall x \in X)$
+  \end{center}
+}{}
+
+
+
+\clearpage
+\chapter{極限}
+とりあえず、帰納極限だけ述べる。射影極限は双対概念なのでまぁ頑張って。
+\Definition{(帰納系の定義)\\
+  ($\Lambda,\leq$)を順序集合、$\mathscr{C}$を圏とする。各$\lambda \in \Lambda$に対し、$X_{\lambda} \in \text{Ob}(\mathscr{C})$が与えられ、
+  $\lambda \leq \mu$に対して射$\varphi_{\mu,\lambda}:X_{\lambda} \to X_{\mu}$があって
+  次を満たすとき、$\{X_{\lambda},\varphi_{\mu,\lambda}\}$を\textbf{順系(direct system)}または
+  \textbf{帰納系(inductive system)}という。しばし$\varphi_{\mu,\lambda}$を省略して$\{X_{\lambda}\}_{\lambda \in \Lambda}$や$\{X_{\lambda}\}_{\lambda}$で表す。
+  \begin{itemize}
+    \item[---] 任意の$\lambda \in \Lambda$に他逸して$\varphi_{\lambda,\lambda}=\text{id}_{X_{\lambda}}$
+    \item[---] $\lambda \leq \mu \leq \nu$なる任意の$\lambda,\mu,\nu \in \Lambda$に対して$\varphi_{\nu,\lambda} = \varphi_{\nu,\mu}\circ \varphi_{\mu,\lambda}$
+  \end{itemize}
+}
+\Definition{(帰納系の射の定義)\\
+  $\Lambda$を順序集合。$\{X_{\lambda},\varphi_{\lambda,\mu}\},\{Y_{\lambda},\psi_{\lambda,\mu}\}$を$\Lambda$上の圏$\mathscr{C}$における帰納系とする。
+  このとき$\{X_{\lambda}\}$から$\{Y_{\lambda}\}$への射とは$f_{\lambda}:X_{\lambda} \to Y_{\lambda}$なる射の族
+  $\{f_{\lambda}\}$で、任意の$\lambda \leq \mu$に対して
+  $\psi_{\lambda,\mu}\circ f_{\mu} = f_{\lambda}\circ \varphi_{\lambda,\mu}$となるものを言う。
+  %---------------後に図式を追加する。------------------%
+}
+\Definition{
+  $\mathscr{C}$を圏とし、$\Lambda$を順序集合とする。$\{X_{\lambda},\varphi_{\mu,\lambda}\}$を
+  $\mathscr{C}$の帰納系とする。\\
+  このとき$\{X_{\lambda},\varphi_{\mu,\lambda}\}$の\textbf{順極限(direct limit)}または\textbf{帰納的極限(inductive limit)}または\textbf{帰納極限}とは、
+  $\mathscr{C}$の対象$\displaystyle \varinjlim_{\lambda \in \Lambda}X_{\lambda} \in \text{Ob}(\mathscr{C})$
+  と射の族$\displaystyle \{\varphi_{\lambda}:X_{\lambda} \to \varinjlim_{\lambda \in \Lambda}X_{\lambda}\}_{\lambda \in \Lambda}$の組
+  $\{\varinjlim X_{\lambda},\varphi_{\lambda}\}$で、次の条件を満たすものをいう。
+  \begin{itemize}
+    \item[---] $\lambda \leq \mu$に対して$\varphi_{\mu}\circ \varphi_{\mu,\lambda} = \varphi_{\lambda}$
+    \item[---] $\lambda \leq \mu$に対して$f_{\mu}\circ \varphi_{\mu,\lambda} = f_{\lambda}$を満たす任意の射の族$\{f_{\lambda}:X_{\lambda} \to Y\}_{\lambda \in \Lambda}$に対して、
+    $\displaystyle f:\varinjlim_{\lambda \in \Lambda}X_{\lambda} \to Y$が一意に存在して
+    \begin{equation*}
+      f\circ \varphi_{\lambda} = f_{\lambda}\quad (\forall \lambda \in \Lambda)
+    \end{equation*}
+    を満たす。
+  \end{itemize}
+}
+\Remark{
+  一般の圏では帰納極限や射影極限は存在するとは限らない。しかし、存在するとすれば、同型を除いて一意である。
+}{}
+\Proposition{
+  帰納極限は存在すれば、同型を除いて一意である。
+}{
+証明は後で書く。
+}
 \end{document}
