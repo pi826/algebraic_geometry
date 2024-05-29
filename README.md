@@ -13,6 +13,7 @@
     - [Liu "Algebraic Geometry and Arithmetic Curves"](#liu-algebraic-geometry-and-arithmetic-curves)
     - [上野健爾 "代数幾何"](#上野健爾-代数幾何)
     - [宮西正宜 "代数幾何学"](#宮西正宜-代数幾何学)
+    - [寺杣友秀 "リーマン面の理論"](#寺杣友秀-リーマン面の理論)
     - [志甫淳 "層とホモロジー代数"](#志甫淳-層とホモロジー代数)
     - [中岡宏行 "圏論の技法"](#中岡宏行-圏論の技法)
     - [Masaki Kashiwara and Pierre Schapira "Categories and Sheaves"](#masaki-kashiwara-and-pierre-schapira-categories-and-sheaves)
@@ -52,6 +53,8 @@
 ### [上野健爾 "代数幾何"](https://www.iwanami.co.jp/book/b265778.html)
 
 ### [宮西正宜 "代数幾何学"](https://www.shokabo.co.jp/mybooks/ISBN978-4-7853-1312-8.htm)
+
+### [寺杣友秀 "リーマン面の理論"](https://www.morikita.co.jp/books/mid/007831)
 
 ### [志甫淳 "層とホモロジー代数"](https://www.kyoritsu-pub.co.jp/book/b10003680.html)
 
