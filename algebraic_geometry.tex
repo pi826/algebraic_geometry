@@ -440,6 +440,9 @@ $s\in \mathcal{F}(U)$を$U$上の$\mathcal{F}$の\textbf{切断}(section)とい�
           $s_{i}|_{U_{i} \cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}$を満たすならば、$s|_{U_{i}} = s_{i}$を満たす$s\in \mathcal{F}(U)$が存在する。
   \end{itemize}
 }
+\Remark{
+  $\mathcal{F}$が層ならば$\mathcal{F}(\varnothing) = 0$となる。
+}{}
 \Example{
 $X$を位相空間とする。\\
 $\mathcal{C}_{X}^{0}$を$X$の開集合$U$に対して$U\to \mathbf{C}$なる連続写像全体の集合$\mathcal{C}_{X}^{0}(U)$を対応させるものとし、制限写像を普通の制限とする。
@@ -453,9 +456,16 @@ $f_{i}|_{U_{i} \cap U_{j}} = f_{j}|_{U_{i} \cap U_{j}}$を満たすとする。�
 $f\in \mathcal{C}_{X}^{0}(U)$であり、$f|_{U_{i}}=f_{i}$となる。よって$(\mathcal{C}_{X}^{0},\rho)$は層となる。これを連続写像が成す層という。
 }
 \Example{
-  $X$を位相空間とする。\\
-  $A$を自明でないアーベル群とする。$\mathcal{A}_{X}$を$X$の空でない開集合$U$に対して$\mathcal{A}_{X}(U)=A$とする。
-}{}
+$X$を位相空間とする。\\
+$A$を自明でないアーベル群とする。$\mathcal{A}_{X}$を$X$の空でない開集合$U$に対して$\mathcal{A}_{X}(U)=A$に、
+空集合$\varnothing$に対して$\mathcal{A}_{X}(\varnothing) = 0$に対応させるものとし、
+制限写像を空でない開集合$V \subset U$に対して$\rho_{U,V}=\text{id}_{A}$とし、$\rho_{U,\varnothing} = 0$とする。\\
+すると、$(\mathcal{A}_{X},\rho)$は$X$上の前層にはなるが、一般に層とはならない。\\
+}{
+例えば、$X$が連結でないとすると、非交差な開集合$U,V$があって$X=U\cup V$とかける。すると$\{U,V\}$は$X$の開被覆となる。
+$s_{U} \in \mathcal{A}_{X}(U)=A$が$s_{U}|_{U\cap V} = s_{U}|_{\varnothing} = 0 = s_{V}|_{U \cap V}$
+を満たすとする。このとき、任意の$s \in \mathcal{A}_{X}(X)=A$で$s|_{U}=s|_{V}=s$となり層とならない。
+}
 \Remark{
 $\mathcal{B}$を位相空間$X$の開基で有限交叉で閉じているものとする。(つまり任意の$U,V\in \mathcal{B}$に対して$U\cap V \in \mathcal{B}$.\ e.g. $\text{Spec}\, A$の開基$\{D(f)\}_f$)
 このとき$\mathcal{B}$-前層($\mathcal{B}\text{-presheaf}$)\\$\mathcal{F}_0$とは
@@ -512,11 +522,13 @@ $X$上の2つの前層$\mathcal{F,G}$とする。\textbf{前層の射}$\alpha:\m
   任意の開集合の組$V\subset U$に対して$\alpha(V)\circ \rho_{U,V}^{\mathcal{F}} = \rho_{U,V}^{\mathcal{G}}\circ \alpha(U)$を満たすことをいう。\\
 $X$の任意の開集合$U$に対して$\alpha(U)$が単射ならば$\alpha$は単射であるという。(全射はうまくいかんっぽい？)
   }
+
 $\alpha:\mathcal{F} \to \mathcal{G}$を$X$上の前層の射とする。任意の$x \in X$に対して
 $\alpha$から自然に誘導される群準同型$\alpha_{x}:\mathcal{F}_{x} \to \mathcal{G}_{x}$で
 $(\alpha(U)(s))_{x} = \alpha_{x}(s_{x})$が$X$の任意の開集合$U,s\in \mathcal{F}(U),x\in U$で
   成り立つものが取れる。\\
 $\alpha_{x}$が任意の$x\in X$で全射なら$\alpha$が全射であるという。
+
   \Example{
     $X=\mathbf{C} \mysetminus \{0\}$とし$\mathcal{F}$を$X$上の正則関数がなす層とし、
     $\mathcal{G}$を$X$上の双正則関数のなす層とする。今、任意の開集合$U$と任意の$f\in \mathcal{F}(U)$に対して$\alpha(U)(f) = \exp(f)$で定義される層の射$\alpha:\mathcal{F} \to \mathcal{G}$
@@ -529,6 +541,44 @@ $\alpha_{x}$が任意の$x\in X$で全射なら$\alpha$が全射であるとい�
       $\alpha$が同型$\Leftrightarrow$ $\alpha_{x}$が同型$(\forall x \in X)$
     \end{center}
   }{}
+  \Theorem{
+  位相空間$X$上の前層$\mathcal{F}$に対して、前層$\mathcal{F}$の層化(sheafification)$\mathcal{F}^{\dagger}$は存在する。
+  }{
+$X$の開集合$U$に対して
+  \begin{equation*}
+    \mathcal{F}^{\dagger}(U) = \left\{\sigma: U \to \prod_{x\in U} \mathcal{F}_{x}\, \middle|\,
+    \begin{aligned}
+      \forall x\in U,x\in \exists V\subset U:\text{open},\exists s \in \mathcal{F}(V)\, \text{s.t.}\, \sigma(y) = s_{y}\, (\forall y \in V)
+    \end{aligned}
+    \right\}
+  \end{equation*}
+  とし、$V \subset U$なる開集合に対し、
+  $$
+    \begin{array}{rccc}
+      \rho_{U,V}^{\mathcal{F}^{\dagger}}: & \mathcal{F}^{\dagger}(U) & \longrightarrow & \mathcal{F}^{\dagger}(V) \\
+                                          & \rotatebox{90}{$\in$}    &                 & \rotatebox{90}{$\in$}    \\
+                                          & \sigma                   & \longmapsto     & \sigma|_{V}
+    \end{array}
+  $$
+  が定義できる。実際、任意の$x\in V$をとる。$V \subset U$であり、
+$\sigma \in \mathcal{F}^{\dagger}(U)$より
+  \begin{center}
+    $x\in \exists U_{0} \subset U$:open,$\exists s \in \mathcal{F}(U_{0})$\, s.t.\, $\sigma(y)=s_{y}\, (\forall y\in U_{0})$
+  \end{center}
+$V_{0} = U_{0} \cap V,\quad t = s|_{V_{0}}$とすると任意の$y\in V_{0}$に対して
+  \begin{equation*}
+    \sigma(y)=\sigma|_{V}(y)=s_{y}
+  \end{equation*}
+  さらに帰納極限の定義から
+  \begin{equation*}
+    \sigma|_{V}(y)=t_{y}
+  \end{equation*}
+  次に$\rho_{U,V}^{\mathcal{F}^{\dagger}}$が準同型になっていることつまり
+  \begin{equation*}
+    \rho_{U,V}^{\mathcal{F}^{\dagger}}(\sigma + \tau) = \rho_{U,V}^{\mathcal{F}^{\dagger}}(\sigma) + \rho_{U,V}^{\mathcal{F}^{\dagger}}(\tau)
+  \end{equation*}
+  が成り立つことを示そう。
+  }
 
 
 
