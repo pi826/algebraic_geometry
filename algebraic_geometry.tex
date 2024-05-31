@@ -430,8 +430,9 @@ atodekakuyo
   \end{itemize}
 }
 $s\in \mathcal{F}(U)$を$U$上の$\mathcal{F}$の\textbf{切断}(section)という.
-また,$\rho_{U,V}(s)\in \mathcal{F}(V)$を$s|_{V}$と書いて$s$の$V$への制限という.
-
+また,$\rho_{U,V}(s)\in \mathcal{F}(V)$を$s|_{V}$と書いて$s$の$V$への制限という.\\
+また,単に$\mathcal{F,G,H,}\dots$などと書いたら(前)層を表すことや、$\rho$と書いたら制限写像を意味する。
+また,どの(前)層の制限写像かを明示するため,例えば,$\rho_{U,V}^{\mathcal{F}}$などと書くことがある。
 \Definition{
   前層$\mathcal{F}$が層(sheaf)とは次の条件を満たすことをいう.
   \begin{itemize}
@@ -612,7 +613,24 @@ $$
 ただし,$x\in U_{i}$.すると,$\sigma$は$\sigma_{i}\in \mathcal{F}^{\dagger}(U_{i})$を張り合わせて作っているので
 これは$\sigma \in \mathcal{F}(U)$となることが容易にわかる。よって、$\mathcal{F}^{\dagger}$は層になる。
 }
-
+\Lemma{
+  $\mathcal{F}$を$X$上の層とし、$\mathcal{F}'$を$\mathcal{F}$の部分層とする。
+  このとき開集合$U$を$\mathcal{F}(U)/\mathcal{F}'(U)$に対応させるものは前層になる。
+}{
+  この対応を$\mathcal{G}$とおく。$V \subset U$なる開集合$U,V$をとる。制限写像を
+  $$
+  \begin{array}{rccc}
+    \rho_{U,V}^{\mathcal{G}} :& \mathcal{F}(U)/\mathcal{F}'(U) & \longrightarrow & \mathcal{F}(V)/\mathcal{F}'(V)\\
+                                        & \rotatebox{90}{$\in$}    &                 & \rotatebox{90}{$\in$}    \\
+                                        & s + \mathcal{F}'(U)    & \longmapsto     & \rho_{U,V}^{\mathcal{F}}(s) + \mathcal{F}'(V)
+  \end{array}
+  $$
+  とすると、これはwell-definedである。また、$U\subset V \subset W$なる開集合の組に対して
+  \begin{equation*}
+    \rho_{U,W}^{\mathcal{G}} = \rho_{V,W}^{\mathcal{G}} \circ \rho_{U,V}^{\mathcal{G}}
+  \end{equation*}
+  が成り立つことは制限写像の定義から明らかである。よって$\mathcal{G}$は前層。
+}
 
 
 \clearpage
