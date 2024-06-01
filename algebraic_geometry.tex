@@ -75,7 +75,8 @@ pdfkeywords={}
 % chapter 
 \titleformat{\chapter}[block]
 {}{}{0pt}{
-  \vspace*{-2cm}\fontsize{27pt}{30pt}\selectfont\filleft
+  \ifthenelse{\value{chapter}=0}{}
+  {\vspace*{-2cm}}\fontsize{27pt}{30pt}\selectfont\filleft
 }[
   \ifthenelse{\value{chapter}=0}{\hrule}{\titleline{
   \hspace{225pt}
@@ -84,7 +85,7 @@ pdfkeywords={}
     \draw [thick,line width = 0.4pt] (6.5cm,2cm)-- (6.5cm,-1cm);
     % \draw [line width = 0.4pt] (6.5cm,1cm) -- (6.5cm,-1cm);
   \end{tikzpicture}}}
-  \vspace*{-1cm}\Large{\filleft \ifthenelse{\value{chapter}=0}{}{第 \thechapter 章}}
+  \Large{\filleft \ifthenelse{\value{chapter}=0}{}{\vspace*{-1cm}第 \thechapter 章}}
 ]
 
 
@@ -854,4 +855,6 @@ $\{\varinjlim X_{\lambda},\varphi_{\lambda}\}$で,次の条件を満たすもの
 
 \clearpage
 \chapter{Category Theory}
+
+
 \end{document}
