@@ -1,13 +1,14 @@
-# 代数幾何について勉強したこと。
+# 代数幾何について勉強したこと。<!-- omit in toc -->
 
-- [代数幾何について勉強したこと。](#代数幾何について勉強したこと)
 - [目次](#目次)
-  - [1.Scheme](#1scheme)
+  - [1 Scheme](#1-scheme)
     - [1.1 Zariski Topology](#11-zariski-topology)
     - [1.2 Algebraic Sets](#12-algebraic-sets)
     - [1.3 Sheaves](#13-sheaves)
-  - [2 Limits](#2-limits)
-    - [2.1 Induction Limit](#21-induction-limit)
+    - [1.4 Ringed Topological Space](#14-ringed-topological-space)
+  - [Appendix A: Limits](#appendix-a-limits)
+    - [A.1 Inductive Limit](#a1-inductive-limit)
+  - [Appendix B: Category Theory](#appendix-b-category-theory)
 - [参考文献](#参考文献)
   - [book](#book)
     - [Liu "Algebraic Geometry and Arithmetic Curves"](#liu-algebraic-geometry-and-arithmetic-curves)
@@ -25,7 +26,7 @@
 
 # 目次
 
-## 1.Scheme
+## 1 Scheme
 
 ### 1.1 Zariski Topology
 全く書いてない。
@@ -34,13 +35,26 @@
 全く書いてない。
 
 ### 1.3 Sheaves
+加筆が必要。<br>
+- B-shaef
+- Sheafification
+- Lem 1.3.8
+- direct image and inverse image
+
+### 1.4 Ringed Topological Space
 書いている。
 
-## 2 Limits
-書いている
+<br>
 
-### 2.1 Induction Limit
+
+## Appendix A: Limits
 書いている。
+
+### A.1 Inductive Limit
+書いている。
+
+## Appendix B: Category Theory
+気が向けば書きたい。
 
 <br>
 

@@ -75,16 +75,19 @@ pdfkeywords={}
 % chapter 
 \titleformat{\chapter}[block]
 {}{}{0pt}{
-  \fontsize{27pt}{30pt}\selectfont\filleft
+  \vspace*{-2cm}\fontsize{27pt}{30pt}\selectfont\filleft
 }[
   \ifthenelse{\value{chapter}=0}{\hrule}{\titleline{
-  \hspace{250pt}
+  \hspace{225pt}
   \begin{tikzpicture}
-    \draw [line width = 0.4pt] (0,0) -- (6.5cm,0);
+    \draw [thick,line width = 0.4pt] (0,0) -- (7.5cm,0);
+    \draw [thick,line width = 0.4pt] (6.5cm,2cm)-- (6.5cm,-1cm);
     % \draw [line width = 0.4pt] (6.5cm,1cm) -- (6.5cm,-1cm);
   \end{tikzpicture}}}
-  \Large{\filleft \ifthenelse{\value{chapter}=0}{}{第 \thechapter 章}}
+  \vspace*{-1cm}\Large{\filleft \ifthenelse{\value{chapter}=0}{}{第 \thechapter 章}}
 ]
+
+
 
 \makeatletter
 \def\Section{\@ifstar{\@Section[2pt]}{\@Section[\z@]}}
@@ -777,7 +780,9 @@ $$
 
 
 \clearpage
-\chapter{極限}
+\appendix
+\chapter{Limit}
+\Section{Inductive Limit}
 とりあえず,帰納極限だけ述べる.射影極限は双対概念なのでまぁ頑張って.
 \Definition{(帰納系の定義)\\
 ($\Lambda,\leq$)を順序集合,$\mathscr{C}$を圏とする.各$\lambda \in \Lambda$に対し,$X_{\lambda} \in \text{Ob}(\mathscr{C})$が与えられ,
@@ -843,4 +848,10 @@ $\{\varinjlim X_{\lambda},\varphi_{\lambda}\}$で,次の条件を満たすもの
 }{
   証明は後で書く.
 }
+
+
+
+
+\clearpage
+\chapter{Category Theory}
 \end{document}
