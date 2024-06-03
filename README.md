@@ -38,7 +38,7 @@
 加筆が必要。<br>
 - B-shaef
 - Sheafification
-- Lem 1.3.8
+- ~~Lem 1.3.8~~
 - direct image and inverse image
 
 ### 1.4 Ringed Topological Space

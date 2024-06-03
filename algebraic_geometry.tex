@@ -477,91 +477,91 @@ $s_{U} \in \mathcal{A}_{X}(U)=A$が$s_{U}|_{U\cap V} = s_{U}|_{\varnothing} = 0 
 \Remark{
 $\mathcal{B}$を位相空間$X$の開基で有限交叉で閉じているものとする.(つまり任意の$U,V\in \mathcal{B}$に対して$U\cap V \in \mathcal{B}$.\ e.g. $\text{Spec}\, A$の開基$\{D(f)\}_f$)
 このとき$\mathcal{B}$-前層($\mathcal{B}\text{-presheaf}$)\\$\mathcal{F}_0$とは
-\begin{itemize}
-  \item[---] $U\in \mathcal{B}$に対して$\mathcal{F}_0(U)$はアーベル群.
-  \item[---] $V\subset U \in \mathcal{B}$に対して群準同型$\rho_{U,V}:\mathcal{F}_0(U) \to \mathcal{F}_0(V)$が定まる.
-\end{itemize}
-としたもの.\\
+  \begin{itemize}
+    \item[---] $U\in \mathcal{B}$に対して$\mathcal{F}_0(U)$はアーベル群.
+    \item[---] $V\subset U \in \mathcal{B}$に対して群準同型$\rho_{U,V}:\mathcal{F}_0(U) \to \mathcal{F}_0(V)$が定まる.
+  \end{itemize}
+  としたもの.\\
 $\mathcal{B}$-層($\mathcal{B}\text{-sheaf}$)$\mathcal{F}_0$から$X$上の層$\mathcal{F}$を作ることができる.\\
-位相空間$X$の任意の開集合$U$をとり,$\{U_{i}\}_{i}$をその開被覆とする.($U_{i} \in \mathcal{B}$)
-\begin{equation*}
-  \mathcal{F}(U):=\left\{(s_{i})_{i} \in \prod_{i}\mathcal{F}_0(U_{i})\ \Biggl|\ 任意のi,jに対してs_{i}|_{U_{i} \cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}\right\}
-\end{equation*}
-と定義する.するとこれは開被覆によらない.実際$\mathcal{F}(U)_{U_i}$を開被覆$\{U_{i}\}_{i}$による$\mathcal{F}(U)$とし,$\{V_{j}\}_{j}$を別の開被覆とすると,
+  位相空間$X$の任意の開集合$U$をとり,$\{U_{i}\}_{i}$をその開被覆とする.($U_{i} \in \mathcal{B}$)
+  \begin{equation*}
+    \mathcal{F}(U):=\left\{(s_{i})_{i} \in \prod_{i}\mathcal{F}_0(U_{i})\ \Biggl|\ 任意のi,jに対してs_{i}|_{U_{i} \cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}\right\}
+  \end{equation*}
+  と定義する.するとこれは開被覆によらない.実際$\mathcal{F}(U)_{U_i}$を開被覆$\{U_{i}\}_{i}$による$\mathcal{F}(U)$とし,$\{V_{j}\}_{j}$を別の開被覆とすると,
 $\{U_{i}\cap V_{j}\}_{i,j}$はこれら2つの細分である.$\mathcal{F}(U)_{U_i} \to \mathcal{F}(U)_{U_{i}\cap V_{j}}$なる群準同型を
 $(s_{i})_{i}\mapsto (s_{i}|_{U_{i}\cap V_{j}})_{i,j}$で定義できる.実際
-\begin{align*}
-  s_{i} |_{U_{i} \cap V_{j}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}
-    & = s_{i} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                                              \\
-    & = s_{i} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                          \\
-    & = s_{i'} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})} \quad (\because (s_{i})_{i} \in \mathcal{F}(U)_{U_{i}}) \\
-    & = s_{i'} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                                             \\
-    & = s_{i'} |_{U_{i'} \cap V_{j'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}
-\end{align*}
-より$(s_{i}|_{U_{i}\cap V_{j}})_{i,j}\in \mathcal{F}(U)_{U_{i} \cap V_{j}}$\\
-また,$(s_{ij})_{ij}\in \mathcal{F}(U)_{U_{i}\cap V_{j}}$を取ると,
+  \begin{align*}
+    s_{i} |_{U_{i} \cap V_{j}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}
+     & = s_{i} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                                              \\
+     & = s_{i} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                          \\
+     & = s_{i'} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})} \quad (\because (s_{i})_{i} \in \mathcal{F}(U)_{U_{i}}) \\
+     & = s_{i'} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                                             \\
+     & = s_{i'} |_{U_{i'} \cap V_{j'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}
+  \end{align*}
+  より$(s_{i}|_{U_{i}\cap V_{j}})_{i,j}\in \mathcal{F}(U)_{U_{i} \cap V_{j}}$\\
+  また,$(s_{ij})_{ij}\in \mathcal{F}(U)_{U_{i}\cap V_{j}}$を取ると,
 $(s_{ij})_{ij} = (s_{i}|_{U_{i} \cap V_{j}})$と出来るので全射(？？？？？)\\
-Kernelを計算すると
-\begin{align*}
-    & s_{i}|_{U_{i}\cap V_{j}} = 0 \quad (\forall i,j)                \\
-    & s_{i}|_{U_{i}}=s_{i} = 0 \quad (\forall i) \quad (\because (4))
-\end{align*}
-よってKernelが自明なので単射.
-% $\mathcal{U}=\{U_{i}\}_{i}$を$X$の部分開集合族とする.$U=\cup_{i}U_{i},U_{ij}=U_{i}\cap U_{j}$
-}{}
+  Kernelを計算すると
+  \begin{align*}
+     & s_{i}|_{U_{i}\cap V_{j}} = 0 \quad (\forall i,j)                \\
+     & s_{i}|_{U_{i}}=s_{i} = 0 \quad (\forall i) \quad (\because (4))
+  \end{align*}
+  よってKernelが自明なので単射.
+  % $\mathcal{U}=\{U_{i}\}_{i}$を$X$の部分開集合族とする.$U=\cup_{i}U_{i},U_{ij}=U_{i}\cap U_{j}$
+  }{}
 
 
-\Definition{
-  位相空間$X$上の前層$\mathcal{F}$と$x\in X$に対して,$x$での$\mathcal{F}$の\textbf{茎(stalk)}$\mathcal{F}_{x}$という群が定義できる.
-  \begin{equation*}
-    \mathcal{F}_{x} = \varinjlim_{U \ni x}\mathcal{F}(U)
-  \end{equation*}
-  ただし,$U$は$x$の開近傍をすべてを回る.$U$上の切断$s\in \mathcal{F}(U)$に対して
-  $x\in U$の茎$\mathcal{F}_{x}$への自然な群準同型の像を$s_{x}$と書いて,$x$での$s$の\textbf{芽(germ)}という.
-}
-\Lemma{
+  \Definition{
+    位相空間$X$上の前層$\mathcal{F}$と$x\in X$に対して,$x$での$\mathcal{F}$の\textbf{茎(stalk)}$\mathcal{F}_{x}$という群が定義できる.
+    \begin{equation*}
+      \mathcal{F}_{x} = \varinjlim_{U \ni x}\mathcal{F}(U)
+    \end{equation*}
+    ただし,$U$は$x$の開近傍をすべてを回る.$U$上の切断$s\in \mathcal{F}(U)$に対して
+    $x\in U$の茎$\mathcal{F}_{x}$への自然な群準同型の像を$s_{x}$と書いて,$x$での$s$の\textbf{芽(germ)}という.
+  }
+  \Lemma{
 $\mathcal{F}$を$X$上の層とする.$s,t \in \mathcal{F}(X)$が任意の$x \in X$に対して$s_{x} = t_{x}$ならば$s=t$
-}{
-差を考えれば$t=0$のときを考えればいい.$s_{x}=0\ (\forall x\in X)$とすると,$x$の開近傍$U_{x}$があって$s|_{U_{x}}=0$となる.$\{U_{x}\}_{x\in U_{x}}$は$X$の開被覆なので,$s=0$となる.
-}
-\Definition{
+  }{
+  差を考えれば$t=0$のときを考えればいい.$s_{x}=0\ (\forall x\in X)$とすると,$x$の開近傍$U_{x}$があって$s|_{U_{x}}=0$となる.$\{U_{x}\}_{x\in U_{x}}$は$X$の開被覆なので,$s=0$となる.
+  }
+  \Definition{
 $X$上の2つの前層$\mathcal{F,G}$とする.\textbf{前層の射}$\alpha:\mathcal{F} \to \mathcal{G}$
-とは,$X$の開集合$U$に対して群準同型$\alpha(U):\mathcal{F}(U) \to \mathcal{G}(U)$があって,
-任意の開集合の組$V\subset U$に対して$\alpha(V)\circ \rho_{U,V}^{\mathcal{F}} = \rho_{U,V}^{\mathcal{G}}\circ \alpha(U)$を満たすことをいう.\\
+  とは,$X$の開集合$U$に対して群準同型$\alpha(U):\mathcal{F}(U) \to \mathcal{G}(U)$があって,
+  任意の開集合の組$V\subset U$に対して$\alpha(V)\circ \rho_{U,V}^{\mathcal{F}} = \rho_{U,V}^{\mathcal{G}}\circ \alpha(U)$を満たすことをいう.\\
 $X$の任意の開集合$U$に対して$\alpha(U)$が単射ならば$\alpha$は単射であるという.(全射はうまくいかんっぽい？)
-}
+  }
 
 $\alpha:\mathcal{F} \to \mathcal{G}$を$X$上の前層の射とする.任意の$x \in X$に対して
 $\alpha$から自然に誘導される群準同型$\alpha_{x}:\mathcal{F}_{x} \to \mathcal{G}_{x}$で
 $(\alpha(U)(s))_{x} = \alpha_{x}(s_{x})$が$X$の任意の開集合$U,s\in \mathcal{F}(U),x\in U$で
-成り立つものが取れる.\\
+  成り立つものが取れる.\\
 $\alpha_{x}$が任意の$x\in X$で全射なら$\alpha$が全射であるという.
 
-\Example{
-  $X=\mathbf{C} \mysetminus \{0\}$とし$\mathcal{F}$を$X$上の正則関数がなす層とし,
-  $\mathcal{G}$を$X$上の双正則関数のなす層とする.今,任意の開集合$U$と任意の$f\in \mathcal{F}(U)$に対して$\alpha(U)(f) = \exp(f)$で定義される層の射$\alpha:\mathcal{F} \to \mathcal{G}$
-  が全射であることはよく知られている.しかし$\alpha(X):\mathcal{F}(X) \to \mathcal{G}(X)$は
-  全射ではない.例えば恒等写像は$\exp(f)$と書けない.
-}{}
-\Proposition{
-  $\alpha:\mathcal{F} \to \mathcal{G}$を$X$上の層の射とする.
-  \begin{center}
-    $\alpha$が同型$\Leftrightarrow$ $\alpha_{x}$が同型$(\forall x \in X)$
-  \end{center}
-}{}
-\Theorem{
-位相空間$X$上の前層$\mathcal{F}$に対して,前層$\mathcal{F}$の層化(sheafification)$\mathcal{F}^{\dagger}$は存在する.
-}{
+  \Example{
+    $X=\mathbf{C} \mysetminus \{0\}$とし$\mathcal{F}$を$X$上の正則関数がなす層とし,
+    $\mathcal{G}$を$X$上の双正則関数のなす層とする.今,任意の開集合$U$と任意の$f\in \mathcal{F}(U)$に対して$\alpha(U)(f) = \exp(f)$で定義される層の射$\alpha:\mathcal{F} \to \mathcal{G}$
+    が全射であることはよく知られている.しかし$\alpha(X):\mathcal{F}(X) \to \mathcal{G}(X)$は
+    全射ではない.例えば恒等写像は$\exp(f)$と書けない.
+  }{}
+  \Proposition{
+    $\alpha:\mathcal{F} \to \mathcal{G}$を$X$上の層の射とする.
+    \begin{center}
+      $\alpha$が同型$\Leftrightarrow$ $\alpha_{x}$が同型$(\forall x \in X)$
+    \end{center}
+  }{}
+  \Theorem{
+  位相空間$X$上の前層$\mathcal{F}$に対して,前層$\mathcal{F}$の層化(sheafification)$\mathcal{F}^{\dagger}$は存在する.
+  }{
 $X$の開集合$U$に対して
-\begin{equation*}
-  \mathcal{F}^{\dagger}(U) = \left\{\sigma: U \to \prod_{x\in U} \mathcal{F}_{x}\, \middle|\,
-  \begin{aligned}
-    \forall x\in U,x\in \exists V\subset U:\text{open},\exists s \in \mathcal{F}(V)\, \text{s.t.}\, \sigma(y) = s_{y}\, (\forall y \in V)
-  \end{aligned}
-  \right\}
-\end{equation*}
-とする.ただし,$\sigma$は任意の$x\in U$に対して$\sigma(x) \in \mathcal{F}_{x}$とする.
-また,$V \subset U$なる開集合に対し,
+  \begin{equation*}
+    \mathcal{F}^{\dagger}(U) = \left\{\sigma: U \to \prod_{x\in U} \mathcal{F}_{x}\, \middle|\,
+    \begin{aligned}
+      \forall x\in U,x\in \exists V\subset U:\text{open},\exists s \in \mathcal{F}(V)\, \text{s.t.}\, \sigma(y) = s_{y}\, (\forall y \in V)
+    \end{aligned}
+    \right\}
+  \end{equation*}
+  とする.ただし,$\sigma$は任意の$x\in U$に対して$\sigma(x) \in \mathcal{F}_{x}$とする.
+  また,$V \subset U$なる開集合に対し,
 $$
   \begin{array}{rccc}
     \rho_{U,V}^{\mathcal{F}^{\dagger}}: & \mathcal{F}^{\dagger}(U) & \longrightarrow & \mathcal{F}^{\dagger}(V) \\
@@ -587,18 +587,18 @@ $\sigma,\tau \in \mathcal{F}^{\dagger}(U)$ならば$\sigma+\tau \in \mathcal{F}^
 を示そう.\\
 $\sigma,\tau \in \mathcal{F}^{\dagger}(U)$より任意の$x\in U$に対して
 \begin{align*}
-  &x\in \exists U_{0} \subset U:\mathrm{open},\exists s \in \mathcal{F}(U_{0})\ \mathrm{s.t.}\ 
-  \sigma(y) = s_{y}\ (\forall y \in U_{0})\\
-  &x\in \exists V_{0} \subset U:\mathrm{open},\exists t \in \mathcal{F}(V_{0})\ \mathrm{s.t.}\ 
-  \tau(z) = t_{z}\ (\forall z \in V_{0}) 
+   & x\in \exists U_{0} \subset U:\mathrm{open},\exists s \in \mathcal{F}(U_{0})\ \mathrm{s.t.}\
+  \sigma(y) = s_{y}\ (\forall y \in U_{0})                                                       \\
+   & x\in \exists V_{0} \subset U:\mathrm{open},\exists t \in \mathcal{F}(V_{0})\ \mathrm{s.t.}\
+  \tau(z) = t_{z}\ (\forall z \in V_{0})
 \end{align*}
 を満たす.いま$W = U_{0} \cap V_{0},s' = s|_{W},t' = t|_{W}$とすると,
 \begin{align*}
-  x\in W \subset U:\mathrm{open}, s',t' \in \mathcal{F}(W)\ \mathrm{s.t.}\ 
-  (\sigma + \tau)(y) 
-  &= \sigma(y) + \tau(y)\\
-  &= s_{y} + t_{y}\\
-  &= (s + t)_{y} \ (\forall y \in W)
+  x\in W \subset U:\mathrm{open}, s',t' \in \mathcal{F}(W)\ \mathrm{s.t.}\
+  (\sigma + \tau)(y)
+   & = \sigma(y) + \tau(y)             \\
+   & = s_{y} + t_{y}                   \\
+   & = (s + t)_{y} \ (\forall y \in W)
 \end{align*}
 よって$\sigma + \tau \in \mathcal{F}^{\dagger}(U)$また明らかに可換.
 よって$\mathcal{F}^{\dagger}(U)$はアーベル群.\\
@@ -611,25 +611,35 @@ $U$を$X$の開集合とし,$\{U_{i}\}_{i}$をその開被覆とする.$\sigma\i
 $\sigma_{i}|_{U_{i} \cap U_{j}} = \sigma_{j}|_{U_{i} \cap U_{j}}$と仮定すると,
 $$
   \begin{array}{rccc}
-    \sigma :& U & \longrightarrow &\displaystyle \prod_{x\in U}\mathcal{F}_{x} \\
-                                        & \rotatebox{90}{$\in$}    &                 & \rotatebox{90}{$\in$}    \\
-                                        & x      & \longmapsto     & \sigma_{i}(x)
+    \sigma : & U                     & \longrightarrow & \displaystyle \prod_{x\in U}\mathcal{F}_{x} \\
+             & \rotatebox{90}{$\in$} &                 & \rotatebox{90}{$\in$}                       \\
+             & x                     & \longmapsto     & \sigma_{i}(x)
   \end{array}
 $$
 ただし,$x\in U_{i}$.すると,$\sigma$は$\sigma_{i}\in \mathcal{F}^{\dagger}(U_{i})$を張り合わせて作っているので
 これは$\sigma \in \mathcal{F}(U)$となることが容易にわかる。よって、$\mathcal{F}^{\dagger}$は層になる。
 }
+
+
+
+\Proposition{
+  層化の射$\theta:\mathcal{F} \to \mathcal{F}^{\dagger}$に対して、
+  その茎の射$\theta_{x}:\mathcal{F}_{x} \to \mathcal{F}^{\dagger}_{x}$は同型である。
+}{}
+
+
+
 \Lemma{
   $\mathcal{F}$を$X$上の層とし、$\mathcal{F}'$を$\mathcal{F}$の部分層とする。
   このとき開集合$U$を$\mathcal{F}(U)/\mathcal{F}'(U)$に対応させるものは前層になる。
 }{
   この対応を$\mathcal{G}$とおく。$V \subset U$なる開集合$U,V$をとる。制限写像を
   $$
-  \begin{array}{rccc}
-    \rho_{U,V}^{\mathcal{G}} :& \mathcal{F}(U)/\mathcal{F}'(U) & \longrightarrow & \mathcal{F}(V)/\mathcal{F}'(V)\\
-                                        & \rotatebox{90}{$\in$}    &                 & \rotatebox{90}{$\in$}    \\
-                                        & s + \mathcal{F}'(U)    & \longmapsto     & \rho_{U,V}^{\mathcal{F}}(s) + \mathcal{F}'(V)
-  \end{array}
+    \begin{array}{rccc}
+      \rho_{U,V}^{\mathcal{G}} : & \mathcal{F}(U)/\mathcal{F}'(U) & \longrightarrow & \mathcal{F}(V)/\mathcal{F}'(V)                \\
+                                 & \rotatebox{90}{$\in$}          &                 & \rotatebox{90}{$\in$}                         \\
+                                 & s + \mathcal{F}'(U)            & \longmapsto     & \rho_{U,V}^{\mathcal{F}}(s) + \mathcal{F}'(V)
+    \end{array}
   $$
   とすると、これはwell-definedである。また、$U\subset V \subset W$なる開集合の組に対して
   \begin{equation*}
@@ -638,7 +648,7 @@ $$
   が成り立つことは制限写像の定義から明らかである。よって$\mathcal{G}$は前層。
 }
 \Definition{
-  Lem:\ref{Lem:1.3.7}で定義した前層の層化を$\mathcal{F}/\mathcal{F}'$と書いて、\textbf{商層(quotient shaef)}という。
+  Lem:\ref{Lem:1.3.8}で定義した前層の層化を$\mathcal{F}/\mathcal{F}'$と書いて、\textbf{商層(quotient shaef)}という。
 }
 \Definition{
   $\alpha:\mathcal{F} \to \mathcal{G}$を前層の射とする。このとき開集合$U$に対して
@@ -651,31 +661,19 @@ $$
   $\mathcal{F,G}$を$X$上の層,$\mathcal{F}'$を$\mathcal{F}$の部分層,$\alpha:\mathcal{F} \to \mathcal{G}$を前層の射とする。
   このとき、
   \begin{align*}
-    &(\ker \alpha)_{x} = \ker \alpha_{x}\\
-    &(\im \alpha)_{x} = \im \alpha_{x}\\
-    &(\mathcal{F}/\mathcal{F}')_{x} = \mathcal{F}_{x}/\mathcal{F}'_{x}
+     & (\ker \alpha)_{x} = \ker \alpha_{x}                               \\
+     & (\im \alpha)_{x} = \im \alpha_{x}                                 \\
+     & (\mathcal{F}/\mathcal{F}')_{x} = \mathcal{F}_{x}/\mathcal{F}'_{x}
   \end{align*}
   が成り立つ。
 }{
-  任意の部分層は層の射の核としてかけるので、$\mathcal{F}'=\ker \alpha$とする。\\
-  また、$\mathcal{K}(U) = \ker (\alpha(U)),\mathcal{I}(U) = \im (\alpha(U)),\mathcal{Q}(U) = \mathcal{F}(U)/\ker (\alpha(U))$とおく。\\
+  $\mathcal{Q}(U) = \mathcal{F}(U)/\mathcal{F}'(U)$とおく。\\
   このとき、アーベル群の完全列
   \begin{center}
     \begin{tikzpicture}[auto]
-      \node (01) at (0,0) {$0$};
-      \node (ker) at (2.5,0) {$\mathcal{K}(U)$};
-      \node (fu) at (5,0) {$\mathcal {F}(U)$};
-      \node (im) at (7.5,0) {$\mathcal{I}(U)$};
-      \node (02) at (10,0) {$0$};
-      
-      \draw[->] (01) to (ker);
-      \draw[->] (ker) to (fu);
-      \draw[->] (fu) to (im);
-      \draw[->] (im) to (02);
-
       \node (03) at (0,-1) {$0$};
-      \node (im1) at (2.5,-1) {$\mathcal{I}(U)$};
-      \node (gu) at (5,-1) {$\mathcal{G}(U)$};
+      \node (im1) at (2.5,-1) {$\mathcal{F}'(U)$};
+      \node (gu) at (5,-1) {$\mathcal{F}(U)$};
       \node (qu) at (7.5,-1) {$\mathcal{Q}(U)$};
       \node (04) at (10,-1) {$0$};
 
@@ -685,23 +683,12 @@ $$
       \draw[->] (qu) to (04);
     \end{tikzpicture}
   \end{center}
-  が作れる。帰納極限は完全列を完全列に移すので、
+  が作れる。帰納極限は完全列を完全列に移すので、またProp:\ref{Prop:1.3.7}より
   \begin{center}
     \begin{tikzpicture}[auto]
-      \node (01) at (0,0) {$0$};
-      \node (ker) at (2.5,0) {$\varinjlim \mathcal{K}(U)$};
-      \node (fu) at (5,0) {$\varinjlim \mathcal{F}(U)$};
-      \node (im) at (7.5,0) {$\varinjlim \mathcal{I}(U)$};
-      \node (02) at (10,0) {$0$};
-      
-      \draw[->] (01) to (ker);
-      \draw[->] (ker) to (fu);
-      \draw[->] (fu) to (im);
-      \draw[->] (im) to (02);
-
       \node (03) at (0,-1) {$0$};
-      \node (im1) at (2.5,-1) {$\varinjlim \mathcal{I}(U)$};
-      \node (gu) at (5,-1) {$\varinjlim \mathcal{G}(U)$};
+      \node (im1) at (2.5,-1) {$\varinjlim \mathcal{F}'(U)$};
+      \node (gu) at (5,-1) {$\varinjlim \mathcal{F}(U)$};
       \node (qu) at (7.5,-1) {$\varinjlim \mathcal{Q}(U)$};
       \node (04) at (10,-1) {$0$};
 
@@ -714,21 +701,10 @@ $$
   を得る。よって
   \begin{center}
     \begin{tikzpicture}[auto]
-      \node (01) at (0,0) {$0$};
-      \node (ker) at (2.5,0) {$(\ker \alpha)_{x}$};
-      \node (fu) at (5,0) {$\mathcal{F}_{x}$};
-      \node (im) at (7.5,0) {$(\im \alpha)_{x}$};
-      \node (02) at (10,0) {$0$};
-      
-      \draw[->] (01) to (ker);
-      \draw[->] (ker) to (fu);
-      \draw[->] (fu) to (im);
-      \draw[->] (im) to (02);
-
       \node (03) at (0,-1) {$0$};
-      \node (im1) at (2.5,-1) {$(\im \alpha)_{x}$};
-      \node (gu) at (5,-1) {$\mathcal{G}_{x}$};
-      \node (qu) at (7.5,-1) {$(\mathcal{F}/\ker \alpha)_{x}$};
+      \node (im1) at (2.5,-1) {$\mathcal{F}'_{x}$};
+      \node (gu) at (5,-1) {$\mathcal{F}_{x}$};
+      \node (qu) at (7.5,-1) {$(\mathcal{F}/\mathcal{F}')_{x}$};
       \node (04) at (10,-1) {$0$};
 
       \draw[->] (03) to (im1);
@@ -737,9 +713,26 @@ $$
       \draw[->] (qu) to (04);
     \end{tikzpicture}
   \end{center}
-  したがって、完全列$\mathcal{F}_{x} \longrightarrow (\im \alpha)_{x} \longrightarrow \mathcal{G}_{x}$
-  を得る。これは$\alpha_{x}$のことである。よって
-  % 次迷う
+  したがって、
+  \begin{equation*}
+    \mathcal{F}_{x}/\mathcal{F}'_{x} \simeq (\mathcal{F}/\mathcal{F}')_{x}
+  \end{equation*}
+  を得る。\\
+  次に
+  \begin{align*}
+    (\ker \alpha)_{x}
+     & = \{s_{x} \in \mathcal{F}_{x} \ |\ \alpha(U)(s) = 0,x\in U:\text{open},s\in \mathcal{F}(U) \}   \\
+     & = \{s_{x} \in \mathcal{F}_{x} \ |\ \alpha_{x}(s_{x})=0,x\in U:\text{open},s\in \mathcal{F}(U)\} \\
+     & = \ker \alpha_{x}
+  \end{align*}
+  を得る。同様に
+  \begin{align*}
+    (\im \alpha)_{x}
+     & = \{t_{x} \in \mathcal{G}_{x} \ |\ x\in \exists U:\text{open}, \exists s\in \mathcal{F}(U)\ \text{s.t}\ t = \alpha(U)(s)\} \\
+     & = \{(\alpha(U)(s))_{x} \in \mathcal{G}_{x} \ |\ x \in U:\text{open},s\in \mathcal{F}(U)\}                                  \\
+     & = \{\alpha_{x}(s_{x}) \in \mathcal{G}_{x}\ |\ s_{x} \in \mathcal{F}_{x}\}                                                  \\
+     & = \im \alpha_{x}
+  \end{align*}
 }
 
 \Definition{
@@ -754,7 +747,7 @@ $$
   \begin{equation*}
     \mathcal{F} \longrightarrow \mathcal{G} \longrightarrow \mathcal{H}が完全
     \Longleftrightarrow
-    任意のx \in Xに対して\mathcal{F}_{x} \longrightarrow \mathcal{G}_{x} \longrightarrow \mathcal{H}_{x}が完全 
+    任意のx \in Xに対して\mathcal{F}_{x} \longrightarrow \mathcal{G}_{x} \longrightarrow \mathcal{H}_{x}が完全
   \end{equation*}
 }{
   明らか。
@@ -771,12 +764,12 @@ $$
 }
 
 \Definition{
-  局所環付き空間の射とは
-  \begin{equation*}
-    (f,f^{\#}): (X,\mathcal{O}_{X}) \to (Y,\mathcal{O}_{Y})
-  \end{equation*}
-  とは連続写像$f:X \to Y$と環の層の射$f^{\#}:\mathcal{O}_{Y} \to f_{*}\mathcal{O}_{X}$の組$(f,f^{\#})$で、
-  任意の$x\in X$に対して$f^{\#}_{x} : \mathcal{O}_{Y,f(x)} \to \mathcal{O}_{X,x}$は局所射となるものをいう。
+局所環付き空間の射とは
+\begin{equation*}
+  (f,f^{\#}): (X,\mathcal{O}_{X}) \to (Y,\mathcal{O}_{Y})
+\end{equation*}
+とは連続写像$f:X \to Y$と環の層の射$f^{\#}:\mathcal{O}_{Y} \to f_{*}\mathcal{O}_{X}$の組$(f,f^{\#})$で、
+任意の$x\in X$に対して$f^{\#}_{x} : \mathcal{O}_{Y,f(x)} \to \mathcal{O}_{X,x}$は局所射となるものをいう。
 }
 
 
@@ -788,24 +781,24 @@ $$
 \Definition{(帰納系の定義)\\
 ($\Lambda,\leq$)を順序集合,$\mathscr{C}$を圏とする.各$\lambda \in \Lambda$に対し,$X_{\lambda} \in \text{Ob}(\mathscr{C})$が与えられ,
 $\lambda \leq \mu$に対して射$\varphi_{\mu,\lambda}:X_{\lambda} \to X_{\mu}$があって
-  次を満たすとき,$\{X_{\lambda},\varphi_{\mu,\lambda}\}$を\textbf{順系(direct system)}または
-  \textbf{帰納系(inductive system)}という.しばし$\varphi_{\mu,\lambda}$を省略して$\{X_{\lambda}\}_{\lambda \in \Lambda}$や$\{X_{\lambda}\}_{\lambda}$で表す.
-  \begin{itemize}
-    \item[---] 任意の$\lambda \in \Lambda$に他逸して$\varphi_{\lambda,\lambda}=\text{id}_{X_{\lambda}}$
-    \item[---] $\lambda \leq \mu \leq \nu$なる任意の$\lambda,\mu,\nu \in \Lambda$に対して$\varphi_{\nu,\lambda} = \varphi_{\nu,\mu}\circ \varphi_{\mu,\lambda}$
+次を満たすとき,$\{X_{\lambda},\varphi_{\mu,\lambda}\}$を\textbf{順系(direct system)}または
+\textbf{帰納系(inductive system)}という.しばし$\varphi_{\mu,\lambda}$を省略して$\{X_{\lambda}\}_{\lambda \in \Lambda}$や$\{X_{\lambda}\}_{\lambda}$で表す.
+\begin{itemize}
+  \item[---] 任意の$\lambda \in \Lambda$に他逸して$\varphi_{\lambda,\lambda}=\text{id}_{X_{\lambda}}$
+  \item[---] $\lambda \leq \mu \leq \nu$なる任意の$\lambda,\mu,\nu \in \Lambda$に対して$\varphi_{\nu,\lambda} = \varphi_{\nu,\mu}\circ \varphi_{\mu,\lambda}$
 \end{itemize}
 }
 \Example{
-  位相空間$X$の開集合族$\{U\}_{U}$に対して
-  \begin{equation*}
-    U \leq V \defi V \subset U
-  \end{equation*}
-  と定義する.そして,$\mathbf{AGrp}$をアーベル群の成す圏,$\mathcal{F}$を$X$上の前層とする.すると,各開集合$U$に対し,$\mathcal{F}(U) \in \mathrm{Ob}(\mathbf{AGrp})$で,
-  前層の定義からアーベル群と制限写像との組$\{\mathcal{F}(U),\rho_{U,V}\}$は帰納系となる.前層の定義はDef:\ref{Def:1.3.1}を参照.
+位相空間$X$の開集合族$\{U\}_{U}$に対して
+\begin{equation*}
+  U \leq V \defi V \subset U
+\end{equation*}
+と定義する.そして,$\mathbf{AGrp}$をアーベル群の成す圏,$\mathcal{F}$を$X$上の前層とする.すると,各開集合$U$に対し,$\mathcal{F}(U) \in \mathrm{Ob}(\mathbf{AGrp})$で,
+前層の定義からアーベル群と制限写像との組$\{\mathcal{F}(U),\rho_{U,V}\}$は帰納系となる.前層の定義はDef:\ref{Def:1.3.1}を参照.
 }{}
 \Definition{(帰納系の射の定義)\\
 $\Lambda$を順序集合.$\{X_{\lambda},\varphi_{\lambda,\mu}\},\{Y_{\lambda},\psi_{\lambda,\mu}\}$を$\Lambda$上の圏$\mathscr{C}$における帰納系とする.
-  このとき$\{X_{\lambda}\}$から$\{Y_{\lambda}\}$への射とは$f_{\lambda}:X_{\lambda} \to Y_{\lambda}$なる射の族
+このとき$\{X_{\lambda}\}$から$\{Y_{\lambda}\}$への射とは$f_{\lambda}:X_{\lambda} \to Y_{\lambda}$なる射の族
 $\{f_{\lambda}\}$で,任意の$\lambda \leq \mu$に対して
 $\psi_{\lambda,\mu}\circ f_{\mu} = f_{\lambda}\circ \varphi_{\lambda,\mu}$となるものを言う.
 %---------------後に図式を追加する.------------------%
@@ -827,9 +820,9 @@ $\psi_{\lambda,\mu}\circ f_{\mu} = f_{\lambda}\circ \varphi_{\lambda,\mu}$とな
 \Definition{
 $\mathscr{C}$を圏とし,$\Lambda$を順序集合とする.$\{X_{\lambda},\varphi_{\mu,\lambda}\}$を
 $\mathscr{C}$の帰納系とする.\\
-  このとき$\{X_{\lambda},\varphi_{\mu,\lambda}\}$の\textbf{順極限(direct limit)}または\textbf{帰納的極限(inductive limit)}または\textbf{帰納極限}とは,
+このとき$\{X_{\lambda},\varphi_{\mu,\lambda}\}$の\textbf{順極限(direct limit)}または\textbf{帰納的極限(inductive limit)}または\textbf{帰納極限}とは,
 $\mathscr{C}$の対象$\displaystyle \varinjlim_{\lambda \in \Lambda}X_{\lambda} \in \text{Ob}(\mathscr{C})$
-  と射の族$\displaystyle \{\varphi_{\lambda}:X_{\lambda} \to \varinjlim_{\lambda \in \Lambda}X_{\lambda}\}_{\lambda \in \Lambda}$の組
+と射の族$\displaystyle \{\varphi_{\lambda}:X_{\lambda} \to \varinjlim_{\lambda \in \Lambda}X_{\lambda}\}_{\lambda \in \Lambda}$の組
 $\{\varinjlim X_{\lambda},\varphi_{\lambda}\}$で,次の条件を満たすものをいう.
 \begin{itemize}
   \item[---] $\lambda \leq \mu$に対して$\varphi_{\mu}\circ \varphi_{\mu,\lambda} = \varphi_{\lambda}$
