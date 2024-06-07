@@ -1,7 +1,7 @@
 # 代数幾何について勉強したこと。<!-- omit in toc -->
 
 - [目次](#目次)
-  - [1 Scheme](#1-scheme)
+  - [1: Scheme](#1-scheme)
     - [1.1 Zariski Topology](#11-zariski-topology)
     - [1.2 Algebraic Sets](#12-algebraic-sets)
     - [1.3 Sheaves](#13-sheaves)
@@ -12,6 +12,7 @@
 - [参考文献](#参考文献)
   - [book](#book)
     - [Liu "Algebraic Geometry and Arithmetic Curves"](#liu-algebraic-geometry-and-arithmetic-curves)
+    - [Ulrich Görtz and Torsten Wedhorn "Algebraic Geometry Part I: Schemes. With Examples and Exercises"](#ulrich-görtz-and-torsten-wedhorn-algebraic-geometry-part-i-schemes-with-examples-and-exercises)
     - [上野健爾 "代数幾何"](#上野健爾-代数幾何)
     - [宮西正宜 "代数幾何学"](#宮西正宜-代数幾何学)
     - [寺杣友秀 "リーマン面の理論"](#寺杣友秀-リーマン面の理論)
@@ -26,7 +27,7 @@
 
 # 目次
 
-## 1 Scheme
+## 1: Scheme
 
 ### 1.1 Zariski Topology
 全く書いてない。
@@ -39,7 +40,7 @@
 - B-shaef
 - Sheafification
 - ~~Lem 1.3.8~~
-- direct image and inverse image
+- ~~direct image and inverse image~~
 
 ### 1.4 Ringed Topological Space
 書いている。
@@ -63,6 +64,8 @@
 ## book
 
 ### [Liu "Algebraic Geometry and Arithmetic Curves"](https://www.math.u-bordeaux.fr/~qliu/Book/index.html)
+
+### [Ulrich Görtz and Torsten Wedhorn "Algebraic Geometry I: Schemes With Examples and Exercises"](https://link.springer.com/book/10.1007/978-3-658-30733-2)
 
 ### [上野健爾 "代数幾何"](https://www.iwanami.co.jp/book/b265778.html)
 
