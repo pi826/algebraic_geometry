@@ -12,7 +12,7 @@
 - [参考文献](#参考文献)
   - [book](#book)
     - [Liu "Algebraic Geometry and Arithmetic Curves"](#liu-algebraic-geometry-and-arithmetic-curves)
-    - [Ulrich Görtz and Torsten Wedhorn "Algebraic Geometry Part I: Schemes. With Examples and Exercises"](#ulrich-görtz-and-torsten-wedhorn-algebraic-geometry-part-i-schemes-with-examples-and-exercises)
+    - [Ulrich Görtz and Torsten Wedhorn "Algebraic Geometry I: Schemes With Examples and Exercises"](#ulrich-görtz-and-torsten-wedhorn-algebraic-geometry-i-schemes-with-examples-and-exercises)
     - [上野健爾 "代数幾何"](#上野健爾-代数幾何)
     - [宮西正宜 "代数幾何学"](#宮西正宜-代数幾何学)
     - [寺杣友秀 "リーマン面の理論"](#寺杣友秀-リーマン面の理論)
@@ -21,6 +21,8 @@
     - [Masaki Kashiwara and Pierre Schapira "Categories and Sheaves"](#masaki-kashiwara-and-pierre-schapira-categories-and-sheaves)
   - [pdf](#pdf)
     - [極限](#極限)
+    - [THE RISING SEA : Foundations of Algebraic Geometry](#the-rising-sea--foundations-of-algebraic-geometry)
+    - [William Fulton "ALGEBRAIC CURVES"](#william-fulton-algebraic-curves)
   - [website](#website)
     - [層理論](#層理論)
 
@@ -84,6 +86,10 @@
 ## pdf
 
 ### [極限](https://www.math.s.chiba-u.ac.jp/~matsu/math/limit.pdf)
+
+### [THE RISING SEA : Foundations of Algebraic Geometry](https://math.stanford.edu/~vakil/216blog/FOAGnov1817public.pdf)
+
+### [William Fulton "ALGEBRAIC CURVES"](https://dept.math.lsa.umich.edu/~wfulton/CurveBook.pdf)
 
 <br>
 
