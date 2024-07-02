@@ -369,6 +369,7 @@ pdfkeywords={}
 \newcommand{\im}[1]{\mathrm{Im}\, #1}
 \newcommand{\coker}[1]{\mathrm{Coker}\, #1}
 \renewcommand{\hom}[3]{\mathrm{Hom}_{#1}(#2,#3)}
+\newcommand{\spec}[1]{\mathrm{Spec}\, #1}
 
 
 \begin{document}
@@ -1070,8 +1071,61 @@ Prop:\ref{Prop:1.3.13}より
   \begin{equation*}
     \mathcal{O}_{X,\xi} = K
   \end{equation*}
-  が成り立つ．さらに，任意の空でない開集合$U \subset X$と$\xi \in U$に対して
-}{}
+  が成り立つ．さらに，任意の空でない開集合$U \subset X$と$\xi \in U$に対して標準的な準同型
+  \begin{equation*}
+    \mathcal{O}_{X}(U) \to \mathcal{O}_{X,\xi}
+  \end{equation*}
+  は単射となる．開集合の組$V \subset U$に対して制限
+  \begin{equation*}
+    \mathcal{O}_{X}(U) \to \mathcal{O}_{X}(V)
+  \end{equation*}
+  は単射となる．
+}{
+  Prop:\ref{Prop:1.5.1}(2)より
+  \begin{equation*}
+    \mathcal{O}_{X,\xi} = A_{\xi} = K
+  \end{equation*}
+  を得る．\\
+  $U=D(f)$とすると，$\mathcal{O}_{X}(U) = A_{f}\subset K$．一般に
+  \begin{equation*}
+    U = \bigcup_{i}D(f_{i})
+  \end{equation*}
+  と置く．$s\in \mathcal{O}_{X}(U)$を飛ばすと$0 \in K$になるとする．各開被覆$D(f_{i}) \subset U$への
+  制限を考えると
+  \begin{equation*}
+    s|_{D(f_{i})} = 0
+  \end{equation*}
+  が任意の$i$で成り立つので，$s=0$である．よって$\mathcal{O}_{X}(U) \to \mathcal{O}_{X,\xi} \subset K$は単射．\\
+  開集合の組$\xi \in V\subset U$に対して制限$\mathcal{O}_{X}(U) \to \mathcal{O}_{X}(V)$に対して帰納極限の定義より図式
+  \begin{center}
+    \begin{tikzpicture}[auto]
+      \node (OU) at (0,0) {$\mathcal{O}_{X}(U)$};
+      \node (Oxi) at (0,-2.5) {$\mathcal{O}_{X,\xi}$};
+      \node (OV) at (2.5,0) {$\mathcal{O}_{X}(V)$};
+      \node (ci) at (0.75,-0.75) {$\circlearrowleft$};
+
+      \draw[->] (OU) to node () {} (OV);
+      \draw[->] (OU) to node () {} (Oxi);
+      \draw[->] (OV) to node () {} (Oxi);
+    \end{tikzpicture}
+  \end{center}
+  が可換となるので，制限は単射である．
+}
+
+\Lemma{
+  $X = \text{Spec}\, A$をアフィンスキームとし，$g\in A$をとる．このとき開集合$D(g)$は
+  $X$から誘導される局所環付き空間で$\spec{A_{g}}$に同型なアフィンスキームになる．
+}{
+  $Y = \spec{A_{g}}$と置く．局所化と素イデアルの対応より標準的な開はめ込み
+  \begin{equation*}
+    i:Y \to X
+  \end{equation*}
+  がある($\im i = D(g)$)\\
+  $D(h)\subset D(g)$とする．$A\stackrel{\varphi}{\to} A_{g}$とする．また$\varphi(h) = \bar{h}$と置く．このとき標準的な同型
+  \begin{equation*}
+    \mathcal{O}_{X}(D(h)) = A_{h} \simeq (A_{g})_{\bar{h}} = \mathcal{O}_{Y}(D(\bar{h})) = i_{*}\mathcal{O}_{Y}(D(h))
+  \end{equation*}
+}
 
 
 
