@@ -921,7 +921,7 @@ Prop:\ref{Prop:1.3.13}より
 \end{equation*}
 を考えることは
 \begin{equation*}
-  f^{\#} : f_{*}\mathcal{O}_Y \to \mathcal{O}_{X}
+  f^{\#} : f^{*}\mathcal{O}_Y \to \mathcal{O}_{X}
 \end{equation*}
 を考えることに等しい．Def:\ref{Def:1.4.2}の$f^{\#}_{x}$は下の式で考えている．
 
@@ -1125,8 +1125,25 @@ Prop:\ref{Prop:1.3.13}より
   \begin{equation*}
     \mathcal{O}_{X}(D(h)) = A_{h} \simeq (A_{g})_{\bar{h}} = \mathcal{O}_{Y}(D(\bar{h})) = i_{*}\mathcal{O}_{Y}(D(h))
   \end{equation*}
+  % 同型がよくわからん
+  $\{D(h)\}_{h}$は$D(g)$の開基となるので，$i$は$(Y,\mathcal{O}_{Y})$から$(D(g),\mathcal{O}_{X}|_{D(g)})\subset (X,\mathcal{O}_{X})$
+  への同型を誘導する．(Refer to Exercises 2.7)
 }
 
+\Definition{
+  \textbf{スキーム(scheme)}とは局所環付き空間$(X,\mathcal{O}_{X})$で開被覆$\{U_{i}\}_{i}$に対して$(U_{i},\mathcal{O}_{X}|_{U_{i}})$
+  がアフィンスキームになるものが存在するときをいう．また$\mathcal{O}_{X}(U)$の元は(やや不適切であるが)\textbf{$U$上の正則関数(regular functions on $U$)}という．しかし，層の関数としての側面をよく表している．(Refer to Exercises 3.4 and Proposition 4.4)
+}
+
+明らかにアフィンスキームはスキームである．また，局所環付き空間$X$が開被覆$\{U_{i}\}_{i}$に対して
+$(U_{i},\mathcal{O}_{X}|_{U_{i}})$がスキームだったら$X$はスキームである．逆に次の命題が従う．
+
+\Proposition{
+  $X$をスキームとする．このとき任意の開集合$U\subset X$に対して局所環付き空間$(U,\mathcal{O}_{X}|_{U})$はまたスキームになる．
+}{
+  定義より$X = \bigcup_{i}U_{i}$で$U_{i}$は開集合で，アフィンスキームになるものがある．
+  $U\cap U_{i}$がスキームとなることを示せば十分である．
+}
 
 
 
