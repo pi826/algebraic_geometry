@@ -75,17 +75,17 @@ pdfkeywords={}
 % chapter 
 \titleformat{\chapter}[block]
 {}{}{0pt}{
-  \ifthenelse{\value{chapter}=0}{}
-  {\vspace*{-2cm}}\fontsize{27pt}{30pt}\selectfont\filleft
+\ifthenelse{\value{chapter}=0}{}
+{\vspace*{-2cm}}\fontsize{27pt}{30pt}\selectfont\filleft
 }[
-  \ifthenelse{\value{chapter}=0}{\hrule}{\titleline{
-  \hspace{225pt}
-  \begin{tikzpicture}
-    \draw [thick,line width = 0.4pt] (0,0) -- (7.5cm,0);
-    \draw [thick,line width = 0.4pt] (6.5cm,2cm)-- (6.5cm,-1cm);
-    % \draw [line width = 0.4pt] (6.5cm,1cm) -- (6.5cm,-1cm);
-  \end{tikzpicture}}}
-  \Large{\filleft \ifthenelse{\value{chapter}=0}{}{\vspace*{-1cm}第 \thechapter 章}}
+\ifthenelse{\value{chapter}=0}{\hrule}{\titleline{
+\hspace{225pt}
+\begin{tikzpicture}
+  \draw [thick,line width = 0.4pt] (0,0) -- (7.5cm,0);
+  \draw [thick,line width = 0.4pt] (6.5cm,2cm)-- (6.5cm,-1cm);
+  % \draw [line width = 0.4pt] (6.5cm,1cm) -- (6.5cm,-1cm);
+\end{tikzpicture}}}
+\Large{\filleft \ifthenelse{\value{chapter}=0}{}{\vspace*{-1cm}第 \thechapter 章}}
 ]
 
 
@@ -135,195 +135,211 @@ pdfkeywords={}
 \renewcommand{\thedefcounter}{\thechapter.\thesection.\arabic{defcounter}}
 
 \NewTotalTColorBox[use counter = defcounter, number within = section]{\Definition}{ +m }{ 
-    notitle,
-    colback=green!5!white,
-    frame hidden,
-    boxrule=0pt,
-    enhanced,
-    sharp corners,
-    borderline west={4pt}{0pt}{green!50!black},
-    breakable = true,
-    label = {Def:\thedefcounter},
+  notitle,
+  colback=green!5!white,
+  frame hidden,
+  boxrule=0pt,
+  enhanced,
+  sharp corners,
+  borderline west={4pt}{0pt}{green!50!black},
+  breakable = true,
+  label = {Def:\thedefcounter},
 }{
-    \textcolor{green!50!black}{
-        \sffamily
-        \textbf{Definition~\thetcbcounter.}%k
-    }%
-    #1
+  \textcolor{green!50!black}{
+      \sffamily
+      \textbf{Definition~\thetcbcounter.}%k
+  }%
+  #1
 }
 
 \NewTotalTColorBox{\Remark}{ +m +m }{ 
-    notitle,
-    colback=yellow!5!white,
-    colbacklower=white,
-    frame hidden,
-    boxrule=0pt,
-    bicolor,
-    sharp corners,
-    borderline west={4pt}{0pt}{yellow!50!black},
-    %fontupper=\sffamily,
-    breakable = true,
-    label = {Rem:\thetotalcounter},
+  notitle,
+  colback=yellow!5!white,
+  colbacklower=white,
+  frame hidden,
+  boxrule=0pt,
+  bicolor,
+  sharp corners,
+  borderline west={4pt}{0pt}{yellow!50!black},
+  %fontupper=\sffamily,
+  breakable = true,
+  label = {Rem:\thetotalcounter},
 }{
-    \textcolor{yellow!50!black}{
-        \sffamily
-        \textbf{Remark~.}%
-    }%
-    #1
-    \if #2\kara \else 
-    \tcblower%
-    \textcolor{yellow!50!black}{
-        \sffamily
-        \textbf{Proof.}%
-    }%
-    #2
-    \qedsymbol
-    \fi
+  \textcolor{yellow!50!black}{
+      \sffamily
+      \textbf{Remark~.}%
+  }%
+  #1
+  \if #2\kara \else 
+  \tcblower%
+  \textcolor{yellow!50!black}{
+      \sffamily
+      \textbf{Proof.}%
+  }%
+  #2
+  \qedsymbol
+  \fi
 }
 
 \NewTotalTColorBox[use counter = totalcounter, number within = section]{\Lemma}{ +m +m }{ 
-    notitle,
-    colback=orange!5!white,
-    colbacklower=white,
-    frame hidden,
-    boxrule=0pt,
-    bicolor,
-    sharp corners,
-    borderline west={4pt}{0pt}{orange!50!black},
-    fontupper=\sffamily,
-    breakable = true,
-    label = {Lem:\thetotalcounter},
+  notitle,
+  colback=orange!5!white,
+  colbacklower=white,
+  frame hidden,
+  boxrule=0pt,
+  bicolor,
+  sharp corners,
+  borderline west={4pt}{0pt}{orange!50!black},
+  fontupper=\sffamily,
+  breakable = true,
+  label = {Lem:\thetotalcounter},
 }{
-    \textcolor{orange!50!black}{
-        \sffamily
-        \textbf{Lemma~\thetcbcounter.}%
-    }%
-    #1
-    \if #2\kara \else 
-    \tcblower%
-    \textcolor{orange!50!black}{
-        \sffamily
-        \textbf{Proof.}%
-    }%
-    #2
-    \qedsymbol
-    \fi
+  \textcolor{orange!50!black}{
+      \sffamily
+      \textbf{Lemma~\thetcbcounter.}%
+  }%
+  #1
+  \if #2\kara \else 
+  \tcblower%
+  \textcolor{orange!50!black}{
+      \sffamily
+      \textbf{Proof.}%
+  }%
+  #2
+  \qedsymbol
+  \fi
 }
 
 
 \NewTotalTColorBox[use counter = totalcounter, number within = section]{\Theorem}{ +m +m }{ 
-    notitle,
-    colback=blue!5!white,
-    colbacklower=white,
-    frame hidden,
-    boxrule=0pt,
-    bicolor,
-    sharp corners,
-    borderline west={4pt}{0pt}{blue!50!black},
-    fontupper=\sffamily,
-    breakable = true,
-    label = {Thm:\thetotalcounter},
+  notitle,
+  colback=blue!5!white,
+  colbacklower=white,
+  frame hidden,
+  boxrule=0pt,
+  bicolor,
+  sharp corners,
+  borderline west={4pt}{0pt}{blue!50!black},
+  fontupper=\sffamily,
+  breakable = true,
+  label = {Thm:\thetotalcounter},
 }{
-    \textcolor{blue!50!black}{
-        \sffamily
-        \textbf{Theorem~\thetcbcounter.}%
-    }%
-    #1
-    \if #2\kara \else 
-    \tcblower%
-    \textcolor{blue!50!black}{
-        \sffamily
-        \textbf{Proof.}%
-    }%
-    #2
-    \qedsymbol
-    \fi
+  \textcolor{blue!50!black}{
+      \sffamily
+      \textbf{Theorem~\thetcbcounter.}%
+  }%
+  #1
+  \if #2\kara \else 
+  \tcblower%
+  \textcolor{blue!50!black}{
+      \sffamily
+      \textbf{Proof.}%
+  }%
+  #2
+  \qedsymbol
+  \fi
 }
 
 \NewTotalTColorBox[use counter = totalcounter, number within = section]{\Example}{ +m +m }{ 
-    notitle,
-    colback=cyan!5!white,
-    colbacklower=white,
-    frame hidden,
-    boxrule=0pt,
-    bicolor,
-    sharp corners,
-    borderline west={4pt}{0pt}{cyan!50!black},
-    %fontupper=\sffamily,
-    breakable = true,
-    label = {Ex:\thetotalcounter},
+  notitle,
+  colback=cyan!5!white,
+  colbacklower=white,
+  frame hidden,
+  boxrule=0pt,
+  bicolor,
+  sharp corners,
+  borderline west={4pt}{0pt}{cyan!50!black},
+  %fontupper=\sffamily,
+  breakable = true,
+  label = {Ex:\thetotalcounter},
 }{
-    \textcolor{cyan!50!black}{
-        \sffamily
-        \textbf{Example~\thetcbcounter.}%
-    }%
-    #1
-    \if #2\kara \else
-    \tcblower%
-    \textcolor{cyan!50!black}{
-        \sffamily
-        \textbf{Proof.}%
-    }%
-    #2
-    \qedsymbol
-    \fi
+  \textcolor{cyan!50!black}{
+      \sffamily
+      \textbf{Example~\thetcbcounter.}%
+  }%
+  #1
+  \if #2\kara \else
+  \tcblower%
+  \textcolor{cyan!50!black}{
+      \sffamily
+      \textbf{Proof.}%
+  }%
+  #2
+  \qedsymbol
+  \fi
 }
 
 \NewTotalTColorBox[use counter = totalcounter, number within = section]{\Proposition}{ +m +m }{ 
-    notitle,
-    colback=red!5!white,
-    colbacklower=white,
-    frame hidden,
-    boxrule=0pt,
-    bicolor,
-    sharp corners,
-    borderline west={4pt}{0pt}{red!50!black},
-    fontupper=\sffamily,
-    breakable = true,
-    label = {Prop:\thetotalcounter},
+  notitle,
+  colback=red!5!white,
+  colbacklower=white,
+  frame hidden,
+  boxrule=0pt,
+  bicolor,
+  sharp corners,
+  borderline west={4pt}{0pt}{red!50!black},
+  fontupper=\sffamily,
+  breakable = true,
+  label = {Prop:\thetotalcounter},
 }{
-    \textcolor{red!50!black}{
-        \sffamily
-        \textbf{Proposition~\thetcbcounter.}%
-    }%
-    #1
-    \if #2\kara \else 
-    \tcblower%
-    \textcolor{red!50!black}{
-        \sffamily
-        \textbf{Proof.}%
-    }%
-    #2
-    \qedsymbol
-    \fi
+  \textcolor{red!50!black}{
+      \sffamily
+      \textbf{Proposition~\thetcbcounter.}%
+  }%
+  #1
+  \if #2\kara \else 
+  \tcblower%
+  \textcolor{red!50!black}{
+      \sffamily
+      \textbf{Proof.}%
+  }%
+  #2
+  \qedsymbol
+  \fi
 }
 \NewTotalTColorBox[use counter = totalcounter, number within = section]{\Corollary}{ +m +m }{ 
-    notitle,
-    colback=darkgray!5!white,
-    colbacklower=white,
-    frame hidden,
-    boxrule=0pt,
-    bicolor,
-    sharp corners,
-    borderline west={4pt}{0pt}{darkgray!50!black},
-    fontupper=\sffamily,
-    breakable = true,
-    label = {Cor:\thetotalcounter},
+  notitle,
+  colback=darkgray!5!white,
+  colbacklower=white,
+  frame hidden,
+  boxrule=0pt,
+  bicolor,
+  sharp corners,
+  borderline west={4pt}{0pt}{darkgray!50!black},
+  fontupper=\sffamily,
+  breakable = true,
+  label = {Cor:\thetotalcounter},
 }{
-    \textcolor{darkgray!50!black}{
-        \sffamily
-        \textbf{Corollary~\thetcbcounter.}%
-    }%
-    #1
-    \if #2\kara \else 
-    \tcblower%
-    \textcolor{darkgray!50!black}{
-        \sffamily
-        \textbf{Proof.}%
-    }%
-    #2
-    \qedsymbol
-    \fi
+  \textcolor{darkgray!50!black}{
+      \sffamily
+      \textbf{Corollary~\thetcbcounter.}%
+  }%
+  #1
+  \if #2\kara \else 
+  \tcblower%
+  \textcolor{darkgray!50!black}{
+      \sffamily
+      \textbf{Proof.}%
+  }%
+  #2
+  \qedsymbol
+  \fi
+}
+\definecolor{background}{HTML}{FCF9EE}
+\definecolor{linecolor}{HTML}{581810}
+\newtcolorbox{conditionbox}{enhanced,
+    boxsep=0.25ex,
+    arc=0mm,
+    borderline west={1pt}{-0.5pt}{linecolor},
+    borderline east={1pt}{-0.5pt}{linecolor},
+    colback=background,
+    colframe=background,
+    overlay={
+      \foreach \n in {north east,north west,south east,south west}
+        {%
+        \draw [linecolor, fill=linecolor] (frame.\n) circle (2pt);
+        };
+    }
 }
 
 % \newtcbtheorem[use counter from = theorem]{mythm}{Theorem}%
@@ -350,11 +366,11 @@ pdfkeywords={}
 % }{def}
 
 \newtcolorbox{mybox}{
-  enhanced,
-  boxrule=0pt,frame hidden,
-  borderline west={4pt}{0pt}{green!75!black},
-  colback=green!10!white,
-  sharp corners
+enhanced,
+boxrule=0pt,frame hidden,
+borderline west={4pt}{0pt}{green!75!black},
+colback=green!10!white,
+sharp corners
 }
 
 \newcommand{\mysetminusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
@@ -483,10 +499,10 @@ $s_{U} \in \mathcal{A}_{X}(U)=A$が$s_{U}|_{U\cap V} = s_{U}|_{\varnothing} = 0 
   $X$を位相空間、$A$をアーベル群とする。$p\in X$に対して$i_{p} : \{p\} \hookrightarrow X$を包含写像とする。
   このとき$i_{p,*}\mathcal{A}$を
   \begin{equation*}
-    i_{p,*}\mathcal{A}(U) = \left\{ 
+    i_{p,*}\mathcal{A}(U) = \left\{
     \begin{alignedat}{2}
-      &A \qquad &p \in U\\
-      &1 \qquad &p \notin U
+       & A \qquad & p \in U    \\
+       & 1 \qquad & p \notin U
     \end{alignedat}
     \right.
   \end{equation*}
@@ -502,226 +518,226 @@ $\mathcal{B}$を位相空間$X$の開基で有限交叉で閉じているもの�
   \end{itemize}
   としたもの.\\
 $\mathcal{B}$-層($\mathcal{B}\text{-sheaf}$)$\mathcal{F}'$から$X$上の層$\mathcal{F}$を作ることができる.\\
-% 位相空間$X$の任意の開集合$U$をとり,$\{U_{i}\}_{i}$をその開被覆とする.($U_{i} \in \mathcal{B}$)
-% \begin{equation*}
-%   \mathcal{F}(U):=\left\{(s_{i})_{i} \in \prod_{i}\mathcal{F}_0(U_{i})\ \Biggl|\ 任意のi,jに対してs_{i}|_{U_{i} \cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}\right\}
-% \end{equation*}
-% と定義する.するとこれは開被覆によらない.実際$\mathcal{F}(U)_{U_i}$を開被覆$\{U_{i}\}_{i}$による$\mathcal{F}(U)$とし,$\{V_{j}\}_{j}$を別の開被覆とすると,
-% $\{U_{i}\cap V_{j}\}_{i,j}$はこれら2つの細分である.$\mathcal{F}(U)_{U_i} \to \mathcal{F}(U)_{U_{i}\cap V_{j}}$なる群準同型を
-% $(s_{i})_{i}\mapsto (s_{i}|_{U_{i}\cap V_{j}})_{i,j}$で定義できる.実際
-% \begin{align*}
-%   s_{i} |_{U_{i} \cap V_{j}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}
-%     & = s_{i} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                                              \\
-%     & = s_{i} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                          \\
-%     & = s_{i'} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})} \quad (\because (s_{i})_{i} \in \mathcal{F}(U)_{U_{i}}) \\
-%     & = s_{i'} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                                             \\
-%     & = s_{i'} |_{U_{i'} \cap V_{j'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}
-% \end{align*}
-% より$(s_{i}|_{U_{i}\cap V_{j}})_{i,j}\in \mathcal{F}(U)_{U_{i} \cap V_{j}}$\\
-% また,$(s_{ij})_{ij}\in \mathcal{F}(U)_{U_{i}\cap V_{j}}$を取ると,
-% $(s_{ij})_{ij} = (s_{i}|_{U_{i} \cap V_{j}})$と出来るので全射(？？？？？)\\
-% Kernelを計算すると
-% \begin{align*}
-%     & s_{i}|_{U_{i}\cap V_{j}} = 0 \quad (\forall i,j)                \\
-%     & s_{i}|_{U_{i}}=s_{i} = 0 \quad (\forall i) \quad (\because (4))
-% \end{align*}
-% よってKernelが自明なので単射.
-% % $\mathcal{U}=\{U_{i}\}_{i}$を$X$の部分開集合族とする.$U=\cup_{i}U_{i},U_{ij}=U_{i}\cap U_{j}$
+  % 位相空間$X$の任意の開集合$U$をとり,$\{U_{i}\}_{i}$をその開被覆とする.($U_{i} \in \mathcal{B}$)
+  % \begin{equation*}
+  %   \mathcal{F}(U):=\left\{(s_{i})_{i} \in \prod_{i}\mathcal{F}_0(U_{i})\ \Biggl|\ 任意のi,jに対してs_{i}|_{U_{i} \cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}\right\}
+  % \end{equation*}
+  % と定義する.するとこれは開被覆によらない.実際$\mathcal{F}(U)_{U_i}$を開被覆$\{U_{i}\}_{i}$による$\mathcal{F}(U)$とし,$\{V_{j}\}_{j}$を別の開被覆とすると,
+  % $\{U_{i}\cap V_{j}\}_{i,j}$はこれら2つの細分である.$\mathcal{F}(U)_{U_i} \to \mathcal{F}(U)_{U_{i}\cap V_{j}}$なる群準同型を
+  % $(s_{i})_{i}\mapsto (s_{i}|_{U_{i}\cap V_{j}})_{i,j}$で定義できる.実際
+  % \begin{align*}
+  %   s_{i} |_{U_{i} \cap V_{j}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}
+  %     & = s_{i} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                                              \\
+  %     & = s_{i} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                          \\
+  %     & = s_{i'} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})} \quad (\because (s_{i})_{i} \in \mathcal{F}(U)_{U_{i}}) \\
+  %     & = s_{i'} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                                             \\
+  %     & = s_{i'} |_{U_{i'} \cap V_{j'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}
+  % \end{align*}
+  % より$(s_{i}|_{U_{i}\cap V_{j}})_{i,j}\in \mathcal{F}(U)_{U_{i} \cap V_{j}}$\\
+  % また,$(s_{ij})_{ij}\in \mathcal{F}(U)_{U_{i}\cap V_{j}}$を取ると,
+  % $(s_{ij})_{ij} = (s_{i}|_{U_{i} \cap V_{j}})$と出来るので全射(？？？？？)\\
+  % Kernelを計算すると
+  % \begin{align*}
+  %     & s_{i}|_{U_{i}\cap V_{j}} = 0 \quad (\forall i,j)                \\
+  %     & s_{i}|_{U_{i}}=s_{i} = 0 \quad (\forall i) \quad (\because (4))
+  % \end{align*}
+  % よってKernelが自明なので単射.
+  % % $\mathcal{U}=\{U_{i}\}_{i}$を$X$の部分開集合族とする.$U=\cup_{i}U_{i},U_{ij}=U_{i}\cap U_{j}$
 
 
-位相空間$X$の任意の開集合$V$に対して
-\begin{align*}
-  \mathcal{F}(V) 
-  &= \varprojlim_{\substack{U\in \mathcal{B}\\ U\subset V}}\mathcal{F}'(U)\\
-  &= \left\{(s_{U})_{U} \in \prod_{\substack{U\in \mathcal{B}\\ U \subset V}} \mathcal{F}'(U) \ \biggl|\ 
-  \forall U' \subset U \in \mathcal{B}, s_{U}|_{U'}=s_{U'} \right\}
-\end{align*}
-と定める．制限写像は射影極限から誘導される射である．
-\begin{center}
-  \begin{tikzpicture}[auto]
-    \node (X1) at (0,0) {$\mathcal{F}'(U)$};
-    \node (X2) at (0,-2.5) {$\displaystyle \varprojlim_{U}\mathcal{F}'(U)$};
-    \node (Y1) at (2.5,0) {$\mathcal{F}'(U')$};
-    \node (Y2) at (2.5,-2.5) {$\displaystyle \varprojlim_{U'}\mathcal{F}'(U')$};
-    \node (ci) at (1.25,-1.25) {$\circlearrowleft$};
+  位相空間$X$の任意の開集合$V$に対して
+  \begin{align*}
+    \mathcal{F}(V)
+     & = \varprojlim_{\substack{U\in \mathcal{B}                  \\ U\subset V}}\mathcal{F}'(U)\\
+     & = \left\{(s_{U})_{U} \in \prod_{\substack{U\in \mathcal{B} \\ U \subset V}} \mathcal{F}'(U) \ \biggl|\
+    \forall U' \subset U \in \mathcal{B}, s_{U}|_{U'}=s_{U'} \right\}
+  \end{align*}
+  と定める．制限写像は射影極限から誘導される射である．
+  \begin{center}
+    \begin{tikzpicture}[auto]
+      \node (X1) at (0,0) {$\mathcal{F}'(U)$};
+      \node (X2) at (0,-2.5) {$\displaystyle \varprojlim_{U}\mathcal{F}'(U)$};
+      \node (Y1) at (2.5,0) {$\mathcal{F}'(U')$};
+      \node (Y2) at (2.5,-2.5) {$\displaystyle \varprojlim_{U'}\mathcal{F}'(U')$};
+      \node (ci) at (1.25,-1.25) {$\circlearrowleft$};
 
-    \draw[->] (X1) to node[yshift = -6pt,label=above:$\rho_{U,U'}$] () {} (Y1);
-    \draw[->] (X2) to node[xshift = 6pt, label=left:$\varphi_{U}$] () {} (X1);
-    \draw[->] (X2) to node[yshift = -2pt,label=below:$f$] () {} (Y2);
-    \draw[->] (Y2) to node[xshift = 2pt,label=right:$\psi_{U'}$] () {} (Y1);
-  \end{tikzpicture}
-\end{center}
-% F(V)とF(V')にしてU'ではなくU\cap V'にしよう．
-これが層となることを確かめよう．まず，任意の開集合$V$とその開被覆$\{U_{i}\}_{i}\subset \mathcal{B}$をとる．
+      \draw[->] (X1) to node[yshift = -6pt,label=above:$\rho_{U,U'}$] () {} (Y1);
+      \draw[->] (X2) to node[xshift = 6pt, label=left:$\varphi_{U}$] () {} (X1);
+      \draw[->] (X2) to node[yshift = -2pt,label=below:$f$] () {} (Y2);
+      \draw[->] (Y2) to node[xshift = 2pt,label=right:$\psi_{U'}$] () {} (Y1);
+    \end{tikzpicture}
+  \end{center}
+  % F(V)とF(V')にしてU'ではなくU\cap V'にしよう．
+  これが層となることを確かめよう．まず，任意の開集合$V$とその開被覆$\{U_{i}\}_{i}\subset \mathcal{B}$をとる．
 $s\in \mathcal{F}(V)$に対して$s|_{U_{i}}=0$とする．すると定義から$U\subset V$なる任意の$U\in \mathcal{B}$に対して$s_{U}\in \mathcal{F}'(U)$が$0$であることを示せば$s=0$ということである．
-実際$V$の開被覆から$U$の開被覆$\{U \cap U_{i}\}_{i}\subset \mathcal{B}$が得られる.
-また任意の$i$に対して$U\cap U_{i} \subset U_{i}$より$s_{U_{i}}|_{U\cap U_{i}} = s_{U\cap U_{i}} = 0$となる．(いま$s_{U_{i}}$は$s|_{U_{i}}$のこと)
-したがって任意の$i$に対して$s_{U}|_{U\cap U_{i}} = 0$となる．いま$\mathcal{F}'$は層なので$s_{U}=0$
-よって$s=0$がわかった．\\
-また，$s_{i} \in \mathcal{F}(U_{i})$が$s_{i}|_{U_{i}\cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}$を満たすとする．
-よって，$U_{i}\cap U_{j} \in \mathcal{B}$より
-}{}
+  実際$V$の開被覆から$U$の開被覆$\{U \cap U_{i}\}_{i}\subset \mathcal{B}$が得られる.
+  また任意の$i$に対して$U\cap U_{i} \subset U_{i}$より$s_{U_{i}}|_{U\cap U_{i}} = s_{U\cap U_{i}} = 0$となる．(いま$s_{U_{i}}$は$s|_{U_{i}}$のこと)
+  したがって任意の$i$に対して$s_{U}|_{U\cap U_{i}} = 0$となる．いま$\mathcal{F}'$は層なので$s_{U}=0$
+  よって$s=0$がわかった．\\
+  また，$s_{i} \in \mathcal{F}(U_{i})$が$s_{i}|_{U_{i}\cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}$を満たすとする．
+  よって，$U_{i}\cap U_{j} \in \mathcal{B}$より
+  }{}
 
 
-\Definition{
-  位相空間$X$上の前層$\mathcal{F}$と$x\in X$に対して,$x$での$\mathcal{F}$の\textbf{茎(stalk)}$\mathcal{F}_{x}$という群が定義できる.
-  \begin{equation*}
-    \mathcal{F}_{x} = \varinjlim_{U \ni x}\mathcal{F}(U)
-  \end{equation*}
-  ただし,$U$は$x$の開近傍をすべてを回る.$U$上の切断$s\in \mathcal{F}(U)$に対して
-  $x\in U$の茎$\mathcal{F}_{x}$への自然な群準同型の像を$s_{x}$と書いて,$x$での$s$の\textbf{芽(germ)}という.
-}
-\Lemma{
+  \Definition{
+    位相空間$X$上の前層$\mathcal{F}$と$x\in X$に対して,$x$での$\mathcal{F}$の\textbf{茎(stalk)}$\mathcal{F}_{x}$という群が定義できる.
+    \begin{equation*}
+      \mathcal{F}_{x} = \varinjlim_{U \ni x}\mathcal{F}(U)
+    \end{equation*}
+    ただし,$U$は$x$の開近傍をすべてを回る.$U$上の切断$s\in \mathcal{F}(U)$に対して
+    $x\in U$の茎$\mathcal{F}_{x}$への自然な群準同型の像を$s_{x}$と書いて,$x$での$s$の\textbf{芽(germ)}という.
+  }
+  \Lemma{
 $\mathcal{F}$を$X$上の層とする.$s,t \in \mathcal{F}(X)$が任意の$x \in X$に対して$s_{x} = t_{x}$ならば$s=t$
-}{
-差を考えれば$t=0$のときを考えればいい.$s_{x}=0\ (\forall x\in X)$とすると,$x$の開近傍$U_{x}$があって$s|_{U_{x}}=0$となる.$\{U_{x}\}_{x\in U_{x}}$は$X$の開被覆なので,$s=0$となる.
-}
-\Definition{
+  }{
+  差を考えれば$t=0$のときを考えればいい.$s_{x}=0\ (\forall x\in X)$とすると,$x$の開近傍$U_{x}$があって$s|_{U_{x}}=0$となる.$\{U_{x}\}_{x\in U_{x}}$は$X$の開被覆なので,$s=0$となる.
+  }
+  \Definition{
 $X$上の2つの前層$\mathcal{F,G}$とする.\textbf{前層の射}$\alpha:\mathcal{F} \to \mathcal{G}$
-とは,$X$の開集合$U$に対して群準同型$\alpha(U):\mathcal{F}(U) \to \mathcal{G}(U)$があって,
-任意の開集合の組$V\subset U$に対して$\alpha(V)\circ \rho_{U,V}^{\mathcal{F}} = \rho_{U,V}^{\mathcal{G}}\circ \alpha(U)$を満たすことをいう.\\
+  とは,$X$の開集合$U$に対して群準同型$\alpha(U):\mathcal{F}(U) \to \mathcal{G}(U)$があって,
+  任意の開集合の組$V\subset U$に対して$\alpha(V)\circ \rho_{U,V}^{\mathcal{F}} = \rho_{U,V}^{\mathcal{G}}\circ \alpha(U)$を満たすことをいう.\\
 $X$の任意の開集合$U$に対して$\alpha(U)$が単射ならば$\alpha$は単射であるという.(全射はうまくいかんっぽい？)
-}
+  }
 
 $\alpha:\mathcal{F} \to \mathcal{G}$を$X$上の前層の射とする.任意の$x \in X$に対して
 $\alpha$から自然に誘導される群準同型$\alpha_{x}:\mathcal{F}_{x} \to \mathcal{G}_{x}$で
 $(\alpha(U)(s))_{x} = \alpha_{x}(s_{x})$が$X$の任意の開集合$U,s\in \mathcal{F}(U),x\in U$で
-成り立つものが取れる.\\
+  成り立つものが取れる.\\
 $\alpha_{x}$が任意の$x\in X$で全射なら$\alpha$が全射であるという.
 
-\Example{
-  $X=\mathbf{C} \mysetminus \{0\}$とし$\mathcal{F}$を$X$上の正則関数がなす層とし,
-  $\mathcal{G}$を$X$上の双正則関数のなす層とする.今,任意の開集合$U$と任意の$f\in \mathcal{F}(U)$に対して$\alpha(U)(f) = \exp(f)$で定義される層の射$\alpha:\mathcal{F} \to \mathcal{G}$
-  が全射であることはよく知られている.しかし$\alpha(X):\mathcal{F}(X) \to \mathcal{G}(X)$は
-  全射ではない.例えば恒等写像は$\exp(f)$と書けない.
-}{}
-\Proposition{
-  $\alpha:\mathcal{F} \to \mathcal{G}$を$X$上の層の射とする.
-  \begin{center}
-    $\alpha$が同型$\Leftrightarrow$ $\alpha_{x}$が同型$(\forall x \in X)$
-  \end{center}
-}{}
-\Theorem{
-位相空間$X$上の前層$\mathcal{F}$に対して,前層$\mathcal{F}$の層化(sheafification)$\mathcal{F}^{\dagger}$は存在する.
-}{
+  \Example{
+    $X=\mathbf{C} \mysetminus \{0\}$とし$\mathcal{F}$を$X$上の正則関数がなす層とし,
+    $\mathcal{G}$を$X$上の双正則関数のなす層とする.今,任意の開集合$U$と任意の$f\in \mathcal{F}(U)$に対して$\alpha(U)(f) = \exp(f)$で定義される層の射$\alpha:\mathcal{F} \to \mathcal{G}$
+    が全射であることはよく知られている.しかし$\alpha(X):\mathcal{F}(X) \to \mathcal{G}(X)$は
+    全射ではない.例えば恒等写像は$\exp(f)$と書けない.
+  }{}
+  \Proposition{
+    $\alpha:\mathcal{F} \to \mathcal{G}$を$X$上の層の射とする.
+    \begin{center}
+      $\alpha$が同型$\Leftrightarrow$ $\alpha_{x}$が同型$(\forall x \in X)$
+    \end{center}
+  }{}
+  \Theorem{
+  位相空間$X$上の前層$\mathcal{F}$に対して,前層$\mathcal{F}$の層化(sheafification)$\mathcal{F}^{\dagger}$は存在する.
+  }{
 $X$の開集合$U$に対して
-\begin{equation*}
-  \mathcal{F}^{\dagger}(U) = \left\{\sigma: U \to \prod_{x\in U} \mathcal{F}_{x}\, \middle|\,
-  \begin{aligned}
-    \forall x\in U,x\in \exists V\subset U:\text{open},\exists s \in \mathcal{F}(V)\, \text{s.t.}\, \sigma(y) = s_{y}\, (\forall y \in V)
-  \end{aligned}
-  \right\}
-\end{equation*}
-とする.ただし,$\sigma$は任意の$x\in U$に対して$\sigma(x) \in \mathcal{F}_{x}$とする.
-また,$V \subset U$なる開集合に対し,
-$$
-  \begin{array}{rccc}
-    \rho_{U,V}^{\mathcal{F}^{\dagger}}: & \mathcal{F}^{\dagger}(U) & \longrightarrow & \mathcal{F}^{\dagger}(V) \\
-                                        & \rotatebox{90}{$\in$}    &                 & \rotatebox{90}{$\in$}    \\
-                                        & \sigma                   & \longmapsto     & \sigma|_{V}
-  \end{array}
-$$
-が定義できる.実際,任意の$x\in V$をとる.$V \subset U$であり,
-$\sigma \in \mathcal{F}^{\dagger}(U)$より
-\begin{center}
-  $x\in \exists U_{0} \subset U$:open,$\exists s \in \mathcal{F}(U_{0})$\, s.t.\, $\sigma(y)=s_{y}\, (\forall y\in U_{0})$
-\end{center}
-$V_{0} = U_{0} \cap V,\quad t = s|_{V_{0}}$とすると任意の$y\in V_{0}$に対して
-\begin{equation*}
-  \sigma(y)=\sigma|_{V}(y)=s_{y}
-\end{equation*}
-さらに帰納極限の定義から
-\begin{equation*}
-  \sigma|_{V}(y)=t_{y}
-\end{equation*}
-次に$\mathcal{F}^{\dagger}(U)$がアーベル群,つまり
-$\sigma,\tau \in \mathcal{F}^{\dagger}(U)$ならば$\sigma+\tau \in \mathcal{F}^{\dagger}(U)$
-を示そう.\\
-$\sigma,\tau \in \mathcal{F}^{\dagger}(U)$より任意の$x\in U$に対して
-\begin{align*}
-    & x\in \exists U_{0} \subset U:\mathrm{open},\exists s \in \mathcal{F}(U_{0})\ \mathrm{s.t.}\
-  \sigma(y) = s_{y}\ (\forall y \in U_{0})                                                       \\
-    & x\in \exists V_{0} \subset U:\mathrm{open},\exists t \in \mathcal{F}(V_{0})\ \mathrm{s.t.}\
-  \tau(z) = t_{z}\ (\forall z \in V_{0})
-\end{align*}
-を満たす.いま$W = U_{0} \cap V_{0},s' = s|_{W},t' = t|_{W}$とすると,
-\begin{align*}
-  x\in W \subset U:\mathrm{open}, s',t' \in \mathcal{F}(W)\ \mathrm{s.t.}\
-  (\sigma + \tau)(y)
-    & = \sigma(y) + \tau(y)             \\
-    & = s_{y} + t_{y}                   \\
-    & = (s + t)_{y} \ (\forall y \in W)
-\end{align*}
-よって$\sigma + \tau \in \mathcal{F}^{\dagger}(U)$また明らかに可換.
-よって$\mathcal{F}^{\dagger}(U)$はアーベル群.\\
-また,通常の制限で制限写像を定義しているため,$\mathcal{F}^{\dagger}$は前層となる.\\
-更に層となることを示そう.\\
-$U$を$X$の開集合とし,$\{U_{i}\}_{i}$をその開被覆とする.$\sigma\in \mathcal{F}^{\dagger}(U)$が
-任意の$i$に対して$\sigma|_{U_{i}} = 0$とする.つまり任意の$x \in U_{i}$に対して$\sigma(x) = 0$
-とする.$U_{i}$は$U$を被覆するので結局$\sigma = 0$となる.\\
-次に,$\sigma_{i} \in \mathcal{F}^{\dagger}(U_{i})$とし,
-$\sigma_{i}|_{U_{i} \cap U_{j}} = \sigma_{j}|_{U_{i} \cap U_{j}}$と仮定すると,
-$$
-  \begin{array}{rccc}
-    \sigma : & U                     & \longrightarrow & \displaystyle \prod_{x\in U}\mathcal{F}_{x} \\
-              & \rotatebox{90}{$\in$} &                 & \rotatebox{90}{$\in$}                       \\
-              & x                     & \longmapsto     & \sigma_{i}(x)
-  \end{array}
-$$
-ただし,$x\in U_{i}$.すると,$\sigma$は$\sigma_{i}\in \mathcal{F}^{\dagger}(U_{i})$を張り合わせて作っているので
-これは$\sigma \in \mathcal{F}(U)$となることが容易にわかる。よって、$\mathcal{F}^{\dagger}$は層になる。
-}
-
-
-
-\Proposition{
-  層化の射$\theta:\mathcal{F} \to \mathcal{F}^{\dagger}$に対して、
-  その茎の射$\theta_{x}:\mathcal{F}_{x} \to \mathcal{F}^{\dagger}_{x}$は同型である。
-}{}
-
-
-
-\Lemma{
-  $\mathcal{F}$を$X$上の層とし、$\mathcal{F}'$を$\mathcal{F}$の部分層とする。
-  このとき開集合$U$を$\mathcal{F}(U)/\mathcal{F}'(U)$に対応させるものは前層になる。
-}{
-  この対応を$\mathcal{G}$とおく。$V \subset U$なる開集合$U,V$をとる。制限写像を
+  \begin{equation*}
+    \mathcal{F}^{\dagger}(U) = \left\{\sigma: U \to \prod_{x\in U} \mathcal{F}_{x}\, \middle|\,
+    \begin{aligned}
+      \forall x\in U,x\in \exists V\subset U:\text{open},\exists s \in \mathcal{F}(V)\, \text{s.t.}\, \sigma(y) = s_{y}\, (\forall y \in V)
+    \end{aligned}
+    \right\}
+  \end{equation*}
+  とする.ただし,$\sigma$は任意の$x\in U$に対して$\sigma(x) \in \mathcal{F}_{x}$とする.
+  また,$V \subset U$なる開集合に対し,
   $$
     \begin{array}{rccc}
-      \rho_{U,V}^{\mathcal{G}} : & \mathcal{F}(U)/\mathcal{F}'(U) & \longrightarrow & \mathcal{F}(V)/\mathcal{F}'(V)                \\
-                                  & \rotatebox{90}{$\in$}          &                 & \rotatebox{90}{$\in$}                         \\
-                                  & s + \mathcal{F}'(U)            & \longmapsto     & \rho_{U,V}^{\mathcal{F}}(s) + \mathcal{F}'(V)
+      \rho_{U,V}^{\mathcal{F}^{\dagger}}: & \mathcal{F}^{\dagger}(U) & \longrightarrow & \mathcal{F}^{\dagger}(V) \\
+                                          & \rotatebox{90}{$\in$}    &                 & \rotatebox{90}{$\in$}    \\
+                                          & \sigma                   & \longmapsto     & \sigma|_{V}
     \end{array}
   $$
-  とすると、これはwell-definedである。また、$U\subset V \subset W$なる開集合の組に対して
+  が定義できる.実際,任意の$x\in V$をとる.$V \subset U$であり,
+$\sigma \in \mathcal{F}^{\dagger}(U)$より
+  \begin{center}
+    $x\in \exists U_{0} \subset U$:open,$\exists s \in \mathcal{F}(U_{0})$\, s.t.\, $\sigma(y)=s_{y}\, (\forall y\in U_{0})$
+  \end{center}
+$V_{0} = U_{0} \cap V,\quad t = s|_{V_{0}}$とすると任意の$y\in V_{0}$に対して
   \begin{equation*}
-    \rho_{U,W}^{\mathcal{G}} = \rho_{V,W}^{\mathcal{G}} \circ \rho_{U,V}^{\mathcal{G}}
+    \sigma(y)=\sigma|_{V}(y)=s_{y}
   \end{equation*}
-  が成り立つことは制限写像の定義から明らかである。よって$\mathcal{G}$は前層。
-}
-\Definition{
-  Lem:\ref{Lem:1.3.8}で定義した前層の層化を$\mathcal{F}/\mathcal{F}'$と書いて、\textbf{商層(quotient shaef)}という。
-}
-\Definition{
-  $\alpha:\mathcal{F} \to \mathcal{G}$を前層の射とする。このとき開集合$U$に対して
-  $U \mapsto \ker (\alpha(U))$とするものは$\mathcal{F}$の部分層になる。これを$\ker{\alpha}$と
-  書いて、\textbf{$\alpha$の核(kernel of $\alpha$)}という。\\
-  更に、$U\mapsto \im (\alpha(U))$は一般には前層となるので、これの層化を$\im \alpha$と書いて、
-  \textbf{$\alpha$の像(image of $\alpha$)}という。\\
-  また，$U\mapsto \coker (\alpha(U)) = \mathcal{G}(U)/\im (\alpha(U))$は一般には前層となるので，これの層化を$\coker \alpha$と書いて，\textbf{$\alpha$の余核(cokernel of $\alpha$)}という．
-}
-\Lemma{
-  $\mathcal{F,G}$を$X$上の層,$\mathcal{F}'$を$\mathcal{F}$の部分層,$\alpha:\mathcal{F} \to \mathcal{G}$を前層の射とする。
+  さらに帰納極限の定義から
+  \begin{equation*}
+    \sigma|_{V}(y)=t_{y}
+  \end{equation*}
+  次に$\mathcal{F}^{\dagger}(U)$がアーベル群,つまり
+$\sigma,\tau \in \mathcal{F}^{\dagger}(U)$ならば$\sigma+\tau \in \mathcal{F}^{\dagger}(U)$
+  を示そう.\\
+$\sigma,\tau \in \mathcal{F}^{\dagger}(U)$より任意の$x\in U$に対して
+  \begin{align*}
+     & x\in \exists U_{0} \subset U:\mathrm{open},\exists s \in \mathcal{F}(U_{0})\ \mathrm{s.t.}\
+    \sigma(y) = s_{y}\ (\forall y \in U_{0})                                                       \\
+     & x\in \exists V_{0} \subset U:\mathrm{open},\exists t \in \mathcal{F}(V_{0})\ \mathrm{s.t.}\
+    \tau(z) = t_{z}\ (\forall z \in V_{0})
+  \end{align*}
+  を満たす.いま$W = U_{0} \cap V_{0},s' = s|_{W},t' = t|_{W}$とすると,
+  \begin{align*}
+    x\in W \subset U:\mathrm{open}, s',t' \in \mathcal{F}(W)\ \mathrm{s.t.}\
+    (\sigma + \tau)(y)
+     & = \sigma(y) + \tau(y)             \\
+     & = s_{y} + t_{y}                   \\
+     & = (s + t)_{y} \ (\forall y \in W)
+  \end{align*}
+  よって$\sigma + \tau \in \mathcal{F}^{\dagger}(U)$また明らかに可換.
+  よって$\mathcal{F}^{\dagger}(U)$はアーベル群.\\
+  また,通常の制限で制限写像を定義しているため,$\mathcal{F}^{\dagger}$は前層となる.\\
+  更に層となることを示そう.\\
+$U$を$X$の開集合とし,$\{U_{i}\}_{i}$をその開被覆とする.$\sigma\in \mathcal{F}^{\dagger}(U)$が
+  任意の$i$に対して$\sigma|_{U_{i}} = 0$とする.つまり任意の$x \in U_{i}$に対して$\sigma(x) = 0$
+  とする.$U_{i}$は$U$を被覆するので結局$\sigma = 0$となる.\\
+  次に,$\sigma_{i} \in \mathcal{F}^{\dagger}(U_{i})$とし,
+$\sigma_{i}|_{U_{i} \cap U_{j}} = \sigma_{j}|_{U_{i} \cap U_{j}}$と仮定すると,
+  $$
+    \begin{array}{rccc}
+      \sigma : & U                     & \longrightarrow & \displaystyle \prod_{x\in U}\mathcal{F}_{x} \\
+               & \rotatebox{90}{$\in$} &                 & \rotatebox{90}{$\in$}                       \\
+               & x                     & \longmapsto     & \sigma_{i}(x)
+    \end{array}
+  $$
+  ただし,$x\in U_{i}$.すると,$\sigma$は$\sigma_{i}\in \mathcal{F}^{\dagger}(U_{i})$を張り合わせて作っているので
+  これは$\sigma \in \mathcal{F}(U)$となることが容易にわかる。よって、$\mathcal{F}^{\dagger}$は層になる。
+  }
+
+
+
+  \Proposition{
+    層化の射$\theta:\mathcal{F} \to \mathcal{F}^{\dagger}$に対して、
+    その茎の射$\theta_{x}:\mathcal{F}_{x} \to \mathcal{F}^{\dagger}_{x}$は同型である。
+  }{}
+
+
+
+  \Lemma{
+    $\mathcal{F}$を$X$上の層とし、$\mathcal{F}'$を$\mathcal{F}$の部分層とする。
+    このとき開集合$U$を$\mathcal{F}(U)/\mathcal{F}'(U)$に対応させるものは前層になる。
+  }{
+    この対応を$\mathcal{G}$とおく。$V \subset U$なる開集合$U,V$をとる。制限写像を
+    $$
+      \begin{array}{rccc}
+        \rho_{U,V}^{\mathcal{G}} : & \mathcal{F}(U)/\mathcal{F}'(U) & \longrightarrow & \mathcal{F}(V)/\mathcal{F}'(V)                \\
+                                   & \rotatebox{90}{$\in$}          &                 & \rotatebox{90}{$\in$}                         \\
+                                   & s + \mathcal{F}'(U)            & \longmapsto     & \rho_{U,V}^{\mathcal{F}}(s) + \mathcal{F}'(V)
+      \end{array}
+    $$
+    とすると、これはwell-definedである。また、$U\subset V \subset W$なる開集合の組に対して
+    \begin{equation*}
+      \rho_{U,W}^{\mathcal{G}} = \rho_{V,W}^{\mathcal{G}} \circ \rho_{U,V}^{\mathcal{G}}
+    \end{equation*}
+    が成り立つことは制限写像の定義から明らかである。よって$\mathcal{G}$は前層。
+  }
+  \Definition{
+    Lem:\ref{Lem:1.3.8}で定義した前層の層化を$\mathcal{F}/\mathcal{F}'$と書いて、\textbf{商層(quotient shaef)}という。
+  }
+  \Definition{
+    $\alpha:\mathcal{F} \to \mathcal{G}$を前層の射とする。このとき開集合$U$に対して
+    $U \mapsto \ker (\alpha(U))$とするものは$\mathcal{F}$の部分層になる。これを$\ker{\alpha}$と
+    書いて、\textbf{$\alpha$の核(kernel of $\alpha$)}という。\\
+    更に、$U\mapsto \im (\alpha(U))$は一般には前層となるので、これの層化を$\im \alpha$と書いて、
+    \textbf{$\alpha$の像(image of $\alpha$)}という。\\
+    また，$U\mapsto \coker (\alpha(U)) = \mathcal{G}(U)/\im (\alpha(U))$は一般には前層となるので，これの層化を$\coker \alpha$と書いて，\textbf{$\alpha$の余核(cokernel of $\alpha$)}という．
+  }
+  \Lemma{
+$\mathcal{F,G}$を$X$上の層,$\mathcal{F}'$を$\mathcal{F}$の部分層,$\alpha:\mathcal{F} \to \mathcal{G}$を前層の射とする。
   このとき、
   \begin{align*}
-      & (\ker \alpha)_{x} = \ker \alpha_{x}                               \\
-      & (\im \alpha)_{x} = \im \alpha_{x}                                 \\
-      & (\coker \alpha)_{x} = \coker \alpha_{x} \\
-      & (\mathcal{F}/\mathcal{F}')_{x} = \mathcal{F}_{x}/\mathcal{F}'_{x}
+     & (\ker \alpha)_{x} = \ker \alpha_{x}                               \\
+     & (\im \alpha)_{x} = \im \alpha_{x}                                 \\
+     & (\coker \alpha)_{x} = \coker \alpha_{x}                           \\
+     & (\mathcal{F}/\mathcal{F}')_{x} = \mathcal{F}_{x}/\mathcal{F}'_{x}
   \end{align*}
   が成り立つ。
-}{
-  $\mathcal{Q}(U) = \mathcal{F}(U)/\mathcal{F}'(U)$とおく。\\
+  }{
+$\mathcal{Q}(U) = \mathcal{F}(U)/\mathcal{F}'(U)$とおく。\\
   このとき、アーベル群の完全列
   \begin{center}
     \begin{tikzpicture}[auto]
@@ -775,91 +791,91 @@ $$
   次に
   \begin{align*}
     (\ker \alpha)_{x}
-      & = \{s_{x} \in \mathcal{F}_{x} \ |\ \alpha(U)(s) = 0,x\in U:\text{open},s\in \mathcal{F}(U) \}   \\
-      & = \{s_{x} \in \mathcal{F}_{x} \ |\ \alpha_{x}(s_{x})=0,x\in U:\text{open},s\in \mathcal{F}(U)\} \\
-      & = \ker \alpha_{x}
+     & = \{s_{x} \in \mathcal{F}_{x} \ |\ \alpha(U)(s) = 0,x\in U:\text{open},s\in \mathcal{F}(U) \}   \\
+     & = \{s_{x} \in \mathcal{F}_{x} \ |\ \alpha_{x}(s_{x})=0,x\in U:\text{open},s\in \mathcal{F}(U)\} \\
+     & = \ker \alpha_{x}
   \end{align*}
   を得る。同様に
   \begin{align*}
     (\im \alpha)_{x}
-      & = \{t_{x} \in \mathcal{G}_{x} \ |\ x\in \exists U:\text{open}, \exists s\in \mathcal{F}(U)\ \text{s.t}\ t = \alpha(U)(s)\} \\
-      & = \{(\alpha(U)(s))_{x} \in \mathcal{G}_{x} \ |\ x \in U:\text{open},s\in \mathcal{F}(U)\}                                  \\
-      & = \{\alpha_{x}(s_{x}) \in \mathcal{G}_{x}\ |\ s_{x} \in \mathcal{F}_{x}\}                                                  \\
-      & = \im \alpha_{x}
+     & = \{t_{x} \in \mathcal{G}_{x} \ |\ x\in \exists U:\text{open}, \exists s\in \mathcal{F}(U)\ \text{s.t}\ t = \alpha(U)(s)\} \\
+     & = \{(\alpha(U)(s))_{x} \in \mathcal{G}_{x} \ |\ x \in U:\text{open},s\in \mathcal{F}(U)\}                                  \\
+     & = \{\alpha_{x}(s_{x}) \in \mathcal{G}_{x}\ |\ s_{x} \in \mathcal{F}_{x}\}                                                  \\
+     & = \im \alpha_{x}
   \end{align*}
   を得る．また，$(\mathcal{F}/\mathcal{F}')_{x} = \mathcal{F}_{x}/\mathcal{F}'_{x}$より
   \begin{equation*}
     (\coker \alpha)_{x} = (\mathcal{G}/\im \alpha)_{x} = \mathcal{G}_{x}/\im \alpha_{x} = \coker \alpha_{x}
   \end{equation*}
-}
+  }
 
-\Definition{
-  層の列
-  \begin{equation*}
-    \mathcal{F} \stackrel{\alpha}{\longrightarrow} \mathcal{G} \stackrel{\beta}{\longrightarrow} \mathcal{H}
-  \end{equation*}
-  が完全とは、$\im \alpha = \ker \beta$が成り立つことをいう。
-}
-\Proposition{
-  層の列に対して次が成り立つ。
-  \begin{equation*}
-    \mathcal{F} \longrightarrow \mathcal{G} \longrightarrow \mathcal{H}が完全
-    \Longleftrightarrow
-    任意のx \in Xに対して\mathcal{F}_{x} \longrightarrow \mathcal{G}_{x} \longrightarrow \mathcal{H}_{x}が完全
-  \end{equation*}
-}{
-  明らか。
-}
+  \Definition{
+    層の列
+    \begin{equation*}
+      \mathcal{F} \stackrel{\alpha}{\longrightarrow} \mathcal{G} \stackrel{\beta}{\longrightarrow} \mathcal{H}
+    \end{equation*}
+    が完全とは、$\im \alpha = \ker \beta$が成り立つことをいう。
+  }
+  \Proposition{
+    層の列に対して次が成り立つ。
+    \begin{equation*}
+      \mathcal{F} \longrightarrow \mathcal{G} \longrightarrow \mathcal{H}が完全
+      \Longleftrightarrow
+      任意のx \in Xに対して\mathcal{F}_{x} \longrightarrow \mathcal{G}_{x} \longrightarrow \mathcal{H}_{x}が完全
+    \end{equation*}
+  }{
+    明らか。
+  }
 
-\Definition{
-  $X,Y$を位相空間,$f:X\to Y$を連続写像とする。このとき、
-  $X$上の層$\mathcal{F}$,$Y$上の層$\mathcal{G}$に対して、新たな$Y$上の層$f_{*}\mathcal{F}$が
-  \begin{equation*}
-    V \mapsto \mathcal{F}(f^{-1}(V))
-  \end{equation*}
-  によって定義できる。これを\textbf{$\mathcal{F}$の順像(direct image of $\mathcal{F}$)}という。\\
-  また、
-  \begin{equation*}
-    U \mapsto \varinjlim_{V\supset f(U)}\mathcal{G}(V)
-  \end{equation*}
-  で定義できる新たな$X$上の前層$f^{\cdot}\mathcal{G}$の層化$f^{*}\mathcal{G}$を\textbf{$\mathcal{G}$の逆像(inverse image of $\mathcal{G}$)}
-  という。
-}
+  \Definition{
+    $X,Y$を位相空間,$f:X\to Y$を連続写像とする。このとき、
+    $X$上の層$\mathcal{F}$,$Y$上の層$\mathcal{G}$に対して、新たな$Y$上の層$f_{*}\mathcal{F}$が
+    \begin{equation*}
+      V \mapsto \mathcal{F}(f^{-1}(V))
+    \end{equation*}
+    によって定義できる。これを\textbf{$\mathcal{F}$の順像(direct image of $\mathcal{F}$)}という。\\
+    また、
+    \begin{equation*}
+      U \mapsto \varinjlim_{V\supset f(U)}\mathcal{G}(V)
+    \end{equation*}
+    で定義できる新たな$X$上の前層$f^{\cdot}\mathcal{G}$の層化$f^{*}\mathcal{G}$を\textbf{$\mathcal{G}$の逆像(inverse image of $\mathcal{G}$)}
+    という。
+  }
 
-\Proposition{
-  上の状況で
-  \begin{equation*}
-    (f^{*}\mathcal{G})_{x} = \mathcal{G}_{f(x)} \qquad \forall x \in X
-  \end{equation*}
-}{
-  \begin{equation*}
-    (f^{*}\mathcal{G})_{x} = \varinjlim_{x \in U}(f^{*}\mathcal{G})(U) = \varinjlim_{x \in U}\varinjlim_{f(U) \subset V}\mathcal{G}(V) = \mathcal{G}_{f(x)}
-  \end{equation*}
-  最後の等号は明らか．
-}
+  \Proposition{
+    上の状況で
+    \begin{equation*}
+      (f^{*}\mathcal{G})_{x} = \mathcal{G}_{f(x)} \qquad \forall x \in X
+    \end{equation*}
+  }{
+    \begin{equation*}
+      (f^{*}\mathcal{G})_{x} = \varinjlim_{x \in U}(f^{*}\mathcal{G})(U) = \varinjlim_{x \in U}\varinjlim_{f(U) \subset V}\mathcal{G}(V) = \mathcal{G}_{f(x)}
+    \end{equation*}
+    最後の等号は明らか．
+  }
 
-\Remark{
-  $V$を$Y$の開集合とする。このとき自然な単射$i:V \to Y$に対して
-  \begin{equation*}
-    i^{*}\mathcal{G} = \mathcal{G}|_{V}
-  \end{equation*}
-  が成り立つ。
-}{}
-\Proposition{
-  $f:X \to Y$を位相空間の間の連続写像とし，$\mathcal{F}$を$X$上の層．$\mathcal{G}$を$Y$上の層とする．このとき
+  \Remark{
+    $V$を$Y$の開集合とする。このとき自然な単射$i:V \to Y$に対して
+    \begin{equation*}
+      i^{*}\mathcal{G} = \mathcal{G}|_{V}
+    \end{equation*}
+    が成り立つ。
+  }{}
+  \Proposition{
+$f:X \to Y$を位相空間の間の連続写像とし，$\mathcal{F}$を$X$上の層．$\mathcal{G}$を$Y$上の層とする．このとき
   \begin{equation*}
     \hom{\text{Sh}(X)}{f^{*}\mathcal{G}}{\mathcal{F}}\simeq \hom{\text{Sh}(Y)}{\mathcal{G}}{f_{*}\mathcal{F}}
   \end{equation*}
   ただし，$\hom{\mathcal{C}}{X}{Y}$は圏$\mathcal{C}$で$X \to Y$なる射全体を表し，$\text{Sh}(X)$は$X$上の層全体を表す．
-}{
+  }{
   層化の普遍性より$\theta:f^{\cdot}\mathcal{G} \to f^{*}\mathcal{G} = (f^{\cdot}\mathcal{G})^{\dagger}$
   を層化の射とすると，
   $$
-  \begin{array}{rccc}
-     & \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}}                     & \stackrel{\simeq}{\longrightarrow} & \displaystyle \hom{\text{Ph(X)}}{f^{*}\mathcal{G}}{\mathcal{F}} \\
-              & \rotatebox{90}{$\in$} &                 & \rotatebox{90}{$\in$}                       \\
-              & \alpha                     & \longmapsto     & \tilde{\alpha}\circ \theta
-  \end{array}
+    \begin{array}{rccc}
+       & \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}} & \stackrel{\simeq}{\longrightarrow} & \displaystyle \hom{\text{Ph(X)}}{f^{*}\mathcal{G}}{\mathcal{F}} \\
+       & \rotatebox{90}{$\in$}                                    &                                    & \rotatebox{90}{$\in$}                                           \\
+       & \alpha                                                   & \longmapsto                        & \tilde{\alpha}\circ \theta
+    \end{array}
   $$
   が成り立つ．つまり
   \begin{equation*}
@@ -887,7 +903,7 @@ $$
   \end{equation*}
   と$\rho^{\mathcal{F}}_{f^{-1}(V),U}$を合成したものである．(帰納系の選び方によらない．)\\
   したがって，$\varphi\in \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}}$を与えることは，$\psi \in \hom{\text{Ph}(Y)}{\mathcal{G}}{f_{*}\mathcal{F}}$を与えることと等しい．
-}
+  }
 
 
 
@@ -896,254 +912,289 @@ $$
 
 
 
-\Section{Ringed Topological Space}
+  \Section{Ringed Topological Space}
 
-\Definition{
-  \textbf{局所環付き空間}とは位相空間$X$と$X$上の環の層$\mathcal{O}_{X}$の組$(X,\mathcal{O}_{X})$
-  で、任意の$x\in X$に対して$\mathcal{O}_{X,x}$が局所環となるものをいう。また、この$\mathcal{O}_{X}$
-  を$(X,\mathcal{O}_{X})$の\textbf{構造層(structure sheaf)}という。また$(X,\mathcal{O}_{X})$を単に
-  $\mathcal{O}_{X}$と書くことがある。\\
-  また、$\mathcal{O}_{X,x}$の唯一の極大イデアル$\mathfrak{m}_{x}$に対して
-  その剰余体$\mathcal{O}_{X,x}/\mathfrak{m}_{x}$を\textbf{$X$の点$x$での剰余体(residue field of X at x)}といって$k(x)$と書く。
-}
+  \Definition{
+    \textbf{局所環付き空間}とは位相空間$X$と$X$上の環の層$\mathcal{O}_{X}$の組$(X,\mathcal{O}_{X})$
+    で、任意の$x\in X$に対して$\mathcal{O}_{X,x}$が局所環となるものをいう。また、この$\mathcal{O}_{X}$
+    を$(X,\mathcal{O}_{X})$の\textbf{構造層(structure sheaf)}という。また$(X,\mathcal{O}_{X})$を単に
+    $\mathcal{O}_{X}$と書くことがある。\\
+    また、$\mathcal{O}_{X,x}$の唯一の極大イデアル$\mathfrak{m}_{x}$に対して
+    その剰余体$\mathcal{O}_{X,x}/\mathfrak{m}_{x}$を\textbf{$X$の点$x$での剰余体(residue field of X at x)}といって$k(x)$と書く。
+  }
 
-\Definition{
+  \Definition{
   局所環付き空間の射とは
   \begin{equation*}
     (f,f^{\#}): (X,\mathcal{O}_{X}) \to (Y,\mathcal{O}_{Y})
   \end{equation*}
   とは連続写像$f:X \to Y$と環の層の射$f^{\#}:\mathcal{O}_{Y} \to f_{*}\mathcal{O}_{X}$の組$(f,f^{\#})$で、
   任意の$x\in X$に対して$f^{\#}_{x} : \mathcal{O}_{Y,f(x)} \to \mathcal{O}_{X,x}$は局所射となるものをいう。(つまり$f^{\#}_{x}(\mathfrak{m}_{Y,f(x)})\subset \mathfrak{m}_{X,x}$を満たす．)
-}
-Prop:\ref{Prop:1.3.13}より
-\begin{equation*}
-  f^{\#} : \mathcal{O}_{Y} \to f_{*}\mathcal{O}_{X}
-\end{equation*}
-を考えることは
-\begin{equation*}
-  f^{\#} : f^{*}\mathcal{O}_Y \to \mathcal{O}_{X}
-\end{equation*}
-を考えることに等しい．Def:\ref{Def:1.4.2}の$f^{\#}_{x}$は下の式で考えている．
+  }
+  Prop:\ref{Prop:1.3.13}より
+  \begin{equation*}
+    f^{\#} : \mathcal{O}_{Y} \to f_{*}\mathcal{O}_{X}
+  \end{equation*}
+  を考えることは
+  \begin{equation*}
+    f^{\#} : f^{*}\mathcal{O}_Y \to \mathcal{O}_{X}
+  \end{equation*}
+  を考えることに等しい．Def:\ref{Def:1.4.2}の$f^{\#}_{x}$は下の式で考えている．
 
-\Definition{
+  \Definition{
   射$(f,f^{\#}):(X,\mathcal{O}_{X}) \to (Y,\mathcal{O}_{Y})$が\textbf{開はめ込み(open immersion)}(resp. \textbf{閉はめ込み(closed immersion)})
   とは連続写像$f$が開はめ込み(resp. 閉はめ込み)
   \footnote{$f:X\to Y$が(位相的)開(閉)はめ込みとは$X$と$f(X)$が同相で$f(X)$が開(閉)集合のときをいう。}
   でかつ任意の$x\in X$に対して$f^{\#}_{x}$が同型(resp. 全射)のときをいう。
-}
+  }
 
-\Definition{
-  $(X,\mathcal{O}_{X})$を局所環付き空間とする。$\mathcal{J}$が$\mathcal{O}_{X}$の
-  \textbf{イデアル層(sheaf of ideals of $\mathcal{O}_{X}$)}とは任意の開集合$U$に対して
-  $\mathcal{J}(U)$が$\mathcal{O}_{X}(U)$のイデアルになっているときをいう。
-}
+  \Definition{
+    $(X,\mathcal{O}_{X})$を局所環付き空間とする。$\mathcal{J}$が$\mathcal{O}_{X}$の
+    \textbf{イデアル層(sheaf of ideals of $\mathcal{O}_{X}$)}とは任意の開集合$U$に対して
+    $\mathcal{J}(U)$が$\mathcal{O}_{X}(U)$のイデアルになっているときをいう。
+  }
 
-\Lemma{
-  $(X,\mathcal{O}_{X})$を局所環付き空間とする。$\mathcal{J}$を$\mathcal{O}_{X}$のイデアル層とする。
+  \Lemma{
+$(X,\mathcal{O}_{X})$を局所環付き空間とする。$\mathcal{J}$を$\mathcal{O}_{X}$のイデアル層とする。
   そして、
   \begin{equation*}
     V(\mathcal{J}) = \{x \in X\ |\ \mathcal{J}_{x} \neq \mathcal{O}_{X,x}\}
   \end{equation*}
   とおく。(ちなみに上の諸々から$\mathcal{J}_{x} \subset \mathcal{O}_{X,x}$が分かる。)\\
-  $j:V(\mathcal{J}) \hookrightarrow X$を包含写像とする。すると
+$j:V(\mathcal{J}) \hookrightarrow X$を包含写像とする。すると
   \begin{itemize}
     \item[---] $V(\mathcal{J})$は$X$の閉集合
     \item[---] $(V(\mathcal{J}),j^{*}(\mathcal{O}_{X}/\mathcal{J}))$は局所環付き空間
     \item[---] $j^{\#}$は自然な全射
-    \begin{equation*}
-      \mathcal{O}_{X} \longrightarrow \mathcal{O}_{X}/\mathcal{J} = j_{*}(j^{*}(\mathcal{O}_{X}/\mathcal{J}))
-    \end{equation*}
-    で
-    $(j,j^{\#}):(V(\mathcal{J}),j^{-1}(\mathcal{O}_{X}/\mathcal{J})) \to (X,\mathcal{O}_{X})$は閉はめ込みである。
+          \begin{equation*}
+            \mathcal{O}_{X} \longrightarrow \mathcal{O}_{X}/\mathcal{J} = j_{*}(j^{*}(\mathcal{O}_{X}/\mathcal{J}))
+          \end{equation*}
+          で
+          $(j,j^{\#}):(V(\mathcal{J}),j^{-1}(\mathcal{O}_{X}/\mathcal{J})) \to (X,\mathcal{O}_{X})$は閉はめ込みである。
   \end{itemize}
-}{
+  }{
   \Claim{1}$V(\mathcal{J})$は$X$の閉集合\\
-  $x\in X\mysetminus V(\mathcal{J}) = \{x\in X\ |\ \mathcal{J}_{x} = \mathcal{O}_{X,x}\}$
+$x\in X\mysetminus V(\mathcal{J}) = \{x\in X\ |\ \mathcal{J}_{x} = \mathcal{O}_{X,x}\}$
   に対して$f_{x} = 1$なる$x$の開近傍$U$と$f\in \mathcal{J}(U)$をとる。
   つまり$f|_{V} = 1|_{V} = 1$なる$x$の開近傍$V \subset U$がある。
   すると任意の$y \in V$に対して$f_{y} = 1 \in \mathcal{J}_{y}$となって,この$y$に対して
-  $\mathcal{J}_{y} = \mathcal{O}_{X,y}$なので
-  $V\subset X \mysetminus V(\mathcal{J})$となって$X\mysetminus V(\mathcal{J})$が開であることがわかる。\\
+$\mathcal{J}_{y} = \mathcal{O}_{X,y}$なので
+$V\subset X \mysetminus V(\mathcal{J})$となって$X\mysetminus V(\mathcal{J})$が開であることがわかる。\\
   \Claim{2}$(V(\mathcal{J}),j^{*}(\mathcal{O}_{X}/\mathcal{J}))$は局所環付き空間\\
   任意の$x\in V(\mathcal{J})$に対して
   \begin{equation*}
     (j^{*}(\mathcal{O}_{X}/\mathcal{J}))_{x} = (\mathcal{O}_{X}/\mathcal{J})_{x} = \mathcal{O}_{X,x}/\mathcal{J}_{x}
   \end{equation*}
   は局所環。残りは自明。
-}
+  }
 
-\Proposition{
-  $f:X \to Y$を局所環付き空間の閉はめ込みとする。$Z$を局所環付き空間$V(\mathcal{J})$とする。
-  ただし、$\mathcal{J} = \ker f^{\#}\subset \mathcal{O}_{Y}$.すると$X\simeq Z$を自然な閉はめ込み
-  $Z \hookrightarrow Y$から得る。
-}{
-まず次の完全列
-  \begin{equation*}
-    0 \longrightarrow \mathcal{J} \longrightarrow \mathcal{O}_{Y} \longrightarrow f_{*}\mathcal{O}_{X} \longrightarrow 0
-  \end{equation*}
-  からProp:\ref{Prop:1.3.11}より任意の$y \in Y$に対して
-  \begin{equation*}
-    \mathcal{O}_{Y,y}/\mathcal{J}_{y} = (f_{*}\mathcal{O}_{X})_{y}
-  \end{equation*}
-  を得る。よって
-  \begin{equation*}
-    (f_{*}\mathcal{O}_{X})_{y} = \left\{ 
-    \begin{alignedat}{2}
-      &\quad 0 \qquad &y& \in Y \mysetminus V(\mathcal{J})\\
-      &\mathcal{O}_{Y,y}/\mathcal{J}_{y} \qquad &y& \in V(\mathcal{J})
-    \end{alignedat}
-    \right.\qquad \cdots (*)
-  \end{equation*}
-  を得る。$f(X)$は$Y$の閉集合なので$x\in Y\mysetminus f(X)$の開近傍$U$で
-  \begin{equation*}
-    f(X)\cap U = \varnothing
-  \end{equation*}
-  となるものがとれる。よって
-  \begin{equation*}
-    f_{*}\mathcal{O}_{X}(U) = \mathcal{O}_{X}(f^{-1}(U)) = \mathcal{O}_{X}(\varnothing) = 0
-  \end{equation*}
-  したがって、
-  \begin{equation*}
-    (f_{*}\mathcal{O}_{X})_{x} = 0
-  \end{equation*}
-  また、$x\in f(X)$の開近傍$U$に対して$f$での引き戻し$f^{-1}(U)$は$y=f(x)$の開近傍である。
-  これを$V$とおく。逆に、$f$は閉はめ込みなので、$X$は$f(X)$と同相なので$X$に自然に$Y$の相対位相が入る。
-  つまり、任意の$x\in X$の開近傍$U$に対して$y=f(x)\in Y$の開近傍$V$が存在して$f^{-1}(V)$とかける。
-  よって、
-  \begin{equation*}
-    (f_{*}\mathcal{O}_{X})_{x} = \varinjlim_{U \ni x}f_{*}\mathcal{O}_{X}(U) = \varinjlim_{U \ni x}\mathcal{O}_{X}(f^{-1}(U)) = \varinjlim_{V \ni y}\mathcal{O}_{X}(V) = \mathcal{O}_{X,y}
-  \end{equation*}
-  つまり、
-  \begin{equation*}
-    (f_{*}\mathcal{O}_{X})_{y} = \left\{ 
-    \begin{alignedat}{2}
-      &\quad 0 \qquad &y& \in Y \mysetminus f(X)\\
-      &\mathcal{O}_{X,x} \qquad &y& = f(x)
-    \end{alignedat}
-    \right.
-  \end{equation*}
-  $(*)$と比較すれば
-  \begin{equation*}
-    V(\mathcal{J}) = f(X)
-  \end{equation*}
-  が分かる。
-  なので、$j:Z \hookrightarrow Y$を包含写像とすると、$f$から誘導される同相写像$g:X \to Z$に対して
-  \begin{equation*}
-    f = j \circ g
-  \end{equation*}
-  で、
-  \begin{equation*}
-    j_{*}\mathcal{O}_{Z} = \mathcal{O}_{Y}/\mathcal{J} \simeq f_{*}\mathcal{O}_{X}
-  \end{equation*}
-  がわかる。容易に
-  \begin{equation*}
-    f_{*}\mathcal{O}_{X} = j_{*}g_{*}\mathcal{O}_{X}
-  \end{equation*}
-  が分かるので
-  \begin{equation*}
-    \mathcal{O}_{Z} = (j^{-1}\circ j)_{*}\mathcal{O}_{Z} = (j^{-1})_{*}j_{*}\mathcal{O}_{Z}\simeq (j^{-1})_{*}j_{*}g_{*}\mathcal{O}_{X} = (j^{-1}\circ j)_{*} g_{*}\mathcal{O}_{X} = g_{*}\mathcal{O}_{X}
-  \end{equation*}
-  である。よって、$g$は局所環付き空間の同型射である。$f=j\circ g$が局所環付き空間の射であることを確認するのは読者に委ねる。
-}
+  \Proposition{
+    $f:X \to Y$を局所環付き空間の閉はめ込みとする。$Z$を局所環付き空間$V(\mathcal{J})$とする。
+    ただし、$\mathcal{J} = \ker f^{\#}\subset \mathcal{O}_{Y}$.すると$X\simeq Z$を自然な閉はめ込み
+    $Z \hookrightarrow Y$から得る。
+  }{
+    まず次の完全列
+    \begin{equation*}
+      0 \longrightarrow \mathcal{J} \longrightarrow \mathcal{O}_{Y} \longrightarrow f_{*}\mathcal{O}_{X} \longrightarrow 0
+    \end{equation*}
+    からProp:\ref{Prop:1.3.11}より任意の$y \in Y$に対して
+    \begin{equation*}
+      \mathcal{O}_{Y,y}/\mathcal{J}_{y} = (f_{*}\mathcal{O}_{X})_{y}
+    \end{equation*}
+    を得る。よって
+    \begin{equation*}
+      (f_{*}\mathcal{O}_{X})_{y} = \left\{
+      \begin{alignedat}{2}
+         & \quad 0 \qquad                           & y & \in Y \mysetminus V(\mathcal{J}) \\
+         & \mathcal{O}_{Y,y}/\mathcal{J}_{y} \qquad & y & \in V(\mathcal{J})
+      \end{alignedat}
+      \right.\qquad \cdots (*)
+    \end{equation*}
+    を得る。$f(X)$は$Y$の閉集合なので$x\in Y\mysetminus f(X)$の開近傍$U$で
+    \begin{equation*}
+      f(X)\cap U = \varnothing
+    \end{equation*}
+    となるものがとれる。よって
+    \begin{equation*}
+      f_{*}\mathcal{O}_{X}(U) = \mathcal{O}_{X}(f^{-1}(U)) = \mathcal{O}_{X}(\varnothing) = 0
+    \end{equation*}
+    したがって、
+    \begin{equation*}
+      (f_{*}\mathcal{O}_{X})_{x} = 0
+    \end{equation*}
+    また、$x\in f(X)$の開近傍$U$に対して$f$での引き戻し$f^{-1}(U)$は$y=f(x)$の開近傍である。
+    これを$V$とおく。逆に、$f$は閉はめ込みなので、$X$は$f(X)$と同相なので$X$に自然に$Y$の相対位相が入る。
+    つまり、任意の$x\in X$の開近傍$U$に対して$y=f(x)\in Y$の開近傍$V$が存在して$f^{-1}(V)$とかける。
+    よって、
+    \begin{equation*}
+      (f_{*}\mathcal{O}_{X})_{x} = \varinjlim_{U \ni x}f_{*}\mathcal{O}_{X}(U) = \varinjlim_{U \ni x}\mathcal{O}_{X}(f^{-1}(U)) = \varinjlim_{V \ni y}\mathcal{O}_{X}(V) = \mathcal{O}_{X,y}
+    \end{equation*}
+    つまり、
+    \begin{equation*}
+      (f_{*}\mathcal{O}_{X})_{y} = \left\{
+      \begin{alignedat}{2}
+         & \quad 0 \qquad           & y & \in Y \mysetminus f(X) \\
+         & \mathcal{O}_{X,x} \qquad & y & = f(x)
+      \end{alignedat}
+      \right.
+    \end{equation*}
+    $(*)$と比較すれば
+    \begin{equation*}
+      V(\mathcal{J}) = f(X)
+    \end{equation*}
+    が分かる。
+    なので、$j:Z \hookrightarrow Y$を包含写像とすると、$f$から誘導される同相写像$g:X \to Z$に対して
+    \begin{equation*}
+      f = j \circ g
+    \end{equation*}
+    で、
+    \begin{equation*}
+      j_{*}\mathcal{O}_{Z} = \mathcal{O}_{Y}/\mathcal{J} \simeq f_{*}\mathcal{O}_{X}
+    \end{equation*}
+    がわかる。容易に
+    \begin{equation*}
+      f_{*}\mathcal{O}_{X} = j_{*}g_{*}\mathcal{O}_{X}
+    \end{equation*}
+    が分かるので
+    \begin{equation*}
+      \mathcal{O}_{Z} = (j^{-1}\circ j)_{*}\mathcal{O}_{Z} = (j^{-1})_{*}j_{*}\mathcal{O}_{Z}\simeq (j^{-1})_{*}j_{*}g_{*}\mathcal{O}_{X} = (j^{-1}\circ j)_{*} g_{*}\mathcal{O}_{X} = g_{*}\mathcal{O}_{X}
+    \end{equation*}
+    である。よって、$g$は局所環付き空間の同型射である。$f=j\circ g$が局所環付き空間の射であることを確認するのは読者に委ねる。
+  }
 
 
 
-\Section{Schemes}
+  \Section{Schemes}
 
-\Proposition{
-  $A$を環、$X=\text{Spec}\, A$とする。このとき以下が成り立つ。
-  \begin{itemize}
-    \item[(1)] $\mathcal{O}_{X}'$を環の$\mathfrak{B}$-層とする。$\mathcal{O}_{X}'$が誘導する$X$上の層$\mathcal{O}_{X}$は$\mathcal{O}_{X}(X)=A$となる。
-    \item[(2)] 任意の$\mathfrak{p}\in X$に対して、茎$\mathcal{O}_{X,\mathfrak{p}}$は$A_{\mathfrak{p}}$への標準的な同型がある。特に、$(X,\mathcal{O}_{X})$は局所環付き空間になる。 
-  \end{itemize}
-}{
-  まず，開集合$U=X$についてUniquness条件を確認する．ほかの基本開集合も同様に示される．
-  $U_{i} = $
-}
+  \Proposition{
+    $A$を環、$X=\text{Spec}\, A$とする。このとき以下が成り立つ。
+    \begin{itemize}
+      \item[(1)] $\mathcal{O}_{X}'$を環の$\mathfrak{B}$-層とする。$\mathcal{O}_{X}'$が誘導する$X$上の層$\mathcal{O}_{X}$は$\mathcal{O}_{X}(X)=A$となる。
+      \item[(2)] 任意の$\mathfrak{p}\in X$に対して、茎$\mathcal{O}_{X,\mathfrak{p}}$は$A_{\mathfrak{p}}$への標準的な同型がある。特に、$(X,\mathcal{O}_{X})$は局所環付き空間になる。
+    \end{itemize}
+  }{
+    まず，開集合$U=X$についてUniquness条件を確認する．ほかの基本開集合も同様に示される．
+    $U_{i} = $
+  }
 
-\Definition{
+  \Definition{
   上で定義した局所環付き空間$(\text{Spec}\, A,\mathcal{O}_{\text{Spec}\, A})$を
   \textbf{アフィンスキーム(affine scheme)}という．
-}
+  }
 
-\Lemma{
-  $A$を整域とし$K$をその商体とする．素イデアル$0$に対応する$X = \text{Spec}\, A$の点を$\xi$とする．このとき
-  \begin{equation*}
-    \mathcal{O}_{X,\xi} = K
-  \end{equation*}
-  が成り立つ．さらに，任意の空でない開集合$U \subset X$と$\xi \in U$に対して標準的な準同型
-  \begin{equation*}
-    \mathcal{O}_{X}(U) \to \mathcal{O}_{X,\xi}
-  \end{equation*}
-  は単射となる．開集合の組$V \subset U$に対して制限
-  \begin{equation*}
-    \mathcal{O}_{X}(U) \to \mathcal{O}_{X}(V)
-  \end{equation*}
-  は単射となる．
-}{
-  Prop:\ref{Prop:1.5.1}(2)より
-  \begin{equation*}
-    \mathcal{O}_{X,\xi} = A_{\xi} = K
-  \end{equation*}
-  を得る．\\
-  $U=D(f)$とすると，$\mathcal{O}_{X}(U) = A_{f}\subset K$．一般に
-  \begin{equation*}
-    U = \bigcup_{i}D(f_{i})
-  \end{equation*}
-  と置く．$s\in \mathcal{O}_{X}(U)$を飛ばすと$0 \in K$になるとする．各開被覆$D(f_{i}) \subset U$への
-  制限を考えると
-  \begin{equation*}
-    s|_{D(f_{i})} = 0
-  \end{equation*}
-  が任意の$i$で成り立つので，$s=0$である．よって$\mathcal{O}_{X}(U) \to \mathcal{O}_{X,\xi} \subset K$は単射．\\
-  開集合の組$\xi \in V\subset U$に対して制限$\mathcal{O}_{X}(U) \to \mathcal{O}_{X}(V)$に対して帰納極限の定義より図式
-  \begin{center}
-    \begin{tikzpicture}[auto]
-      \node (OU) at (0,0) {$\mathcal{O}_{X}(U)$};
-      \node (Oxi) at (0,-2.5) {$\mathcal{O}_{X,\xi}$};
-      \node (OV) at (2.5,0) {$\mathcal{O}_{X}(V)$};
-      \node (ci) at (0.75,-0.75) {$\circlearrowleft$};
+  \Lemma{
+    $A$を整域とし$K$をその商体とする．素イデアル$0$に対応する$X = \text{Spec}\, A$の点を$\xi$とする．このとき
+    \begin{equation*}
+      \mathcal{O}_{X,\xi} = K
+    \end{equation*}
+    が成り立つ．さらに，任意の空でない開集合$U \subset X$と$\xi \in U$に対して標準的な準同型
+    \begin{equation*}
+      \mathcal{O}_{X}(U) \to \mathcal{O}_{X,\xi}
+    \end{equation*}
+    は単射となる．開集合の組$V \subset U$に対して制限
+    \begin{equation*}
+      \mathcal{O}_{X}(U) \to \mathcal{O}_{X}(V)
+    \end{equation*}
+    は単射となる．
+  }{
+    Prop:\ref{Prop:1.5.1}(2)より
+    \begin{equation*}
+      \mathcal{O}_{X,\xi} = A_{\xi} = K
+    \end{equation*}
+    を得る．\\
+    $U=D(f)$とすると，$\mathcal{O}_{X}(U) = A_{f}\subset K$．一般に
+    \begin{equation*}
+      U = \bigcup_{i}D(f_{i})
+    \end{equation*}
+    と置く．$s\in \mathcal{O}_{X}(U)$を飛ばすと$0 \in K$になるとする．各開被覆$D(f_{i}) \subset U$への
+    制限を考えると
+    \begin{equation*}
+      s|_{D(f_{i})} = 0
+    \end{equation*}
+    が任意の$i$で成り立つので，$s=0$である．よって$\mathcal{O}_{X}(U) \to \mathcal{O}_{X,\xi} \subset K$は単射．\\
+    開集合の組$\xi \in V\subset U$に対して制限$\mathcal{O}_{X}(U) \to \mathcal{O}_{X}(V)$に対して帰納極限の定義より図式
+    \begin{center}
+      \begin{tikzpicture}[auto]
+        \node (OU) at (0,0) {$\mathcal{O}_{X}(U)$};
+        \node (Oxi) at (0,-2.5) {$\mathcal{O}_{X,\xi}$};
+        \node (OV) at (2.5,0) {$\mathcal{O}_{X}(V)$};
+        \node (ci) at (0.75,-0.75) {$\circlearrowleft$};
 
-      \draw[->] (OU) to node () {} (OV);
-      \draw[->] (OU) to node () {} (Oxi);
-      \draw[->] (OV) to node () {} (Oxi);
-    \end{tikzpicture}
-  \end{center}
-  が可換となるので，制限は単射である．
-}
+        \draw[->] (OU) to node () {} (OV);
+        \draw[->] (OU) to node () {} (Oxi);
+        \draw[->] (OV) to node () {} (Oxi);
+      \end{tikzpicture}
+    \end{center}
+    が可換となるので，制限は単射である．
+  }
 
-\Lemma{
-  $X = \text{Spec}\, A$をアフィンスキームとし，$g\in A$をとる．このとき開集合$D(g)$は
-  $X$から誘導される局所環付き空間で$\spec{A_{g}}$に同型なアフィンスキームになる．
-}{
-  $Y = \spec{A_{g}}$と置く．局所化と素イデアルの対応より標準的な開はめ込み
+  \Lemma{
+$X = \text{Spec}\, A$をアフィンスキームとし，$g\in A$をとる．このとき開集合$D(g)$は
+$X$から誘導される局所環付き空間で$\spec{A_{g}}$に同型なアフィンスキームになる．
+  }{
+$Y = \spec{A_{g}}$と置く．局所化と素イデアルの対応より標準的な開はめ込み
   \begin{equation*}
     i:Y \to X
   \end{equation*}
   がある($\im i = D(g)$)\\
-  $D(h)\subset D(g)$とする．$A\stackrel{\varphi}{\to} A_{g}$とする．また$\varphi(h) = \bar{h}$と置く．このとき標準的な同型
+$D(h)\subset D(g)$とする．$A\stackrel{\varphi}{\to} A_{g}$とする．また$\varphi(h) = \bar{h}$と置く．このとき標準的な同型
   \begin{equation*}
     \mathcal{O}_{X}(D(h)) = A_{h} \simeq (A_{g})_{\bar{h}} = \mathcal{O}_{Y}(D(\bar{h})) = i_{*}\mathcal{O}_{Y}(D(h))
   \end{equation*}
   % 同型がよくわからん
-  $\{D(h)\}_{h}$は$D(g)$の開基となるので，$i$は$(Y,\mathcal{O}_{Y})$から$(D(g),\mathcal{O}_{X}|_{D(g)})\subset (X,\mathcal{O}_{X})$
+$\{D(h)\}_{h}$は$D(g)$の開基となるので，$i$は$(Y,\mathcal{O}_{Y})$から$(D(g),\mathcal{O}_{X}|_{D(g)})\subset (X,\mathcal{O}_{X})$
   への同型を誘導する．(Refer to Exercises 2.7)
-}
+  }
 
-\Definition{
+  \Definition{
   \textbf{スキーム(scheme)}とは局所環付き空間$(X,\mathcal{O}_{X})$で開被覆$\{U_{i}\}_{i}$に対して$(U_{i},\mathcal{O}_{X}|_{U_{i}})$
   がアフィンスキームになるものが存在するときをいう．また$\mathcal{O}_{X}(U)$の元は(やや不適切であるが)\textbf{$U$上の正則関数(regular functions on $U$)}という．しかし，層の関数としての側面をよく表している．(Refer to Exercises 3.4 and Proposition 4.4)
-}
+  }
 
-明らかにアフィンスキームはスキームである．また，局所環付き空間$X$が開被覆$\{U_{i}\}_{i}$に対して
+  明らかにアフィンスキームはスキームである．また，局所環付き空間$X$が開被覆$\{U_{i}\}_{i}$に対して
 $(U_{i},\mathcal{O}_{X}|_{U_{i}})$がスキームだったら$X$はスキームである．逆に次の命題が従う．
 
-\Proposition{
-  $X$をスキームとする．このとき任意の開集合$U\subset X$に対して局所環付き空間$(U,\mathcal{O}_{X}|_{U})$はまたスキームになる．
-}{
+  \Proposition{
+$X$をスキームとする．このとき任意の開集合$U\subset X$に対して局所環付き空間$(U,\mathcal{O}_{X}|_{U})$はまたスキームになる．
+  }{
   定義より$X = \bigcup_{i}U_{i}$で$U_{i}$は開集合で，アフィンスキームになるものがある．
-  $U\cap U_{i}$がスキームとなることを示せば十分である．
-}
+$U\cap U_{i}$がスキームとなることを示せば十分である．
+  }
+
+  \Definition{
+$X$をスキームとする．$U$を$X$の開集合とする．スキーム$(U,\mathcal{O}_{X}|_{U})$を$X$の\textbf{開部分スキーム(open subscheme)}
+  更に$(U,\mathcal{O}_{X}|_{U})$がアフィンスキームになるとき$U$を\textbf{アフィン開集合(affine open subset)}という．
+  }
+
+  以下，$X$の開集合$U$はスキームの構造が与えられているとする．
+
+  \Definition{
+    $X$をスキーム，$f\in \mathcal{O}_{X}(X)$とする．
+    \begin{equation*}
+      X_{f}:= \{x\in X\ |\ f_{x} \in \mathcal{O}_{X,x}\}
+    \end{equation*}
+    %LiuのDef 3.11.では\mathcal{O}^{*}_{X,x}で書いていたが，*の記号の意味がよくわからんし，多分誤植．
+  }
+
+  次の条件を考えよう．
+
+  \begin{conditionbox}
+    $X$は有限アフィン開被覆$\{U_{i}\}_{i}$があって$U_{i}\cap U_{j}$はまた有限アフィン開被覆を持つ．
+  \end{conditionbox}
+  便宜上この条件を条件Aと呼称する．
+
+
+
+  \Proposition{
+$X$をスキームとし$f\in \mathcal{O}_{X}(X)$とする．このとき$X_{f}$は$X$の開集合で，
+  更に，$X$が条件Aを満たすなら，制限$\mathcal{O}_{X}(X)\to \mathcal{O}_{X}(X_{f})$は同型
+  \begin{equation*}
+    \mathcal{O}_{X}(X)_{f} \simeq \mathcal{O}_{X}(X_{f})
+  \end{equation*}
+  を誘導する．
+  }{
+$x\in X_{f}$とする．$x$の開近傍$U$と$g\in \mathcal{O}_{X}(U)$があって，$f_{x}g_{x} = 1$を満たすものがある．
+  }
 
 
 
