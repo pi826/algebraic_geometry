@@ -1082,6 +1082,11 @@ $V\subset X \mysetminus V(\mathcal{J})$となって$X\mysetminus V(\mathcal{J})$
   \textbf{アフィンスキーム(affine scheme)}という．
   }
 
+  \Remark{
+    $X,Y$をアフィンスキームとする．このとき$f:X\to Y$がアフィンスキームの射とは局所環付き空間としての射として定義する．
+    後に定義するスキームの射も同様である．また(アフィン)スキームが開(閉)はめ込みも局所環付き空間として定義される．
+  }{}
+
   \Lemma{
     $A$を整域とし$K$をその商体とする．素イデアル$0$に対応する$X = \text{Spec}\, A$の点を$\xi$とする．このとき
     \begin{equation*}
@@ -1171,9 +1176,9 @@ $X$をスキームとする．$U$を$X$の開集合とする．スキーム$(U,\
   \Definition{
     $X$をスキーム，$f\in \mathcal{O}_{X}(X)$とする．
     \begin{equation*}
-      X_{f}:= \{x\in X\ |\ f_{x} \in \mathcal{O}_{X,x}\}
+      X_{f}:= \{x\in X\ |\ f_{x} \in \mathcal{O}^{\times}_{X,x}\}
     \end{equation*}
-    %LiuのDef 3.11.では\mathcal{O}^{*}_{X,x}で書いていたが，*の記号の意味がよくわからんし，多分誤植．
+    ただし，$A^{\times}$は$A$の単元群である．(LiuのDefinition 3.11.では*の記号を用いている．)
   }
 
   次の条件を考えよう．
@@ -1194,7 +1199,85 @@ $X$をスキームとし$f\in \mathcal{O}_{X}(X)$とする．このとき$X_{f}$
   を誘導する．
   }{
 $x\in X_{f}$とする．$x$の開近傍$U$と$g\in \mathcal{O}_{X}(U)$があって，$f_{x}g_{x} = 1$を満たすものがある．
-  }
+$f_{x}g_{x} = (fg)_{x}$よりある$x$の開近傍$V\subset U$があって$fg|_{V}=1$を満たす．
+したがって，$V\subset X_{f}$となる．よって$X_{f}$は開集合である．\\
+更に，$V$が動くにつれて$f$の逆元$g\in \mathcal{O}_{X}(V)$を張り合わせると
+$f|_{X_{f}}$の$\mathcal{O}_{X}(X_{f})$での逆元を得る．\\
+詳しく言えば，$X_{f}$の上の$V$を集めた開被覆$\{V_{i}\}_{i}$を取り，$fg_{i}|_{V_{i}} = 1$なる$g_{i} \in \mathcal{O}_{X}(V_{i})$を考えれば
+任意の$i,j$に対して
+\begin{equation*}
+  fg_{i}|_{V_{i} \cap V_{j}} = 1 = fg_{j}|_{V_{i} \cap V_{j}}
+\end{equation*}
+より
+\begin{align*}
+  (左辺) - (右辺) 
+  &= fg_{i}|_{V_{i} \cap V_{j}} - fg_{j}|_{V_{i} \cap V_{j}}\\
+  &= f|_{V_{i} \cap V_{j}}(g_{i}|_{V_{i} \cap V_{j}} - g_{j}|_{V_{i} \cap V_{j}})\\
+  &= 0
+\end{align*}
+また，$f|_{V_{i}}$は単元なので逆元$(f|_{V_{i}})^{-1}$がある．また，
+\begin{equation*}
+  f|_{V_{i} \cap V_{j}} = (f|_{V_{i}})|_{V_{i} \cap V_{j}}
+\end{equation*}
+なので，
+\begin{align*}
+  f|_{V_{i} \cap V_{j}} ((f|_{V_{i}})^{-1}|_{V_{i} \cap V_{j}}) 
+  &= (f|_{V_{i}})|_{V_{i} \cap V_{j}} ((f|_{V_{i}})^{-1}|_{V_{i} \cap V_{j}}) \\
+  &= ((f|_{V_{i}})(f|_{V_{i}})^{-1})|_{V_{i} \cap V_{j}} \\
+  &= 1
+\end{align*}
+よって$f|_{V_{i} \cap V_{j}}$はまた単元で$g_{i}|_{V_{i} \cap V_{j}} = g_{j}|_{V_{i} \cap V_{j}}$を得る．
+
+$\mathcal{O}_{X}$は層なので，貼り合わせ条件より$g|_{V_{i}} = g_{i}$なる$g\in \mathcal{O}_{X}(X_{f})$がある．
+この$g$が$f|_{X_{f}}$の逆元になっている．\\
+よって制限$\mathcal{O}_{X}(X)\to \mathcal{O}_{X}(X_{f})$
+から準同型
+\begin{equation*}
+  \alpha : \mathcal{O}_{X}(X)_{f}\to \mathcal{O}_{X}(X_{f})
+\end{equation*}
+を誘導する．($\mathcal{O}_{X}(X)$は環なので$\mathcal{O}_{X}(X)_{f}$は$\{f^{n}\}_{n\in \mathbb{N}}$での局所化であることに注意しよう．)
+ここで条件Aを仮定すれば，$X$は有限アフィン開被覆$\mathcal{U} = \{U_{i}\}_{i}$を持つ．
+よって，
+\begin{equation*}
+  X_{f} = \bigcup_{i}U_{i}\cap X_{f} = \bigcup_{i}V_{i} = \bigcup_{i}D(f|_{U_{i}})
+\end{equation*}
+%D(f|_{U_{i}})がなぞ
+Lem:\ref{Lem:1.5.3}より$\mathcal{O}_{X}(U_{i})_{f} = \mathcal{O}_{X}(V_{i})$\\
+今以下の完全系列を得る．
+\begin{equation*}
+  C^{\bullet}(\mathcal{U},\mathcal{O}_{X}):0 \longrightarrow \mathcal{O}_{X}(X) \stackrel{d_{0}}{\longrightarrow} \bigoplus_{i}\mathcal{O}_{X}(U_{i}) \stackrel{d_{1}}{\longrightarrow} \bigoplus_{i,j}\mathcal{O}_{X}(U_{i} \cap U_{j})
+\end{equation*}
+ただし$d_{0}:s\mapsto (s|_{U_{i}})_{i},d_{1}:(s_{i})_{i}\mapsto (s_{i}|_{U_{i}\cap U_{j}} - s_{j}|_{U_{i} \cap U_{j}})_{i,j}$
+とする．(有限個なら直積$\prod$と直和$\bigoplus$は同じ)\\
+次にテンソルをとることは左完全関手なので$C^{\bullet}(\mathcal{U},\mathcal{O}_{X})\otimes_{\mathcal{O}_{X}(X)}\mathcal{O}_{X}(X)_{f}$
+はまた，完全列である．よってこれは次の可換図式を与える．
+
+\begin{center}
+  \begin{tikzpicture}[auto]
+    \node (00) at (0,0) {$0$};
+    \node (01) at (0,-2.5) {$0$};
+    \node (OX_f) at (2.5,0) {$\mathcal{O}_{X}(X)_{f}$};
+    \node (OXf_) at (2.5,-2.5) {$\mathcal{O}_{X}(X_{f})$};
+    \node (oOU_f) at (5.5,0) {$\bigoplus_{i}\mathcal{O}_{X}(U_{i})_{f}$};
+    \node (oOV) at (5.5,-2.5) {$\bigoplus_{i}\mathcal{O}_{X}(V_{i})$};
+    \node (oOUU_f) at (9.5,0) {$\bigoplus_{i,j}\mathcal{O}_{X}(U_{i}\cap U_{j})_{f}$};
+    \node (oOVV) at (9.5,-2.5) {$\bigoplus_{i,j}\mathcal{O}_{X}(V_{i}\cap V_{j})$};
+    \node (ci) at (1.25,-1.25) {$\circlearrowleft$};
+
+    \draw[->] (00) to (OX_f);
+    \draw[->] (01) to (OXf_);
+    \draw[->] (OX_f) to (oOU_f);
+    \draw[->] (OXf_) to (oOV);
+    \draw[->] (oOU_f) to (oOUU_f);
+    \draw[->] (oOV) to (oOVV);
+    \draw[->] (OX_f) to node[label=left:$\alpha$] () {} (OXf_);
+    % \draw[->] (X2) to node[yshift = -2pt,label=below:$f_{\lambda}$] () {} (Y2);
+    % \draw[->] (Y1) to node[xshift = -6pt,label=right:$\psi_{\lambda,\mu}$] () {} (Y2);
+  \end{tikzpicture}
+\end{center}
+
+
+}
 
 
 
@@ -1228,20 +1311,20 @@ $\Lambda$を順序集合.$\{X_{\lambda},\varphi_{\lambda,\mu}\},\{Y_{\lambda},\p
 $\{f_{\lambda}\}$で,任意の$\lambda \leq \mu$に対して
 $\psi_{\lambda,\mu}\circ f_{\mu} = f_{\lambda}\circ \varphi_{\lambda,\mu}$となるものを言う.
   %---------------後に図式を追加する.------------------%
-  \begin{center}
-    \begin{tikzpicture}[auto]
-      \node (X1) at (0,0) {$X_{\mu}$};
-      \node (X2) at (0,-2.5) {$X_{\lambda}$};
-      \node (Y1) at (2.5,0) {$Y_{\mu}$};
-      \node (Y2) at (2.5,-2.5) {$Y_{\lambda}$};
-      \node (ci) at (1.25,-1.25) {$\circlearrowleft$};
+\begin{center}
+  \begin{tikzpicture}[auto]
+    \node (X1) at (0,0) {$X_{\mu}$};
+    \node (X2) at (0,-2.5) {$X_{\lambda}$};
+    \node (Y1) at (2.5,0) {$Y_{\mu}$};
+    \node (Y2) at (2.5,-2.5) {$Y_{\lambda}$};
+    \node (ci) at (1.25,-1.25) {$\circlearrowleft$};
 
-      \draw[->] (X1) to node[yshift = -6pt,label=above:$f_{\mu}$] () {} (Y1);
-      \draw[->] (X1) to node[label=left:$\varphi_{\lambda,\mu}$] () {} (X2);
-      \draw[->] (X2) to node[yshift = -2pt,label=below:$f_{\lambda}$] () {} (Y2);
-      \draw[->] (Y1) to node[xshift = -6pt,label=right:$\psi_{\lambda,\mu}$] () {} (Y2);
-    \end{tikzpicture}
-  \end{center}
+    \draw[->] (X1) to node[yshift = -6pt,label=above:$f_{\mu}$] () {} (Y1);
+    \draw[->] (X1) to node[label=left:$\varphi_{\lambda,\mu}$] () {} (X2);
+    \draw[->] (X2) to node[yshift = -2pt,label=below:$f_{\lambda}$] () {} (Y2);
+    \draw[->] (Y1) to node[xshift = -6pt,label=right:$\psi_{\lambda,\mu}$] () {} (Y2);
+  \end{tikzpicture}
+\end{center}
   }
   \Definition{
 $\mathscr{C}$を圏とし,$\Lambda$を順序集合とする.$\{X_{\lambda},\varphi_{\mu,\lambda}\}$を
