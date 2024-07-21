@@ -1,0 +1,36 @@
+
+\subsection{Morphism of schemes}
+\Definition{
+  $f:X\to Y$が\textbf{スキームの射(morphism of schemes)}とは局所環付き空間としての射とする．
+}
+
+環の射$\varphi:A\to B$が誘導する射$\spec{B} \to \spec{A}$を$\varphi^{a}$と書くことにする．
+
+\Proposition{
+  $\varphi: A \to B$を環の射とする．このとき
+  \begin{equation*}
+    (\varphi^{a},(\varphi^{a})^{\#}):\spec{B} \to \spec{A}
+  \end{equation*}
+  は$(\varphi^{a})^{\#}(\spec{A})=\varphi$を満たすスキームの射である．
+}{
+  $X=\spec{B},Y=\spec{A}$と置く．任意の$g\in A$に対して
+  \begin{equation*}
+    (\varphi^{a})^{-1}(D(g))=D(\varphi(g))
+  \end{equation*}
+  が成り立ち，$\varphi$から誘導される環の射
+  \begin{equation*}
+    (\varphi^{a})^{\#}(D(g)):\mathcal{O}_{Y}(D(g)) = A_{g} \to B_{\varphi(g)} = (\varphi^{a})_{*}\mathcal{O}_{X}(D(g))
+  \end{equation*}
+  これは制限写像と可換(compatibleという意味で)になる．よって層の射
+  \begin{equation*}
+    (\varphi^{a})^{\#}:\mathcal{O}_{Y} \to \varphi^{a}_{*}\mathcal{O}_{X}
+  \end{equation*}
+  に拡張できる．
+  %開基？(or 基本開集合族)で決まっていれば拡張できることを証明する．
+  更に，任意の$\mathfrak{q} \in X$に対して$\varphi$から誘導される環の射
+  \begin{equation*}
+    A_{\varphi^{a}(\mathfrak{q})} \to B_{\mathfrak{q}}
+  \end{equation*}
+  は局所射で$(\varphi^{a})^{\#}_{x}$に一致する．よって$(\varphi^{a},(\varphi^{a})^{\#})$は
+  局所環付き空間の射になる．構成により$(\varphi^{a})^{\#}(Y)=\varphi$を満たす．
+}
