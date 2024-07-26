@@ -35,6 +35,9 @@ $\mathcal{F}$が層ならば$\mathcal{F}(\varnothing) = 0$となる.
 \Example{
 $X$を位相空間とする.\\
 $\mathcal{C}_{X}^{0}$を$X$の開集合$U$に対して$U\to \mathbf{C}$なる連続写像全体の集合$\mathcal{C}_{X}^{0}(U)$を対応させるものとし,制限写像を普通の制限とする.
+\begin{equation*}
+  \mathcal{C}_{X}^{0}(U) = \left\{ f:U \to \mathbf{C} \mid f\text{ is continuous} \right\}
+\end{equation*}
 すると,$\mathcal{C}_{X}^{0}$は$X$上の層となる.
 }{
 $V \subset U$なる開集合$U,V$に対して$U$上の連続写像$f\in \mathcal{C}_{X}^{0}(U)$を$V$に制限することによって得られる
@@ -71,74 +74,7 @@ $X$を位相空間、$A$をアーベル群とする。$p\in X$に対して$i_{p}
 と定義する。これは層になる。
 }{}
 
-\Remark{
-$\mathcal{B}$を位相空間$X$の開基で有限交叉で閉じているものとする.(つまり任意の$U,V\in \mathcal{B}$に対して$U\cap V \in \mathcal{B}$.\ e.g. $\text{Spec}\, A$の開基$\{D(f)\}_f$)
-このとき$\mathcal{B}$-前層($\mathcal{B}\text{-presheaf}$)\\$\mathcal{F}'$とは
-\begin{itemize}
-  \item[---] $U\in \mathcal{B}$に対して$\mathcal{F}'(U)$はアーベル群.
-  \item[---] $V\subset U \in \mathcal{B}$に対して群準同型$\rho_{U,V}:\mathcal{F}'(U) \to \mathcal{F}'(V)$が定まる.
-\end{itemize}
-としたもの.\\
-$\mathcal{B}$-層($\mathcal{B}\text{-sheaf}$)$\mathcal{F}'$から$X$上の層$\mathcal{F}$を作ることができる.\\
-% 位相空間$X$の任意の開集合$U$をとり,$\{U_{i}\}_{i}$をその開被覆とする.($U_{i} \in \mathcal{B}$)
-% \begin{equation*}
-%   \mathcal{F}(U):=\left\{(s_{i})_{i} \in \prod_{i}\mathcal{F}_0(U_{i})\ \Biggl|\ 任意のi,jに対してs_{i}|_{U_{i} \cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}\right\}
-% \end{equation*}
-% と定義する.するとこれは開被覆によらない.実際$\mathcal{F}(U)_{U_i}$を開被覆$\{U_{i}\}_{i}$による$\mathcal{F}(U)$とし,$\{V_{j}\}_{j}$を別の開被覆とすると,
-% $\{U_{i}\cap V_{j}\}_{i,j}$はこれら2つの細分である.$\mathcal{F}(U)_{U_i} \to \mathcal{F}(U)_{U_{i}\cap V_{j}}$なる群準同型を
-% $(s_{i})_{i}\mapsto (s_{i}|_{U_{i}\cap V_{j}})_{i,j}$で定義できる.実際
-% \begin{align*}
-%   s_{i} |_{U_{i} \cap V_{j}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}
-%     & = s_{i} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                                              \\
-%     & = s_{i} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                          \\
-%     & = s_{i'} |_{U_{i}\cap U_{i'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})} \quad (\because (s_{i})_{i} \in \mathcal{F}(U)_{U_{i}}) \\
-%     & = s_{i'} \Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}                                                                             \\
-%     & = s_{i'} |_{U_{i'} \cap V_{j'}}\Bigl|_{(U_{i} \cap V_{j}) \cap (U_{i'} \cap V_{j'})}
-% \end{align*}
-% より$(s_{i}|_{U_{i}\cap V_{j}})_{i,j}\in \mathcal{F}(U)_{U_{i} \cap V_{j}}$\\
-% また,$(s_{ij})_{ij}\in \mathcal{F}(U)_{U_{i}\cap V_{j}}$を取ると,
-% $(s_{ij})_{ij} = (s_{i}|_{U_{i} \cap V_{j}})$と出来るので全射(？？？？？)\\
-% Kernelを計算すると
-% \begin{align*}
-%     & s_{i}|_{U_{i}\cap V_{j}} = 0 \quad (\forall i,j)                \\
-%     & s_{i}|_{U_{i}}=s_{i} = 0 \quad (\forall i) \quad (\because (4))
-% \end{align*}
-% よってKernelが自明なので単射.
-% % $\mathcal{U}=\{U_{i}\}_{i}$を$X$の部分開集合族とする.$U=\cup_{i}U_{i},U_{ij}=U_{i}\cap U_{j}$
 
-
-位相空間$X$の任意の開集合$V$に対して
-\begin{align*}
-  \mathcal{F}(V)
-    & = \varprojlim_{\substack{U\in \mathcal{B}                  \\ U\subset V}}\mathcal{F}'(U)\\
-    & = \left\{(s_{U})_{U} \in \prod_{\substack{U\in \mathcal{B} \\ U \subset V}} \mathcal{F}'(U) \ \biggl|\
-  \forall U' \subset U \in \mathcal{B}, s_{U}|_{U'}=s_{U'} \right\}
-\end{align*}
-と定める．制限写像は射影極限から誘導される射である．
-\begin{center}
-  \begin{tikzpicture}[auto]
-    \node (X1) at (0,0) {$\mathcal{F}'(U)$};
-    \node (X2) at (0,-2.5) {$\displaystyle \varprojlim_{U}\mathcal{F}'(U)$};
-    \node (Y1) at (2.5,0) {$\mathcal{F}'(U')$};
-    \node (Y2) at (2.5,-2.5) {$\displaystyle \varprojlim_{U'}\mathcal{F}'(U')$};
-    \node (ci) at (1.25,-1.25) {$\circlearrowleft$};
-
-    \draw[->] (X1) to node[yshift = -6pt,label=above:$\rho_{U,U'}$] () {} (Y1);
-    \draw[->] (X2) to node[xshift = 6pt, label=left:$\varphi_{U}$] () {} (X1);
-    \draw[->] (X2) to node[yshift = -2pt,label=below:$f$] () {} (Y2);
-    \draw[->] (Y2) to node[xshift = 2pt,label=right:$\psi_{U'}$] () {} (Y1);
-  \end{tikzpicture}
-\end{center}
-% F(V)とF(V')にしてU'ではなくU\cap V'にしよう．
-これが層となることを確かめよう．まず，任意の開集合$V$とその開被覆$\{U_{i}\}_{i}\subset \mathcal{B}$をとる．
-$s\in \mathcal{F}(V)$に対して$s|_{U_{i}}=0$とする．すると定義から$U\subset V$なる任意の$U\in \mathcal{B}$に対して$s_{U}\in \mathcal{F}'(U)$が$0$であることを示せば$s=0$ということである．
-実際$V$の開被覆から$U$の開被覆$\{U \cap U_{i}\}_{i}\subset \mathcal{B}$が得られる.
-また任意の$i$に対して$U\cap U_{i} \subset U_{i}$より$s_{U_{i}}|_{U\cap U_{i}} = s_{U\cap U_{i}} = 0$となる．(いま$s_{U_{i}}$は$s|_{U_{i}}$のこと)
-したがって任意の$i$に対して$s_{U}|_{U\cap U_{i}} = 0$となる．いま$\mathcal{F}'$は層なので$s_{U}=0$
-よって$s=0$がわかった．\\
-また，$s_{i} \in \mathcal{F}(U_{i})$が$s_{i}|_{U_{i}\cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}$を満たすとする．
-よって，$U_{i}\cap U_{j} \in \mathcal{B}$より
-}{}
 
 
 \Definition{
