@@ -4,7 +4,8 @@
   $f:X\to Y$が\textbf{スキームの射(morphism of schemes)}とは局所環付き空間としての射とする．
 }
 
-環の射$\varphi:A\to B$が誘導する射$\spec{B} \to \spec{A}$を$\varphi^{a}$と書くことにする．
+環の射$\varphi:A\to B$が誘導する射$\spec{B} \to \spec{A}$を$\varphi^{a}$と書くことにする．\\
+つまり$\mathfrak{p}\in \spec{B}$に対して$\varphi^{a}(\mathfrak{p}) = \varphi^{-1}(\mathfrak{p})$
 
 \Proposition{
   $\varphi: A \to B$を環の射とする．このとき
@@ -13,13 +14,22 @@
   \end{equation*}
   は$(\varphi^{a})^{\#}(\spec{A})=\varphi$を満たすスキームの射である．
 }{
-  $X=\spec{B},Y=\spec{A}$と置く．任意の$g\in A$に対して
+  $X=\spec{B},Y=\spec{A}$と置く．任意の$f\in A$に対して
   \begin{equation*}
-    (\varphi^{a})^{-1}(D(g))=D(\varphi(g))
+    (\varphi^{a})^{-1}(D(f))=D(\varphi(f))
   \end{equation*}
-  が成り立ち，$\varphi$から誘導される環の射
+  が成り立ち，実際
+  \begin{align*}
+    (\varphi^{a})^{-1}(D(f)) 
+    &= \{ \mathfrak{p} \in X\ |\ \varphi^{a}(\mathfrak{p}) \in D(f)\}\\
+    &= \{ \mathfrak{p} \in X\ |\ f \notin \varphi^{a}(\mathfrak{p})\}\\
+    &= \{ \mathfrak{p} \in X \mid f \notin \varphi^{-1}(\mathfrak{p})\}\\
+    &= \{ \mathfrak{p} \in X \mid \varphi(f) \notin \mathfrak{p}\}\\
+    &= D(\varphi(f))
+  \end{align*}  
+  である．$\varphi$から誘導される環の射
   \begin{equation*}
-    (\varphi^{a})^{\#}(D(g)):\mathcal{O}_{Y}(D(g)) = A_{g} \to B_{\varphi(g)} = (\varphi^{a})_{*}\mathcal{O}_{X}(D(g))
+    (\varphi^{a})^{\#}(D(f)):\mathcal{O}_{Y}(D(f)) = A_{f} \to B_{\varphi(f)} = \mathcal{O}_{X}(D(\varphi(f))) = (\varphi^{a})_{*}\mathcal{O}_{X}(D(f))
   \end{equation*}
   これは制限写像と可換(compatibleという意味で)になる．よって層の射
   \begin{equation*}
@@ -29,8 +39,83 @@
   %開基？(or 基本開集合族)で決まっていれば拡張できることを証明する．
   更に，任意の$\mathfrak{q} \in X$に対して$\varphi$から誘導される環の射
   \begin{equation*}
-    A_{\varphi^{a}(\mathfrak{q})} \to B_{\mathfrak{q}}
+    (\varphi^{a})^{\#}_{\mathfrak{q}}:A_{\varphi^{a}(\mathfrak{q})} \to B_{\mathfrak{q}}
   \end{equation*}
-  は局所射で$(\varphi^{a})^{\#}_{x}$に一致する．よって$(\varphi^{a},(\varphi^{a})^{\#})$は
-  局所環付き空間の射になる．構成により$(\varphi^{a})^{\#}(Y)=\varphi$を満たす．
+  は局所射で，実際
+  \begin{align*}
+    (\varphi^{a})^{\#}_{\mathfrak{q}}(\varphi^{a}(\mathfrak{q})A_{\varphi^{a}(\mathfrak{q})})
+    &= \{ \varphi(a)/\varphi(p) \mid a\in \varphi^{a}(\mathfrak{q}),p \notin \varphi^{a}(\mathfrak{q})\}\\
+    &= \{\varphi(a)/\varphi(p)\mid \varphi(a)\in \mathfrak{q},\varphi(p)\notin \mathfrak{q}\}\\
+    &\subset \{b/q\mid b\in \mathfrak{q},q\notin \mathfrak{q}\}\\
+    &= \mathfrak{q}B_{\mathfrak{q}}
+  \end{align*}
+  よって$(\varphi^{a},(\varphi^{a})^{\#})$は
+  局所環付き空間の射になる．構成により
+  \begin{equation*}
+    (\varphi^{a})^{\#}(Y):\mathcal{O}_{Y}(Y) = A \to B = \mathcal{O}_{X}(X) = (\varphi^{a})_{*}\mathcal{O}_{X}(Y)
+  \end{equation*}
+  で$(\varphi^{a})^{\#}(Y) = \varphi$を満たす．
 }
+
+\Lemma{
+  $A$を環とし，$I$をそのイデアルとする．このとき，スキームの射
+  \begin{equation*}
+    i:\spec{A/I} \to \spec{A}
+  \end{equation*}
+  が自然な射影$\varphi:A\to A/I$によって誘導される．$i$は$\im{i} = V(I)$へのスキームの閉はめ込みである．
+  更に，任意の$\spec{A}$の基本開集合$D(f)$に対して
+  \begin{equation*}
+    (\ker{i^{\#}})(D(f)) = I\otimes_{A}A_{f}
+  \end{equation*}
+  が成り立つ．
+}{
+  $i$が閉はめ込みであることはよい．次に，任意の$\spec{A}$の基本開集合$D(f)$に対して先ほど
+  みたように，標準的な全射
+  \begin{equation*}
+    \mathcal{O}_{\spec{A}}(D(f)) = A_{f} \to (A/I)_{\varphi(f)} = i_{*}\mathcal{O}_{\spec{A}}(D(f))
+  \end{equation*}
+  がある．これにより，$i^{\#}$の全射性と，$(\ker{i^{\#}})(D(f)) = I_{f} = I\otimes_{A}A_{f}$
+  がわかる．
+}
+
+\Definition{
+  $Z$を$X$の閉集合とする．このとき$Z$が\textbf{閉部分スキーム(closed subscheme)}とは
+  包含写像$j:Z\to X$が閉はめ込み
+  \begin{equation*}
+    (j,j^{\#}):(Z,\mathcal{O}_{Z}) \to (X,\mathcal{O}_{X})
+  \end{equation*}
+  となるときをいう．
+}
+
+
+
+\Proposition{
+  $X=\spec{A}$をアフィンスキームとする．$j:Z\to X$をスキームの閉はめ込みとする．
+  このとき，$Z$はアフィンスキームで，あるイデアル$J\subset A$が唯一存在して
+  $j$は同型$Z\stackrel{\simeq}{\longrightarrow}\spec{A/J}$を誘導する．
+}{}
+
+\Definition{
+  $S$をスキームとする．このとき$X$が\textbf{$S$-スキーム($S$-scheme)}または\textbf{$S$上のスキーム(scheme over $S$)}とは
+  スキームの射$\pi:X \to S$が与えられているときをいう．この$\pi$を\textbf{構造射(structural morphism,\ structure morphism)}
+  ，$S$を\textbf{基底スキーム(base scheme)}という．
+}
+
+スキーム$X,Y$に対して
+\begin{equation*}
+  \hom{\textbf{Sch}}{X}{Y}:=\{f:X\to Y\ |\ f\text{ is morphism of schemes}\}
+\end{equation*}
+また，環$A,B$に対して
+\begin{equation*}
+  \hom{\textbf{Ring}}{A}{B}:=\{f:A\to B\ |\ f\text{ is morphism of rings}\}
+\end{equation*}
+とおく．このとき標準的な写像
+\begin{equation*}
+  \rho:\hom{\textbf{Sch}}{X}{Y} \to \hom{\textbf{Ring}}{\mathcal{O}_{Y}(Y)}{\mathcal{O}_{X}(X)}
+\end{equation*}
+がある．実際$(f,f^{\#})\in \hom{\textbf{Sch}}{X}{Y}$とすると
+\begin{equation*}f^{\#}(Y):\mathcal{O}_{Y}(Y) \to f_{*}\mathcal{O}_{X}(Y) = \mathcal{O}_{X}(f^{-1}(Y))=\mathcal{O}_{X}(X)
+\end{equation*}
+がある．
+%関手的であることを確認する．
+
