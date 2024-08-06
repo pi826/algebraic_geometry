@@ -5,8 +5,10 @@
     - [1.1 Zariski Topology](#11-zariski-topology)
     - [1.2 Algebraic Sets](#12-algebraic-sets)
     - [1.3 Sheaves](#13-sheaves)
+    - [1.3.1 $\\mathfrak{B}$-sheaf](#131-mathfrakb-sheaf)
     - [1.4 Ringed Topological Space](#14-ringed-topological-space)
     - [1.5 Scheme](#15-scheme)
+    - [1.5.1 Morphism of schemes](#151-morphism-of-schemes)
   - [Appendix A: Limits](#appendix-a-limits)
     - [A.1 Inductive Limit](#a1-inductive-limit)
   - [Appendix B: Category Theory](#appendix-b-category-theory)
@@ -43,18 +45,29 @@
 全く書いてない。
 
 ### 1.3 Sheaves
-加筆が必要。<br>
-- B-shaef
+加筆が必要．<br>
 - Sheafification
 - ~~Lem 1.3.8~~
 - ~~direct image and inverse image~~
 - Exercises
 
+### 1.3.1 $\mathfrak{B}$-sheaf
+加筆が必要．<br>
+- 層になることを証明する．
+- ついでに，開基上でmorphismが構成されているときに，任意の開集合上のmorphismに拡張できることを示す．
+
+
 ### 1.4 Ringed Topological Space
 加筆が必要．<br>
 - Prop 1.4.2
+- 例を増やす．
 
 ### 1.5 Scheme
+加筆が必要．<br>
+- 証明を書く．
+- 例を書く．
+
+### 1.5.1 Morphism of schemes
 書いている．
 
 <br>
