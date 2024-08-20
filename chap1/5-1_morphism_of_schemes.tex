@@ -115,7 +115,18 @@
   \textbf{構造射(structural morphism,\ structure morphism)}
   ，$S$を
   \index{きていすきーむ@基底スキーム}\index{base scheme}
-  \textbf{基底スキーム(base scheme)}という．
+  \textbf{基底スキーム(base scheme)}という．$S=\spec{A}$のときまた$X$を
+  \index{えーすきーむ/えーじょうのすきーむ@$A$-スキーム/$A$上のスキーム}\index{A-scheme/scheme over A@$A$-scheme/scheme over $A$}
+  \textbf{$A$-スキーム($A$-scheme)}または\textbf{$A$上のスキーム(scheme over $A$)}
+  という．このとき$A$を\index{きていかん@基底環}\index{base ring}\textbf{基底環(base ring)}
+}
+
+\Definition{
+  $\pi:X\to S,\rho:Y \to S$を$S$上のスキームとする．このとき
+  \index{えすすきーむ/えすじょうのすきーむ@$S$-スキーム/$S$上のスキーム!のしゃ@の射}
+  \index{S-scheme/scheme over S@$S$-scheme/scheme over $S$!morphism}
+  \textbf{$S$-スキームの射(morphism of $S$-scheme)}$f:X\to Y$とは$f$がスキームの射で
+  $\rho \circ f = \pi$を満たすことをいう．
 }
 
 スキーム$X,Y$に対して
@@ -136,3 +147,21 @@
 がある．
 %関手的であることを確認する．
 
+
+\Definition{
+  $\pi:X\to S$を$S$上のスキームとする．\textbf{$X$の切断(section of $X$)}\index{せつだん@切断}
+  \index{section}とは$S$上のスキームの射$\sigma:S\to X$で$\pi \circ \sigma=\text{id}_S$となるときをいう．
+  $X$の切断の集合を$X(S)$($S=\spec{A}$のときは$X(A)$)とかく．
+}
+
+\Example{
+  $X$を体$k$上のスキームとする．このとき
+  \begin{equation*}
+    X(k) = \{x\in X\mid k(x) = k\}
+  \end{equation*}
+  実際$\sigma\in X(k)$をとる．$\mathcal{O}_{\spec{k},(0)} = k_{(0)} = k$より
+  \begin{equation*}
+    \sigma^{\#}_{(0)}:\mathcal{O}_{X,\sigma((0))}\to \mathcal{O}_{\spec{k},(0)} = k
+  \end{equation*}
+  で，
+}{}
