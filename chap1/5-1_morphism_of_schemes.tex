@@ -1,6 +1,7 @@
 
 \subsection{Morphism of schemes}
 \Definition{
+  \index{すきーむ@スキーム!のしゃ@の射}\index{scheme!morphism}
   $f:X\to Y$が\textbf{スキームの射(morphism of schemes)}とは局所環付き空間としての射とする．
 }
 
@@ -72,14 +73,23 @@
   $i$が閉はめ込みであることはよい．次に，任意の$\spec{A}$の基本開集合$D(f)$に対して先ほど
   みたように，標準的な全射
   \begin{equation*}
-    \mathcal{O}_{\spec{A}}(D(f)) = A_{f} \to (A/I)_{\varphi(f)} = i_{*}\mathcal{O}_{\spec{A}}(D(f))
+    \mathcal{O}_{\spec{A}}(D(f)) = A_{f} \to (A/I)_{\varphi(f)} = i_{*}\mathcal{O}_{\spec{A/I}}(D(f))
   \end{equation*}
-  がある．これにより，$i^{\#}$の全射性と，$(\ker{i^{\#}})(D(f)) = I_{f} = I\otimes_{A}A_{f}$
+  がある．これにより，$i^{\#}$の全射性と，
+  \begin{align*}
+    (\ker{i^{\#}})(D(f)) 
+    &= \ker{(i^{\#}(D(f)))}\\
+    &= \ker{(A_{f} \to (A/I)_{\varphi(f)})}\\
+    &= I_{f} \\
+    &= I\otimes_{A}A_{f}
+  \end{align*}
   がわかる．
 }
 
 \Definition{
-  $Z$を$X$の閉集合とする．このとき$Z$が\textbf{閉部分スキーム(closed subscheme)}とは
+  $Z$を$X$の閉集合とする．このとき$Z$が
+  \index{へいぶぶんすきーむ@閉部分スキーム}\index{closed subscheme}
+  \textbf{閉部分スキーム(closed subscheme)}とは
   包含写像$j:Z\to X$が閉はめ込み
   \begin{equation*}
     (j,j^{\#}):(Z,\mathcal{O}_{Z}) \to (X,\mathcal{O}_{X})
@@ -96,9 +106,16 @@
 }{}
 
 \Definition{
-  $S$をスキームとする．このとき$X$が\textbf{$S$-スキーム($S$-scheme)}または\textbf{$S$上のスキーム(scheme over $S$)}とは
-  スキームの射$\pi:X \to S$が与えられているときをいう．この$\pi$を\textbf{構造射(structural morphism,\ structure morphism)}
-  ，$S$を\textbf{基底スキーム(base scheme)}という．
+  $S$をスキームとする．このとき$X$が
+  \index{えすすきーむ/えすじょうのすきーむ@$S$-スキーム/$S$上のスキーム}
+  \index{S-scheme/scheme over S@$S$-scheme/scheme over $S$}
+  \textbf{$S$-スキーム($S$-scheme)}または\textbf{$S$上のスキーム(scheme over $S$)}とは
+  スキームの射$\pi:X \to S$が与えられているときをいう．この$\pi$を
+  \index{こうぞうしゃ@構造射}\index{structural morphism}
+  \textbf{構造射(structural morphism,\ structure morphism)}
+  ，$S$を
+  \index{きていすきーむ@基底スキーム}\index{base scheme}
+  \textbf{基底スキーム(base scheme)}という．
 }
 
 スキーム$X,Y$に対して

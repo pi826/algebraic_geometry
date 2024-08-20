@@ -1,7 +1,8 @@
 
 \Section{Sheaves}
 \Definition{
-$X$を位相空間とする.$X$上の(アーベル群の)\textbf{前層}(presheaf)$\, \mathcal{F}$とは
+$X$を位相空間とする.$X$上の(アーベル群の)\textbf{前層}(presheaf)
+\index{ぜんそう@前層}\index{presheaf}$\, \mathcal{F}$とは
 次のデータ
 \begin{center}
   \begin{itemize}
@@ -16,12 +17,12 @@ $X$を位相空間とする.$X$上の(アーベル群の)\textbf{前層}(preshea
   \item[(2)] 任意の開集合$W\subset V \subset U$に対して$\rho_{U,W}=\rho_{V,W}\circ \rho_{U,V}$となる.
 \end{itemize}
 }
-$s\in \mathcal{F}(U)$を$U$上の$\mathcal{F}$の\textbf{切断}(section)という.
+$s\in \mathcal{F}(U)$を$U$上の$\mathcal{F}$の\index{せつだん@切断}\index{section}\textbf{切断}(section)という.
 また,$\rho_{U,V}(s)\in \mathcal{F}(V)$を$s|_{V}$と書いて$s$の$V$への制限という.\\
 また,単に$\mathcal{F,G,H,}\dots$などと書いたら(前)層を表すことや、$\rho$と書いたら制限写像を意味する。
 また,どの(前)層の制限写像かを明示するため,例えば,$\rho_{U,V}^{\mathcal{F}}$などと書くことがある。
 \Definition{
-前層$\mathcal{F}$が層(sheaf)とは次の条件を満たすことをいう.
+前層$\mathcal{F}$が\index{そう@層}\index{sheaf}層(sheaf)とは次の条件を満たすことをいう.
 \begin{itemize}
   \item[(4)] (Uniqueness) $U$を$X$の開集合とし$\{U_{i}\}_{i}$をその開被覆とする.
         $s\in \mathcal{F}(U)$が任意の$i$に対して$s|_{U_{i}}=0$ならば$s=0$
@@ -78,12 +79,12 @@ $X$を位相空間、$A$をアーベル群とする。$p\in X$に対して$i_{p}
 
 
 \Definition{
-  位相空間$X$上の前層$\mathcal{F}$と$x\in X$に対して,$x$での$\mathcal{F}$の\textbf{茎(stalk)}$\mathcal{F}_{x}$という群が定義できる.
+  位相空間$X$上の前層$\mathcal{F}$と$x\in X$に対して,$x$での$\mathcal{F}$の\index{くき@茎}\index{stalk}\textbf{茎(stalk)}$\mathcal{F}_{x}$という群が定義できる.
   \begin{equation*}
     \mathcal{F}_{x} = \varinjlim_{U \ni x}\mathcal{F}(U)
   \end{equation*}
   ただし,$U$は$x$の開近傍をすべてを回る.$U$上の切断$s\in \mathcal{F}(U)$に対して
-  $x\in U$の茎$\mathcal{F}_{x}$への自然な群準同型の像を$s_{x}$と書いて,$x$での$s$の\textbf{芽(germ)}という.
+  $x\in U$の茎$\mathcal{F}_{x}$への自然な群準同型の像を$s_{x}$と書いて,$x$での$s$の\index{め@芽}\index{germ}\textbf{芽(germ)}という.
 }
 \Remark{
   ここで，$\mathcal{F}_{x}$は$x$近傍の情報を持っていると言える．実際，
@@ -115,7 +116,7 @@ $\mathcal{F}$を$X$上の層とする.$s,t \in \mathcal{F}(X)$が任意の$x \in
 差を考えれば$t=0$のときを考えればいい.$s_{x}=0\ (\forall x\in X)$とすると,$x$の開近傍$U_{x}$があって$s|_{U_{x}}=0$となる.$\{U_{x}\}_{x\in U_{x}}$は$X$の開被覆なので,$s=0$となる.
 }
 \Definition{
-$X$上の2つの前層$\mathcal{F,G}$とする.\textbf{前層の射}$\alpha:\mathcal{F} \to \mathcal{G}$
+$X$上の2つの前層$\mathcal{F,G}$とする.\index{ぜんそう@前層!のしゃ@の射}\index{presheaf!morphism}\textbf{前層の射}$\alpha:\mathcal{F} \to \mathcal{G}$
 とは,$X$の開集合$U$に対して群準同型$\alpha(U):\mathcal{F}(U) \to \mathcal{G}(U)$があって,
 任意の開集合の組$V\subset U$に対して$\alpha(V)\circ \rho_{U,V}^{\mathcal{F}} = \rho_{U,V}^{\mathcal{G}}\circ \alpha(U)$を満たすことをいう.\\
 $X$の任意の開集合$U$に対して$\alpha(U)$が単射ならば$\alpha$は単射であるという.(全射はうまくいかんっぽい？)
@@ -140,7 +141,8 @@ $\alpha_{x}$が任意の$x\in X$で全射なら$\alpha$が全射であるとい�
   \end{center}
 }{}
 \Theorem{
-位相空間$X$上の前層$\mathcal{F}$に対して,前層$\mathcal{F}$の層化(sheafification)$\mathcal{F}^{\dagger}$は存在する.
+位相空間$X$上の前層$\mathcal{F}$に対して,\index{ぜんそう@前層!のそうか@の層化}\index{sheafification}
+前層$\mathcal{F}$の層化(sheafification)$\mathcal{F}^{\dagger}$は存在する.
 }{
 $X$の開集合$U$に対して
 \begin{equation*}
@@ -238,15 +240,19 @@ $$
   が成り立つことは制限写像の定義から明らかである。よって$\mathcal{G}$は前層。
 }
 \Definition{
-  Lem:\ref{Lem:1.3.8}で定義した前層の層化を$\mathcal{F}/\mathcal{F}'$と書いて、\textbf{商層(quotient shaef)}という。
+  Lem:\ref{Lem:1.3.8}で定義した前層の層化を$\mathcal{F}/\mathcal{F}'$と書いて、\index{しょうそう@商層}\index{quotient sheaf}
+  \textbf{商層(quotient shaef)}という。
 }
 \Definition{
   $\alpha:\mathcal{F} \to \mathcal{G}$を前層の射とする。このとき開集合$U$に対して
   $U \mapsto \ker (\alpha(U))$とするものは$\mathcal{F}$の部分層になる。これを$\ker{\alpha}$と
-  書いて、\textbf{$\alpha$の核(kernel of $\alpha$)}という。\\
+  書いて、\index{ぜんそう@前層!のしゃ@の射!のかく@の核}\index{presheaf!morphism!kernel}\textbf{$\alpha$の核(kernel of $\alpha$)}という。\\
   更に、$U\mapsto \im (\alpha(U))$は一般には前層となるので、これの層化を$\im \alpha$と書いて、
+  \index{ぜんそう@前層!のしゃ@の射!のぞう@の像}\index{presheaf!morphism!image}
   \textbf{$\alpha$の像(image of $\alpha$)}という。\\
-  また，$U\mapsto \coker (\alpha(U)) = \mathcal{G}(U)/\im (\alpha(U))$は一般には前層となるので，これの層化を$\coker \alpha$と書いて，\textbf{$\alpha$の余核(cokernel of $\alpha$)}という．
+  また，$U\mapsto \coker (\alpha(U)) = \mathcal{G}(U)/\im (\alpha(U))$は一般には前層となるので，これの層化を$\coker \alpha$と書いて，
+  \index{ぜんそう@前層!のしゃ@の射!のよかく@の余核}\index{presheaf!morphism!cokernel}
+  \textbf{$\alpha$の余核(cokernel of $\alpha$)}という．
 }
 \Lemma{
 $\mathcal{F,G}$を$X$上の層,$\mathcal{F}'$を$\mathcal{F}$の部分層,$\alpha:\mathcal{F} \to \mathcal{G}$を前層の射とする。
@@ -355,12 +361,16 @@ $\mathcal{Q}(U) = \mathcal{F}(U)/\mathcal{F}'(U)$とおく。\\
   \begin{equation*}
     V \mapsto \mathcal{F}(f^{-1}(V))
   \end{equation*}
-  によって定義できる。これを\textbf{$\mathcal{F}$の順像(direct image of $\mathcal{F}$)}という。\\
+  によって定義できる。これを
+  \index{そう@層!のじゅんぞう@の順像}\index{sheaf!direct image}
+  \textbf{$\mathcal{F}$の順像(direct image of $\mathcal{F}$)}という。\\
   また、
   \begin{equation*}
     U \mapsto \varinjlim_{V\supset f(U)}\mathcal{G}(V)
   \end{equation*}
-  で定義できる新たな$X$上の前層$f^{\cdot}\mathcal{G}$の層化$f^{*}\mathcal{G}$を\textbf{$\mathcal{G}$の逆像(inverse image of $\mathcal{G}$)}
+  で定義できる新たな$X$上の前層$f^{\cdot}\mathcal{G}$の層化$f^{*}\mathcal{G}$を
+  \index{そう@層!のぎゃくぞう@の逆像}\index{sheaf!inverse image}
+  \textbf{$\mathcal{G}$の逆像(inverse image of $\mathcal{G}$)}
   という。
 }
 

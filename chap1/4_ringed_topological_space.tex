@@ -2,15 +2,21 @@
 \Section{Ringed Topological Space}
 
 \Definition{
+  \index{きょくしょかんつきくうかん@局所環付き空間}\index{locally ringed space}
   \textbf{局所環付き空間}とは位相空間$X$と$X$上の環の層$\mathcal{O}_{X}$の組$(X,\mathcal{O}_{X})$
   で、任意の$x\in X$に対して$\mathcal{O}_{X,x}$が局所環となるものをいう。また、この$\mathcal{O}_{X}$
-  を$(X,\mathcal{O}_{X})$の\textbf{構造層(structure sheaf)}という。また$(X,\mathcal{O}_{X})$を単に
+  を$(X,\mathcal{O}_{X})$の
+  \index{こうぞうそう@構造層}\index{structure sheaf}
+  \textbf{構造層(structure sheaf)}という。また$(X,\mathcal{O}_{X})$を単に
   $\mathcal{O}_{X}$と書くことがある。\\
   また、$\mathcal{O}_{X,x}$の唯一の極大イデアル$\mathfrak{m}_{x}$に対して
-  その剰余体$\mathcal{O}_{X,x}/\mathfrak{m}_{x}$を\textbf{$X$の点$x$での剰余体(residue field of X at x)}といって$k(x)$と書く。
+  その剰余体$\mathcal{O}_{X,x}/\mathfrak{m}_{x}$を
+  \index{てんでのじょうよたい@点での剰余体}\index{residue field at point}
+  \textbf{$X$の点$x$での剰余体(residue field of X at x)}といって$k(x)$と書く。
 }
 
 \Definition{
+\index{きょくしょかんつきくうかん@局所環付き空間!のしゃ@の射}\index{locally ringed space!morphism}
 局所環付き空間の射とは
 \begin{equation*}
   (f,f^{\#}): (X,\mathcal{O}_{X}) \to (Y,\mathcal{O}_{Y})
@@ -29,13 +35,17 @@ Prop:\ref{Prop:1.3.13}より
 を考えることに等しい．Def:\ref{Def:1.4.2}の$f^{\#}_{x}$は下の式で考えている．
 
 \Definition{
-射$(f,f^{\#}):(X,\mathcal{O}_{X}) \to (Y,\mathcal{O}_{Y})$が\textbf{開はめ込み(open immersion)}(resp. \textbf{閉はめ込み(closed immersion)})
+\index{きょくしょかんつきくうかん@局所環付き空間!かいはめこみ@開はめ込み}\index{locally ringed space!open immersion}
+射$(f,f^{\#}):(X,\mathcal{O}_{X}) \to (Y,\mathcal{O}_{Y})$が\textbf{開はめ込み(open immersion)}(resp. 
+\index{きょくしょかんつきくうかん@局所環付き空間!へいはめこみ@閉はめ込み}\index{locally ringed space!closed immersion}
+\textbf{閉はめ込み(closed immersion)})
 とは連続写像$f$が開はめ込み(resp. 閉はめ込み)
 \footnote{$f:X\to Y$が(位相的)開(閉)はめ込みとは$X$と$f(X)$が同相で$f(X)$が開(閉)集合のときをいう。}
 でかつ任意の$x\in X$に対して$f^{\#}_{x}$が同型(resp. 全射)のときをいう。
 }
 
 \Definition{
+  \index{いであるそう@イデアル層}\index{sheaf of ideals}
   $(X,\mathcal{O}_{X})$を局所環付き空間とする。$\mathcal{J}$が$\mathcal{O}_{X}$の
   \textbf{イデアル層(sheaf of ideals of $\mathcal{O}_{X}$)}とは任意の開集合$U$に対して
   $\mathcal{J}(U)$が$\mathcal{O}_{X}(U)$のイデアルになっているときをいう。

@@ -1,6 +1,5 @@
 \documentclass[dvipdfmx,a4paper,11pt]{jsbook}
 
-
 % 数式
 \usepackage{amsmath,amsfonts}
 \usepackage[mathcal]{euscript}
@@ -17,6 +16,7 @@
 \usepackage{mathrsfs}
 \usepackage[scr]{rsfso}
 \usepackage{relsize}
+\usepackage{makeidx}
 
 % 画像
 % \usepackage[dvipdfmx]{graphicx,color}
@@ -390,6 +390,7 @@ sharp corners
 \renewcommand{\hom}[3]{\mathrm{Hom}_{#1}(#2,#3)}
 \newcommand{\spec}[1]{\mathrm{Spec}\, #1}
 
+\makeindex
 
 \begin{document}
 
@@ -449,5 +450,5 @@ sharp corners
 \chapter{Limit}
 \input{appendix/1_limit/1_inductive_limit.tex}
 
-
+\printindex
 \end{document}

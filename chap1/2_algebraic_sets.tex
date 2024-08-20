@@ -1,3 +1,22 @@
 
 \Section{Algebraic Sets}
-atodekakuyo
+$A$をNoether環，$I$をそのイデアルとするとき$\text{bl}_{I}A$はNoether環である．\\
+$\text{bl}_{I}A = A[It]$に注意すると任意の元は$I$の生成元の集合を$\{a_{1},\cdots,a_{r}\}$とすると
+\begin{align*}
+  \sum_{n} \left(\sum_{i}a_{i,n}a_{i}\right)^{n}t^{n}= \sum_{n}\sum_{\substack{i_{1},\cdots,i_{r}\\ i_{1}+i_{2} +\cdots + i_{r} = n}}b_{i_{1},\cdots ,i_{r},n}a_{1}^{i_{1}}\cdots a_{r}^{i_{r}}t^{n}
+\end{align*}
+なので$\varphi:A[X_{1},\cdots,X_{r}] \to A[It]$を$X_{i} \mapsto a_{i}$とすると
+\begin{align*}
+  \varphi(\sum_{i_{1},\cdots,i_{r}}a_{i_{1},\cdots ,i_{r}}X_{1}^{i_{1}}\cdots X_{r}^{i_{r}}) 
+  &= \sum_{i_{1},\cdots,i_{r}}a_{i_{1},\cdots,i_{r}}a_{1}^{i_{1}}\cdots a_{r}^{i_{r}}\\
+  &= \sum_{n}\sum_{\substack{i_{1},\cdots,i_{r}\\ i_{1}+i_{2}+\cdots + i_{r} = n}}a_{i_{1},\cdots,i_{r}}a_{1}^{i_{1}}\cdots a_{r}^{i_{r}}t^{n}
+\end{align*}
+全射準同型なので
+\begin{equation*}
+  A[X_{1},\cdots,X_{r}]/\ker{\varphi} \simeq A[It]
+\end{equation*}
+左辺はNoether環なので$\text{bl}_{I}A$はNoether環である．特に
+\begin{equation*}
+  \text{gr}_{I}A = \text{bl}_{I}A/I\, \text{bl}_{I}A 
+\end{equation*}
+もNoether環である．

@@ -13,6 +13,7 @@ $\mathfrak{B}$-sheafはアフィンスキームの構成にも必要な概念で
 
 \Definition{
   $X$を位相空間．$\mathfrak{B}$をその開基とする．このとき$\mathcal{F}$が
+  \index{びーぜんそう@$\mathfrak{B}$-前層}\index{B-presheaf@$\mathfrak{B}$-presheaf}
   \textbf{$\mathfrak{B}$-前層($\mathfrak{B}$-presheaf)}であるとは，
   \begin{itemize}
     \item[---] $U\in \mathcal{B}$に対して$\mathcal{F}(U)$はアーベル群.
@@ -28,33 +29,46 @@ $\mathfrak{B}$-sheafはアフィンスキームの構成にも必要な概念で
 
 \Definition{
   $\mathfrak{B}$が有限交叉で閉じているとする．このとき$\mathfrak{B}$-前層が層の条件を満たすとき
+  \index{びーそう@$\mathfrak{B}$-層}\index{B-sheaf@$\mathfrak{B}$-sheaf}
   \textbf{$\mathfrak{B}$-層($\mathfrak{B}$-sheaf)}という．
 }
 
 \Proposition{
-  $\mathcal{F}$を$\mathfrak{B}$-前層とする．このとき，任意の開集合$V$に対して
-  \begin{align*}
-    \mathcal{F}(V)
-      & = \varprojlim_{\substack{U\in \mathcal{B}                  \\ U\subset V}}\mathcal{F}(U)\\
-      & = \left\{(s_{U})_{U} \in \prod_{\substack{U\in \mathcal{B} \\ U \subset V}} \mathcal{F}(U) \ \biggl|\
-    \forall U' \subset U \in \mathcal{B}, s_{U}|_{U'}=s_{U'} \right\}
-  \end{align*}
-  制限写像は射影極限から誘導される射である．
-  \begin{center}
-    \begin{tikzpicture}[auto]
-      \node (X1) at (0,0) {$\mathcal{F}(U)$};
-      \node (X2) at (0,-2.5) {$\displaystyle \varprojlim_{U\subset V}\mathcal{F}(U)$};
-      \node (Y1) at (2.5,0) {$\mathcal{F}(U')$};
-      \node (Y2) at (2.5,-2.5) {$\displaystyle \varprojlim_{U'\subset V'}\mathcal{F}(U')$};
-      \node (ci) at (1.25,-1.25) {$\circlearrowleft$};
+  $\mathcal{F}$を$\mathfrak{B}$-層とする．このとき，任意の開集合$V$に対して
+  \begin{equation*}
+    \mathcal{F}(V) = \left\{(s_{U})_{U}\in \prod_{\substack{U \in \mathfrak{B} \\ U \subset V}}
+    \mathcal{F}(U) \ \biggl|\ \forall U,U'\in \mathfrak{B},\ s_U|_{U\cap U'} = s_{U'}|_{U \cap U'}\right\}
+  \end{equation*}
+  とおく．演算を
+  \begin{equation*}
+    (s_U)_U + (t_U)_U = (s_U + t_U)_U
+  \end{equation*}
+  で定めるとアーベル群になる．\\
+  また，$V'\subset V$に対して
+  制限写像$\rho_{V,V'}:\mathcal{F}(V) \to \mathcal{F}(V')$を
   
-      \draw[->] (X1) to node[yshift = -6pt,label=above:$\rho_{U,U'}$] () {} (Y1);
-      \draw[->] (X2) to node[xshift = 6pt, label=left:$\varphi_{U}$] () {} (X1);
-      \draw[->] (X2) to node[yshift = -2pt,label=below:$\rho_{V,V'}$] () {} (Y2);
-      \draw[->] (Y2) to node[xshift = 2pt,label=right:$\psi_{U'}$] () {} (Y1);
-    \end{tikzpicture}
-  \end{center}
-  するとこれは前層になる．
+  % \begin{align*}
+  %   \mathcal{F}(V)
+  %     & = \varprojlim_{\substack{U\in \mathcal{B}                  \\ U\subset V}}\mathcal{F}(U)\\
+  %     & = \left\{(s_{U})_{U} \in \prod_{\substack{U\in \mathcal{B} \\ U \subset V}} \mathcal{F}(U) \ \biggl|\
+  %   \forall U' \subset U \in \mathcal{B}, s_{U}|_{U'}=s_{U'} \right\}
+  % \end{align*}
+  % 制限写像は射影極限から誘導される射である．
+  % \begin{center}
+  %   \begin{tikzpicture}[auto]
+  %     \node (X1) at (0,0) {$\mathcal{F}(U)$};
+  %     \node (X2) at (0,-2.5) {$\displaystyle \varprojlim_{U\subset V}\mathcal{F}(U)$};
+  %     \node (Y1) at (2.5,0) {$\mathcal{F}(U')$};
+  %     \node (Y2) at (2.5,-2.5) {$\displaystyle \varprojlim_{U'\subset V'}\mathcal{F}(U')$};
+  %     \node (ci) at (1.25,-1.25) {$\circlearrowleft$};
+  
+  %     \draw[->] (X1) to node[yshift = -6pt,label=above:$\rho_{U,U'}$] () {} (Y1);
+  %     \draw[->] (X2) to node[xshift = 6pt, label=left:$\varphi_{U}$] () {} (X1);
+  %     \draw[->] (X2) to node[yshift = -2pt,label=below:$\rho_{V,V'}$] () {} (Y2);
+  %     \draw[->] (Y2) to node[xshift = 2pt,label=right:$\psi_{U'}$] () {} (Y1);
+  %   \end{tikzpicture}
+  % \end{center}
+  % するとこれは前層になる．
 }{}
 
 \Proposition{

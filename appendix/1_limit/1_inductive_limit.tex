@@ -2,66 +2,71 @@
 \Section{Inductive Limit}
 とりあえず,帰納極限だけ述べる.射影極限は双対概念なのでまぁ頑張って.
 \Definition{(帰納系の定義)\\
-($\Lambda,\leq$)を順序集合,$\mathscr{C}$を圏とする.各$\lambda \in \Lambda$に対し,$X_{\lambda} \in \text{Ob}(\mathscr{C})$が与えられ,
-$\lambda \leq \mu$に対して射$\varphi_{\mu,\lambda}:X_{\lambda} \to X_{\mu}$があって
-次を満たすとき,$\{X_{\lambda},\varphi_{\mu,\lambda}\}$を\textbf{順系(direct system)}または
-\textbf{帰納系(inductive system)}という.しばし$\varphi_{\mu,\lambda}$を省略して$\{X_{\lambda}\}_{\lambda \in \Lambda}$や$\{X_{\lambda}\}_{\lambda}$で表す.
-\begin{itemize}
-  \item[---] 任意の$\lambda \in \Lambda$に対して$\varphi_{\lambda,\lambda}=\text{id}_{X_{\lambda}}$
-  \item[---] $\lambda \leq \mu \leq \nu$なる任意の$\lambda,\mu,\nu \in \Lambda$に対して$\varphi_{\nu,\lambda} = \varphi_{\nu,\mu}\circ \varphi_{\mu,\lambda}$
-\end{itemize}
+  ($\Lambda,\leq$)を順序集合,$\mathscr{C}$を圏とする.各$\lambda \in \Lambda$に対し,$X_{\lambda} \in \text{Ob}(\mathscr{C})$が与えられ,
+  $\lambda \leq \mu$に対して射$\varphi_{\mu,\lambda}:X_{\lambda} \to X_{\mu}$があって
+  次を満たすとき,$\{X_{\lambda},\varphi_{\mu,\lambda}\}$を
+  \index{きのうけい/じゅんけい@帰納系/順系}\index{inductive system/direct system}
+  \textbf{順系(direct system)}または
+  \textbf{帰納系(inductive system)}という.しばし$\varphi_{\mu,\lambda}$を省略して$\{X_{\lambda}\}_{\lambda \in \Lambda}$や$\{X_{\lambda}\}_{\lambda}$で表す.
+  \begin{itemize}
+    \item[---] 任意の$\lambda \in \Lambda$に対して$\varphi_{\lambda,\lambda}=\text{id}_{X_{\lambda}}$
+    \item[---] $\lambda \leq \mu \leq \nu$なる任意の$\lambda,\mu,\nu \in \Lambda$に対して$\varphi_{\nu,\lambda} = \varphi_{\nu,\mu}\circ \varphi_{\mu,\lambda}$
+  \end{itemize}
 }
 \Example{
-位相空間$X$の開集合族$\{U\}_{U}$に対して
-\begin{equation*}
-  U \leq V \defi V \subset U
-\end{equation*}
-と定義する.そして,$\mathbf{AGrp}$をアーベル群の成す圏,$\mathcal{F}$を$X$上の前層とする.すると,各開集合$U$に対し,$\mathcal{F}(U) \in \mathrm{Ob}(\mathbf{AGrp})$で,
-前層の定義からアーベル群と制限写像との組$\{\mathcal{F}(U),\rho_{U,V}\}$は帰納系となる.前層の定義はDef:\ref{Def:1.3.1}を参照.
+  位相空間$X$の開集合族$\{U\}_{U}$に対して
+  \begin{equation*}
+    U \leq V \defi V \subset U
+  \end{equation*}
+  と定義する.そして,$\mathbf{AGrp}$をアーベル群の成す圏,$\mathcal{F}$を$X$上の前層とする.すると,各開集合$U$に対し,$\mathcal{F}(U) \in \mathrm{Ob}(\mathbf{AGrp})$で,
+  前層の定義からアーベル群と制限写像との組$\{\mathcal{F}(U),\rho_{U,V}\}$は帰納系となる.前層の定義はDef:\ref{Def:1.3.1}を参照.
 }{}
 \Definition{(帰納系の射の定義)\\
-$\Lambda$を順序集合.$\{X_{\lambda},\varphi_{\lambda,\mu}\},\{Y_{\lambda},\psi_{\lambda,\mu}\}$を$\Lambda$上の圏$\mathscr{C}$における帰納系とする.
-このとき$\{X_{\lambda}\}$から$\{Y_{\lambda}\}$への射とは$f_{\lambda}:X_{\lambda} \to Y_{\lambda}$なる射の族
-$\{f_{\lambda}\}$で,任意の$\lambda \leq \mu$に対して
-$\psi_{\lambda,\mu}\circ f_{\mu} = f_{\lambda}\circ \varphi_{\lambda,\mu}$となるものを言う.
-%---------------後に図式を追加する.------------------%
-\begin{center}
-\begin{tikzpicture}[auto]
-  \node (X1) at (0,0) {$X_{\mu}$};
-  \node (X2) at (0,-2.5) {$X_{\lambda}$};
-  \node (Y1) at (2.5,0) {$Y_{\mu}$};
-  \node (Y2) at (2.5,-2.5) {$Y_{\lambda}$};
-  \node (ci) at (1.25,-1.25) {$\circlearrowleft$};
+  \index{きのうけい/じゅんけい@帰納系/順系!のしゃ@の射}\index{inductive system/direct system!morphism}
+  $\Lambda$を順序集合.$\{X_{\lambda},\varphi_{\lambda,\mu}\},\{Y_{\lambda},\psi_{\lambda,\mu}\}$を$\Lambda$上の圏$\mathscr{C}$における帰納系とする.
+  このとき$\{X_{\lambda}\}$から$\{Y_{\lambda}\}$への射とは$f_{\lambda}:X_{\lambda} \to Y_{\lambda}$なる射の族
+  $\{f_{\lambda}\}$で,任意の$\lambda \leq \mu$に対して
+  $\psi_{\lambda,\mu}\circ f_{\mu} = f_{\lambda}\circ \varphi_{\lambda,\mu}$となるものを言う.
+  %---------------後に図式を追加する.------------------%
+  \begin{center}
+  \begin{tikzpicture}[auto]
+    \node (X1) at (0,0) {$X_{\mu}$};
+    \node (X2) at (0,-2.5) {$X_{\lambda}$};
+    \node (Y1) at (2.5,0) {$Y_{\mu}$};
+    \node (Y2) at (2.5,-2.5) {$Y_{\lambda}$};
+    \node (ci) at (1.25,-1.25) {$\circlearrowleft$};
 
-  \draw[->] (X1) to node[yshift = -6pt,label=above:$f_{\mu}$] () {} (Y1);
-  \draw[->] (X1) to node[label=left:$\varphi_{\lambda,\mu}$] () {} (X2);
-  \draw[->] (X2) to node[yshift = -2pt,label=below:$f_{\lambda}$] () {} (Y2);
-  \draw[->] (Y1) to node[xshift = -6pt,label=right:$\psi_{\lambda,\mu}$] () {} (Y2);
-\end{tikzpicture}
-\end{center}
+    \draw[->] (X1) to node[yshift = -6pt,label=above:$f_{\mu}$] () {} (Y1);
+    \draw[->] (X1) to node[label=left:$\varphi_{\lambda,\mu}$] () {} (X2);
+    \draw[->] (X2) to node[yshift = -2pt,label=below:$f_{\lambda}$] () {} (Y2);
+    \draw[->] (Y1) to node[xshift = -6pt,label=right:$\psi_{\lambda,\mu}$] () {} (Y2);
+  \end{tikzpicture}
+  \end{center}
 }
 \Definition{
-$\mathscr{C}$を圏とし,$\Lambda$を順序集合とする.$\{X_{\lambda},\varphi_{\mu,\lambda}\}$を
-$\mathscr{C}$の帰納系とする.\\
-このとき$\{X_{\lambda},\varphi_{\mu,\lambda}\}$の\textbf{順極限(direct limit)}または\textbf{帰納的極限(inductive limit)}または\textbf{帰納極限}とは,
-$\mathscr{C}$の対象$\displaystyle \varinjlim_{\lambda \in \Lambda}X_{\lambda} \in \text{Ob}(\mathscr{C})$
-と射の族$\displaystyle \{\varphi_{\lambda}:X_{\lambda} \to \varinjlim_{\lambda \in \Lambda}X_{\lambda}\}_{\lambda \in \Lambda}$の組
-$\{\varinjlim X_{\lambda},\varphi_{\lambda}\}$で,次の条件を満たすものをいう.
-\begin{itemize}
-\item[---] $\lambda \leq \mu$に対して$\varphi_{\mu}\circ \varphi_{\mu,\lambda} = \varphi_{\lambda}$
-\item[---] $\lambda \leq \mu$に対して$f_{\mu}\circ \varphi_{\mu,\lambda} = f_{\lambda}$を満たす任意の射の族$\{f_{\lambda}:X_{\lambda} \to Y\}_{\lambda \in \Lambda}$に対して,
-      $\displaystyle f:\varinjlim_{\lambda \in \Lambda}X_{\lambda} \to Y$が一意に存在して
-      \begin{equation*}
-        f\circ \varphi_{\lambda} = f_{\lambda}\quad (\forall \lambda \in \Lambda)
-      \end{equation*}
-      を満たす.
-\end{itemize}
+  $\mathscr{C}$を圏とし,$\Lambda$を順序集合とする.$\{X_{\lambda},\varphi_{\mu,\lambda}\}$を
+  $\mathscr{C}$の帰納系とする.\\
+  このとき$\{X_{\lambda},\varphi_{\mu,\lambda}\}$の
+  \index{きのうきょくげん/じゅんきょくげん@帰納極限/順極限}\index{inductive limit/direct limit}
+  \textbf{順極限(direct limit)}または\textbf{帰納的極限(inductive limit)}または\textbf{帰納極限}とは,
+  $\mathscr{C}$の対象$\displaystyle \varinjlim_{\lambda \in \Lambda}X_{\lambda} \in \text{Ob}(\mathscr{C})$
+  と射の族$\displaystyle \{\varphi_{\lambda}:X_{\lambda} \to \varinjlim_{\lambda \in \Lambda}X_{\lambda}\}_{\lambda \in \Lambda}$の組
+  $\{\varinjlim X_{\lambda},\varphi_{\lambda}\}$で,次の条件を満たすものをいう.
+  \begin{itemize}
+  \item[---] $\lambda \leq \mu$に対して$\varphi_{\mu}\circ \varphi_{\mu,\lambda} = \varphi_{\lambda}$
+  \item[---] $\lambda \leq \mu$に対して$f_{\mu}\circ \varphi_{\mu,\lambda} = f_{\lambda}$を満たす任意の射の族$\{f_{\lambda}:X_{\lambda} \to Y\}_{\lambda \in \Lambda}$に対して,
+        $\displaystyle f:\varinjlim_{\lambda \in \Lambda}X_{\lambda} \to Y$が一意に存在して
+        \begin{equation*}
+          f\circ \varphi_{\lambda} = f_{\lambda}\quad (\forall \lambda \in \Lambda)
+        \end{equation*}
+        を満たす.
+  \end{itemize}
 }
 \Remark{
-一般の圏では帰納極限や射影極限は存在するとは限らない.しかし,存在するとすれば,同型を除いて一意である.
+  一般の圏では帰納極限や射影極限は存在するとは限らない.しかし,存在するとすれば,同型を除いて一意である.
 }{}
 \Proposition{
-帰納極限は存在すれば,同型を除いて一意である.
+  帰納極限は存在すれば,同型を除いて一意である.
 }{
-証明は後で書く.
+  証明は後で書く.
 }
