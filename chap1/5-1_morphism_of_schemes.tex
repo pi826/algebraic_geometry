@@ -58,6 +58,20 @@
   で$(\varphi^{a})^{\#}(Y) = \varphi$を満たす．
 }
 
+\Example{
+  $A$を環とする．$f\in A$に対して$\varphi:A\to A_{f}$を自然な射とする．よってProp:\ref{Prop:1.5.7}より
+  $\varphi^{a}:\spec{A_{f}} \to \spec{A}$はアフィンスキームの射で，$\spec{A_{f}}\simeq D(f)$
+  で，$D(f)\to \spec{A}$は開はめ込みである．
+}{}
+
+\Example{
+  $X$をスキームとする．$x\in X$に対して標準的な射$\spec{\mathcal{O}_{X,x}} \to X$がある．
+  実際$x\in U$なるアフィン開集合に対して標準的な射$\mathcal{O}_{X}(U) \to \mathcal{O}_{X,x}$
+  から誘導される射$\spec{\mathcal{O}_{X,x}} \to \spec{\mathcal{O}_{X}(U)} = U$
+  がとれる．また$U\hookrightarrow X$は自然に開はめ込みだと見れるので射$\spec{\mathcal{O}_{X,x}} \to X$
+  を得る．これは$U$の選び方に依らない．
+}{}
+
 \Lemma{
   $A$を環とし，$I$をそのイデアルとする．このとき，スキームの射
   \begin{equation*}
@@ -85,6 +99,13 @@
   \end{align*}
   がわかる．
 }
+
+\Example{
+  $X$をスキームとする．$x\in X$に対して$k(x)$は点$x$での$X$の剰余体であった．(Def:\ref{Def:1.4.1}を参照．)このとき標準的な全射$\mathcal{O}_{X,x} \to k(x) = \mathcal{O}_{X,x}/\mathfrak{m}_{x}$
+  は閉はめ込み$\spec{k(x)} \to \spec{\mathcal{O}_{X,x}}$を誘導する．Ex:\ref{Ex:1.5.9}より
+  射$\mathcal{O}_{X,x} \to X$がある．よって射$\spec{k(x)} \to X$を得る．この射は$\spec{k(x)}$の
+  唯一の点を$x\in X$に送る射である．
+}{}
 
 \Definition{
   $Z$を$X$の閉集合とする．このとき$Z$が
@@ -165,3 +186,47 @@
   \end{equation*}
   で，
 }{}
+
+\Definition{
+  $X$を体$k$上のスキームとする．上の例より$X(k)$の点を\index{ゆうりてん@有理点}\index{rational points}
+  \textbf{$X$の$k$-有理点($k$-rational points of $X$)}という．
+}
+
+\Remark{
+  $Y$を$X$の開(閉)部分スキームとする．任意の点$y\in Y$に対してその点での剰余体は
+  $\mathcal{O}_{Y}$で考えたときと$\mathcal{O}_{X}$で考えたときの二種類が考えられるがこれらは
+  同型である．よって$X$を体$k$上のスキームとすると$Y(k) = X(k) \cap Y$である．
+}{}
+
+\Lemma{
+  $S$をスキームとする．$\{X_{i}\}_{i}$を$S$上のスキームの族とする．$X_{ij}$を$X_{i}$の開部分スキーム
+  として$f_{ii} = \text{id}_{X_{i}},\ f_{ij}(X_{ij}\cap X_{ik}) = X_{ji}\cap X_{jk}$と
+  $f_{ik}=f_{jk}\circ f_{ij}$が$X_{ij}\cap X_{ik}$上で成り立つ
+  $S$スキームの同型射$f_{ij}:X_{ij}\stackrel{\simeq}{\longrightarrow} X_{ji}$
+  が与えられているとき，ある$S$上のスキーム$X$が同型を除いて唯一存在して以下を満たす．
+  \begin{center}
+    開はめ込み$g_{i}:X_{i}\to X$があって$X_{ij}$上で$g_{i} = g_{j}\circ f_{ij}$で$\displaystyle X = \bigcup_{i}g_{i}(X_{i})$
+  \end{center}
+}{
+  先に$X$を構成しそれが条件を満たすことを確認する．
+  \begin{equation*}
+    X = \left. \coprod_{i}X_{i}\right/{\mathlarger{\sim}}
+  \end{equation*}
+  とおく．ここで
+  \begin{equation*}
+    x\sim y \defi x\in X_{i},y\in X_{j},y = f_{ij}(x)
+  \end{equation*}
+  と定義する．また$X$に商位相を入れる．包含写像$g_{i}:X_{i}\hookrightarrow X$は位相的開はめ込みで
+  $g_{i} = g_{j} \circ f_{ij}$を満たす．$U_{i} = g_{i}(X_{i})$と置いて$\mathcal{O}_{U_{i}} = {g_{i}}_{*}\mathcal{O}_{X}$
+  とおくと
+  \begin{equation*}
+    \mathcal{O}_{U_{i}}|_{U_{i}\cap U_{j}} = \mathcal{O}_{U_{j}}|_{U_{i}\cap U_{j}}
+  \end{equation*}
+  を満たす．実際
+  \begin{align*}
+    \mathcal{O}_{U_{i}}|_{U_{i}\cap U_{j}}
+    &= ({g_{i}}_{*}\mathcal{O}_{X})|_{U_{i}\cap U_{j}}\\
+    &= ((g_{j}\circ f_{ij})_{*}\mathcal{O}_{X})|_{U_{i} \cap U_{j}}\\
+    &= ({g_{j}}_{*}{f_{ij}}_{*}\mathcal{O}_{X})|_{U_{i} \cap U_{j}}
+  \end{align*}
+}

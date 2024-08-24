@@ -1,0 +1,92 @@
+
+\subsection{Projective schemes}
+まず初めに次数環
+\begin{equation*}
+  A = \bigoplus_{n\in \mathbf{N}}A_{n}
+\end{equation*}
+を固定する．ここでイデアル$I \subset A$が斉次イデアルとは
+\begin{equation*}
+  I = \bigoplus_{n\in \mathbf{N}}(I\cap A_{n})
+\end{equation*}
+のときをいう．ここで
+\begin{equation*}
+  A/I = \left. \bigoplus_{n\in \mathbf{N}} A_{n}\right / \bigoplus_{n\in \mathbf{N}}(I\cap A_{n})
+\end{equation*}
+だが
+$$
+\begin{array}{rccc}
+  \varphi \colon &\bigoplus_{n\in \mathbf{N}}A_{n}/(I\cap A_{n})                     &\longrightarrow& A/I                    \\
+          & \rotatebox{90}{$\in$}&               & \rotatebox{90}{$\in$} \\
+          & (x_{i} + I \cap A_{i})_{i}                    & \longmapsto   & (x_{i})_{i} + I
+\end{array}
+$$
+とするとこれは全準同型で単射性は$(x_{i})_{i} + I = (y_{i})_{i} + I$とすると$(x_{i})_{i} - (y_{i})_{i}  = (x_{i} - y_{i})_{i}\in I$
+と$x_{i} \in A_{i}$より$x_{i} - y_{i} \in I \cap A_{i}$でこれは単射であることを意味する．
+よって，
+\begin{equation*}
+  A/I = \bigoplus_{n \in \mathbf{N}}A_{n}/(I \cap A_{n})
+\end{equation*}
+である．ここで$\proj{A}$を次のように定義しよう．
+\begin{equation*}
+  \proj{A}:= \{\mathfrak{p} \in \spec{A}\mid \mathfrak{p}は斉次イデアルでA_{+} \notin \mathfrak{p} \}
+\end{equation*}
+とおく．ただし
+\begin{equation*}
+  A_{+} := \bigoplus_{n > 0}A_{n}
+\end{equation*}
+である．あとで$\proj{A}$にスキームの構造が入ることを示そう．\\
+任意の斉次イデアル$I\subset A$に対して
+\begin{equation*}
+  V_{+}(I) := \{\mathfrak{p} \in \proj{A}\mid I \subset \mathfrak{p}\}
+\end{equation*}
+と定義する．このとき
+\begin{align}
+  \bigcap_{\mu}V_{+}(I_{\mu}) &= V_{+}(\sum_{\mu}I_{\mu})\\
+  V_{+}(I)\cup V_{+}(J) &= V_{+}(I\cap J)\\
+  V_{+}(A) &= \varnothing\\
+  V_{+}(0) &= \proj{A}
+\end{align}
+が成り立つ．実際(1.1)から示そう．
+\begin{align*}
+  I_{\lambda} \subset \sum_{\mu}I_{\mu}
+\end{align*}
+なので
+\begin{equation*}
+  V_{+}(\sum_{\mu}I_{\mu}) \subset V_{+}(I_{\lambda})
+\end{equation*}
+である．よって
+\begin{equation*}
+  V_{+}(\sum_{\mu}I_{\mu}) \subset \bigcap_{\mu}V_{+}(I_{\mu})
+\end{equation*}
+逆に$\mathfrak{p} \in \bigcap V_{+}(I_{\mu})$とすると任意の$\mu$に対して$I_{\mu} \subset \mathfrak{p}$なので
+$\sum I_{\mu}\subset \mathfrak{p}$ が成り立ち逆の包含関係もわかる．\\
+(1.2)は$\mathfrak{p} \in V_{+}(I)$なら$I \subset \mathfrak{p}$なので$I\cap J \subset \mathfrak{p}$
+だから$V_{+}(I)\subset V_{+}(I\cap J)$で同様に$V_{+}(J) \subset V_{+}(I\cap J)$なので
+\begin{equation*}
+  V_{+}(I)\cup V_{+}(J) \subset V_{+}(I\cap J)
+\end{equation*}
+逆に$\mathfrak{p} \in V_{+}(I\cap J)$なら$I\cap J \subset \mathfrak{p}$で$I\not\subset \mathfrak{p}$なら$a\in I$かつ$a\notin \mathfrak{p}$なる元がある．しかし，任意の$b\in J$に対して
+$ab \in I\cap J$なので$ab \in \mathfrak{p}$で今$a\notin \mathfrak{p}$なので$b\in \mathfrak{p}$
+である．よって$J\subset \mathfrak{p}$なので$V_{+}(I\cap J)\subset V_{+}(J)$だから逆の包含関係もわかる．
+残り二つは自明である．\\
+$\spec$の場合と同様に$\proj{A}$にも$\{V_{+}(I)\}_{I}$を閉集合族とする位相を入れることにする．
+この位相を同様にZariski位相ということにする．\\
+$I$を$A$の任意のイデアルとすると，$I$に伴う斉次イデアル$I^{h} = \bigoplus(I\cap A_{n})$(ここで$h$乗ではなく単なる記号であることに注意)が定義できる．
+\Lemma{
+  $I,J$を次数環$A$のイデアルとする．このとき以下が成り立つ．
+  \begin{itemize}
+    \item[(1)] $I$が素イデアルならそれに伴う斉次イデアル$I^{h}$も素イデアル．
+    \item[(2)] $I$と$J$が斉次イデアルとする．このとき
+      \begin{equation*}
+        V_{+}(I)\subset V_{+}(J)\Leftrightarrow J\cap A_{+} \subset \sqrt{I}
+      \end{equation*}
+    \item[(3)] $\proj{A}=\varnothing \Leftrightarrow A_{+}$が冪零
+  \end{itemize}
+}{
+  (1)$I$を素イデアルとする．$a,b\in A$が$ab\in I^{h}$で$a,b\notin I^{h}$を満たすとする．
+  斉次元に分解すると
+  \begin{equation*}
+    a = \sum_{i = 0}^{n} a_{i},\quad b = \sum_{j = 0}^{m}b_{j},\quad a_{n},b_{n} \in A_{n}
+  \end{equation*}
+  
+}

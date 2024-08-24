@@ -20,7 +20,13 @@ $X$を位相空間とする.$X$上の(アーベル群の)\textbf{前層}(preshea
 $s\in \mathcal{F}(U)$を$U$上の$\mathcal{F}$の\index{せつだん@切断}\index{section}\textbf{切断}(section)という.
 また,$\rho_{U,V}(s)\in \mathcal{F}(V)$を$s|_{V}$と書いて$s$の$V$への制限という.\\
 また,単に$\mathcal{F,G,H,}\dots$などと書いたら(前)層を表すことや、$\rho$と書いたら制限写像を意味する。
-また,どの(前)層の制限写像かを明示するため,例えば,$\rho_{U,V}^{\mathcal{F}}$などと書くことがある。
+また,どの(前)層の制限写像かを明示するため,例えば,$\rho_{U,V}^{\mathcal{F}}$などと書くことがある．
+
+\Remark{
+  $\mathcal{F}(U)$を$\Gamma(U,\mathcal{F})$と書くことがある．これはたぶん$\mathcal{F}$が複雑だったり
+  $U$が複雑だったりするからである．
+}{}
+
 \Definition{
 前層$\mathcal{F}$が\index{そう@層}\index{sheaf}層(sheaf)とは次の条件を満たすことをいう.
 \begin{itemize}
@@ -30,6 +36,7 @@ $s\in \mathcal{F}(U)$を$U$上の$\mathcal{F}$の\index{せつだん@切断}\ind
         $s_{i}|_{U_{i} \cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}$を満たすならば,$s|_{U_{i}} = s_{i}$を満たす$s\in \mathcal{F}(U)$が存在する.
 \end{itemize}
 }
+
 \Remark{
 $\mathcal{F}$が層ならば$\mathcal{F}(\varnothing) = 0$となる.
 }{}
@@ -53,7 +60,7 @@ $X$を位相空間とする.\\
 $A$を自明でないアーベル群とする.$\mathcal{A}_{X}$を$X$の空でない開集合$U$に対して$\mathcal{A}_{X}(U)=A$に,
 空集合$\varnothing$に対して$\mathcal{A}_{X}(\varnothing) = 0$に対応させるものとし,
 制限写像を空でない開集合$V \subset U$に対して$\rho_{U,V}=\text{id}_{A}$とし,$\rho_{U,\varnothing} = 0$とする.\\
-すると,$(\mathcal{A}_{X},\rho)$は$X$上の前層にはなるが,一般に層とはならない.\\
+すると,$(\mathcal{A}_{X},\rho)$は$X$上の前層にはなるが,一般に層とはならない.
 }{
 例えば,$X$が連結でないとすると,非交差な開集合$U,V$があって$X=U\cup V$とかける.すると$\{U,V\}$は$X$の開被覆となる.
 $s_{U} \in \mathcal{A}_{X}(U)=A$が$s_{U}|_{U\cap V} = s_{U}|_{\varnothing} = 0 = s_{V}|_{U \cap V}$
@@ -61,6 +68,7 @@ $s_{U} \in \mathcal{A}_{X}(U)=A$が$s_{U}|_{U\cap V} = s_{U}|_{\varnothing} = 0 
 }
 
 \Example{
+\index{まてんろうそう@摩天楼層}\index{skyscraper sheaf}
 (skyscraper sheaf)\\
 $X$を位相空間、$A$をアーベル群とする。$p\in X$に対して$i_{p} : \{p\} \hookrightarrow X$を包含写像とする。
 このとき$i_{p,*}\mathcal{A}$を
@@ -73,6 +81,15 @@ $X$を位相空間、$A$をアーベル群とする。$p\in X$に対して$i_{p}
   \right.
 \end{equation*}
 と定義する。これは層になる。
+}{}
+
+\Example{
+  $\mathcal{F}$を$X$上の前層とする．このとき$X$の開集合$U$に対して$U$上の
+  前層$\mathcal{F}|_{U}$が$V\subset U$なる開集合に対して$\mathcal{F}|_{U}(V) = \mathcal{F}(V)$
+  として定義される．これを
+  \index{えふのゆーへのせいげん@$\mathcal{F}$の$U$への制限}\index{restriction of $\mathcal{F}$ to $U$}
+  \textbf{$\mathcal{F}$の$U$への制限(restriction of $\mathcal{F}$ to $U$)}という．
+  もし$\mathcal{F}$が層なら$\mathcal{F}|_{U}$も層である．
 }{}
 
 
@@ -89,7 +106,7 @@ $X$を位相空間、$A$をアーベル群とする。$p\in X$に対して$i_{p}
 \Remark{
   ここで，$\mathcal{F}_{x}$は$x$近傍の情報を持っていると言える．実際，
   \begin{equation*}
-    \mathcal{F}_{x} = \left. \bigsqcup_{i}U_{i}\right/{\mathlarger{\sim}}\qquad \cdots (*)
+    \mathcal{F}_{x} = \left. \bigsqcup_{x\in U_{i}}\mathcal{F}(U_{i})\right/{\mathlarger{\sim}}\qquad \cdots (*)
   \end{equation*}
   ここで，同値関係は
   \begin{equation*}
@@ -394,45 +411,54 @@ $\mathcal{Q}(U) = \mathcal{F}(U)/\mathcal{F}'(U)$とおく。\\
   が成り立つ。
 }{}
 \Proposition{
-$f:X \to Y$を位相空間の間の連続写像とし，$\mathcal{F}$を$X$上の層．$\mathcal{G}$を$Y$上の層とする．このとき
-\begin{equation*}
-  \hom{\text{Sh}(X)}{f^{*}\mathcal{G}}{\mathcal{F}}\simeq \hom{\text{Sh}(Y)}{\mathcal{G}}{f_{*}\mathcal{F}}
-\end{equation*}
-ただし，$\hom{\mathcal{C}}{X}{Y}$は圏$\mathcal{C}$で$X \to Y$なる射全体を表し，$\text{Sh}(X)$は$X$上の層全体を表す．
+  $f:X \to Y$を位相空間の間の連続写像とし，$\mathcal{F}$を$X$上の層．$\mathcal{G}$を$Y$上の層とする．このとき
+  \begin{equation*}
+    \hom{\text{Sh}(X)}{f^{*}\mathcal{G}}{\mathcal{F}}\simeq \hom{\text{Sh}(Y)}{\mathcal{G}}{f_{*}\mathcal{F}}
+  \end{equation*}
+  ただし，$\hom{\mathcal{C}}{X}{Y}$は圏$\mathcal{C}$で$X \to Y$なる射全体を表し，$\text{Sh}(X)$は$X$上の層全体を表す．
 }{
-層化の普遍性より$\theta:f^{\cdot}\mathcal{G} \to f^{*}\mathcal{G} = (f^{\cdot}\mathcal{G})^{\dagger}$
-を層化の射とすると，
-$$
-  \begin{array}{rccc}
-      & \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}} & \stackrel{\simeq}{\longrightarrow} & \displaystyle \hom{\text{Ph(X)}}{f^{*}\mathcal{G}}{\mathcal{F}} \\
-      & \rotatebox{90}{$\in$}                                    &                                    & \rotatebox{90}{$\in$}                                           \\
-      & \alpha                                                   & \longmapsto                        & \tilde{\alpha}\circ \theta
-  \end{array}
-$$
-が成り立つ．つまり
-\begin{equation*}
-  \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}}\simeq \hom{\text{Sh(Y)}}{\mathcal{G}}{f_{*}\mathcal{F}}
-\end{equation*}
-を示せばいい．次に$X$上の開集合$U$に対して
-\begin{equation*}
-  f^{\cdot}\mathcal{G}(U) = \varinjlim_{V\supset f(U)}\mathcal{G}(V)
-\end{equation*}
-なので，$\varphi \in \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}}$に対して
-\begin{equation*}
-  \varphi(U) : \varinjlim_{V\supset f(U)}\mathcal{G}(V) \to \mathcal{F}(U)
-\end{equation*}
-を与えることは帰納極限の定義より$f(U)\subset V$なる開集合$V$に対して
-\begin{equation*}
-  \psi'(V) : \mathcal{G}(V) \to \mathcal{F}(U)
-\end{equation*}
-を$f(U)\subset V' \subset V$ならば，
-\begin{equation*}
-  \psi'(V) = \psi'(V')\circ \rho^{\mathcal{G}}_{V,V'}
-\end{equation*}
-となるように与えることである．すなわち$\psi'(V)$は
-\begin{equation*}
-  \psi(V):\mathcal{G}(V) \to \mathcal{F}(f^{-1}(V))
-\end{equation*}
-と$\rho^{\mathcal{F}}_{f^{-1}(V),U}$を合成したものである．(帰納系の選び方によらない．)\\
-したがって，$\varphi\in \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}}$を与えることは，$\psi \in \hom{\text{Ph}(Y)}{\mathcal{G}}{f_{*}\mathcal{F}}$を与えることと等しい．
+  層化の普遍性より$\theta:f^{\cdot}\mathcal{G} \to f^{*}\mathcal{G} = (f^{\cdot}\mathcal{G})^{\dagger}$
+  を層化の射とすると，
+  $$
+    \begin{array}{rccc}
+        & \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}} & \stackrel{\simeq}{\longrightarrow} & \displaystyle \hom{\text{Ph(X)}}{f^{*}\mathcal{G}}{\mathcal{F}} \\
+        & \rotatebox{90}{$\in$}                                    &                                    & \rotatebox{90}{$\in$}                                           \\
+        & \alpha                                                   & \longmapsto                        & \tilde{\alpha}\circ \theta
+    \end{array}
+  $$
+  が成り立つ．つまり
+  \begin{equation*}
+    \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}}\simeq \hom{\text{Sh(Y)}}{\mathcal{G}}{f_{*}\mathcal{F}}
+  \end{equation*}
+  を示せばいい．次に$X$上の開集合$U$に対して
+  \begin{equation*}
+    f^{\cdot}\mathcal{G}(U) = \varinjlim_{V\supset f(U)}\mathcal{G}(V)
+  \end{equation*}
+  なので，$\varphi \in \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}}$に対して
+  \begin{equation*}
+    \varphi(U) : \varinjlim_{V\supset f(U)}\mathcal{G}(V) \to \mathcal{F}(U)
+  \end{equation*}
+  を与えることは帰納極限の定義より$f(U)\subset V$なる開集合$V$に対して
+  \begin{equation*}
+    \psi'(V) : \mathcal{G}(V) \to \mathcal{F}(U)
+  \end{equation*}
+  を$f(U)\subset V' \subset V$ならば，
+  \begin{equation*}
+    \psi'(V) = \psi'(V')\circ \rho^{\mathcal{G}}_{V,V'}
+  \end{equation*}
+  となるように与えることである．すなわち$\psi'(V)$は
+  \begin{equation*}
+    \psi(V):\mathcal{G}(V) \to \mathcal{F}(f^{-1}(V))
+  \end{equation*}
+  と$\rho^{\mathcal{F}}_{f^{-1}(V),U}$を合成したものである．(帰納系の選び方によらない．)\\
+  したがって，$\varphi\in \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}}$を与えることは，$\psi \in \hom{\text{Ph}(Y)}{\mathcal{G}}{f_{*}\mathcal{F}}$を与えることと等しい．
 }
+
+\Example{
+  $\mathcal{F}$を$X$上の層とする．このとき
+  \begin{equation*}
+    \text{Supp}\, \mathcal{F} = \{x\in X\mid \mathcal{F}_{x} \neq 0\}
+  \end{equation*}
+  と定義して\index{そう@層!のだい@の台}\index{sheaf!support}
+  \textbf{$\mathcal{F}$の台(Supports of $\mathcal{F}$)}という．一般にはこれは閉集合ではない．
+}{}

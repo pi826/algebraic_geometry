@@ -19,6 +19,12 @@
 \textbf{アフィンスキーム(affine scheme)}という．
 }
 
+\Example{
+  環$R$に対して$\mathbf{A}_{R}^{n}:=\spec{R[X_{1},\cdots,X_{n}]}$とおく．
+  これを\textbf{$R$上の相対次元$n$のアフィン空間(affine space of relative dimension $n$ over $R$)}という．
+  もちろん$(\mathbf{A}_{R}^{n},\mathcal{O}_{\mathbf{A}_{R}^{n}})$はアフィンスキーム
+}{}
+
 \Lemma{
   $A$を整域とし$K$をその商体とする．素イデアル$0$に対応する$X = \text{Spec}\, A$の点を$\xi$とする．このとき
   \begin{equation*}
@@ -172,14 +178,29 @@ $\mathcal{O}_{X}$は層なので，貼り合わせ条件より$g|_{V_{i}} = g_{i
 よって制限$\mathcal{O}_{X}(X)\to \mathcal{O}_{X}(X_{f})$
 から準同型
 \begin{equation*}
-\alpha : \mathcal{O}_{X}(X)_{f}\to \mathcal{O}_{X}(X_{f})
+\alpha : \mathcal{O}_{X}(X)_{f}\to \mathcal{O}_{X}(X_{f});\frac{x}{f^n} \mapsto \rho_{X,X_f}(x)f^{-n} = \rho_{X,X_f}(x)g^n
 \end{equation*}
-を誘導する．($\mathcal{O}_{X}(X)$は環なので$\mathcal{O}_{X}(X)_{f}$は$\{f^{n}\}_{n\in \mathbb{N}}$での局所化であることに注意しよう．)
+を誘導する．($\mathcal{O}_{X}(X)$は環なので$\mathcal{O}_{X}(X)_{f}$は$\{f^{n}\}_{n\in \mathbf{N}}$での局所化であることに注意しよう．)
 ここで条件Aを仮定すれば，$X$は有限アフィン開被覆$\mathcal{U} = \{U_{i}\}_{i}$を持つ．
 よって，
 \begin{equation*}
 X_{f} = \bigcup_{i}U_{i}\cap X_{f} = \bigcup_{i}V_{i} = \bigcup_{i}D(f|_{U_{i}})
 \end{equation*}
+ここで，$U_{i} = \spec{A_{i}}$とすると
+\begin{align*}
+  U_{i} \cap X_{f} 
+  &= \{x\in X\cap \spec{A_{i}}\mid f_{x} \in \mathcal{O}_{X,x}^{\times}\}\\
+  &= \{x\in \spec{A_{i}}\mid f_{x} \in \mathcal{O}_{X,x}^{\times}\}\\
+  &= \{x\in \spec{A_{i}}\mid f_{x} \in (\mathcal{O}_{X}|_{\spec{A_{i}},x})^{\times}\}\\
+  &= \{\mathfrak{p}\in \spec{A_{i}}\mid f_{\mathfrak{p}} \in A_{i,\mathfrak{p}}^{\times}\}
+\end{align*}
+ここで，素イデアルの局所化$A_{\mathfrak{p}}$が局所環でその極大イデアルが
+$A_{\mathfrak{p}}\mysetminus A_{\mathfrak{p}}^{\times} = \mathfrak{p}A_{\mathfrak{p}}$となることに注意すると
+\begin{align*}
+  \{\mathfrak{p} \in \spec{A_{i}}\mid f_{\mathfrak{p}}\in A_{i,\mathfrak{p}}^{\times}\}
+  &= \{\mathfrak{p} \in \spec{A_{i}} \mid f_{\mathfrak{p}} \notin \mathfrak{p}A_{i,\mathfrak{p}}\}\\
+  &= \{\}
+\end{align*}
 %D(f|_{U_{i}})がなぞ
 Lem:\ref{Lem:1.5.3}より$\mathcal{O}_{X}(U_{i})_{f} = \mathcal{O}_{X}(V_{i})$\\
 今以下の完全系列を得る．
