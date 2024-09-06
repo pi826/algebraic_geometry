@@ -1,0 +1,154 @@
+
+\Section{Holomorphic Function}
+\noindent
+複素数$z = x + iy\in \mathbf{C}$に対して$|z|$を
+\begin{equation}
+  |z| \defi \sqrt{x^{2} + y^{2}}
+\end{equation}
+と定義する．定義とコーシー・シュワルツの不等式から$z,w\in \mathbf{C}$に対して
+\begin{align}
+  &|z| = 0 \Leftrightarrow z = 0\\
+  &|zw| = |z||w|\\
+  &|z + w| \leq |z| + |w|\qquad (三角不等式)
+\end{align}
+が成り立つ．三角不等式より
+\begin{equation}
+  ||z|-|w|| \leq |z - w|
+\end{equation}
+が成り立つ．実際
+\begin{align*}
+  |z| = |z - w + w| \leq |z - w| + |w| 
+\end{align*}
+より$|z| - |w| \leq |z - w|$で，対称性から$-(|z| - |w|) \leq |z-w|$より式(B.5)を
+得る．\\
+集合$\Omega \subset \mathbf{C}$上で定義された関数
+$f:\Omega \subset \mathbf{C} \to \mathbf{C}$が$z_{0}\in \Omega$で
+\index{れんぞく@連続}\index{continuous}\textbf{連続(continuous)}とは，
+任意の$\varepsilon \in \mathbf{R}_{>0}$に対して，ある$\delta \in \mathbf{R}_{>0}$
+が存在して
+\begin{equation}
+  |z - z_{0}| < \delta \Rightarrow |f(z) - f(z_{0})| < \varepsilon
+\end{equation}
+を満たすことである．
+\footnote{ただし，$\delta$を十分小さく取る．具体的には$z\in \Omega$となる程度}
+これは，$\Omega$内の点列$(z_{n})_{n}$で$z_{n} \to z_{0}\ (n \to \infty)$
+なる任意の点列に対して，
+\begin{equation}
+  \lim_{n \to \infty}f(z_{n}) = f(z_{0})
+\end{equation}
+が成り立つことと同値である．
+$f$が$\Omega$上で連続とは$\Omega$の任意の点で連続なときを言う．\\
+$f$が連続ならば実数値関数$|f|$も連続であることがわかる．実際(B.5)より
+\begin{equation}
+  ||f(z)| - |f(z_{0})|| \leq |f(z) - f(z_{0})|
+\end{equation}
+なのでよい．\\
+$f$が点$z_{0}\in \Omega$で最大値をとるとは，
+\begin{equation*}
+  |f(z)| \leq |f(z_{0})| \qquad (z\in \Omega)
+\end{equation*}
+を満たすことである．同様に最小値も定義される．
+
+\Theorem{
+  コンパクト集合$\Omega$上の連続関数は有界で，$\Omega$において最大値と最小値をとる．
+}{}
+
+証明は省く．
+
+\Definition{
+  $\Omega\subset \mathbf{C}$を開集合とし，$f:\Omega \to \mathbf{C}$が$z_{0}\in \Omega$
+  で\index{せいそく@正則}\index{regular}\index{non-singular}
+  \textbf{正則(regular/non-singular)}であるとは，
+  \begin{equation}
+    \frac{f(z+h) - f(z)}{h}
+  \end{equation}
+  が$h\to 0$のときに極限を持つことである．ただし，(B.9)が定義されるために，
+  $h\in \mathbf{C}$をゼロでない複素数で$|h|$を十分小さく$z+h\in \Omega$
+  となるように取る．この極限が存在する場合$f'(z_{0})$と書いて
+  $f$の$z_{0}$における微分という．ただし，この極限において$h$はすべての方向から
+  $0$に近づくような複素数であることに注意．\\
+  $f$が$\Omega$で正則とは，$f$が$\Omega$の任意の点で正則であるときを言う．\\
+  $\Omega$が開でないときは，$\Omega$を含むある開集合上で正則で$f$が正則である
+  ということにする．$f$が$\mathbf{C}$で正則のとき$f$を
+  \index{せいかんすう@整関数}\index{entire function}
+  \textbf{整関数}という．
+}
+
+\Proposition{
+  $f,g$を$\Omega$上の正則関数とする．このとき以下が成り立つ．
+  \begin{itemize}
+    \item $f+g$は$\Omega$上で正則で，$(f + g)' = f' + g'$である．
+    \item $fg$は$\Omega$上で正則で，$(fg)' = f'g + fg'$である．
+    \item $g(z_{0}) \neq 0$ならば$f/g$は$z_{0}$で正則で，
+    \begin{equation*}
+      \left( \frac{f}{g} \right)' = \frac{f'g - fg'}{g^{2}}
+    \end{equation*}
+    \item もし$f:\Omega \to U,g:U\to \mathbf{C}$が正則なら，
+    \begin{equation*}
+      (g\circ f)'(z) = g'(f(z))f'(z)\qquad (z \in \Omega)
+    \end{equation*}
+    が成り立つ．
+  \end{itemize}
+}{}
+
+\Example{
+  $f(z) = z$は正則で，$f'(z) = 1$である．よってProp:\ref{Prop:B.1.2}より，
+  多項式
+  \begin{equation*}
+    p(z) = \sum_{i=0}^{n}a_{i}x^{i}
+  \end{equation*}
+  は$\mathbf{C}$で正則で，
+  \begin{equation*}
+    p'(z) = \sum_{i=1}^{n}i a_{i}x^{i-1}
+  \end{equation*}
+  である．
+}{}
+
+\Example{
+  $f(z) = \bar{z}$は正則ではない．
+}{}
+
+\noindent
+(B.9)の$h$が実数の場合の極限を考えよう．特に$h = h_{1} + ih_{2}$として$h_{2} = 0$
+の場合を考えよう．このとき$f(z) = f(x,y)$と書くことにすると，
+\begin{equation}
+  f'(z) = \lim_{h_{1} \to 0}\frac{f(x + h_{1},y) - f(x,y)}{h_{1}} = \frac{\partial f}{\partial x}(z)
+\end{equation}
+次に$h_{1} = 0$として考えると，
+\begin{equation}
+  f'(z) = \lim_{h_{2} \to 0}\frac{f(x,y + h_{2}) - f(x,y)}{ih_{2}} = \frac{1}{i}\frac{\partial f}{\partial y}(z)
+\end{equation}
+よって，$f$が正則なら
+\begin{equation}
+  \frac{\partial f}{\partial x} = \frac{1}{i}\frac{\partial f}{\partial y}
+\end{equation}
+が成り立つ．$f = u + iv$とかけば，
+\begin{equation}
+  \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y},\quad \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}
+\end{equation}
+が成り立つことがわかる．
+これらの関係式を\index{こーしーりーまんのほうていしき@コーシー・リーマンの方程式}
+\index{Cauchy-Riemann equations}
+\textbf{コーシー・リーマンの方程式(Cauchy-Riemann equations)}という．
+ここで，ウェルティンガーの微分を定義する．
+\begin{equation}
+  \frac{\partial}{\partial z}\defi \frac{1}{2}\left( \frac{\partial}{\partial x} + \frac{1}{i}\frac{\partial}{\partial y} \right),\quad \frac{\partial}{\partial \bar{z}} \defi \frac{1}{2}\left( \frac{\partial}{\partial x} - \frac{1}{i}\frac{\partial}{\partial y} \right)
+\end{equation}
+
+\Proposition{
+  $f$が$z_{0}$で正則なら
+  \begin{equation}
+    \frac{\partial f}{\partial \bar{z}}(z_{0}) = 0 
+  \end{equation}
+}{
+  $f = u + iv$と置くと，
+  \begin{align*}
+    \frac{\partial f}{\partial \bar{z}} 
+    &= \frac{1}{2}\left( \frac{\partial f}{\partial x} - \frac{1}{i}\frac{\partial f}{\partial y} \right)\\
+    &= \frac{1}{2}\left( \frac{\partial u}{\partial x} + i\frac{\partial v}{\partial x} - \frac{1}{i}\left( \frac{\partial u}{\partial y} + i\frac{\partial v}{\partial y} \right) \right)\\
+    &= \frac{1}{2} \left( \left( \frac{\partial u}{\partial x} - \frac{\partial v}{\partial y} \right) +i\left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial xL} \right)  \right)
+  \end{align*}
+  よってコーシー・リーマンの方程式と同値である．
+}
+
+

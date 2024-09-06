@@ -1,7 +1,30 @@
 
 \Section{Schemes}
 後できちんとした定義を述べるが，スキーム(scheme)とは局所環付き空間で局所的にはアフィンスキーム(affine scheme)とみれる
-空間のことである．すなわち，先にアフィンスキームを定義せねばなるまい．
+空間のことである．すなわち，先にアフィンスキームを定義せねばなるまい．\\
+まず，$A$を環とし$X=\spec{A}$とし，Zariski位相が与えられてるとする．
+このとき，$X$上の層$\mathcal{O}_{X}$を構成しよう．\\
+まず，$D(f)\subset X$に対して$\mathcal{O}_{X}(D(f)) = A_{f}(=A[1/f])$とする．
+次に射$\rho_{D(f),D(g)}:\mathcal{O}_{X}(D(f)) \to \mathcal{O}_{X}(D(g))$を定義しよう．\\
+まず，$D(g) \subset D(f)$とする．つまり
+\begin{equation*}
+  g\in \sqrt{fA}
+\end{equation*}
+である．これは
+\begin{equation}
+  \exists m \in \mathbf{N}-\{0\},\exists b\in A\text{ s.t. } g^{m} = fb
+\end{equation}
+を意味する．よって$f$は$A_{g}$で単元である．実際上の式に両辺$1/g^{m}$をかけることによって
+\begin{equation*} 
+  f^{-1} = b/g^{m}
+\end{equation*}
+を得る．これによって制限写像$A_{f} \to A_{g}$を
+\begin{equation*}
+  a/f^{n} \mapsto ab^{n}/g^{mn}
+\end{equation*}
+で定義できる．もし$D(f) = D(g)$なら$A_{f} \to A_{g}$は同型射になる．(計算すれば容易にわかる．)
+従って，$\mathcal{O}_{X}(D(f))$は$f$の選び方に依らない．$\{D(f)\}_{f}$は有限交叉で閉じた開基で
+あったから，これは$\mathfrak{B}\text{-presheaf}$である．
 \Proposition{
   $A$を環、$X=\text{Spec}\, A$とする。このとき以下が成り立つ。
   \begin{itemize}
@@ -80,11 +103,44 @@ $Y = \spec{A_{g}}$と置く．局所化と素イデアルの対応より標準�
   i:Y \to X
 \end{equation*}
 がある($\im i = D(g)$)\\
-$D(h)\subset D(g)$とする．$A\stackrel{\varphi}{\to} A_{g}$とする．また$\varphi(h) = \bar{h}$と置く．このとき標準的な同型
+$D(h)\subset D(g)$とする．$A\stackrel{\varphi}{\longrightarrow} A_{g}$とする．また$\varphi(h) = \bar{h}$と置く．このとき標準的な同型
 \begin{equation*}
   \mathcal{O}_{X}(D(h)) = A_{h} \simeq (A_{g})_{\bar{h}} = \mathcal{O}_{Y}(D(\bar{h})) = i_{*}\mathcal{O}_{Y}(D(h))
 \end{equation*}
-% 同型がよくわからん
+今$A_{h}\simeq (A_{g})_{\bar{h}}$は感覚的には
+\begin{equation*}
+  (A_{g})_{\bar{h}} = (A[1/g])_{\bar{h}} = A[1/g,1/\bar{h}]
+\end{equation*}
+で，$D(h)\subset D(g)$より$h^{n} = gb$となる$n\in \mathbf{N}-\{0\}$と$b\in A$がある．よって
+\begin{equation*}
+  A[1/g,1/\bar{h}] = A[b/h^{n},1/\bar{h}] = A[1/h]=A_{h}
+\end{equation*}
+具体的にはまず，$\varphi$が単射ではないとき，
+\begin{equation*}
+  \ker{\varphi} \neq 0 \Leftrightarrow A_{g} = 0
+\end{equation*}
+に注意すると(よって$(A_{g})_{\bar{h}} = 0$)，定義から$\ker{\varphi} \ni a \neq 0$とすると
+\begin{equation*}
+  \exists m\in \mathbf{N}\text{ s.t. } g^{m}a = 0
+\end{equation*}
+を満たす．また$h^n = gb$より$h^{nm}a = g^{m}ab^{m} = 0$より$\ker{(A\to A_{h})}$は$0$でない．
+従って，$A_{h}=0$だから自明に同型である．よって$\varphi$を単射とする．\\
+\begin{equation*}
+  (A_{g})_{\bar{h}} \to A_{h}
+\end{equation*}
+を，
+\begin{equation*}
+  \frac{a}{g^{m}}\frac{1}{\bar{h}^{k}} \mapsto \frac{ab^{m}}{h^{mn}}\frac{1}{h^{k}} = \frac{ab^{m}}{h^{mn + k}}
+\end{equation*}
+で定義する．これは簡単に準同型で$0\leq k<n$としてよい．次に
+\begin{equation*}
+  A_{h} \to (A_{g})_{\bar{h}}
+\end{equation*}
+を，
+\begin{equation*}
+  \frac{a}{h^{n}} \mapsto \frac{\bar{a}}{\bar{h}^{n}}
+\end{equation*}
+ただし，$0\leq k<n$とする．これらは互いに逆射を与えるので，
 $\{D(h)\}_{h}$は$D(g)$の開基となるので，$i$は$(Y,\mathcal{O}_{Y})$から$(D(g),\mathcal{O}_{X}|_{D(g)})\subset (X,\mathcal{O}_{X})$
 への同型を誘導する．(Refer to Exercises 2.7)
 }

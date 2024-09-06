@@ -28,9 +28,11 @@ $$
 \end{equation*}
 である．ここで$\proj{A}$を次のように定義しよう．
 \begin{equation*}
-  \proj{A}:= \{\mathfrak{p} \in \spec{A}\mid \mathfrak{p}は斉次イデアルでA_{+} \notin \mathfrak{p} \}
+  \proj{A}:= \left\{\mathfrak{p} \in \spec{A}\mid \mathfrak{p}は斉次イデアルでA_{+} \not \subset \mathfrak{p} \right\}
 \end{equation*}
-とおく．ただし
+とおく．
+%($A_{+}\not \subset \mathfrak{p}\Leftrightarrow A_{+}\cap \mathfrak{p}\not \subset A_{+}$であることに注意)
+ただし
 \begin{equation*}
   A_{+} := \bigoplus_{n > 0}A_{n}
 \end{equation*}
@@ -88,5 +90,50 @@ $I$を$A$の任意のイデアルとすると，$I$に伴う斉次イデアル$I
   \begin{equation*}
     a = \sum_{i = 0}^{n} a_{i},\quad b = \sum_{j = 0}^{m}b_{j},\quad a_{n},b_{n} \in A_{n}
   \end{equation*}
-  
+  よって$ab=a_{n}b_{m} + \{次数n+m未満の斉次元\}$だから$ab$の$n+m$次斉次元は$a_{n}b_{m}$で
+  \\
+  %わからん%
+  (2)まず$(\Leftarrow)$を示す．つまり$J\cap A_{+}\subset \sqrt{I}$とする．
+  任意の$\mathfrak{p}\in V_{+}(I)$に対して
+  \begin{equation*}
+    \mathfrak{p}\supset J\cap A_{+} \supset JA_{+}
+  \end{equation*}
+
 }
+
+斉次元$f\in A$に対して
+\begin{equation*}
+  D_{+}(f) = \proj{A}\mysetminus V_{+}(fA)
+\end{equation*}
+これを\index{きほんかいしゅうごう@基本開集合}\index{principal open subset}
+\textbf{基本開集合(principal open subset)}
+という．基本開集合の族$\{D_{+}(f)\}_{f}$は$\proj{A}$の開基になっている．
+\\
+\Lemma{
+  3.36
+}{}
+
+\Proposition{
+  3.38
+}{}
+
+\Lemma{
+  3.40
+}{}
+
+\Lemma{
+  3.41
+}{}
+
+\Definition{
+  3.42
+}{}
+
+\Lemma{
+  3.43
+}{}
+
+\Corollary{
+  3.44
+}{}
+

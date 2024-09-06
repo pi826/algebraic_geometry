@@ -1,0 +1,42 @@
+
+\subsection{Noetherian schemes, algebraic varieties}
+
+\Definition{
+  スキーム$X$の各点$x$のアフィン開近傍$\spec{A_{x}}$として，$A_{x}$がネーター環であるものがとれるとき
+  \index{きょくしょねーたーすきーむ@局所ネータースキーム}\index{locally noetherian scheme}
+  \textbf{局所ネータースキーム(locally noetherian scheme)}という．更に$X$が準コンパクトであれば
+  \index{ねーたーすきーむ@ネータースキーム}\index{noetherian scheme}
+  \textbf{ネータースキーム(noetherian scheme)}という．
+}
+
+\Proposition{
+  $X$をネータースキームとする．
+  \begin{itemize}
+    \item[(1)] $X$の任意の開(閉)部分スキームはネーターである．
+    \item[(2)] 任意の点$x\in X$に対して$\mathcal{O}_{X,x}$はネーター
+    \item[(3)] 任意のアフィン開集合$U$に対して$\mathcal{O}_{X}(U)$はネーター  
+  \end{itemize}
+}{
+  $X$はネーター的なので有限個のアフィン開集合$\{X_{i}\}$で被覆され$\mathcal{O}_{X}(X_{i})$はネーター環であるようにとる．\\
+  (1)$Z$を$X$の開(閉)部分スキームとする．$Z\cap X_{i}$がネーター環であることを示せば十分である．
+  また$Z\cap X_{i}$は$X_{i}$の開(閉)部分スキームであるので，結局$X$をアフィンスキームとしてよい．
+  よって，$X=\spec{A}$とおく．もし$Z$が開だとすると，$Z=X\mysetminus V(I)$なる$I$がある．
+  いま$A$はネーター環なので$I$は有限生成よって$Z$は有限個の基本開集合$D(f_{j})$で被覆され，
+  更にその局所化(例えば$A_{f_{j}}$)はまたネーター的である．従って$Z$はネーターである．\\
+  次に$Z$を閉のときはProp:\ref{Prop:1.5.12}よりよい．\\
+  (2)環$\mathcal{O}_{X,x}$はネーター環の局所化なので再びネーター環になる．\\
+  (3)上で見たように$U\cap X_{i}$は$X_{i}$の有限個のネーターアフィン開集合で被覆される．
+  従って$U$は有限個のネーターアフィン開集合$U_{j}$で被覆されているとしてよい．
+  $I$を$A=\mathcal{O}_{X}(U)$のイデアルとする．$I\mathcal{O}_{X}(U_{j})$
+  は有限生成である．$J\mathcal{O}_{X}(U_{j}) = I\mathcal{O}_{X}(U_{j})$
+  が任意の$j$で成り立つ有限生成なイデアル$J\subset I$が存在する．%感覚的にはわかるが，，
+  任意の点$x\in U$に対して$J\mathcal{O}_{U,x} = I\mathcal{O}_{U,x}$よって
+  \begin{equation*}
+    I\mathcal{O}_{U,x}/J\mathcal{O}_{U,x} = I/J \otimes_{A} A_{\mathfrak{p}} = 0
+  \end{equation*}
+  が任意の$\mathfrak{p} \in \spec{A}$で成り立つ．今$A_{\mathfrak{p}}\neq 0$なので
+  $I/J=0$で$I=J$は有限生成である．
+}
+\Definition{
+  $k$を体とする．
+}
