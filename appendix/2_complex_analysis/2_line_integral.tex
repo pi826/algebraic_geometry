@@ -22,3 +22,132 @@
   があって，$c(t)$が各区間$[a_{i},a_{i+1}]$において滑らかになっていることである．
   点$a_{i}$における右側微分と左側微分とは一致しないこともありうる．
 }
+\noindent
+二つのパラメトリック曲線
+\begin{equation*}
+  c:[a,b] \to \mathbf{C},\quad \bar{c}:[c,d] \to \mathbf{C}
+\end{equation*}
+が同値とは，全単射な$C^{1}$級関数$t:[a,b] \to [c,d]$があって，$t'(s) > 0$かつ
+\begin{equation*}
+  \bar{c}(t(s)) = c(s)
+\end{equation*}
+を満たしていることである．\\
+区分的に滑らかな曲線が閉とは始点と終点が一致していることをいう．\\
+区分的に滑らかな曲線$c$が，単純とは，$c$が単射なときをいう．ただし，曲線が
+閉の場合は始点と終点以外の点で単射なとき単純という．
+
+\Example{
+  中心を$z_{0}\in \mathbf{C}$とする半径$r$の円周
+  \begin{equation*}
+    C_{r}(z_{0}) = \{z\in \mathbf{C}\mid |z-z_{0}| = r\}
+  \end{equation*}
+  は単純閉曲線で，反時計回りのパラメータ付け
+  \begin{equation*}
+    c(t) = z_{0} + re^{it}\quad (t\in [0,2\pi])
+  \end{equation*}
+  を正の向きとしておこう．
+}{}
+漸く積分の定義にありつける．
+
+\Definition{
+  $c:[a,b] \to \mathbf{C}$によりパラメーター付けられた滑らかな曲線$\gamma$と
+  $\gamma$上の連続関数$f$が与えられたとき，$\gamma$に沿った$f$の積分または$\gamma$上の積分を
+  \begin{equation}
+    \int_{\gamma} f(z)dz = \int_{a}^{b}f(c(t))c'(t)dt
+  \end{equation}
+  により，定義する．この定義が意味を持つには，右辺がパラメーター付けに依らないこと
+  を示さなければならない．$\bar{c}:[c,d] \to \mathbf{C}$を同値なパラメータ付けだとする．
+  このとき積分の変数変換の公式と連鎖律から
+  \begin{equation}
+    \int_{a}^{b}f(c(t))c'(t)dt 
+    = \int_{a}^{b}f(\bar{c}(t(s)))\bar{c}'(t(s))t'(s)ds
+    = \int_{c}^{d}f(\bar{c}(s))\bar{c}'(s)ds
+  \end{equation}
+  が成り立つ．\\
+  $\gamma$は区分的に滑らかなときは，$\gamma$上の$f$の積分は，単に区分的に積分
+  した和として定義される．すなわち
+  \begin{equation}
+    \int_{\gamma}f(z)dz = \sum_{k = 0}^{n-1}\int_{a_{k}}^{a_{k+1}}f(c(t))c'(t)dt
+  \end{equation}
+  である．滑らかな曲線$\gamma$の長さ$L(\gamma)$は
+  \begin{equation}
+    L(\gamma) = \int_{a}^{b}|c'(t)|dt
+  \end{equation}
+  と定義する．
+}
+
+\Proposition{
+  以下が成立する．
+  \begin{itemize}
+    \item[(1)] $\alpha,\beta \in \mathbf{C}$に対して，
+    \begin{equation}
+      \int_{\gamma}(\alpha f(z) + \beta g(z))dz = \alpha\int_{\gamma}f(z)dz + \beta\int_{\gamma}g(z)dz
+    \end{equation} 
+    \item[(2)] $\gamma^{-}$を$\gamma$と逆に向き付けた曲線のとき
+    \begin{equation}
+      \int_{\gamma^{-}}f(z)dz = - \int_{\gamma}f(z)dz
+    \end{equation}
+    \item[(3)]次の不等式が成り立つ．
+    \begin{equation}
+      \left| \int_{\gamma}f(z)dz \right| \leq \sup_{z\in \gamma}|f(z)|\cdot L(\gamma)
+    \end{equation}
+  \end{itemize}
+}{
+  気が向いたら書く．
+}
+
+\Theorem{
+  $f$が開集合$\Omega$で連続で，かつ原始関数$F$をもち，$\gamma$が始点$w_{1}$,終点$w_{2}$の$\Omega$内の曲線であるとき，
+  \begin{equation}
+    \int_{\gamma}f(z)dz = F(w_{2}) - F(w_{1})
+  \end{equation}
+  が成り立つ．
+}{
+  $\gamma$が滑らかなとき，
+  $c:[a,b] \to \mathbf{C}$を$\gamma$のパラメータ付けだとすると，$c(a) = w_{1},c(b) = w_{2}$で
+  \begin{align*}
+    \int_{\gamma}f(z)dz 
+    &= \int_{a}^{b}f(c(t))c'(t)dt\\
+    &= \int_{a}^{b}F'(c(t))c'(t)dt\\
+    &= \int_{a}^{b}\frac{d}{dt}F(c(t))dt\\
+    &= F(c(b)) - F(c(a))
+  \end{align*}
+  である．$\gamma$が区分的に滑らかなとき，
+  \begin{align*}
+    \int_{\gamma}f(z)dz 
+    &= \sum_{k = 0}^{n-1}\int_{a_{k}}^{a_{k+1}}f(c(t))c'(t)dt\\
+    &= \sum_{k = 0}^{n-1}(F(c(a_{k+1})) - F(c(a_{k})))\\
+    &= F(c(a_{n})) - F(c(a_{0}))\\
+    &= F(c(b)) - F(c(a))
+  \end{align*}
+  を得る．
+}
+
+\Corollary{
+  $\gamma$が開集合$\Omega$における閉曲線で，$f$が連続かつ$\Omega$で原始関数をもつなら，
+  \begin{equation}
+    \int_{\gamma}f(z)dz = 0
+  \end{equation}
+  である．
+}{}
+
+\Example{
+  $f(z) = 1/z$は$\mathbf{C}\mysetminus\{0\}$で原始関数を持たない．
+}{
+  $C$を$c(t) = e^{it}\ (0\leq t \leq 2\pi)$でパラメーター付けられた単位円周とすると，
+  \begin{equation}
+    \int_{C}f(z)dz = \int_{0}^{2\pi}\frac{1}{e^{it}}ie^{it}dt = 2\pi i \neq 0
+  \end{equation}
+  だからである．
+}
+
+\Corollary{
+  $f$が領域$\Omega$で正則で，$f' = 0$なら$f$は定数である．
+}{
+  点$w_{0}\in \Omega$を任意に取り固定する．任意の$w\in \Omega$に対して，$f(w_{0}) = f(w)$を示せば十分である．
+  $\Omega$は連結なので$w_{0}$と$w$を結ぶ$\Omega$内の曲線$\gamma$がある．よって
+  \begin{equation}
+    \int_{\gamma}f'(z)dz = f(w) - f(w_{0})
+  \end{equation}
+  となる．仮定から$f' = 0$で左辺は$0$になり$f(w_{0}) = f(w)$を得る．
+}
