@@ -1,0 +1,24 @@
+
+\Section{Line Integral}
+\Definition{
+  \index{ぱらめとりっくきょくせん@パラメトリック曲線}\index{parametric curve}
+  \textbf{パラメトリック曲線(parametric curve)}とは，写像
+  $c:[a,b]\subset \mathbf{R} \to \mathbf{C}$のことである．\\
+  パラメトリック曲線が\index{なめらか@滑らか}\index{smooth}
+  \textbf{滑らか(smooth)}とは，$c'(t)$があって，$[a,b]$上で
+  連続であり，そして$t\in [a,b]$に対して$c'(t) \neq 0$を満たすことである．
+  ただし，点$t=a,t=b$に対しては$c'(a),c'(b)$を片側極限
+  \begin{equation*}
+    c'(a) = \lim_{\substack{h\to 0 \\ h > 0}}\frac{c(a + h) - c(a)}{h},\quad 
+    c'(a) = \lim_{\substack{h\to 0 \\ h < 0}}\frac{c(b + h) - c(b)}{h}
+  \end{equation*}
+  で定義する．\\
+  パラメトリック曲線が\index{くぶんてきになめらか@区分的に滑らか}\index{piecewise smooth}
+  \textbf{区分的に滑らか(piecewise smooth)}とは，$c$が$[a,b]$上で連続で，ある
+  区間の分割
+  \begin{equation*}
+    a = a_{0} < a_{1} < \dots < a_{n} = b
+  \end{equation*}
+  があって，$c(t)$が各区間$[a_{i},a_{i+1}]$において滑らかになっていることである．
+  点$a_{i}$における右側微分と左側微分とは一致しないこともありうる．
+}

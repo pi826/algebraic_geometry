@@ -127,7 +127,7 @@ $f$が点$z_{0}\in \Omega$で最大値をとるとは，
   \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y},\quad \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}
 \end{equation}
 が成り立つことがわかる．
-これらの関係式を\index{こーしーりーまんのほうていしき@コーシー・リーマンの方程式}
+これらの関係式(B.13)を\index{こーしーりーまんのほうていしき@コーシー・リーマンの方程式}
 \index{Cauchy-Riemann equations}
 \textbf{コーシー・リーマンの方程式(Cauchy-Riemann equations)}という．
 ここで，ウェルティンガーの微分を定義する．
@@ -146,9 +146,89 @@ $f$が点$z_{0}\in \Omega$で最大値をとるとは，
     \frac{\partial f}{\partial \bar{z}} 
     &= \frac{1}{2}\left( \frac{\partial f}{\partial x} - \frac{1}{i}\frac{\partial f}{\partial y} \right)\\
     &= \frac{1}{2}\left( \frac{\partial u}{\partial x} + i\frac{\partial v}{\partial x} - \frac{1}{i}\left( \frac{\partial u}{\partial y} + i\frac{\partial v}{\partial y} \right) \right)\\
-    &= \frac{1}{2} \left( \left( \frac{\partial u}{\partial x} - \frac{\partial v}{\partial y} \right) +i\left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial xL} \right)  \right)
+    &= \frac{1}{2} \left( \left( \frac{\partial u}{\partial x} - \frac{\partial v}{\partial y} \right) +i\left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right)  \right)
   \end{align*}
   よってコーシー・リーマンの方程式と同値である．
 }
 
+\Theorem{
+  $f=u + iv$を開集合$\Omega$上で定義された複素数値関数とする．もし，$u,v$が
+  $C^1$級で，コーシー・リーマンの方程式を満たすならば，$f$は$\Omega$上で正則で，
+  $f'(z) = \partial f/\partial z$を満たす．
+}{
+  \begin{align*}
+    u(x + h_{1},y + h_{2}) - u(x,y) = \frac{\partial u}{\partial x}h_{1} + \frac{\partial u}{\partial y}h_{2} + |h|\varepsilon_{1}(h)\\
+    v(x + h_{1},y + h_{2}) - v(x,y) = \frac{\partial v}{\partial x}h_{1} + \frac{\partial v}{\partial y}h_{2} + |h|\varepsilon_{2}(h)
+  \end{align*}
+  で表せる．ただしここで，$h = h_{1} + ih_{2}$が$|h| \to 0$のとき
+  $\varepsilon_{i}(h) \to 0$を満たしている．コーシー・リーマンの方程式を用いれば，
+  \begin{align*}
+    f(x + h) - f(x) 
+    &= u(x + h_{1},y + h_{2}) - u(x,y) + i(v(x + h_{1},y + h_{2}) - v(x,y))\\
+    &= \frac{\partial u}{\partial x}h_{1} + \frac{\partial u}{\partial y}h_{2} + i\left( \frac{\partial v}{\partial x}h_{1} + \frac{\partial v}{\partial y}h_{2} \right) + |h|\varepsilon(h)\\
+    &= \frac{\partial u}{\partial x}h_{1} + \frac{\partial u}{\partial y}h_{2} + i\left( -\frac{\partial u}{\partial y}h_{1} + \frac{\partial u}{\partial x}h_{2} \right) + |h|\varepsilon(h)\\
+    &= \left( \frac{\partial u}{\partial x} - i\frac{\partial u}{\partial y} \right)(h_{1} + ih_{2}) + |h|\varepsilon(h)
+  \end{align*}
+  ただし，$|h| \to 0$のとき$\varepsilon(h) = \varepsilon_{1}(h) + i\varepsilon_{2}(h) \to 0$を満たしている．
+  ゆえに$f$は正則で，
+  \begin{equation}
+    f'(z) = 2\frac{\partial u}{\partial z} = \frac{\partial f}{\partial z}
+  \end{equation}
+  が成り立つ．
+}
+\noindent
+次に冪級数
+\begin{equation}
+  \sum_{n = 0}^{\infty}a_{n}z^{n}\qquad (a_{i} \in \mathbf{C})
+\end{equation}
+について考えよう．(めんどうなので和の範囲を省略して$\sum a_{n}z^{n}$と書くこともある．)
+最初に次の定理を証明しよう．
+\Theorem{
+  冪級数$\sum a_{n}z^{n}$に対して$0\leq R \leq \infty$で，次を満たすものが存在する．
+  \begin{itemize}
+    \item[(1)] $|z| < R$ならばこの級数は絶対収束する．
+    \item[(2)] $R < |z|$ならばこの級数は発散する． 
+  \end{itemize}
+  ここで$\sum z_{n}$絶対収束するとは$\sum |z_{n}|$が収束するときをいう．\\
+  便宜上$1/0 = \infty,1/\infty = 0$とすると，$R$は以下で与えられる．
+  \begin{align}
+    \frac{1}{R} &= \limsup_{n \to \infty} \sqrt[n]{|a_{n}|}\\
+    R &= \lim_{n \to \infty}\left| \frac{a_{n}}{a_{n+1}} \right|
+  \end{align}
+}{
+  後で書く．
+}
+
+\Definition{
+  上の定理の$R$を冪級数の\index{しゅうそくはんけい@収束半径}\index{radius of convergence}
+  \textbf{収束半径(radius of convergence)}といい，領域$|z|<R$を
+  \index{しゅうそくえん@収束円}\index{circle of convergence}
+  \textbf{収束円(circle of convergence)}という．
+}
+
+\Remark{
+  収束円の境界$|z| = R$上では収束することも発散することもある．
+}{}
+
+\Theorem{
+  冪級数$\sum a_{n}z^{n}$の収束円内の点における微分は級数の項別微分$\sum na_{n}z^{n-1}$で与えられる．
+  \begin{equation}
+    \frac{\partial}{\partial z} \sum_{n = 0}^{\infty}a_{n}z^{n} = \sum_{n = 0}^{\infty}\frac{\partial }{\partial z}a_{n}z^{n} = \sum_{n = 0}^{\infty}na_{n}z^{n-1}
+  \end{equation}
+  更に，冪級数は微分しても収束半径は変わらない．
+}{
+  後で書く．
+}
+
+\Corollary{
+  冪級数はその収束円内で無限回複素微分可能
+}{}
+
+最後に開集合$\Omega$上の複素数値関数$f$が$z_{0}\in \Omega$で\index{かいせきてき@解析的}\index{analytic}
+\textbf{解析的(analytic)}とは，$z_{0}$を中心として，正の収束半径を持つ冪級数
+$\sum a_{n}(z - z_{0})^{n}$があって，$z_{0}$のある近傍内の任意の点$z$において
+\begin{equation}
+  f(z) = \sum_{n = 0}^{\infty}a_{n}(z - z_{0})^{n}
+\end{equation}
+が成り立つことである．$f$が$\Omega$内の任意の点で解析的であるとき$f$は$\Omega$上で解析的であるという．
 

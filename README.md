@@ -11,13 +11,17 @@
     - [1.5.1 Morphism of schemes](#151-morphism-of-schemes)
   - [Appendix A: Limits](#appendix-a-limits)
     - [A.1 Inductive Limit](#a1-inductive-limit)
-  - [Appendix B: Category Theory](#appendix-b-category-theory)
+  - [Appendix B: Complex Analysis](#appendix-b-complex-analysis)
+    - [B.1 Holomorphic Function](#b1-holomorphic-function)
+    - [B.2 Line Integral](#b2-line-integral)
 - [参考文献](#参考文献)
   - [book](#book)
     - [Liu "Algebraic Geometry and Arithmetic Curves"](#liu-algebraic-geometry-and-arithmetic-curves)
     - [Ulrich Görtz and Torsten Wedhorn "Algebraic Geometry I: Schemes With Examples and Exercises"](#ulrich-görtz-and-torsten-wedhorn-algebraic-geometry-i-schemes-with-examples-and-exercises)
     - [上野健爾 "代数幾何"](#上野健爾-代数幾何)
     - [宮西正宜 "代数幾何学"](#宮西正宜-代数幾何学)
+    - [堀川穎二 "複素代数幾何学入門"](#堀川穎二-複素代数幾何学入門)
+    - [小平邦彦 "複素多様体論"](#小平邦彦-複素多様体論)
     - [寺杣友秀 "リーマン面の理論"](#寺杣友秀-リーマン面の理論)
     - [安藤哲哉 "代数曲線・代数曲面入門 --- 複素代数幾何の源流"](#安藤哲哉-代数曲線代数曲面入門-----複素代数幾何の源流)
     - [志甫淳 "層とホモロジー代数"](#志甫淳-層とホモロジー代数)
@@ -32,6 +36,7 @@
     - [William Fulton "ALGEBRAIC CURVES"](#william-fulton-algebraic-curves)
   - [website](#website)
     - [層理論](#層理論)
+    - [The Stacks project](#the-stacks-project)
 
 
 # 目次
@@ -78,8 +83,13 @@
 ### A.1 Inductive Limit
 書いている。
 
-## Appendix B: Category Theory
-気が向けば書きたい。
+## Appendix B: Complex Analysis
+
+### B.1 Holomorphic Function
+証明を書く．
+
+### B.2 Line Integral
+書いている．
 
 <br>
 
@@ -106,6 +116,10 @@
 ### [Phillip Griffiths and Joseph Harris "Principles of Algebraic Geometry"](https://onlinelibrary.wiley.com/doi/book/10.1002/9781118032527)
 
 -->
+
+### [堀川穎二 "複素代数幾何学入門"](https://www.iwanami.co.jp/book/b265464.html)
+
+### [小平邦彦 "複素多様体論"](https://www.iwanami.co.jp/book/b265463.html)
 
 ### [寺杣友秀 "リーマン面の理論"](https://www.morikita.co.jp/books/mid/007831)
 
@@ -149,6 +163,6 @@
 
 ### [層理論](https://mathlog.info/articles/1422)
 
-
+### [The Stacks project](https://stacks.math.columbia.edu/)
 
 
