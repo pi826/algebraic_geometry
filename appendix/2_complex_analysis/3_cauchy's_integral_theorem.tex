@@ -1,0 +1,38 @@
+
+\Section{Cauchy's Integral Theorem}
+コーシーの積分定理とは，以下のことである．\\
+$D$を領域，$f$を$D$上の正則関数，$C$を$D$内の閉曲線で$D$内で$C$が$0$にホモトープ($C\simeq 0$)ならば
+\begin{equation}
+  \int_{C}f(z)dz = 0
+\end{equation}
+が成り立つ．\\
+ホモトープの定義などは後で述べる．最初に$C$が三角形の辺のなす折れ線の場合を示す．
+$\mathbf{C}$の三点$a,b,c$を頂点とする閉三角形を$T(a,b,c)$で表す．
+\begin{equation}
+  T(a,b,c) = \{z = \lambda a + \mu b + \nu c \in \mathbf{C} \mid \lambda + \mu + \nu = 1,\ \lambda, \mu,\nu, \geq 0\}
+\end{equation}
+と表される．$T$の内部は
+\begin{equation}
+  \{z = \lambda a + \mu b + \nu c \in \mathbf{C} \mid \lambda + \mu + \nu = 1,\ \lambda, \mu, \nu > 0\}
+\end{equation}
+で与えられる．\\
+$T$の境界$\partial T$は閉曲線として$a\to b \to c \to a$と各辺上を動くとき，
+左側に$T$の内部があるように動く向きになっているとする．この向きを$\partial T$の
+正の向きという．
+\Lemma{
+  $D$を領域，$T\subset D$を閉三角形とし，$\partial T$を上のようにする．このとき任意の
+  $D$上で正則な$f$に対して，
+  \begin{equation}
+    \int_{\partial T}f(z)dz = 0
+  \end{equation}
+}{
+  後で書く．
+}
+
+\Theorem{
+  領域$D$内で，始点$w_{0}\in D$，終点$w_{1} \in D$を共有する二つの曲線$\gamma,\gamma'$
+  が，ホモトープならば
+  \begin{equation}
+    \int_{\gamma}f(z)dz = \int_{\gamma'}f(z)dz
+  \end{equation}
+}{}
