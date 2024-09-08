@@ -1,0 +1,43 @@
+
+\Section{Cauchy's Integral Formula}
+\Theorem{(Cauchy's Integral Formula1)\\
+  $f$を閉円板$\overline{D(a;r)}$の近傍上の正則関数とし，円$C(a;r)$に
+  反時計回りの向き(正の向き)を与える．このとき，次の等式が成り立つ．
+  \begin{equation}
+    f(z) = \frac{1}{2\pi i}\int_{C(a;r)}\frac{f(\zeta)}{\zeta - z}d\zeta\qquad (z\in D(a;r))
+  \end{equation}
+}{
+  平行移動で$a = 0$とする．ある開円板$D(r')\ (r' > r)$上で
+  $f$は正則である．$z\in D(r)$に対し$\varepsilon > 0$を$\overline{D(z;\varepsilon)}\subset D(r)$となるようにとる．
+  今ここで，$C(r) = \partial D(r),C(z;\varepsilon) = \partial D(z;\varepsilon)$
+  は反時計回りの向き(正の向き)をもつ円とする．$z_{1}\in \partial D(r)$
+}
+\begin{tikzpicture}
+  \draw[dashed] (-1.414,-1.414) -- (1.414,1.414);
+  \coordinate (z1) at (1.414,1.414);
+  \coordinate (z2) at (0.407,0.407);
+  \coordinate (center1) at (0,0);
+  \coordinate (center2) at (-0.3,-0.3);
+
+  \fill (z1) circle (0.6mm) node[right] at (1.514,1.514) {$z_{1}$};
+  \fill (z2) circle (0.6mm) node[right] {$z_{2}$};
+  \draw[thick,
+        postaction={decorate},
+        decoration={markings,
+                    mark=at position 0.4 with {\arrow{>}},
+                    mark=at position 0.9 with {\arrow{>}}
+                    }
+        ](center1) circle[radius = 2] node[right] at (2,0) {$\scriptstyle \partial D(r)$};
+  \draw[thick,
+        postaction={decorate},
+        decoration={markings,
+                    mark=at position 0.5 with {\arrow{<}},
+                    mark=at position 1 with {\arrow{<}}
+                    }
+        ](center2) circle[radius = 1] node[right] at (0.5,-0.7) { $\scriptstyle -\partial D(z;\varepsilon)$};
+  \fill (center1) circle (0.6mm) node[below right] {$0$};
+  \fill (center2) circle (0.6mm) node[left] {$z$};
+  \draw (-1.007,-1.007) to [bend right = 60] node [fill = white, midway] {$\varepsilon$} (center2);
+  \draw[thick] (z1) to (z2);
+\end{tikzpicture}
+
