@@ -1,2 +1,74 @@
 
 \Section{Residue Theorem}
+
+\Definition{
+  領域$D$で正則な関数$f$が点$c\in D$で$f(c) = 0$ならば，$c$を$f$の\textbf{零点(zoro of $f$)}
+  という．一致の定理によれば，$f$が恒等的に$0$でなければ，$f$の零点集合は内点を
+  持たない．$c$を$f$の零点として$z = c$における$f$の冪級数展開を
+  \begin{equation}
+    f(z) = \sum_{n = 0}^{\infty}a_{n}(z - c)^{n}
+  \end{equation}
+  とする．$f(c) = 0$だから$a_{0} = 0$である．$f$は恒等的に$0$でないとするならば，
+  $a_{n}$の中に$0$でないものがあるからそのような$a_{n}$の中で$n$が最小のものを
+  $a_{k}$とする．このとき$f$は$c$において$k$位の零(zero of order $k$)を
+  持つという．$k$を零点$c$の位数(order)または重複度(multiplicity)ということもある．
+  定理〇〇によって，これは
+  \begin{equation}
+    f(c) = f'(c) = \dots = f^{(k-1)}(c) = 0\qquad (f^{(k)}(c)\neq 0)
+  \end{equation}
+  ということと同値である．
+}
+
+\Theorem{
+  $f$は$D$上正則な関数で$z = c$において$k$位の零を持つとする．
+  このとき$f(z) = (z - c)^{k}g(z),\ g(c) \neq 0$である$D$上の正則な関数$g$が存在する．
+}{
+  \begin{equation}
+    g(z) = \frac{f(z)}{(z - c)^{k}}
+  \end{equation}
+  と定義すれば，$g$は$D\mysetminus \{c\}$で正則である．$f$の冪級数展開(B.39)を用いると，
+  \begin{equation}
+    \phi(z) := \frac{f(z)}{(z - c)^{k}} = \sum_{n = k}^{\infty}a_{n}(z - c)^{n - k}
+  \end{equation}
+  $\phi$はもとの冪級数と同じ収束半径を持つ．$\phi$の作り方から$\phi$は収束する領域内で
+  $z \neq c$なる$z$に対して$g(z) = \phi(z)$が成立する．
+  したがって，$g(c) = \phi(c)(=a_{k})$と定義すれば，$g$は$D$全体で正則で
+  $f(z) = (z - c)^{k}g(z)$かつ$g(c)\neq 0$を満たす．
+}
+
+\Corollary{
+  $f$が恒等的に$0$でないならば$f$の零点集合は離散的である．
+}{
+  $c$を$f$の零点とすれば，$f(z) = (z - c)^{k}g(z),\ g(c) \neq 0$なる$g$がある．
+  $g(c) \neq 0$だから$c$の十分小さい近傍$U(c)$をとれば，$U(c)$の任意の点$z$に対して
+  $g(z) \neq 0$である．したがって，$f$は$U(c)$内に$c$以外の零点を持たない．
+  % 一致の定理から言える．
+}
+
+\Definition{
+  領域$D$と$D$のりさん部分集合$\{c_{\alpha}\}_{\alpha\in A}$を考える．
+  $f$は$D\mysetminus \{c_{\alpha}\}_{\alpha\in A}$で正則な関数とする．
+  このとき$f$が$D$上の\textbf{有理型関数(meromorphic function)}であるとは，
+  各$\alpha$に対して$c_{\alpha}$の近傍$U_{\alpha}$と$U_{\alpha}$で定義された
+  正則関数$g_{\alpha},h_{\alpha}$が存在して，$U_{\alpha}\mysetminus c_{\alpha}$
+  上で，
+  \begin{equation}
+    f(z) = \frac{g_{\alpha}(z)}{h_{\alpha}(z)}
+  \end{equation}
+  が成り立つことである．$z = c_{\alpha}$における$g_{\alpha},h_{\alpha}$の零点の位数を
+  $k,l$とする．すると定理〇〇より
+  \begin{equation}
+    f(z) = \frac{g_{\alpha}(z)}{h_{\alpha}(z)} = \frac{(z - c_{\alpha})^{k}g'_{\alpha}(z)}{(z - c_{\alpha})^{l}h'_{\alpha}(z)}
+  \end{equation}
+  で$g'_{\alpha},h'_{\alpha}$は$z = c_{\alpha}$で$0$ではないようにとれる．
+  よって，$k\geq l$ならば$f$は$z = c_{\alpha}$で正則になるように拡張できる．
+  逆に$k < l$ならば$f$を$z = c_{\alpha}$まで正則にはできない．この場合$f$は
+  $z = c_{\alpha}$で\textbf{極(pole)}を持つといって，$l - k$を極の位数(order)という．
+}
+$f$は$D$上の有理型関数で$z = c$で極を持つとする．$c$を中心とした十分小さい円周$C(c;\varepsilon)$をとって，積分
+\begin{equation}
+  \frac{1}{2\pi i}\int_{C(c;\varepsilon)}f(z)dz
+\end{equation}
+ただし，円周は正の向きに向き付けられているとする．Cauchyの積分定理によって，
+正数$\varepsilon$が十分小さい時
+

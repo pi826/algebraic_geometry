@@ -9,35 +9,45 @@
 }{
   平行移動で$a = 0$とする．ある開円板$D(r')\ (r' > r)$上で
   $f$は正則である．$z\in D(r)$に対し$\varepsilon > 0$を$\overline{D(z;\varepsilon)}\subset D(r)$となるようにとる．
-  今ここで，$C(r) = \partial D(r),C(z;\varepsilon) = \partial D(z;\varepsilon)$
-  は反時計回りの向き(正の向き)をもつ円とする．$z_{1}\in \partial D(r)$
+  今ここで，$C(r) = \partial D(r)$,$C(z;\varepsilon) = \partial D(z;\varepsilon)$
+  は反時計回りの向き(正の向き)をもつ円とする．
+  \begin{wrapfigure}{r}{0pt}
+    \begin{tikzpicture}
+      \draw[dashed] (-1.414,-1.414) -- (1.414,1.414);
+      \coordinate (z1) at (1.414,1.414);
+      \coordinate (z2) at (0.407,0.407);
+      \coordinate (center1) at (0,0);
+      \coordinate (center2) at (-0.3,-0.3);
+    
+      \fill (z1) circle (0.6mm) node[right] at (1.514,1.514) {$z_{1}$};
+      \fill (z2) circle (0.6mm) node[right] {$z_{2}$};
+      \draw[thick,
+            postaction={decorate},
+            decoration={markings,
+                        mark=at position 0.4 with {\arrow{>}},
+                        mark=at position 0.9 with {\arrow{>}}
+                        }
+            ](center1) circle[radius = 2] node[right] at (2,0) {$\scriptstyle \partial D(r)$};
+      \draw[thick,
+            postaction={decorate},
+            decoration={markings,
+                        mark=at position 0.5 with {\arrow{<}},
+                        mark=at position 1 with {\arrow{<}}
+                        }
+            ](center2) circle[radius = 1] node[right] at (0.5,-0.7) { $\scriptstyle -\partial D(z;\varepsilon)$};
+      \fill (center1) circle (0.6mm) node[below right] {$0$};
+      \fill (center2) circle (0.6mm) node[left] {$z$};
+      \draw (-1.007,-1.007) to [bend right = 60] node [fill = white, midway] {$\varepsilon$} (center2);
+      \draw[thick] (z1) to (z2);
+    \end{tikzpicture}
+    \caption{$\gamma$の図}
+  \end{wrapfigure}
+  ここで，右図(図B.1)のように曲線$\gamma$を定義する．\\
+  具体的には次のように定義する．$z_{1}\in \partial D(r)$と
+  $z_{2}\in \partial D(z;\varepsilon)$を最も遠くなるように取る．
+  そして，$z_{1}$を始点として$z_{2}$へ動いて$\partial D(z;\varepsilon)$
+  を時計回りに一周して($-\partial D(z;\varepsilon)$)，次に$z_{2}$から$z_{1}$へ動いて，
+  $\partial D(r)$を反時計回りに一周する曲線を$\gamma$とする．\\
+  
 }
-\begin{tikzpicture}
-  \draw[dashed] (-1.414,-1.414) -- (1.414,1.414);
-  \coordinate (z1) at (1.414,1.414);
-  \coordinate (z2) at (0.407,0.407);
-  \coordinate (center1) at (0,0);
-  \coordinate (center2) at (-0.3,-0.3);
-
-  \fill (z1) circle (0.6mm) node[right] at (1.514,1.514) {$z_{1}$};
-  \fill (z2) circle (0.6mm) node[right] {$z_{2}$};
-  \draw[thick,
-        postaction={decorate},
-        decoration={markings,
-                    mark=at position 0.4 with {\arrow{>}},
-                    mark=at position 0.9 with {\arrow{>}}
-                    }
-        ](center1) circle[radius = 2] node[right] at (2,0) {$\scriptstyle \partial D(r)$};
-  \draw[thick,
-        postaction={decorate},
-        decoration={markings,
-                    mark=at position 0.5 with {\arrow{<}},
-                    mark=at position 1 with {\arrow{<}}
-                    }
-        ](center2) circle[radius = 1] node[right] at (0.5,-0.7) { $\scriptstyle -\partial D(z;\varepsilon)$};
-  \fill (center1) circle (0.6mm) node[below right] {$0$};
-  \fill (center2) circle (0.6mm) node[left] {$z$};
-  \draw (-1.007,-1.007) to [bend right = 60] node [fill = white, midway] {$\varepsilon$} (center2);
-  \draw[thick] (z1) to (z2);
-\end{tikzpicture}
 

@@ -34,7 +34,8 @@ $\mathfrak{B}$-sheafはアフィンスキームの構成にも必要な概念で
 }
 
 \Proposition{
-  $\mathcal{F}$を$\mathfrak{B}$-層とする．このとき，任意の開集合$V$に対して
+  $\mathcal{F}$を$\mathfrak{B}$-層とする．このとき，任意の$\mathfrak{B}$の元でない
+  開集合$V$に対して
   \begin{equation*}
     \mathcal{F}(V) = \left\{(s_{U})_{U}\in \prod_{\substack{U \in \mathfrak{B} \\ U \subset V}}
     \mathcal{F}(U) \ \biggl|\ \forall U,U'\in \mathfrak{B},\ s_U|_{U\cap U'} = s_{U'}|_{U \cap U'}\right\}
@@ -71,27 +72,23 @@ $\mathfrak{B}$-sheafはアフィンスキームの構成にも必要な概念で
   %   \end{tikzpicture}
   % \end{center}
   % するとこれは前層になる．
-}{}
-
-\Proposition{
-  更に，$\mathfrak{B}$が有限交叉で閉じているなら，層になる．
 }{
   \Claim{ (4)(Uniqueness)が成立する}\\
-  $s\in \mathcal{F}(V)$が任意の$i$に対して$s|_{V_{i}} = 0$とする．今定義から$s=0$とは
+  $\mathfrak{B}$の元でない開集合$V$をとり開被覆$\{V_{i}\}_{i}$をとる．
+  \begin{equation*}
+    V = \bigcup_{\substack{V_{i} \subset V\\ V_{i} \in \mathfrak{B}}}V_{i} 
+  \end{equation*}
+  $s\in \mathcal{F}(V)$が任意の$i$に対して$s|_{V_{i}} = 0$とする．
+  このとき$s= 0$が成り立つ．実際，定義から$s=0$とは
   $U\subset V$なる任意の$U\in \mathfrak{B}$に対して$s_{U}\in \mathcal{F}(U)$が$0$であること
-  である．実際$V$の開被覆から$U$の開被覆$\{U\cap V_{i}\}_{i} \subset \mathfrak{B}$を得る．
+  である．
+  まず，$V$の開被覆から$U$の開被覆$\{U\cap V_{i}\}_{i} \subset \mathfrak{B}$を得る．
   また任意の$i$に対して$U\cap V_{i} \subset V_{i}$より$s|_{V_{i}}|_{U\cap V_{i}} = s|_{U\cap V_{i}} = 0$となる．従って任意の$i$に対して$s_{U}|_{U\cap V_{i}} = 0$となる．
   今$\mathcal{F}$は$\mathfrak{B}$-sheafなので$s_{U} = 0$よって$s=0$が分かる．\\
   \Claim{ (5)(Glueing local sections)が成立する}\\
-  $s_{i} \in \mathcal{F}(V_{i})$が任意の$i,j$に対して$s_{i}|_{V_{i}\cap V_{j}} = s_{j}|_{V_{i} \cap V_{j}}$を満たすとする．今$U\in \mathfrak{B}$成分への射影を
-  \begin{equation*}
-    \varphi _{U}:\varprojlim_{U\subset V}\mathcal{F}(U) \to \mathcal{F}(U)
-  \end{equation*}
-  と書くことにすると，制限写像$\rho_{V,V_{i}} = \varphi_{V_{i}}$で，つまり$(s_{U})_{U}\in \mathcal{F}(V)$で$(s_{U})_{U}|_{V_{i}} = s_{i}$なる$(s_{U})_{U}$が
-  あることを示せば良い．各$i$に対して$V_{i} \subset U_{i}$なる$U_{i}\in \mathfrak{B}$で$s_{U_{i}}|_{V_{i}} = s_{i}$
-  なる$s_{U_{i}}\in \mathcal{F}(U_{i})$があればいい．今$U_{i}\subset V$なので$U$の開被覆$\{U_{i}\cap V_{j}\}_{j}$
-  が取れる．
-
+  $s_{V_{i}} \in \mathcal{F}(V_{i})$が任意の$i,j$に対して$s_{V_{i}}|_{V_{i}\cap V_{j}} = s_{V_{j}}|_{V_{i} \cap V_{j}}$を満たすとする．
+  $(s_{U})_{U}\in \prod \mathcal{F}(U)$を$U = V_{i}$のとき$s_{U} = s_{V_{i}}$で
+  定義すれば，$(s_{U})_{U} \in \mathcal{F}(V)$で，$(s_{U})_{U}|_{V_{i}} = s_{V_{i}}$
 }
 % 位相空間$X$の任意の開集合$U$をとり,$\{U_{i}\}_{i}$をその開被覆とする.($U_{i} \in \mathcal{B}$)
 % \begin{equation*}

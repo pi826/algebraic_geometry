@@ -28,12 +28,67 @@
 \Proposition{
   $A$を環、$X=\text{Spec}\, A$とする。このとき以下が成り立つ。
   \begin{itemize}
-    \item[(1)] $\mathcal{O}_{X}'$を環の$\mathfrak{B}$-層とする。$\mathcal{O}_{X}'$が誘導する$X$上の層$\mathcal{O}_{X}$は$\mathcal{O}_{X}(X)=A$となる。
+    \item[(1)] $\mathcal{O}_{X}$を環の$\mathfrak{B}$-層とする。$\mathcal{O}_{X}$が誘導する$X$上の層$\mathcal{O}_{X}$は$\mathcal{O}_{X}(X)=A$となる。
     \item[(2)] 任意の$\mathfrak{p}\in X$に対して、茎$\mathcal{O}_{X,\mathfrak{p}}$は$A_{\mathfrak{p}}$への標準的な同型がある。特に、$(X,\mathcal{O}_{X})$は局所環付き空間になる。
   \end{itemize}
 }{
-  まず，開集合$U=X$についてUniquness条件を確認する．ほかの基本開集合も同様に示される．
-  $U_{i} = $
+  まず，$X = D(1)$なので$\mathcal{O}_{X}(X) = \mathcal{O}_{X}(D(1)) = A$．
+  次に，開集合$U=X$についてUniquness条件を確認する．ほかの基本開集合も同様に示される．
+  \begin{equation*}
+    X = \bigcup_{i}D(f_{i}) = D(\sum_{i}f_{i}A)
+  \end{equation*}
+  開被覆$\{D(f_{i})\}_{i}$をとる．いま$s\in \mathcal{O}_{X}(X) = A$に対して
+  $s|_{D(f_{i})} = 0$とする．このとき，ある$m_{i}\geq 1$があって，
+  \begin{equation*}
+    f_{i}^{m_{i}}s = 0
+  \end{equation*}
+  いま，
+  \begin{equation*}
+    X = \bigcup_{i}D(f_{i}) = \bigcup_{i}D(f^{m_{i}}_{i}) = D(\sum_{i}f^{m_{i}}_{i}A)
+  \end{equation*}
+  これは，$1 \in \sum f^{m_{i}}_{i}A$を意味する．よって
+  \begin{equation*}
+    s \in \sum_{i}sf^{m_{i}}_{i}A = 0
+  \end{equation*}
+  よって$s = 0$を得る．\\
+  次に，Glueing local sections条件を確認する．
+  $s_{i} \in \mathcal{O}_{X}(D(f_{i})) = A_{f_{i}}$をとる．
+  そして，任意の$i,j$に対して，$s_{i}|_{D(f_{i})\cap D(f_{j})} = s_{j}|_{D(f_{i}) \cap D(f_{j})}$
+  が成り立つとする．$s_{i} \in A_{f_{i}}$よりある$m_{i}\geq 1$があって
+  \begin{equation*}
+    s_{i} = \frac{b_{i}}{f^{m_{i}}_{i}}
+  \end{equation*}
+  実は$m_{i}$は$i$に関わらず選ぶことが出来る．$X$は準コンパクトなので有限個の$i\in I$で被覆できる．なので$\max \{m_{i}\}_{i \in I}$を$m$とすると，
+  $m\geq m_{i}$なので，
+  \begin{equation*}
+    s_{i} = \frac{b_{i}}{f^{m_{i}}_{i}} = \frac{b_{i}f^{m - m_{i}}_{i}}{f^{m}_{i}} = \frac{c_{i}}{f^{m}_{i}}
+  \end{equation*}
+  となる．$D(f_{i})\cap D(f_{j}) = D(f_{i}f_{j})$であることを考慮すれば，
+  \begin{align*}
+    \left. \frac{b_{i}}{f^{m}_{i}} \right|_{D(f_{i}) \cap D(f_{j})} 
+    &= \frac{b_{i}c_{i}^{m}}{(f^{n_{i}}_{i}f^{n_{i}}_{j})^{m}}\\
+    \left. \frac{b_{j}}{f^{m}_{j}} \right|_{D(f_{i}) \cap D(f_{j})}
+    &= \frac{b_{j}c_{j}^{m}}{(f^{n_{j}}_{i}f^{n_{j}}_{j})^{m}}
+  \end{align*}
+  よって，仮定から，
+  \begin{equation*}
+    \frac{b_{i}c_{i}^{m}}{(f^{n_{i}}_{i}f^{n_{i}}_{j})^{m}} = \frac{b_{j}c_{j}^{m}}{(f^{n_{j}}_{i}f^{n_{j}}_{j})^{m}}
+  \end{equation*}
+  なので，
+  \begin{equation*}
+    (f_{i}f_{j})^{r_{i,j}}(b_{i}c_{i}^{m}(f^{n_{j}}_{i}f^{n_{j}}_{j})^{m} - b_{j}c^{m}_{j}(f^{n_{i}}_{i}f^{n_{i}}_{j})^{m}) = 0
+  \end{equation*}
+  となる$r_{i,j}$がある．しかし，
+  上と同様に$r = \max \{r_{i,j}\}_{(i,j)\in I\times I}$とおくと，
+  \begin{equation*}
+    (f_{i}f_{j})^{r}(b_{i}c_{i}^{m}(f_{i}^{n_{j}}f_{j}^{n_{j}})^{m} - b_{j}c_{j}^{m}(f_{i}^{n_{i}}f_{j}^{n_{i}})^{m}) = 0
+  \end{equation*}
+  で，
+  上で見たように，$1 = \sum a_{j}f_{j}^{m+r_{i,j}}$なる$a_{j}\in A$
+  がとれる．$s = \sum a_{j}b_{j}f^{r_{i,j}}_{j} \in A$とおくと，
+  \begin{equation*}
+    f^{m + r_{i,j}}_{i}s = \sum_{j}b_{j}f^{r_{i,j}}_{j}f^{m + r_{i,j}}_{i} = \sum_{j}a_{j}b_{i}f_{i}^{r_{i,j}}f_{j}^{m+r_{i,j}} = b_{i}f_{i}^{r_{i,j}}
+  \end{equation*}
 }
 
 \Definition{
