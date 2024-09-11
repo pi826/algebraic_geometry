@@ -1,0 +1,41 @@
+
+\subsection{Redused Schemes}
+
+\Definition{
+  \index{ひやくかん@被約環}\index{reduced ring}
+  \textbf{被約環(reduced ring)}とは$0$でない冪零元を持たない環のことをいう．
+}
+
+\Definition{
+  スキーム$X$が$x\in X$で\textbf{被約(reduced)}とは環$\mathcal{O}_{X,x}$が被約であるときをいう．$X$の任意の点で被約なとき単に$X$は被約であるという．
+}
+
+\Proposition{
+  $X$をスキームとする．以下が成り立つ．
+  \begin{itemize}
+    \item[(1)] $X$が被約$\Leftrightarrow$任意の開集合$U \subset X$に対して$\mathcal{O}_{X}(U)$は被約
+    \item[(2)] $\{X_{i}\}_{i}$を$X$のアフィン開被覆だとする．このとき$\mathcal{O}_{X}(X_{i})$が被約ならば$X$は被約である．
+    \item[(3)] 被約閉部分スキーム$i:X_{\text{red}} \to X$で次を満たすものが唯一存在する．$X_{\text{red}}$と$X$は同じ底空間$X$で，更に，$X$が準コンパクトなら$\ker{i^{\#}(X)}$は$\mathcal{O}_{X}(X)$の冪零根基
+    \item[(4)] 被約スキーム$Y$に対して任意の射$f:Y \to X$は$i:X_{\text{red}} \to Y$によって$g:Y \to X_{\text{red}}$に分解される．つまり$f = i \circ g$が成り立つ．
+    \item[(5)] $Z$を$X$の閉集合とする．このとき，自然に被約閉部分スキームの構造が$Z$に入る．
+  \end{itemize}
+}{
+  $A$を環として，$N(A)$を$A$の冪零根基とする．このときイデアル層$\mathcal{N} \subset \mathcal{O}_{X}$を
+  \begin{equation*}
+    \mathcal{N}(U) := \{s\in \mathcal{O}_{X}(U) \mid \forall x\in U,\ s_{x} \in N(\mathcal{O}_{X,x})\}
+  \end{equation*}
+  で定義する．このとき$X$が被約であることと$\mathcal{N} = 0$は同値．
+  任意の準コンパクト開集合$U\subset X$に対して
+  \begin{equation*}
+    \mathcal{N}(U) = N(\mathcal{O}_{X}(U))
+  \end{equation*}
+  が成り立つ．よって，(1)がわかる．\\
+  $X_{\text{red}}$を局所環付き空間$(X,\mathcal{O}_{X}/\mathcal{N})$とする．
+  これがスキームとなることを確認しよう．
+}
+
+\begin{align*}
+  29n + 1&\leq 205\\
+  29n &\leq 204\\
+  n &\leq \frac{204}{29} = \frac{7\times 29 + 1}{29} = 7+ \frac{1}{29} 
+\end{align*}

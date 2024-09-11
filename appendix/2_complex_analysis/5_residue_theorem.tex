@@ -70,5 +70,51 @@ $f$は$D$上の有理型関数で$z = c$で極を持つとする．$c$を中心�
   \frac{1}{2\pi i}\int_{C(c;\varepsilon)}f(z)dz
 \end{equation}
 ただし，円周は正の向きに向き付けられているとする．Cauchyの積分定理によって，
-正数$\varepsilon$が十分小さい時
+正数$\varepsilon$が十分小さい時積分の値は$\varepsilon$のとり方によらない．
+積分の値を$f$の$z = c$における\textbf{留数(residue)}といって，$\text{Res}(f,c)$とかく．\\
+極の位数を$l$とすれば，$(z - c)^{l}f(z)$は点$c$まで正則に拡張できる．したがって，$f$は原点周りで，
+\begin{equation}
+  f(z) = \frac{a_{-l}}{(z - c)^{l}} + \frac{a_{-(l - 1)}}{(z - c)^{l - 1}} + \dots + \frac{a_{-1}}{z - c} + a_{0} + a_{1}z + a_{2}z^{2} + \dots
+\end{equation}
+と展開される．$0$次以上を$\varphi(z)$とおけば，
+\begin{equation}
+  f(z) = \sum_{n = 1}^{l}\frac{a_{-n}}{(z - c)^{n}} + \varphi(z)
+\end{equation}
+よって，両辺積分すれば，
+\begin{equation}
+  \int_{C(c;\varepsilon)}f(z)dz = \sum_{n = 1}^{l}a_{-n}\int_{C(c;\varepsilon)}\frac{1}{(z - c)^{n}}dz + \int_{C(c;\varepsilon)}\varphi(z)dz
+\end{equation}
+しかし$\varphi$は正則なので右辺の第二項は$0$で
+\begin{equation}
+  \int_{C(c;\varepsilon)}f(z)dz = \sum_{n = 1}^{l}a_{-n}\int_{C(c;\varepsilon)}\frac{1}{(z - c)^{n}}dz
+\end{equation}
+を得る．$z-c = \varepsilon e^{i\theta},\ (0\leq \theta \leq 2\pi)$とすれば，
+\begin{align}
+  \int_{C(c;\varepsilon)}\frac{1}{(z - c)^{n}}dz 
+  &= \varepsilon^{1-n}i\int_{0}^{2\pi}e^{(1 - n)i\theta}d\theta\\
+  &= \left\{
+  \begin{alignedat}{2}
+    &2\pi i \qquad &(n = 1)\\
+    &0\qquad &(n \neq 1)
+  \end{alignedat}
+  \right.
+\end{align}
+である．ゆえに(B.49)の右辺で，$n = 1$の項のみが残り，
+\begin{equation}
+  \text{Res}(f,z) = a_{-1}
+\end{equation}
+となる．
+\Theorem{(Residue Theorem)\\
+  $D$を有界領域で$\partial D$が区分的に滑らかな単純閉曲線だとする．また$f$は$\overline{D}$
+  を含む領域で定義された有利型関数で，境界$\partial D$上には極を持たないとする．
+  このとき，
+  \begin{equation}
+    \frac{1}{2\pi i}\int_{\partial D}f(z)dz = \sum_{c}\mathrm{Res}(f,c)
+  \end{equation}
+  が成り立つ．ただし右辺の和は$D$内の$f$の極をすべて動く．
+}{
+  $\overline{D}$はコンパクトなので，$D$内の極は有限個しかない．極$c$の
+  まわりに十分小さい円周を考えてCauchyの積分定理を適用すれば求める等式を得る．
+}
+
 

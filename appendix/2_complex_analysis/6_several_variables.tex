@@ -1,0 +1,72 @@
+
+\Section{Several Variables}
+$\mathbf{C}^{n}$の領域$D$上で定義された関数$f$を考える．$z = (z_{1},\dots,z_{n}) \in \mathbf{C}^{n}$をとる．\\
+$x_{j} = \Re z_{j},\ y_{j} = \Im z_{j}\ (j = 1,\dots ,n)$として，
+一変数の場合と同様に，
+\begin{align}
+  \frac{\partial}{\partial z_{j}} =\frac{1}{2}\left( \frac{\partial}{\partial x_{j}} + \frac{1}{i}\frac{\partial}{\partial y_{j}} \right)\\
+  \frac{\partial}{\partial \overline{z_{j}}} =\frac{1}{2}\left( \frac{\partial}{\partial x_{j}} - \frac{1}{i}\frac{\partial}{\partial y_{j}}\right)
+\end{align}
+と定義する．$f$が$(x_{1},y_{1},x_{2},y_{2},\dots,x_{n},y_{n})$について$C^{1}$級で
+$D$上で
+\begin{equation}
+  \frac{\partial f}{\partial \overline{z_{j}}} = 0 \qquad (j = 1,\dots,n)
+\end{equation}
+を満たすとき$f$は$D$で\textbf{正則(holomorphic)}という．あるいは$f$は$D$上の
+\textbf{正則関数(holomorphic function)}と呼ばれる．\\
+次に一次元の円板$D\subset \mathbf{C}$に相当する多重円板を定義する．\\
+$c = (c_{1},\dots,c_{n}) \in \mathbf{C}^{n}$，$r= (r_{1},\dots,r_{n}) \in (\mathbf{R}_{>0})^{n}$に対して，
+\begin{equation}
+  \Delta(c;r) = \{z = (z_{1},\dots,z_{n}) \in \mathbf{C}^{n} \mid |z_{j} - c_{j}| < r_{j},\ j = 1,\dots ,n\} = D(c_{1};r_{1})\times \dots \times D(c_{n};r_{n})
+\end{equation}
+の形の領域を$c$を中心とする\textbf{多重円板(polydisc/polydisk)}という．\\
+$f(z) = f(z_{1},\dots ,z_{n})$は多重円板$\Delta(c;r)$の閉包$\overline{\Delta(c;r)}$を
+含む領域で正則な関数とする．$(z_{2},\dots,z_{n})$を固定して$z_{1}$に関して
+一変数のCauchyの積分公式を用いれば，$(z_{1},\dots,z_{n}) \in \Delta$に対して
+\begin{equation}
+  f(z_{1},\dots,z_{n}) = \frac{1}{2\pi i}\int_{D(c_{1};r_{1})}\frac{f(\zeta_{1},z_{2},\dots,z_{n})}{\zeta_{1} - z_{1}}d\zeta_{1}
+\end{equation}
+である．ただし円板$D(c_{1};r_{1})$は正の向きに向き付けられているとする．
+これを$z_{2},\dots,z_{n}$に繰り返し適用すれば，
+\begin{align*}
+  f(z_{1},\dots,z_{n}) 
+  &= \frac{1}{2\pi i}\int_{D(c_{1};r_{1})}\frac{f(\zeta_{1},z_{2},\dots,z_{n})}{\zeta_{1} - z_{1}}d\zeta_{1}\\
+  &= \left(\frac{1}{2\pi i}\right)^{2}\int_{D(c_{1};r_{1})}\int_{D(c_{2};r_{2})}\frac{f(\zeta_{1},\zeta_{2},z_{3},\dots,z_{n})}{(\zeta_{2} - z_{2})(\zeta_{1} - z_{1})}d\zeta_{2}d\zeta_{1}\\
+  &= \left(\frac{1}{2\pi i}\right)^{n}\int_{D(c_{1};r_{1})}\dots \int_{D(c_{n};r_{n})}\frac{f(\zeta_{1},\dots,\zeta_{n})}{(\zeta_{n} - z_{n})\dots (\zeta_{1} - z_{1})}d\zeta_{n} \dots d\zeta_{1}\\
+\end{align*}
+と書くことが出来る．\\
+$n$変数の場合，$c = (c_{1},\dots,c_{n}) \in \mathbf{C}^{n}$における冪級数は
+\begin{equation}
+  \sum_{m_{1} = 0}^{\infty}\dots \sum_{m_{n} = 0}^{\infty}a_{m_{1},\dots,m_{n}}(z_{1} - c_{1})^{m_{1}}\dots (z_{n} - c_{n})^{m_{n}}
+\end{equation}
+である．一変数の場合と同様にして，$\mathbf{C}^{n}$の領域$D$で正則な関数$f$は
+$D$の各点$c$の近傍で絶対収束する冪級数に展開される．このとき展開の係数は
+\begin{align}
+  a_{m_{1},\dots,m_{n}} 
+  &= \frac{1}{m_{1}!\dots m_{n}!}\frac{\partial^{m_{1} + \dots + m_{n}}f}{\partial z_{1}^{m_{1}}\dots \partial z_{n}^{m_{n}}}(c)\\
+  &= \left(\frac{1}{2\pi i}\right)^{n}\int_{D(c_{1};r_{1})}\dots \int_{D(c_{n};r_{n})}\frac{f(\zeta_{1},\dots,\zeta_{n})}{(\zeta_{n} - c_{n})^{m_{n} + 1}\dots (\zeta_{1} - c_{1})^{m_{1} + 1}}d\zeta_{n}\dots d\zeta_{1}
+\end{align}
+で与えられる．したがって$D(c_{1};r_{1})\times \dots \times D(c_{n};r_{n})$における
+$|f(z_{1},\dots,z_{n})|$の最大値を$M$とすれば，
+\begin{equation}
+  |a_{m_{1},\dots,m_{n}}|\leq \frac{M}{r_{1}^{m_{1}}\dots r_{n}^{m_{n}}}
+\end{equation}
+が成り立つ．特に$r_{1},\dots,r_{n}$の最小値を$r$とすれば，
+\begin{equation}
+  |a_{m_{1},\dots,m_{n}}|\leq \frac{M}{r^{m_{1}+\dots + m_{n}}}
+\end{equation}
+が成り立つ．
+一変数の場合と同様に，これらの結果を用いて一致の定理と最大値の原理が証明される．
+\Theorem{(Hartogs' Theorem)
+  $D$を$\mathbf{C}^{n}$の原点$0$を含む領域で$n\geq 2$とする．$f$が$D\mysetminus \{0\}$
+  で定義された正則関数ならば$f$は$D$上の正則関数に拡張される．
+}{
+  $D$は多重円板$\{z \in \mathbf{C}^{n}\mid |z_{j}| < r_{j},\ j = 1,\dots,n\}$
+  としてよい．正数$s$を$0 < s < r_{1}$となるように選び
+  \begin{equation}
+    g(z_{1},\dots,z_{n}) = \frac{1}{2\pi i}\int_{D(0;s)}\frac{f(\zeta_{1},z_{2},\dots,z_{n})}{\zeta_{1} - z_{1}}d\zeta_{1}
+  \end{equation}
+  と定義する．ここで$D(0;s)$は正の向きに向き付けられているとする．このとき
+  $g$は$D' = \{z \in \mathbf{C}^{n} \mid |z_{1}| < s,\ |z_{j}| < r_{j},\ j = 2,\dots,n\}$
+  で正則な関数を定める．
+}
