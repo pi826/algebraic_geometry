@@ -1,0 +1,76 @@
+
+\Section{Zariski Topology}
+$\spec{A}$を幾何的な対象に昇華するために，位相を導入しよう．まず，環$A$のイデアル$I$に対して
+\begin{align*}
+  V(I) &= \{\mathfrak{p} \in \spec{A}\mid I\subset \mathfrak{p}\}\\
+  D(I) &= \spec{A}\mysetminus V(I) = \{\mathfrak{p} \in \spec{A}\mid I\not\subset \mathfrak{p}\}
+\end{align*}
+更に，$f\in A$に対して
+\begin{align*}
+  V(f) &= \{\mathfrak{p} \in \spec{A}\mid Af \subset \mathfrak{p}\}\\
+  D(f) &= \spec{A}\mysetminus V(Af) = \{\mathfrak{p} \in \spec{A}\mid Af \not\subset \mathfrak{p}\}
+\end{align*}
+と定義する．
+また，$Af\subset \mathfrak{p}$より$af\in Af$は$af\in \mathfrak{p}$なので，$a=1$とすれば$f\in \mathfrak{p}$がわかり，
+イデアルの定義より，
+\begin{align*}
+  V(f) &= \{\mathfrak{p} \in \spec{A} \mid f \in \mathfrak{p}\}\\
+  D(f) &= \{\mathfrak{p} \in \spec{A} \mid f \notin \mathfrak{p}\}
+\end{align*}
+がわかる．次に$\{V(I)\}_{I}$を閉集合族とする位相が入ることを示そう．
+
+\Proposition{
+  $I,J,I_{\lambda}(\lambda \in \Lambda)$を環$A$のイデアルとする．このとき以下の等式が成り立つ．
+  \begin{align}
+    V(A) &= \varnothing\\
+    V(0) &= \spec{A}\\
+    V(I)\cup V(J) &= V(I \cap J)\\
+    \bigcap_{\lambda \in \Lambda}V(I_{\lambda}) &= V(\sum_{\lambda \in \Lambda}I_{\lambda})
+  \end{align}
+}{
+  等式(1.1),(1.2)は簡単にわかる．なぜなら$A$の任意の素イデアル$\mathfrak{p}$
+  に対して$\mathfrak{p} \subsetneq A$
+  なので$\mathfrak{p} \notin V(A)$なので(1.1)を得る．また，$0\in \mathfrak{p}$なので$\mathfrak{p} \in V(0)$なので(1.2)を得る．\\
+  (1.3)については，$\mathfrak{p} \in V(I)$なら$I\subset \mathfrak{p}$
+  なので，$I\cap J \subset \mathfrak{p}$を得る．よって，
+  $V(I)\subset V(I\cap J)$で，同様に$V(J)\subset V(I \cap J)$である．
+  よって，
+  \begin{equation*}
+    V(I)\cup V(J) \subset V(I\cap J)
+  \end{equation*}
+  である．逆に$\mathfrak{p} \in V(I\cap J)$なら$I\cap J \subset \mathfrak{p}$
+  で，$I\not\subset \mathfrak{p}$なら$a\in I$かつ$a\notin \mathfrak{p}$
+  なる元$a$がある．しかし，任意の$b\in J$に対して$ab \in I\cap J$なので，
+  $ab\in \mathfrak{p}$で，いま$a\notin \mathfrak{p}$なので$b\in \mathfrak{p}$である．よって$J\subset \mathfrak{p}$
+  なので$V(I \cap J)\subset V(J)$だから逆の包含関係も成り立つ．\\
+  次に(1.4)は$\mu \in \Lambda$に対して
+  \begin{equation*}
+    I_{\mu} \subset \sum_{\lambda \in \Lambda}I_{\lambda}
+  \end{equation*}
+  なので
+  \begin{equation*}
+    V(\sum_{\lambda \in \Lambda}I_{\lambda}) \subset V(I_{\mu})
+  \end{equation*}
+  である．これが任意の$\mu \in \Lambda$で成り立つので
+  \begin{equation*}
+    V(\sum_{\lambda \in \Lambda}I_{\lambda}) \subset \bigcap_{\lambda \in \Lambda}V(I_{\lambda})
+  \end{equation*}
+  である．逆に$\mathfrak{p} \in \bigcap_{\lambda}V(I_{\lambda})$とすると
+  任意の$\lambda \in \Lambda$に対して$I_{\lambda} \subset \mathfrak{p}$
+  なので$\sum_{\lambda}I_{\lambda}\subset \mathfrak{p}$
+  が成り立ち逆の包含関係もわかる．
+}
+
+\Corollary{
+  有限個の環$A$のイデアル$\{I_{k}\}_{k = 1,\dots,n}$に対して
+  \begin{equation*}
+    \bigcup_{k = 1}^{n}V(I_{k}) = V(\bigcap_{k = 1}^{n}I_{k})
+  \end{equation*}
+  が成り立つ．
+}{}
+
+\Definition{
+  $\{V(I)\}_{I}$を閉集合族とする$\spec{A}$の位相を
+  \index{ざりすきいそう@Zariski位相}\index{Zariski topology}
+  \textbf{Zariski位相(Zariski topology)}という．
+}
