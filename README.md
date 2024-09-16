@@ -11,9 +11,15 @@
     - [1.5.1 Morphism of schemes](#151-morphism-of-schemes)
   - [Appendix A: Limits](#appendix-a-limits)
     - [A.1 Inductive Limit](#a1-inductive-limit)
-  - [Appendix B: Complex Analysis](#appendix-b-complex-analysis)
-    - [B.1 Holomorphic Function](#b1-holomorphic-function)
-    - [B.2 Line Integral](#b2-line-integral)
+  - [Apendix B: Manifold](#apendix-b-manifold)
+    - [B.1 Smooth Manifold](#b1-smooth-manifold)
+  - [Appendix C: Complex Analysis](#appendix-c-complex-analysis)
+    - [C.1 Holomorphic Function](#c1-holomorphic-function)
+    - [C.2 Line Integral](#c2-line-integral)
+    - [C.3 Cauchy's Integral Theorem](#c3-cauchys-integral-theorem)
+    - [C.4 Cauchy's Integral Formula](#c4-cauchys-integral-formula)
+    - [C.5 Residue Theorem](#c5-residue-theorem)
+    - [C.6 Several Variable](#c6-several-variable)
 - [参考文献](#参考文献)
   - [book](#book)
     - [Liu "Algebraic Geometry and Arithmetic Curves"](#liu-algebraic-geometry-and-arithmetic-curves)
@@ -81,15 +87,34 @@
 ## Appendix A: Limits
 
 ### A.1 Inductive Limit
-書いている。
+書いている．
 
-## Appendix B: Complex Analysis
+## Apendix B: Manifold
 
-### B.1 Holomorphic Function
+### B.1 Smooth Manifold
+書いている．
+
+
+## Appendix C: Complex Analysis
+
+### C.1 Holomorphic Function
 証明を書く．
 
-### B.2 Line Integral
+### C.2 Line Integral
+証明を書く．
+
+### C.3 Cauchy's Integral Theorem
+証明を書く．
+
+### C.4 Cauchy's Integral Formula
+証明を書く．
+
+### C.5 Residue Theorem
+例を追加する．
+
+### C.6 Several Variable
 書いている．
+
 
 <br>
 

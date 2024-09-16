@@ -19,3 +19,95 @@
   $M$の次元を$\dim M$とかく．
 }
 
+\Remark{
+  位相多様体$M$の各点$p$に対してある開近傍$p \in U$があってある$\mathbf{R}^{\dim M}$
+  の開集合$\widetilde{U}$があって，同相写像$\varphi:U\to \widetilde{U}$があるので
+  $U$に対して$\varphi$を用いて$\widetilde{U}$の座標系を導入するようなことを考えよう．
+}{}
+
+\Definition{
+  $n$次元位相多様体$M$に対して，\index{ちゃーと@チャート}\index{chart}
+  組$(U,\varphi:U\to \widetilde{U})$を
+  \textbf{$M$のチャート(coordinate chart/chart)}という．このとき$U$を
+  座標開集合，$\varphi$を座標写像という．$x^{i}:M\to \mathbf{R}$で
+  $\varphi = (x^{1},\dots,x^{n})$とする．$x^{1},\dots,x^{n}$を$U$の局所座標という．
+  $\varphi(p) = 0$のとき，チャート$(U,\varphi)$は\textbf{点$p$を中心とするチャート}という．
+}
+
+\noindent
+当たり前のことだが，点$p$を含むチャート$(U,\varphi)$
+\footnote{点$p$を含むチャート$(U,\varphi)$とは$p\in U$のことをいう．}
+に対して平行移動を施すことで，
+$p$を中心とするチャートを作ることができる．
+また$\varphi = (x^{1},\dots,x^{n})$とできるので$(U,x^{1},\dots,x^{n})$と書くことがある．
+
+\Example{
+  ユークリッド空間$\mathbf{R}^{n}$はチャート$(\mathbf{R}^{n},\text{id}_{\mathbf{R}^{n}})$で覆われている．
+}{}
+
+\Example{
+  開集合$U\subset \mathbf{R}^{n}$上の連続関数$f:U\to \mathbf{R}^{k}$とする．
+  このとき$f$のグラフ
+  \begin{equation*}
+    \Gamma(f) = \{(x,f(x)) \in \mathbf{R}^{n} \times \mathbf{R}^{k}\mid x\in U\}
+  \end{equation*}
+  これは$n$次元位相多様体になる．
+}{
+  グラフ$\Gamma(f)$は$\mathbf{R}^{n}\times \mathbf{R}^{k}$の部分空間なので，ハウスドルフで第二可算である．
+  $\pi :\mathbf{R}^{n} \times \mathbf{R}^{k}\to \mathbf{R}^{n}$を第一成分の射影
+  つまり$\pi(x,y) = x$とする．$\varphi:\Gamma(f) \to U$を
+  $\pi$の$\Gamma(f)$への制限とする．
+  \begin{equation*}
+    \varphi(x,y) = x\qquad ((x,y) \in \Gamma(f))
+  \end{equation*}
+  このとき$\varphi$は連続写像であることに注意する．またこれは同相写像である．
+  実際$\psi:U\subset \mathbf{R}^{n} \to \mathbf{R}^{n}\times\mathbf{R}^{k}$とすると
+  \begin{equation*}
+    \psi(x) = (x,f(x)) 
+  \end{equation*}
+  とすると，$\psi(U) = \Gamma(f)$，連続写像で
+  \begin{align*}
+    &(\varphi\circ \psi)(x) = \varphi(\psi(x)) = \varphi(x,f(x)) = x\\
+    &(\psi \circ \varphi)(x,f(x)) = \psi(\varphi(x,f(x))) = \psi(x) = (x,f(x))
+  \end{align*}
+  つまり$\psi$は$\varphi$の逆写像を与え，これは連続なので$\varphi$は同相写像である．
+  つまり$\Gamma(f)$はチャート$(\Gamma(f),\varphi)$で覆われた$n$次元位相多様体である．
+}
+
+\Example{
+  $n\in \mathbf{N}$に対して$n$次元球面$\mathbb{S}^{n}$
+  \begin{equation*}
+    \mathbb{S}^{n} = \{(x^{1},\dots ,x^{n+1}) \in \mathbf{R}^{n+1}\mid (x^{1})^2 + \dots + (x^{n+1})^2 = 1\}
+  \end{equation*}
+  は，$n$次元位相多様体になる．
+}{
+  まず$\mathbb{S}^{n}$は$\mathbf{R}^{n+1}$の部分空間なので，ハウスドルフ，第二可算である．
+  次に局所ユークリッド的であることを示そう．
+  \begin{equation*}
+    U_{i}^{+} = \{(x^{1},\dots,x^{n+1}) \in \mathbf{R}^{n+1} \mid x^{i} > 0\}\qquad (i = 1,\dots,n+1)
+  \end{equation*}
+  と定義する，同様に$U_{i}^{-}$を$x^{i} < 0$なる$\mathbf{R}^{n+1}$の部分集合とする．
+  連続写像$f:\mathbb{B}^{n} \to \mathbf{R}$を
+  \begin{equation*}
+    f(u) = \sqrt{1 - |u|^2}
+  \end{equation*}
+  で定義する．ここで$\mathbb{B}^{n}$は$n$次元球体である．
+  \begin{equation*}
+    \mathbb{B}^{n} = \{(x^{1},\dots,x^{n})\in \mathbf{R}^{n}\mid (x^{1})^2 + \dots + (x^{n})^2 < 1\}
+  \end{equation*}
+  $i = 1,\dots,n+1$に対して$U_{i}^{+}\cap \mathbb{S}^{n}$は連続関数のグラフである．
+  \begin{equation*}
+    x^{i} = f(x^{1},\dots,\widehat{x^{i}},\dots,x^{n+1})
+  \end{equation*}
+  $\widehat{x^{i}}$は$x^{i}$を除いて，という意味である．同様に$U_{i}^{-}\cap \mathbb{S}^{n}$は
+  \begin{equation*}
+    x^{i} = -f(x^{1},\dots,\widehat{x^{i}},\dots,x^{n+1})
+  \end{equation*}
+  のグラフである．すなわち，$U_{i}^{\pm}\cap \mathbb{S}^{n}$は$n$次元局所ユークリッド的である．
+  写像$\varphi_{i}^{\pm}:U_{i}^{\pm}\cap \mathbb{S}^{n} \to \mathbb{B}^{n}$を
+  \begin{equation*}
+    \varphi_{i}^{\pm}(x^{1},\dots,x^{n+1}) = (x^{1},\dots,\widehat{x^{i}},\dots,x^{n+1})
+  \end{equation*}
+  で定義する．
+}
+
