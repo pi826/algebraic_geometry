@@ -111,3 +111,93 @@ $p$を中心とするチャートを作ることができる．
   で定義する．
 }
 
+一応関数$\mathbf{R}^{n}\to \mathbf{R}^{m}$が滑らかであることの定義しておこう．
+\Definition{
+  関数$F:U\subset \mathbf{R}^{n} \to V\subset \mathbf{R}^{m}$\index{なめらか@滑らか}\index{smooth}
+  \index{しーむげん@$C^{\infty}$}\index{C infinity@$C^{\infty}$}
+  が\textbf{滑らか(smooth)}もしくは\textbf{$C^{\infty}$}とは何回でも偏微分可能なときをいう．
+  さらに$F$の逆写像が滑らかなとき，\index{びぶんどうそうしゃぞう@微分同相写像}\index{diffeomorphism}
+  \textbf{微分同相写像(diffeomorphism)}という．特に微分同相写像は同相写像である
+}
+$n$次元位相多様体$M$の点$p\in M$の座標写像$\varphi:U\to \widetilde{U}\subset \mathbf{R}^{n}$
+をとる．このとき$f:M\to \mathbf{R}$が点$p$で滑らかとは，$f\circ \varphi^{-1}:\widetilde{U}\subset \mathbf{R}^{n} \to \mathbf{R}$
+が滑らかであることとする．ただ，この定義がwell-definendであるためには座標関数に
+依らないことをいわなければならない．例えば，別の座標写像$\psi:V \to \widetilde{V}\subset \mathbf{R}^{n}$
+をとる．このとき$f\circ \varphi^{-1} = f\circ \psi^{-1}$
+\footnote{ここで左辺の定義域は$\widetilde{U} = \varphi(U)$で右辺の定義域は$\widetilde{V} = \psi(V)$で互いに異なる．ここでこの等号は定義域を$\varphi(U)\cap \psi(V)$に制限して考えている}
+でなければならない．
+これを定義するために色々準備しよう．
+\Definition{
+  $n$次元位相多様体$M$の二つのチャート$(U,\varphi),(V,\psi)$が$U\cap V \neq \varnothing$
+  のとき，写像
+  \begin{equation*}
+    \psi\circ \varphi^{-1} : \varphi(U\cap V) \to \psi(U\cap V)
+  \end{equation*}
+  または
+  \begin{equation*}
+    \varphi \circ \psi^{-1} : \psi(U\cap V) \to \varphi(U\cap V)
+  \end{equation*}
+  を\index{ざひょうへんかんしゃぞう@座標変換写像}\index{transition map}
+  \textbf{座標変換写像(transition map)}
+  \footnote{$\psi\circ \varphi^{-1}$は正確には$\psi \circ (\varphi|_{U\cap V})^{-1}$のことである．}
+  という．これは同相写像の合成なので同相写像である．二つのチャート$(U,\varphi),(V,\psi)$
+  が$U\cap V = \varnothing$であるか，座標変換写像が微分同相であるとき
+  \index{smoothly compatible}
+  \textbf{smoothly compatible}という．
+}
+
+\Definition{
+  位相多様体$M$の\index{あとらす@アトラス}\index{atlas}
+  \textbf{アトラス(atlas)}とは，$M$を被覆するチャートの族のことである．
+  アトラス$\mathcal{A}$が\index{なめらかなあとらす@滑らかなアトラス}\index{smooth atlas}
+  \textbf{滑らかなアトラス(smooth atlas)}とは
+  $\mathcal{A}$の任意の二つのチャートがsmoothly compatibleであるときをいう．
+}
+この滑らかなアトラスが位相多様体に微分構造(smooth structure)を定義するのだが，
+同じ位相多様体に異なる微分構造が入った時いつ同一視するか？という問題がある．
+例えば，$\mathbf{R}^{n}$のアトラス
+\begin{align*}
+  &\mathcal{A}_{1} = \{(\mathbf{R}^{n},\text{id}_{\mathbf{R}^{n}})\}\\
+  &\mathcal{A}_{2} = \{(B(x;1),\text{id}_{B(x;1)})\}_{x\in \mathbf{R}^{n}}
+\end{align*}
+ここで$x\in \mathbf{R}^{n}$と正の実数$r$に対して
+\begin{equation*}
+  B(x;r) \defi \{y\in \mathbf{R}^{n}\mid d(x,y) < r\}
+\end{equation*}
+$d:\mathbf{R}^{n}\times \mathbf{R}^{n} \to \mathbf{R}_{\geq 0}$はユークリッド空間の通常の距離関数である．
+これらは違う滑らかなアトラスだが，関数$f:\mathbf{R}^{n} \to \mathbf{R}$\\ \\
+後で加筆する．
+
+\Definition{
+  滑らかなアトラス$\mathcal{A}$が\textbf{極大(maximal)}とは，$\mathcal{A}$を真に包含する
+  滑らかなアトラスが存在しない時をいう．
+}
+
+\Definition{
+  位相多様体$M$の極大な滑らかなアトラスを\index{びぶんこうぞう@微分構造}\index{smooth structure}
+  \textbf{微分構造(smooth structure)}という．\index{なめらかなたようたい@滑らかな多様体}\index{smooth manifold}
+  \textbf{滑らかな多様体(smooth manifold)}とは位相多様体とその微分構造の組$(M,\mathcal{A})$
+  のことをいう．このとき微分構造が明らかなときは単に$M$は滑らかな多様体という．
+  滑らかな多様体は，また\textbf{可微分多様体(differentiable manifold)}
+  という．
+}
+
+
+\Proposition{
+  位相多様体$M$に対して以下が成り立つ．
+  \begin{itemize}
+    \item[(1)] 任意の$M$の滑らかなアトラス$\mathcal{A}$に対して$\mathcal{A}$を含む極大な滑らかなアトラスが唯一存在する．これを\textbf{$\mathcal{A}$から決まる微分構造(smooth structure determined by $\mathcal{A}$)}という．
+    \item[(2)] $M$の二つの滑らかなアトラスが同じ微分構造を決めるということはそれらの合併が滑らかなアトラスになることと必要十分である． 
+  \end{itemize}
+}{
+  $\mathcal{A}$を$M$の滑らかなアトラス，$\overline{\mathcal{A}}$を
+  $\mathcal{A}$の任意のチャートとsmoothly compatibleなチャートの集合とする．
+  このとき$\overline{\mathcal{A}}$が滑らかなアトラスであることを示そう．
+  つまり任意の$\overline{\mathcal{A}}$の二つのチャートがsmoothly compatible
+  であることを示せば良い．$(U,\varphi),(V,\psi)\in \overline{\mathcal{A}}$
+  をとる．
+  \begin{equation*}
+    \psi\circ \varphi^{-1}:\varphi(U\cap V) \to \psi(U\cap V)
+  \end{equation*}
+  が滑らかであることを確認する．
+}
