@@ -146,10 +146,64 @@ $n$次元位相多様体$M$の点$p\in M$の座標写像$\varphi:U\to \widetilde
   \textbf{smoothly compatible}という．
 }
 
+\begin{center}
+\begin{tikzpicture}
+  \draw[step = 0.5, thin, dotted] (-3,-3) grid (0,0) node[left] at (-3,-3.2) {$\mathbf{R}^{n}$};
+  \draw[->] (-3,-3) -- (0,-3);
+  \draw[->] (-3,-3) -- (-3,0);
+
+  \draw[step = 0.5, thin, dotted] (3,-3) grid (6,0) node[left] at (3,-3.2) {$\mathbf{R}^{n}$};
+  \draw[->] (3,-3) -- (6,-3);
+  \draw[->] (3,-3) -- (3,0);
+
+  \draw[thick] (-3,3) to[closed,curve through = {(-1,4) (1,5) (2,5) (3,4) (6,4) (4,1.5)}] (2,2) node[left] at (-3,4) {$M$};
+  
+  \draw[thick, dotted] (-1,3.5) to[closed,curve through = {(0,4) (2,4.5) (3,3.2)}] (2,2.5) node[left] at (-1.2,3) {$U$}; 
+
+
+  \draw[thick, dotted] (1,4) to[closed,curve through = {(3,3.5) (4,3.7) (5,3)}] (2,2.5) node[right] at (5.2,3) {$V$};
+
+  \begin{scope}
+    \clip (-1,3.5) to[closed,curve through = {(0,4) (2,4.5) (3,3.2)}] (2,2.5);
+    \fill[red, opacity = 0.2] (1,4) to[closed,curve through = {(3,3.5) (4,3.7) (5,3)}] (2,2.5);
+  \end{scope}
+
+  %\fill (2,3) circle (0.5mm);
+
+  \draw[thick,dotted] (-2.5,-2.5) to[closed,curve through = {(-2.5,-1) (-1.5,0)}] (-1,-0.5) node[above] at (-2,0) {$\varphi(U)$};
+
+  \draw[thick,dotted] (4,-2) to[closed,curve through = {(3.5,-1) (5.5,-2)}] (4.5,-2.5) node[above] at (5,0) {$\psi(V)$};
+
+  % \draw[thick,dotted] (0,0) to[closed,curve through = {(-2,-1.5) (-1.5,-2)}] (0,-3);
+
+  \begin{scope}
+    \clip (-2.5,-2.5) to[closed,curve through = {(-2.5,-1) (-1.5,0)}] (-1,-0.5);
+    \draw[thick,dotted] (0,0) to[closed,curve through = {(-2,-1.5) (-1.5,-2)}] (0,-3);
+    \fill[red, opacity = 0.2] (0,0) to[closed,curve through = {(-2,-1.5) (-1.5,-2)}] (0,-3);
+  \end{scope}
+
+  %\draw[thick,dotted] (2.5,0) to[closed,curve through = {(4,-0.5) (5,-2)}] (3,-3);
+
+  \begin{scope}
+    \clip (4,-2) to[closed,curve through = {(3.5,-1) (5.5,-2)}] (4.5,-2.5);
+    \draw[thick,dotted] (2.5,0) to[closed,curve through = {(4,-0.5) (5,-2)}] (3,-3);
+    \fill[red, opacity = 0.2] (2.5,0) to[closed,curve through = {(4,-0.5) (5,-2)}] (3,-3);
+  \end{scope}
+
+  \draw[->,thick] (0,2) to[bend right = 25] (-1.2,0.2) node[right] at (-0.7,1) {$\varphi$};
+
+  \draw[->,thick] (3,2) to[bend left = 25] (4.2,0.2) node[left] at (3.8,1) {$\psi$};
+
+  \draw[->,thick] (-0.5,-0.5) to[bend left = 20] (3.2,-0.5) node[above] at (1.5,0) {$\psi\circ \varphi^{-1}$};
+
+  \draw[<-,thick] (-0.5,-2.5) to[bend right = 20] (3.2,-2.5) node[below] at (1.5,-2) {$\varphi \circ \psi^{-1}$};
+\end{tikzpicture}
+\end{center}
+
 \Definition{
   位相多様体$M$の\index{あとらす@アトラス}\index{atlas}
   \textbf{アトラス(atlas)}とは，$M$を被覆するチャートの族のことである．
-  アトラス$\mathcal{A}$が\index{なめらかなあとらす@滑らかなアトラス}\index{smooth atlas}
+  アトラス$\mathcal{A}$が\index{なめらか@滑らか!なあとらす@なアトラス}\index{smooth! atlas}
   \textbf{滑らかなアトラス(smooth atlas)}とは
   $\mathcal{A}$の任意の二つのチャートがsmoothly compatibleであるときをいう．
 }
@@ -174,8 +228,8 @@ $d:\mathbf{R}^{n}\times \mathbf{R}^{n} \to \mathbf{R}_{\geq 0}$はユークリ�
 }
 
 \Definition{
-  位相多様体$M$の極大な滑らかなアトラスを\index{びぶんこうぞう@微分構造}\index{smooth structure}
-  \textbf{微分構造(smooth structure)}という．\index{なめらかなたようたい@滑らかな多様体}\index{smooth manifold}
+  位相多様体$M$の極大な滑らかなアトラスを\index{びぶんこうぞう@微分構造}\index{smooth! structure}
+  \textbf{微分構造(smooth structure)}という．\index{なめらか@滑らか!なたようたい@な多様体}\index{smooth! manifold}
   \textbf{滑らかな多様体(smooth manifold)}とは位相多様体とその微分構造の組$(M,\mathcal{A})$
   のことをいう．このとき微分構造が明らかなときは単に$M$は滑らかな多様体という．
   滑らかな多様体は，また\textbf{可微分多様体(differentiable manifold)}
@@ -194,10 +248,61 @@ $d:\mathbf{R}^{n}\times \mathbf{R}^{n} \to \mathbf{R}_{\geq 0}$はユークリ�
   $\mathcal{A}$の任意のチャートとsmoothly compatibleなチャートの集合とする．
   このとき$\overline{\mathcal{A}}$が滑らかなアトラスであることを示そう．
   つまり任意の$\overline{\mathcal{A}}$の二つのチャートがsmoothly compatible
-  であることを示せば良い．$(U,\varphi),(V,\psi)\in \overline{\mathcal{A}}$
-  をとる．
+  であることを示せば良い．つまり定義から$(U,\varphi),(V,\psi)\in \overline{\mathcal{A}}$
+  に対して
   \begin{equation*}
     \psi\circ \varphi^{-1}:\varphi(U\cap V) \to \psi(U\cap V)
   \end{equation*}
-  が滑らかであることを確認する．
+  が滑らかであることを確認すればよい．$\varphi(p) \in \varphi(U\cap V)$
+  をとる．アトラス$\mathcal{A}$は$M$を被覆するので$p\in W$なる$(W,\theta) \in \mathcal{A}$
+  を取れる．$\overline{A}$の任意のチャートは$(W,\theta)$とsmoothly compatible
+  なので，$\theta\circ \varphi^{-1}$，$\psi \circ \theta^{-1}$は滑らかである．
+  よって，$p\in U\cap V \cap W$に対して，
+  \begin{equation*}
+    \psi \circ \varphi^{-1} = (\psi \circ \theta^{-1})\circ (\theta \circ \varphi^{-1})
+  \end{equation*}
+  は点$\varphi(p)$近傍で滑らかである．今$\varphi(p)\in \varphi(U\cap V)$は任意なので
+  $\psi\circ \varphi^{-1}$は$\varphi(U\cap V)$の任意の点の近傍で滑らかである．
+  よって$\overline{\mathcal{A}}$は滑らかなアトラスである．\\
+  あとは，極大であることを確認すれば良い．$\overline{\mathcal{A}}\subset \mathcal{B}$なる滑らかなアトラス$\mathcal{B}$を取ると，
+  $\mathcal{A} \subset \mathcal{B}$と定義から$\mathcal{B}$の任意のチャートは
+  $\mathcal{A}$の任意のチャートとsmoothly compatibleである．従って$\overline{\mathcal{A}}$の取り方から逆の包含関係も分かる．又，同様に，唯一性もわかる．
 }
+
+smoothly compatibleを弱めて，アトラスの任意の二つのチャートの座標変換写像が$C^{k}$級
+で，極大なとき\textbf{$C^{k}$構造($C^{k}$ structure)}という．同様に，座標変換写像が，
+実解析的(real-analytic)なとき，\textbf{実解析的構造(real-analytic structure)}
+または\textbf{$C^{\omega}$構造($C^{\omega}$ structure)}という．
+もし次元が$2m$なら$\mathbf{R}^{2m}$と$\mathbf{C}^{m}$とを同一視して，また，
+座標変換写像を複素解析的(正則関数)とすることで，\textbf{複素解析的構造(complex-analytic structure)}が定義できる．
+
+
+\Definition{
+  可微分多様体$M$のチャート$(U,\varphi)$が$M$の微分構造(滑らかなアトラス)に含まれているとき\index{なめらか@滑らか!なちゃーと@なチャート}\index{smooth! chart}
+  \textbf{滑らかなチャート(smooth chart)}という．また，$\varphi$を
+  \index{なめらか@滑らか!なざひょうしゃぞう@な座標写像}\index{smooth! coordinate map}
+  \textbf{滑らかな座標写像(smooth coordinate map)}という．
+  \index{なめらか@滑らか!なざひょうきゅう@な座標球}\index{smooth! coordinate ball}
+  \textbf{滑らかな座標球(smooth coordinate ball)}とは，滑らかのチャート$(U,\varphi)$
+  であり，$\varphi(U)$がユークリッド空間の球であるときをいう．同様に
+  \index{なめらか@滑らか!なざひょうりっぽうたい@な座標立方体}\index{smooth! coordinate cube}
+  \textbf{滑らかな座標立方体(smooth coordinate cube)}が定義される．
+}
+
+\Definition{
+  $B$が\index{せいそくざひょうきゅう@正則座標球}\index{regular coordinate ball}
+  \textbf{正則座標球(regular coordinate ball)}とは$\overline{B}\subset B'$なる
+  滑らかな座標球$B'$が存在し，滑らかな座標写像$\varphi:B'\to \mathbf{R}^{n}$が
+  ある$r < r'$なる正の実数$r,r'$に対して
+  \begin{equation*}
+    \varphi(B) = B(0;r),\ \varphi(\overline{B}) = \overline{B(0;r)},\ \varphi(B') = B(0;r')
+  \end{equation*}
+  となるときをいう．
+}
+
+\Proposition{
+  任意の可微分多様体は正則座標球の加算開基を持つ．
+}{}
+
+
+

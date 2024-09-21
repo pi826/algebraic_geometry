@@ -1,0 +1,44 @@
+
+\Section{Smooth Maps}
+
+\Definition{
+  $n$次元可微分多様体$M$，$k\in \mathbf{Z}_{> 0}$に対して$f:M\to \mathbf{R}^{k}$
+  が\index{なめらか@なめらか!なかんすう@なかんすう}\index{smooth! function}
+  \textbf{滑らかな関数(smooth function)}とは，任意の点$p\in M$に対して，
+  それを含む滑らかなチャート$(U,\varphi)$があって
+  \begin{equation*}
+    f\circ \varphi^{-1}:\varphi(U) \to \mathbf{R}^{k}
+  \end{equation*}
+  が滑らかなときをいう．
+  \begin{equation*}
+    C^{\infty}(M) \defi \{f:M\to \mathbf{R} \mid f \text{ is smooth}\}
+  \end{equation*}
+  と置く．これは$\mathbf{R}$上のベクトル空間である．
+}
+
+\Definition{
+  $M,N$を可微分多様体とする．このとき$F:M\to N$が\index{なめらか@滑らか!なしゃぞう@な写像}\index{smooth! map}
+  \textbf{滑らかな写像(smooth map)}とは任意の点$p\in M$に対して，それを含む
+  滑らかなチャート$(U,\varphi)$と$F(p)$を含む滑らかなチャート$(V,\psi)$があって，
+  $F(U)\subset V$で，
+  \begin{equation*}
+    \psi \circ F \circ \varphi^{-1}:\varphi(U) \to \psi(V)
+  \end{equation*}
+  が滑らかなときをいう．
+}
+
+\Proposition{
+  滑らかな写像は連続である．
+}{
+  $M,N$を可微分多様体として，$F:M\to N$は$p\in M$で滑らかとする．
+  つまり，$p$を含む滑らかなチャート$(U,\varphi)$と$F(p)$を含む滑らかなチャート$(V,\psi)$が$F(U)\subset V$で，
+  \begin{equation*}
+    \psi \circ F\circ \varphi^{-1} : \varphi(U) \to \psi(V)
+  \end{equation*}
+  が滑らかであるようにとれる．よって$\psi \circ F\circ \varphi^{-1}$は連続で，
+  $\varphi :U \to \varphi(U)$，$\psi:V\to \psi(V)$は同相写像なので，
+  \begin{equation*}
+    F|_{U} = \psi^{-1} \circ (\psi \circ F\circ \varphi^{-1}) \circ \varphi : U\to V
+  \end{equation*}
+  は，連続である．よって任意の点の近傍で$F$は連続なので，$M$で連続である．
+}
