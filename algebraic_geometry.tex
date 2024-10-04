@@ -17,6 +17,10 @@
 \usepackage[scr]{rsfso}
 \usepackage{relsize}
 \usepackage{makeidx}
+\usepackage{etoolbox}
+\usepackage{footnote}
+
+
 
 % 画像
 % \usepackage[dvipdfmx]{graphicx,color}
@@ -315,6 +319,8 @@ borderline west={4pt}{0pt}{darkgray!50!black},
 fontupper=\sffamily,
 breakable = true,
 label = {Cor:\thetotalcounter},
+before upper = {\savenotes},
+after upper = {\spewnotes},
 }{
 \textcolor{darkgray!50!black}{
     \sffamily
@@ -396,6 +402,10 @@ sharp corners
 
 \makeindex
 
+
+
+
+
 \begin{document}
 
 % \setlength{\topmargin}{-20truemm}
@@ -463,6 +473,8 @@ sharp corners
 \chapter{Manifold}
 \input{appendix/2_manifold/1_smooth_manifold.tex}
 \input{appendix/2_manifold/2_smooth_maps.tex}
+\input{appendix/2_manifold/3_tangent_space.tex}
+
 \chapter{Complex Analysis}
 \input{appendix/3_complex_analysis/1_holomorphic_function.tex}
 \input{appendix/3_complex_analysis/2_line_integral.tex}

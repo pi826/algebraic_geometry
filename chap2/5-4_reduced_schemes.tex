@@ -39,7 +39,24 @@
 
 \Lemma{
   体$k$上代数多様体$X$の開集合$U$に対して$U^{0} = U\cap X^{0}$が成り立つ．
-}{}
+}{
+  $U^{0}\subset X^{0}$を示せば良い．なぜなら，$x \in X^{0}$を取ると$\{x\}\cap U$は
+  $U$の閉集合で，$x\in U$ならば$\{x\}\cap U = \{x\}$となり$x\in U^{0}$が分かる．
+  つまり
+  \begin{equation*}
+    U\cap X^{0}\subset U^{0}
+  \end{equation*}
+  である．逆に関しては$U^{0} \subset U$なので，
+  \begin{equation*}
+    U^{0} \subset X^{0} \Rightarrow U^{0} \subset U\cap X^{0}
+  \end{equation*}
+  を得る．\\
+  $U$のアフィン開被覆$\{U_{i}\}_{i}$を取ると
+  \begin{equation*}
+    U = \bigcup_{i} U_{i}
+  \end{equation*}
+  で，
+}
 
 \Proposition{
   体$k$上代数多様体$X$に対して射$\mathcal{O}_{X} \to \mathcal{F}_{X}$が単射であることと$X$が被約であることは同値である．

@@ -42,3 +42,40 @@
   \end{equation*}
   は，連続である．よって任意の点の近傍で$F$は連続なので，$M$で連続である．
 }
+
+\Proposition{
+  可微分多様体$M,N,P$に対して以下が成り立つ．
+  \begin{itemize}
+    \item[(1)] 任意の定数写像$c:M\to N$は滑らかである．
+    \item[(2)] 恒等写像$\text{id}_{M}:M\to M$は滑らかである．
+    \item[(3)] 開部分多様体$U\subset M$に対して包含写像$U \hookrightarrow M$は滑らかである．
+    \item[(4)] $F:M\to N$,$G:N\to P$が滑らかなら，$G\circ F:M\to P$は滑らかである．   
+  \end{itemize}
+}{
+  \Claim{(1)}\\
+  $p\in M$を含む滑らかなチャート$(U,\varphi)$と，$c(p) = c$を含む滑らかなチャート$(V,\psi)$は$c(U) = \{c\} \subset V$である．また任意の$x\in \varphi(U)$に対して
+  \begin{equation*}
+    (\psi\circ c \circ \varphi^{-1})(x) = \psi(c)
+  \end{equation*}
+  で，$\psi$は$C^{\infty}$なので，定数写像$c$は滑らかである．\\
+  \Claim{(2)}\\
+  (1)と同じようにチャート$(U,\varphi)$,$(V,\psi)$を取る．ただし$\text{id}_{M}(U)=U\subset V$となるように取る．すると
+  \begin{equation*}
+    \psi \circ \text{id}_{M} \circ \varphi^{-1} = \psi \circ \varphi^{-1}
+  \end{equation*}
+  これは座標変換写像であり，定義から$C^{\infty}$である．よって$\text{id}_{M}$は滑らかである．\\
+  \Claim{(3)}\\
+  部分多様体の定義をかけ！！\\
+  \Claim{(4)}\\
+  $p\in M$を含む滑らかなチャート$(U,\varphi)$と，$F(p)$を含む滑らかなチャート$(V,\psi)$で$F(U)\subset V$が成り立つように取る．また，$G(F(p))$を含む滑らかなチャート$(W,\theta)$で，$G(V)\subset W$が成り立つように取る． 
+  (つまり，$G(F(U))\subset W$が成り立つ．)よって，$F,G$の滑らかさから，
+  \begin{align*}
+    \psi \circ F \circ \varphi^{-1}:\varphi(U) \to \psi(V)\\
+    \theta \circ G \circ \psi^{-1}:\psi(V) \to \theta(W)
+  \end{align*}
+  は滑らかである．よって，
+  \begin{equation*}
+    \theta \circ (G \circ F) \circ \varphi^{-1} = (\theta \circ G \circ \psi^{-1}) \circ (\psi \circ F \circ \varphi^{-1})
+  \end{equation*}
+  は滑らかである．
+}
