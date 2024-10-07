@@ -1,3 +1,29 @@
 
 \Section{Tangent Space}
 
+まず，可微分多様体$M$と$p\in M$に対して，$p$近傍で定義されている$C^{\infty}$実数値関数$f,g$に対して二項関係$\sim$を
+\begin{equation*}
+  f\sim g \defi p\in \exists W:\text{open}, f|_{W} = g|_{W}
+\end{equation*}
+と定義する．すると，これは同値関係である．この同値関係で$p$近傍で定義されている$C^{\infty}$実数値関数の集合を割った集合を$C^{\infty}_{p}(M)$と書く．
+\begin{equation*}
+  C^{\infty}_{p}(M) \defi \{f:U\to \mathbf{R}\mid p\in U:\text{open}\}/\sim
+\end{equation*}
+これは，関数の和と積で$\mathbf{R}$多元環を成す．\\
+$C^{\infty}_{p}(M)$の元は本来$C^{\infty}$関数$f:U\to \mathbf{R}$を用いて，
+\begin{equation*}
+  [f] \in C^{\infty}_{p}(M)
+\end{equation*}
+などと書かれるべきだが，面倒なのでこれを$f$と書いてしまおう．\\
+さて，早速接空間(tangent space)を定義していこう．
+\Definition{
+  可微分多様体$M$の\index{どうぶん@導分}\index{derivation}
+  \textbf{点$p$における導分(derivation at $p$)}とは，線形写像$D:C^{\infty}_{p}(M) \to \mathbf{R}$であって，
+  \begin{equation*}
+    D(fg) = D(f)g(p) + f(p)D(g)
+  \end{equation*}
+  を満たすものとして定義する．また，$M$の点$p$における\index{せつべくとる@接ベクトル}\index{tangent vector}
+  \textbf{接ベクトル(tangent vector)}とは，点$p$における導分のことである．\\
+  点$p$における接ベクトル全体はベクトル空間を成す．これを$T_{p}(M)$または，$T_{p}M$と書いて，\index{せつくうかん@接空間}\index{tangent space}\textbf{点$p$における$M$の接空間(tangent space to $M$ at $p$)}という．
+}
+

@@ -1,0 +1,97 @@
+
+\subsection{differential}
+
+\Definition{
+  可微分多様体$M,N$の間の$C^{\infty}$写像$F:M\to N$を取る．各点$p\in M$に対して
+  $F$の\index{びぶん@微分}\index{differential}
+  \textbf{点$p$における微分(differential at $p$)}と呼ばれる接空間の間の線型写像
+  \begin{equation*}
+    dF:T_{p}M \to T_{F(p)}N
+  \end{equation*}
+  が，$X_{p}\in T_{p}M$に対して$dF(X_{p})$は
+  \begin{equation*}
+    dF(X_{p})(f) \defi X_{p}(f\circ F)\qquad (f\in C^{\infty}_{F(p)}(N))
+  \end{equation*}
+  なる接ベクトルである．
+}
+
+\Remark{
+  どの点における微分であるかを明確にするために$dF$の代わりに$dF_{p}$と書くことがある．
+}{}
+
+滑らかな写像$F:M\to N$,$G:N\to P$と点$p\in M$に対して線型写像
+\[
+  \xymatrix{
+    T_{p}M \ar@/^25pt/@{>}[rr]^{dG_{F(p)}\circ dF_{p}} \ar@/_25pt/@{>}[rr]_{d(G\circ F)_{p}} \ar[r]^{dF_{p}}& T_{F(p)}N \ar[r]^{dG_{F(p)}} &T_{G(F(p))}
+  }
+\]
+
+が定義できる．これらは等しい．
+\Theorem{
+  $F:M\to N$,$G:N\to P$を可微分多様体の間の滑らかな写像とする．このとき$p\in M$ならば
+  \begin{equation*}
+    d(G\circ F)_{p} = dG_{F(p)}\circ dF_{p}
+  \end{equation*}
+  が成り立つ．
+}{
+  $X_{p}\in T_{p}M$を取る．$f\in C^{\infty}_{G(F(p))}(P)$に対して，
+  \begin{equation*}
+    d(G\circ F)(X_{p})(f) = X_{p}(f\circ (G\circ F))
+  \end{equation*}
+  で，また
+  \begin{equation*}
+    (dG\circ dF)(X_{p})(f) = dG(dF(X_{p}))(f) = dF(X_{p})(f\circ G) = X_{p}(f\circ G\circ F)
+  \end{equation*}
+}
+
+\Corollary{
+  $F:M\to N$が可微分多様体の間の微分同相写像とする．このとき$dF_p:T_{p}M \to T_{F(p)}N$は同型写像である．
+}{}
+
+\Corollary{
+  開集合$U\subset \mathbf{R}^{n}$が開集合$V\subset \mathbf{R}^{m}$と微分同相ならば，$n=m$である．
+}{
+  $F:U\to V$を微分同相写像とする．このとき先程の系より，
+  \begin{equation*}
+    dF_{p} : T_{p}U \to T_{F(p)}V
+  \end{equation*}
+  は同型写像である．また，$T_{p}U = T_{p}\mathbf{R}^{n} \simeq \mathbf{R}^{n}$
+  ,$T_{F(p)}V = T_{F(p)}\mathbf{R}^{m} \simeq \mathbf{R}^{m}$より，$n=m$を得る．
+}
+
+$n$次元可微分多様体$M$の点$p$を含む滑らかなチャート$(U,\varphi = (x^{1},\dots ,x^{n}))$をとる．このとき$\varphi:U\to \varphi(U)$は微分同相写像なので，
+\begin{equation*}
+  d\varphi_{p}:T_{p}M\to T_{\varphi(p)}\mathbf{R}^{n}
+\end{equation*}
+は同型写像である．特に$T_{p}M$の次元は$n$である．
+
+\Proposition{
+  $(U,\varphi = (x^{1},\dots ,x^{n}))$を$n$次元可微分多様体$M$の点$p$を含む滑らかなチャートとする．このとき
+  \begin{equation*}
+    d\varphi_{p}\left( \left. \frac{\partial}{\partial x^{i}} \right|_{p}\right) = \left. \frac{\partial}{\partial r^{i}} \right|_{\varphi(p)}
+  \end{equation*}
+}{
+  $f\in C^{\infty}_{\varphi(p)}(\mathbf{R}^{n})$に対して
+  \begin{align*}
+    d\varphi_{p}\left( \left. \frac{\partial}{\partial x^{i}} \right|_{p}\right)f
+    &= \left. \frac{\partial}{\partial x^{i}} \right|_{p} (f\circ \varphi)\\
+    &= \left. \frac{\partial}{\partial r^{i}} \right|_{\varphi(p)} (f\circ \varphi \circ \varphi^{-1})\\
+    &= \left. \frac{\partial}{\partial r^{i}} \right|_{\varphi(p)} f
+  \end{align*}
+}
+
+\Proposition{
+  点$p\in M$を含む滑らかなチャート$(U,\varphi = (x^{1},\dots ,x^{n}))$を取る．すると接空間$T_{p}M$は基底
+  \begin{equation*}
+    \left. \frac{\partial}{\partial x^{1}} \right|_{p},\dots ,\left. \frac{\partial}{\partial x^{n}} \right|_{p}
+  \end{equation*}
+  を持つ．
+}{
+  ベクトル空間の同型写像は基底を基底に移す．先程の命題より，同型写像
+  \begin{equation*}
+    d\varphi_{p}:T_{p}M \to T_{\varphi(p)}\mathbf{R}^{n}
+  \end{equation*}
+  は$\partial/\partial x^{i}|_{p}$を$\partial/\partial r^{i} |_{\varphi(p)}$に移すが，
+  $\partial/\partial r^{i}|_{\varphi(p)}$は$T_{\varphi(p)}\mathbf{R}^{n}$の基底なので，$\partial/\partial x^{i}|_{p}$は$T_{p}M$の基底である．
+}
+
