@@ -55,8 +55,22 @@
   \begin{equation*}
     U = \bigcup_{i} U_{i}
   \end{equation*}
-  で，
+  で，$U^{0} = U\cap X^{0}$ならば，
+  \begin{equation*}
+    U^{0} = \bigcup_{i} U_{i}\cap X^{0}
+  \end{equation*}
+  だから，結局$U$がアフィンの場合だけ示せば良い．$x$を$U$の閉点とすると，$x$を含む
+  任意のアフィン開集合$V$においても閉点であることを示せば十分である．\\
+  点$x\in V$は$A:=\mathcal{O}_{X}(V)$のある素イデアル$\mathfrak{p}$で，
+  $k\subset A/\mathfrak{p} \subset k(x)$を得る．
 }
+
+体$k$の代数閉包$\overline{k}$を一つ固定する．$f\in \mathcal{O}_{X}(X)$を取る．
+それに伴う関数$\tilde{f}:X^{0}\to \overline{k}$が
+\begin{equation*}
+  \tilde{f}(x) = f_{x} \in \mathcal{O}_{X,x}の\mathcal{O}_{X,x}/\mathfrak{m}_{x}= k(x)への像
+\end{equation*}
+
 
 \Proposition{
   体$k$上代数多様体$X$に対して射$\mathcal{O}_{X} \to \mathcal{F}_{X}$が単射であることと$X$が被約であることは同値である．
