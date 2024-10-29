@@ -1,21 +1,22 @@
 
 \Section{Sheaves}
+\sectionmark{Sheaves}
 \Definition{
-$X$を位相空間とする.$X$上の(アーベル群の)\textbf{前層}(presheaf)
-\index{ぜんそう@前層}\index{presheaf}$\, \mathcal{F}$とは
-次のデータ
-\begin{center}
+  $X$を位相空間とする.$X$上の(アーベル群の)\textbf{前層}(presheaf)
+  \index{ぜんそう@前層}\index{presheaf}$\, \mathcal{F}$とは
+  次のデータ
+  \begin{center}
+    \begin{itemize}
+      \item[---] $U$を任意の$X$の開集合に対して$\mathcal{F}(U)$はアーベル群.
+      \item[---] 制限写像(restriction map)と言われる群準同型
+            $\rho_{U,V}:\mathcal{F}(U) \to \mathcal{F}(V)$が任意の開集合$V\subset U$に対して存在する.
+    \end{itemize}
+  \end{center}
+  そして次の条件を満たす.
   \begin{itemize}
-    \item[---] $U$を任意の$X$の開集合に対して$\mathcal{F}(U)$はアーベル群.
-    \item[---] 制限写像(restriction map)と言われる群準同型
-          $\rho_{U,V}:\mathcal{F}(U) \to \mathcal{F}(V)$が任意の開集合$V\subset U$に対して存在する.
+    \item[(1)] $\rho_{U,U} = \text{id}_{\mathcal{F}(U)}$
+    \item[(2)] 任意の開集合$W\subset V \subset U$に対して$\rho_{U,W}=\rho_{V,W}\circ \rho_{U,V}$となる.
   \end{itemize}
-\end{center}
-そして次の条件を満たす.
-\begin{itemize}
-  \item[(1)] $\rho_{U,U} = \text{id}_{\mathcal{F}(U)}$
-  \item[(2)] 任意の開集合$W\subset V \subset U$に対して$\rho_{U,W}=\rho_{V,W}\circ \rho_{U,V}$となる.
-\end{itemize}
 }
 $s\in \mathcal{F}(U)$を$U$上の$\mathcal{F}$の\index{せつだん@切断}\index{section}\textbf{切断}(section)という.
 また,$\rho_{U,V}(s)\in \mathcal{F}(V)$を$s|_{V}$と書いて$s$の$V$への制限という.\\
@@ -28,59 +29,64 @@ $s\in \mathcal{F}(U)$を$U$上の$\mathcal{F}$の\index{せつだん@切断}\ind
 }{}
 
 \Definition{
-前層$\mathcal{F}$が\index{そう@層}\index{sheaf}層(sheaf)とは次の条件を満たすことをいう.
-\begin{itemize}
-  \item[(4)] (Uniqueness) $U$を$X$の開集合とし$\{U_{i}\}_{i}$をその開被覆とする.
-        $s\in \mathcal{F}(U)$が任意の$i$に対して$s|_{U_{i}}=0$ならば$s=0$
-  \item[(5)] (Glueing local sections) 上の状況で,$s_i \in \mathcal{F}(U_i)$が
-        $s_{i}|_{U_{i} \cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}$を満たすならば,$s|_{U_{i}} = s_{i}$を満たす$s\in \mathcal{F}(U)$が存在する.
-\end{itemize}
+  前層$\mathcal{F}$が\index{そう@層}\index{sheaf}層(sheaf)とは次の条件を満たすことをいう.
+  \begin{itemize}
+    \item[(4)] (Uniqueness) $U$を$X$の開集合とし$\{U_{i}\}_{i}$をその開被覆とする.
+          $s\in \mathcal{F}(U)$が任意の$i$に対して$s|_{U_{i}}=0$ならば$s=0$
+    \item[(5)] (Glueing local sections) 上の状況で,$s_i \in \mathcal{F}(U_i)$が
+          $s_{i}|_{U_{i} \cap U_{j}} = s_{j}|_{U_{i} \cap U_{j}}$を満たすならば,$s|_{U_{i}} = s_{i}$を満たす$s\in \mathcal{F}(U)$が存在する.
+  \end{itemize}
 }
 
 \Remark{
-$\mathcal{F}$が層ならば$\mathcal{F}(\varnothing) = 0$となる.
+  $\mathcal{F}$が層ならば$\mathcal{F}(\varnothing) = 0$となる.
 }{}
 \Example{
-$X$を位相空間とする.\\
-$\mathcal{C}_{X}^{0}$を$X$の開集合$U$に対して$U\to \mathbf{C}$なる連続写像全体の集合$\mathcal{C}_{X}^{0}(U)$を対応させるものとし,制限写像を普通の制限とする.
-\begin{equation*}
-  \mathcal{C}_{X}^{0}(U) = \left\{ f:U \to \mathbf{C} \mid f\text{ is continuous} \right\}
-\end{equation*}
-すると,$\mathcal{C}_{X}^{0}$は$X$上の層となる.
+  $X$を位相空間とする.\\
+  $\mathcal{C}_{X}^{0}$を$X$の開集合$U$に対して$U\to \mathbf{C}$なる連続写像全体の集合$\mathcal{C}_{X}^{0}(U)$を対応させるものとし,制限写像を普通の制限とする.
+  \begin{equation*}
+    \mathcal{C}_{X}^{0}(U) = \left\{ f:U \to \mathbf{C} \mid f\text{ is continuous} \right\}
+  \end{equation*}
+  すると,$\mathcal{C}_{X}^{0}$は$X$上の層となる.
 }{
-$V \subset U$なる開集合$U,V$に対して$U$上の連続写像$f\in \mathcal{C}_{X}^{0}(U)$を$V$に制限することによって得られる
-$V$上の連続写像を$\rho_{U,V}(f)(=f|_{V})$と書く.すると,これは$\mathbf{C}$上のベクトル空間($\mathbf{C}$上の関数空間)
-の準同型$\rho_{U,V}:\mathcal{C}_{X}^{0}(U) \to \mathcal{C}_{X}^{0}(V)$となる.つまり$(\mathcal{C}_{X}^{0},\rho)$は前層となる.\\
-また,(4)を満たすのは明らかで.(5)もすぐに成り立つことがわかる.$\{U_{i}\}_{i}$を$U$の開被覆とする.$f_{i} \in \mathcal{C}_{X}^{0}(U_{i})$が
-$f_{i}|_{U_{i} \cap U_{j}} = f_{j}|_{U_{i} \cap U_{j}}$を満たすとする.するとそれらを張り合わせた関数を$f$とすればこれは
-$f\in \mathcal{C}_{X}^{0}(U)$であり,$f|_{U_{i}}=f_{i}$となる.よって$(\mathcal{C}_{X}^{0},\rho)$は層となる.これを連続写像が成す層という.
-}
-\Example{
-$X$を位相空間とする.\\
-$A$を自明でないアーベル群とする.$\mathcal{A}_{X}$を$X$の空でない開集合$U$に対して$\mathcal{A}_{X}(U)=A$に,
-空集合$\varnothing$に対して$\mathcal{A}_{X}(\varnothing) = 0$に対応させるものとし,
-制限写像を空でない開集合$V \subset U$に対して$\rho_{U,V}=\text{id}_{A}$とし,$\rho_{U,\varnothing} = 0$とする.\\
-すると,$(\mathcal{A}_{X},\rho)$は$X$上の前層にはなるが,一般に層とはならない.
-}{
-例えば,$X$が連結でないとすると,非交差な開集合$U,V$があって$X=U\cup V$とかける.すると$\{U,V\}$は$X$の開被覆となる.
-$s_{U} \in \mathcal{A}_{X}(U)=A$が$s_{U}|_{U\cap V} = s_{U}|_{\varnothing} = 0 = s_{V}|_{U \cap V}$
-を満たすとする.このとき,任意の$s \in \mathcal{A}_{X}(X)=A$で$s|_{U}=s|_{V}=s$となり層とならない.
+  $V \subset U$なる開集合$U,V$に対して$U$上の連続写像$f\in \mathcal{C}_{X}^{0}(U)$を$V$に制限することによって得られる
+  $V$上の連続写像を$\rho_{U,V}(f)(=f|_{V})$と書く.すると,これは$\mathbf{C}$上のベクトル空間($\mathbf{C}$上の関数空間)
+  の準同型$\rho_{U,V}:\mathcal{C}_{X}^{0}(U) \to \mathcal{C}_{X}^{0}(V)$となる.つまり$(\mathcal{C}_{X}^{0},\rho)$は前層となる.\\
+  また,(4)を満たすのは明らかで.(5)もすぐに成り立つことがわかる.$\{U_{i}\}_{i}$を$U$の開被覆とする.$f_{i} \in \mathcal{C}_{X}^{0}(U_{i})$が
+  $f_{i}|_{U_{i} \cap U_{j}} = f_{j}|_{U_{i} \cap U_{j}}$を満たすとする.するとそれらを張り合わせた関数を$f$とすればこれは
+  $f\in \mathcal{C}_{X}^{0}(U)$であり,$f|_{U_{i}}=f_{i}$となる.よって$(\mathcal{C}_{X}^{0},\rho)$は層となる.これを連続写像が成す層という.
 }
 
 \Example{
-\index{まてんろうそう@摩天楼層}\index{skyscraper sheaf}
-(skyscraper sheaf)\\
-$X$を位相空間、$A$をアーベル群とする。$p\in X$に対して$i_{p} : \{p\} \hookrightarrow X$を包含写像とする。
-このとき$i_{p,*}\mathcal{A}$を
-\begin{equation*}
-  i_{p,*}\mathcal{A}(U) = \left\{
-  \begin{alignedat}{2}
-      & A \qquad & p \in U    \\
-      & 1 \qquad & p \notin U
-  \end{alignedat}
-  \right.
-\end{equation*}
-と定義する。これは層になる。
+  上の例において$X=\mathbf{C}$として，開集合$U\subset \mathbf{C}$に対して$U\to \mathbf{C}$なる複素微分可能な集合$\mathcal{C}^{1}_{\mathbf{C}}(U)$を対応させるものは層を成す．
+}{}
+
+\Example{
+  $X$を位相空間とする.\\
+  $A$を自明でないアーベル群とする.$\mathcal{A}_{X}$を$X$の空でない開集合$U$に対して$\mathcal{A}_{X}(U)=A$に,
+  空集合$\varnothing$に対して$\mathcal{A}_{X}(\varnothing) = 0$に対応させるものとし,
+  制限写像を空でない開集合$V \subset U$に対して$\rho_{U,V}=\text{id}_{A}$とし,$\rho_{U,\varnothing} = 0$とする.\\
+  すると,$(\mathcal{A}_{X},\rho)$は$X$上の前層にはなるが,一般に層とはならない.
+}{
+  例えば,$X$が連結でないとすると,非交差な開集合$U,V$があって$X=U\cup V$とかける.すると$\{U,V\}$は$X$の開被覆となる.
+  $s_{U} \in \mathcal{A}_{X}(U)=A$が$s_{U}|_{U\cap V} = s_{U}|_{\varnothing} = 0 = s_{V}|_{U \cap V}$
+  を満たすとする.このとき,任意の$s \in \mathcal{A}_{X}(X)=A$で$s|_{U}=s|_{V}=s$となり層とならない.
+}
+
+\Example{
+  \index{まてんろうそう@摩天楼層}\index{skyscraper sheaf}
+  (skyscraper sheaf)\\
+  $X$を位相空間、$A$をアーベル群とする。$p\in X$に対して$i_{p} : \{p\} \hookrightarrow X$を包含写像とする。
+  このとき$i_{p,*}\mathcal{A}$を
+  \begin{equation*}
+    i_{p,*}\mathcal{A}(U) = \left\{
+    \begin{alignedat}{2}
+        & A \qquad & p \in U    \\
+        & 1 \qquad & p \notin U
+    \end{alignedat}
+    \right.
+  \end{equation*}
+  と定義する。これは層になる。
 }{}
 
 \Example{
@@ -103,6 +109,14 @@ $X$を位相空間、$A$をアーベル群とする。$p\in X$に対して$i_{p}
   ただし,$U$は$x$の開近傍をすべてを回る.$U$上の切断$s\in \mathcal{F}(U)$に対して
   $x\in U$の茎$\mathcal{F}_{x}$への自然な群準同型の像を$s_{x}$と書いて,$x$での$s$の\index{め@芽}\index{germ}\textbf{芽(germ)}という.
 }
+
+\Example{
+  Ex:\ref{Ex:1.3.2}で定義した層$\mathcal{C}^{1}_{\mathbf{C}}$と点$p\in \mathbf{C}$に対して
+  \begin{equation*}
+    \mathcal{C}^{1}_{\mathbf{C},p} = \{f:U\to \mathbf{C}\mid f\text{ is regular},p \in U\}
+  \end{equation*}
+}{}
+
 \Remark{
   ここで，$\mathcal{F}_{x}$は$x$近傍の情報を持っていると言える．実際，
   \begin{equation*}
@@ -120,11 +134,17 @@ $X$を位相空間、$A$をアーベル群とする。$p\in X$に対して$i_{p}
 \Proposition{
   層の定義の(4),(5)を次の列が完全系列であるとすることができる．
   \begin{equation*}
-    C^{\bullet}(\mathcal{U},\mathcal{F}) : 0 \longrightarrow \mathcal{F}(U) \stackrel{d_{0}}{\longrightarrow} \prod_{i}\mathcal{F}(U_{i}) \stackrel{d_{1}}{\longrightarrow} \prod_{i}\mathcal{F}(U_{i}\cap U_{j})
+    C^{\bullet}(\mathcal{U},\mathcal{F}) : 0 \longrightarrow \mathcal{F}(U) \stackrel{d_{0}}{\longrightarrow} \prod_{i}\mathcal{F}(U_{i}) \stackrel{d_{1}}{\longrightarrow} \prod_{i,j}\mathcal{F}(U_{i}\cap U_{j})
   \end{equation*}
   ただし，$\mathcal{U}$は開集合$U$の開被覆で$\mathcal{U} = \{U_{i}\}_{i}$．\\
   $d_{0} : s\mapsto (s|_{U_{i}})_{i},d_{1}: (s_{i})_{i} \mapsto (s_{i}|_{U_{i}\cap U_{j}} - s_{j}|_{U_{i}\cap U_{j}})_{i,j}$
 }{
+  $C^{\bullet}(\mathcal{U},\mathcal{F})$が完全とは，
+  $d_{0}$が単射で，$\im{d_{0}} = \ker{d_{1}}$を意味する．\\
+  $d_{0}(s) = 0$とすると，$(s|_{U_{i}})_{i} = 0$つまり任意の$i$に対して$s|_{U_{i}} = 0$を得る．
+  つまり(4)が成り立つことと$d_{0}$が単射であることは同値．\\
+  $(s_{i})_{i} \in \ker{d_{1}}$を取ると，$d_{1}((s_{i})_{i}) = (s_{i}|_{U_{i}\cap U_{j}} - s_{j}|_{U_{i}\cap U_{j}})_{i,j} = 0$つまり任意の$i,j$に対して$s_{i}|_{U_{i}\cap U_{j}} = s_{j}|_{U_{i}\cap U_{j}}$を意味する．
+  つまり(5)が成り立つことと$\im{d_{0}} = \ker{d_{1}}$は同値．
 }
 
 \Lemma{

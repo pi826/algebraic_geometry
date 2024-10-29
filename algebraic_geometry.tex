@@ -54,13 +54,21 @@ pdfkeywords={}
 \pagestyle{fancy}
 
 
+\usepackage{fancyhdr}
+\usepackage{titlesec} % カスタムマーク用
+
 \pagestyle{fancy}
 \fancyhf{} % 全てのヘッダーとフッターをクリア
+
 \fancyhead[LE,RO]{\thepage} % 左側の偶数ページと右側の奇数ページにページ番号を表示
-\fancyhead[RE]{\leftmark} % 右側の偶数ページに章名を表示
-\fancyhead[LO]{\rightmark} % 左側の奇数ページに節名を表示
+\fancyhead[RE]{\nouppercase{\leftmark}} % 右側の偶数ページに章名を元の文体で表示
+\fancyhead[LO]{\nouppercase{\rightmark}} % 左側の奇数ページにsection名を元の文体で表示
+
 \renewcommand{\headrulewidth}{0.4pt} % ヘッダーの線の太さを設定
-\renewcommand{\footrulewidth}{0pt} % フッターの線の太さを定
+\renewcommand{\footrulewidth}{0pt} % フッターの線の太さを設定
+
+% マークのカスタマイズ
+\renewcommand{\sectionmark}[1]{\markright{#1}}
 
 % \makeatletter
 % \let\old@rule\@rule
