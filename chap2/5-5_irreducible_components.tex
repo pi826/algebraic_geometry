@@ -1,0 +1,152 @@
+
+\subsection{Irreducible Components}
+\sectionmark{Irreducible Components}
+
+\Definition{
+  位相空間$X$が\index{きやく@既約}\index{irreducible}
+  \textbf{既約(irreducible)}とは，$X$の閉集合$X_{1},X_{2}$を用いて
+  \begin{equation*}
+    X = X_{1}\cup X_{2}
+  \end{equation*}
+  となるとき，$X_{1} = X$または$X_{2} = X$が成り立つときを言う．
+}
+
+\Lemma{
+  位相空間$X$には包含関係で極大な既約部分空間が存在する．
+}{
+  既約部分空間の集合$\mathscr{S} = \{U\subset X\mid U\text{:irreducible}\}$
+  をとると，$\varnothing \in \mathscr{S}$なので空ではない．また，包含関係で半順序である．
+  全順序部分集合$\{V_{\lambda}\}_{\lambda\in \Lambda}\subset \mathscr{S}$に対して
+  \begin{equation*}
+    U_{\infty} = \bigcup_{\lambda \in \Lambda}V_{\lambda}
+  \end{equation*}
+  と置くと，これは既約である．したがって，$U_{\infty}\in \mathscr{S}$であるからZornの補題より
+  極大な既約部分空間が存在する．
+}
+
+
+\Definition{
+  位相空間$X$の極大な既約部分空間を$X$の\index{きやくせいぶん@既約成分}\index{irreducible components}
+  \textbf{既約成分(irreducible components)}という．
+}
+
+\Remark{
+  位相空間$X$の既約成分全体の和集合は$X$に等しい．なぜなら，一点集合$\{x\}\subset X$は既約
+  なので，これを含む既約成分が存在するからである．
+}{}
+
+\Lemma{
+  位相空間$X$の部分集合$U$に対して以下は同値
+  \begin{itemize}
+    \item[(1)] $U$は既約
+    \item[(2)] $\overline{U}$は既約 
+  \end{itemize}
+}{
+  $U$の閉集合$U_{1},U_{2}$を用いて
+  \begin{equation*}
+    U = U_{1} \cup U_{2} 
+  \end{equation*}
+  とかけたとき，
+  \begin{equation*}
+    \overline{U} = \overline{U_{1}\cup U_{2}} = \overline{U_{1}} \cup \overline{U_{2}} = U_{1}\cup U_{2} = U
+  \end{equation*}
+  なのでよい．
+}
+
+\Corollary{
+  既約成分は閉である．
+}{}
+
+\Lemma{
+  位相空間$X$に対して以下は同値
+  \begin{itemize}
+    \item[(1)] $X$は既約
+    \item[(2)] 任意の空でない開部分集合$U_{1},U_{2}$に対して$U_{1}\cap U_{2}$は空でない．
+  \end{itemize}
+}{
+  $(\Rightarrow)$
+  $X$が既約とし，$U_{1},U_{2}$を空でない開部分集合をとる．今$U_{1}\cap U_{2}$が空であると仮定すると，
+  \begin{align*}
+    X 
+    &= X\mysetminus (U_{1}\cap U_{2})\\
+    &= (X\mysetminus U_{1}) \cup (X\mysetminus U_{2}) 
+  \end{align*}
+  $X\mysetminus U_{i}\ (i = 1,2)$は閉なので既約性より$X\mysetminus U_{1} = X$または$X\mysetminus U_{2} = X$が成り立つが，これは$U_{i}$が空でないことに矛盾する．\\
+  $(\Leftarrow)$$X_{1},X_{2}$を$X$の閉部分集合とし，$X=X_{1}\cup X_{2}$とする．今$X_{1} \neq X$かつ$X_{2}\neq X$と仮定すると，
+  $X\mysetminus X_{i}\neq \varnothing\ (i = 1,2)$でありそれぞれ開なので，前提より
+  \begin{equation*}
+    (X\mysetminus X_{1})\cap (X\mysetminus X_{2}) = X\mysetminus (X_{1}\cup X_{2}) \neq \varnothing
+  \end{equation*}
+  したがって，$X_{1}\cup X_{2} \neq X$であり矛盾する．
+}
+
+\Proposition{
+  $X$を位相空間とする．
+  \begin{itemize}
+    \item[(1)] $X$が既約ならば$X$の空でない開集合$U$は稠密かつ既約である．
+    \item[(2)] $\{X_{i}\}_{i}$を$X$の既約成分，$U$を$X$の開集合とする．このとき$\{X_{i}\cap U\}_{i}$は$U$の既約成分である． 
+    \item[(3)] $X$は有限個の既約な閉部分集合$Z_{j}$に分解されるとする．このとき任意の$X$の既約成分$Z$はある$Z_{j}$に等しい．更に，もし任意の$i,j$に対して$Z_{i}\not\subset Z_{j}$ならば，
+    $\{Z_{j}\}_{j}$が$X$の既約成分の全体である．
+  \end{itemize}
+}{
+  $(1)\ $$U$を空でない開集合とし，$\overline{U}$を$U$の閉包とする．このとき
+  \begin{equation*}
+    X = (X\mysetminus U) \cup U = (X\mysetminus U) \cup \overline{U} 
+  \end{equation*}
+  $X\mysetminus U \subsetneq X$なので既約性より$X = \overline{U}$を得る．よって稠密である．
+  最後に既約であることは$U$の空でない開部分集合$U_{1},U_{2}$に対してそれぞれ$X$で稠密であるので任意の開集合との交わりを持つ．したがって$U_{1}\cap U_{2}$は空でない．
+  したがって，先程の補題より$U$は既約である．\\
+  $(2)\ $$U$は空でないとしてよい．$X_{i}$を$X_{i}\cap U\neq \varnothing$なる$X$の既約成分とする．もし，$(X_{i}\cap U)\subset Z$なる既約な閉集合$Z\subset U$があるとすると，
+  $X_{i}\cap U$は既約部分空間$X_{i}$の空でない開集合なので$(1)$より稠密なので
+  \begin{equation*}
+    X_{i} = \overline{X_{i}\cap U}
+  \end{equation*}
+  包含関係より
+  \begin{equation*}
+    X_{i} = \overline{X_{i}\cap U}\subset \overline{Z} = Z
+  \end{equation*}
+  $Z$は既約なので$X_{i}$の極大性から$Z=X_{i}$．よって，
+  \begin{equation*}
+    Z\cap U = Z = X_{i}\cap U
+  \end{equation*}
+  従って，$X_{i}\cap U$は$U$の既約成分である．逆に，$Z$を$U$の既約成分とすると，
+  ある$X$の既約成分$X_{i}$があって，$Z\subset X_{i}$を満たす．従って，
+  \begin{equation*}
+    Z\subset X_{i}\cap U
+  \end{equation*}
+  よって，$Z=X_{i}\cap U$であるからよい．\\
+  $(3)\ $いま
+  \begin{equation*}
+    Z = \bigcup_{j} Z_{j}\cap Z
+  \end{equation*}
+  である．$Z_{j}$の数で帰納法を行う．一つのときはよい．
+}
+
+\Definition{
+  スキームが\index{きやく@既約}\index{irreducible}\textbf{既約(irreducible)}とは，
+  位相空間として既約なことをいう．
+}
+
+\Proposition{
+  $X = \spec{A}$とし，$I$を$A$のイデアルとする．
+  \begin{itemize}
+    \item[(1)] $V(I)$が既約$\Longleftrightarrow$$\sqrt{I}$が素イデアル．
+    \item[(2)] $\{\mathfrak{p}_{i}\}_{i}$を$A$の極小素イデアルとする．このとき，$\{V(\mathfrak{p}_{i})\}_{i}$は$X$の既約成分である．
+    \item[(3)] $X$が既約$\Longleftrightarrow$$A$は唯一の極小素イデアルを持つ．特に，$A$が整域ならば，$X$は既約．
+  \end{itemize}
+}{
+  $(1)\ $まず$\sqrt{I}$が素イデアルだとする．いま$V(I) = V(J_{1}) \cup V(J_{2})$とすると，
+  $\sqrt{I} = \sqrt{J_{1}J_{2}} \supset J_{1}J_{2}$．仮定から$J_{1}\subset \sqrt{I}$または$J_{2}\subset \sqrt{I}$が成り立つ．
+  よって，$V(J_{1})\supset V(I)$または$V(J_{2})\supset V(I)$が成り立つ．
+  よって，$V(J_{1}) = V(I)$または$V(J_{2}) = V(I)$が成り立つ．従って，$V(I)$は既約．
+  逆に，$\sqrt{I}$が素イデアルでないとすると，ある$a,b\in A\mysetminus \sqrt{I}$があって，
+  $ab\in \sqrt{I}$．よって，$V(I) = (V(a)\cap V(I))\cup (V(b) \cap V(I))$でそれぞれ$V(I)$
+  と等しくない．従って，$V(I)$は既約でない．$(2),(3)$は$(1)$から容易にわかる．
+}
+
+\Proposition{
+  ネータースキーム$X$は唯一の有限個の既約成分を持つ．
+}{
+  
+}
+
