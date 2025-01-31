@@ -1,0 +1,54 @@
+
+\Section{Vector Field}
+多様体$M$においてそのすべての点で時間$t$に応じて運動し
+$M$の上に滑らかな流れが生じている状態を考えてみよう．
+
+\begin{center}
+\begin{tikzpicture}
+  \clip (-3,3) to[closed, curve through = {(-2,-1) (2,-2.5) (2,2.5)}] (0,1) node[left] at (-3,4) {$M$};
+
+% ベクトル場の描画
+\foreach \x in {-4,-3.5,...,5} {
+    \foreach \y in {-4,-3.5,...,4} {
+        % ベクトルの方向と長さを定義
+        \pgfmathsetmacro{\vx}{-\y}
+        \pgfmathsetmacro{\vy}{\x}
+        \pgfmathsetmacro{\magnitude}{sqrt(\vx*\vx+\vy*\vy)}
+        % ゼロ除算を防ぐ
+        \ifdim \magnitude pt > 0pt
+            \pgfmathsetmacro{\scale}{0.3/\magnitude}
+        \else
+            \pgfmathsetmacro{\scale}{0} % 矢印を描画しない
+        \fi
+        % 矢印の描画（\scaleがゼロの場合はスキップ）
+        \ifdim \scale pt > 0pt
+            \draw[->, blue] (\x, \y) -- ++(\scale*\vx, \scale*\vy);
+        \fi
+    }
+}
+
+
+
+
+\draw[thick] (-3,3) to[closed, curve through = {(-2,-1) (2,-2.5) (2,2.5)}] (0,1) node[left] at (-3,4) {$M$};
+
+
+
+\end{tikzpicture}
+\end{center}
+
+
+
+
+\Definition{
+多様体$M$において，各実数$t$に対して滑らかな写像$\varphi_{t}:M \to M$
+が与えられ，次を満たすとき$\{\varphi_{t}\}$を$M$の\textbf{1パラメーター変換群}という．
+\begin{itemize}
+  \item[(1)] $\varphi_{s}\circ \varphi_{t} = \varphi_{s+t},\quad \varphi_{0} = 1_{M}$
+  \item[(2)] 写像$\mathbf{R}\times M\to M;(t,x)\mapsto \varphi_{t}(x)$は滑らかである． 
+\end{itemize}
+}
+曲線の接ベクトルを考えれば
+\begin{equation}
+  X_{x}f = \lim_{t\to 0}\frac{f(\varphi_{t}(x)) - f(x)}{t}
+\end{equation}

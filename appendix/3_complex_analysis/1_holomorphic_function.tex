@@ -210,6 +210,59 @@ $f$が点$z_{0}\in \Omega$で最大値をとるとは，
   収束円の境界$|z| = R$上では収束することも発散することもある．
 }{}
 
+\Lemma{
+  $0$でない収束半径を持つ冪級数$f(z) = \sum a_{n}z^{n}$は$z = 0$で連続である．
+}{
+  \begin{equation*}
+    f(z) - f(0) = \sum_{n = 1}^{\infty}a_{n}z^{n}
+  \end{equation*}
+  で，両辺絶対値を取ると
+  \begin{equation*}
+    | f(z) - f(0) | = \left| \sum_{n = 1}^{\infty}a_{n}z^{n} \right| \leq \sum_{n = 1}^{\infty}|a_{n}z^{n}|
+  \end{equation*}
+  で，$r$を収束半径未満で$0$より大きい実数とすると，$|z| < r$で冪級数は絶対収束する．
+  \begin{equation*}
+    | f(z) - f(0) | \leq \sum_{n = 1}^{\infty}|a_{n}|\left| \frac{z}{r}r\right|^{n}
+  \end{equation*}
+  で
+  \begin{equation*}
+    \left| \frac{z}{r} \right|^{n} < \frac{|z|}{r}
+  \end{equation*}
+  なので
+  \begin{equation*}
+    |f(z) - f(0)| \leq \sum_{n = 1}^{\infty}|a_{n}|\frac{|z|}{r}r^{n} =  C|z|
+  \end{equation*}
+  ($C$は正の定数)だから$f(z)$は$z = 0$で連続である．
+}
+
+\Proposition{
+  (冪級数の一意性)
+  同じ収束半径を持つ冪級数$\sum a_{n}z^{n},\sum b_{n}z^{n}$が等しい
+  \begin{equation*}
+    \sum_{n = 0}^{\infty}a_{n}z^{n} = \sum_{n = 0}^{\infty}b_{n}z^{n}
+  \end{equation*}
+  ならば，任意の$n$に対して$a_{n} = b_{n}$が成り立つ．
+}{
+  先程の補題から関数
+  \begin{equation*}
+    f(z) = \sum_{n = 0}^{\infty}a_{n}z^{n},\ g(z) = \sum_{n = 0}^{\infty}b_{n}z^{n} 
+  \end{equation*}
+  は$z = 0$で連続である．したがって
+  \begin{equation*}
+    \lim_{z \to 0}f(z) = f(0) = a_{0},\ \lim_{z \to 0}g(z) = g(0) = b_{0}
+  \end{equation*}
+  だから$a_{0} = b_{0}$を得る．\\
+  次に，$N > 0$に対して，$N\geq n$までは$a_{n} = b_{n}$が成り立つとすると，
+  \begin{equation*}
+    \sum_{n = 0}^{\infty}a_{n}z^{n} = a_{0} + a_{1}z + \cdots + a_{N}z^{N} + \sum_{n = N+1}^{\infty}a_{n}z^{n}
+  \end{equation*}
+  だから
+  \begin{equation*}
+    \sum_{n = N + 1}^{\infty}a_{n}z^{n} = \sum_{n = N + 1}^{\infty}b_{n}z^{n}
+  \end{equation*}
+  を得る．両辺を$z^{N + 1}$で割って同様に$z \to 0$とすると，$a_{N + 1} = b_{N + 1}$を得る．
+}
+
 \Theorem{
   冪級数$\sum a_{n}z^{n}$の収束円内の点における微分は級数の項別微分$\sum na_{n}z^{n-1}$で与えられる．
   \begin{equation}
@@ -222,6 +275,13 @@ $f$が点$z_{0}\in \Omega$で最大値をとるとは，
 
 \Corollary{
   冪級数はその収束円内で無限回複素微分可能
+}{}
+
+
+
+
+\Proposition{
+
 }{}
 
 最後に開集合$\Omega$上の複素数値関数$f$が$z_{0}\in \Omega$で\index{かいせきてき@解析的}\index{analytic}

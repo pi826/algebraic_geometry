@@ -1,0 +1,43 @@
+
+\Section{Diffrential Form}
+
+$K$を標数$0$の体，$F$を$K$多元環，$V$は$F$加群とする．\\
+とても大切なのは$K=\mathbf{R},\mathbf{C}$の場合である．
+\Example{
+  $F = K$のとき$V$は$K$上のベクトル空間である．
+}{}
+
+\Example{
+  $M$を可微分多様体とすれば$C^{\infty}_{p}(M)$は$\mathbf{R}$多元環で，
+  $M$上で定義されたベクトル場すべてのつくるアーベル群$\mathcal{X}$は$C^{\infty}_{p}(M)$加群である．
+}{}
+
+\Definition{
+  $F=K$として$V$を$K$上の$n$次元ベクトル空間とする．写像
+  \begin{equation*}
+    \phi : \underbrace{V\times \dots \times V}_{\text{$k$個}} \to K
+  \end{equation*}
+  が\textbf{$k$重線型写像(えいご)}
+  とは各変数に関して線型であることをいう．つまり$i = 1,\dots,k$に対して
+  \begin{equation*}
+    \phi(v_{1},\dots,\alpha v_{i} + \beta w_{i},\dots,v_{k}) = \alpha\phi(v_{1},\dots, v_{i},\dots,v_{k}) + \beta \phi(v_{1},\dots, w_{i},\dots, v_{k})
+  \end{equation*}
+  が成り立つときをいう．
+}
+
+\Definition{
+  $p\in \mathbf{Z}_{\geq 0}$に対して$F$加群$V$上の\textbf{$p$次交代形式($p$-th alternating form)}
+  
+}
+
+
+\Proposition{
+  $\phi \in \Lambda^{k}V^{*}, \psi \in \Lambda^{l}V^{*}$とするとき，次が成り立つ．
+  \begin{enumerate}
+    \item $\phi \wedge \psi = (-1)^{kl}\psi \wedge \psi \in \Lambda^{k+l}V^{*}$
+    \item $v_{1},\dots,v_{k+l} \in V$とする．このとき，
+    \begin{equation*}
+      (\phi \wedge \psi)(v_{1},\dots,v_{k+l}) = \frac{1}{k!l!}\sum_{\sigma \in S_{k+l}}\text{sgn}(\sigma)\phi(v_{\sigma(1)},\dots,v_{\sigma(k)})\psi(v_{\sigma(k+1)},\dots,v_{\sigma(k+l)})
+    \end{equation*}
+  \end{enumerate}
+}{}
