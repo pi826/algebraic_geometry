@@ -87,11 +87,21 @@ $I$を$A$の任意のイデアルとすると，$I$に伴う斉次イデアル$I
   \end{itemize}
 }{
   (1)$I$を素イデアルとする．$a,b\in A$が$ab\in I^{h}$で$a,b\notin I^{h}$を満たすとする．
-  斉次元に分解すると
+  それぞれの斉次元への分解を
   \begin{equation*}
-    a = \sum_{i = 0}^{n} a_{i},\quad b = \sum_{j = 0}^{m}b_{j},\quad a_{n},b_{n} \in A_{n}
+    a = \sum_{i = 0}^{n} a_{i},\quad b = \sum_{j = 0}^{m}b_{j},\quad a_{d},b_{d} \in A_{d}
   \end{equation*}
+  とすると，$a,b\notin I^{h}$なのである$i,j$があって，$a_{k}\notin I\cap A_{k},b_{l}\notin I \cap A_{l}$である．
+  \begin{equation*}
+    ab = \sum_{i = 0}^{n + m}\left( \sum_{j = 0}^{i}a_{j}b_{i - j} \right)
+  \end{equation*}
+  ただし$a_{n+1}=a_{n+2}=\cdots = 0, b_{m + 1} = b_{m + 2} = \cdots = 0$とする．
+  \begin{equation*}
+    \sum_{j = 0}^{i} a_{j}b_{i - j} \in I\cap A_{i}
+  \end{equation*}
+  だから
   よって$ab=a_{n}b_{m} + \{次数n+m未満の斉次元\}$だから$ab$の$n+m$次斉次元は$a_{n}b_{m}$で
+  $ab\in I^{h}$より，$a_{n}b_{m} \in I\cap A_{d} \subset I$．また，$I$は素イデアルなので
   \\
   %わからん%
   (2)まず$(\Leftarrow)$を示す．つまり$J\cap A_{+}\subset \sqrt{I}$とする．
