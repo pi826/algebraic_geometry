@@ -474,6 +474,64 @@ $\mathcal{Q}(U) = \mathcal{F}(U)/\mathcal{F}'(U)$とおく。\\
   したがって，$\varphi\in \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}}$を与えることは，$\psi \in \hom{\text{Ph}(Y)}{\mathcal{G}}{f_{*}\mathcal{F}}$を与えることと等しい．
 }
 
+\Proposition{
+  $\mathfrak{B}$を位相空間$X$の開基，$\mathcal{F},\mathcal{G}$を$X$上の層とする．このとき，すべての$U\in \mathfrak{B}$に対して，
+  準同型$\alpha(U):\mathcal{F}(U) \to \mathcal{G}(U)$が定まっていて，制限写像と可換である．つまり
+  \begin{equation*}
+    \alpha(V)\circ \rho_{U,V}^{\mathcal{F}} = \rho_{U,V}^{\mathcal{G}}\circ \alpha(U)
+  \end{equation*}
+  となるとき，層の射$\alpha:\mathcal{F} \to \mathcal{G}$に唯一拡張できる．
+}{
+  $X$の任意の開集合$U$に対して$U_{i}\in \mathfrak{B}$なる開集合$U_{i}\subset U$たちが被覆する
+  \begin{equation*}
+    U = \bigcup_{i}U_{i}
+  \end{equation*}
+  で，もし層の射$\alpha:\mathcal{F}\to \mathcal{G}$があるならば
+  制限写像と可換でなければならない．つまり
+  \begin{equation*}
+    \alpha(U_{i})\circ \rho_{U,U_{i}} = \rho_{U,U_{i}}\circ \alpha(U)
+  \end{equation*}
+  を満たすことに注意しよう．\\
+  $\alpha(U_{i})$は定まっているのでそれらを張り合わせることによって，$\alpha(U)$を構成する．\\
+  層の定義から$s\in \mathcal{F}(U)$に対して
+  \begin{equation*}
+    \alpha(U_{i})(s|_{U_{i}})\in \mathcal{G}(U_{i})
+  \end{equation*}
+  が定まる．仮定より各$\alpha(U_{i})$は制限写像と可換なので，
+  \begin{align*}
+    \alpha(U_{i})(s|_{U_{i}})|_{U_{i}\cap U_{j}} 
+    &= \rho_{U_{i},U_{i}\cap U_{j}} \circ \alpha(U_{i})\circ \rho_{U,U_{i}}(s)\\
+    &= \alpha(U_{i}\cap U_{j})\circ \rho_{U_{i},U_{i}\cap U_{j}}\circ \rho_{U,U_{i}}(s)\\
+    &= \alpha(U_{i}\cap U_{j}) \circ \rho_{U,U_{i}\cap U_{j}}(s)\\
+    &= \alpha(U_{i}\cap U_{j})(s|_{U_{i}\cap U_{j}})
+  \end{align*}
+  また，同様に
+  \begin{align*}
+    \alpha(U_{j})(s|_{U_{j}})|_{U_{i}\cap U_{j}}
+    &= \rho_{U_{j},U_{i}\cap U_{j}}\circ \alpha(U_{j}) \circ \rho_{U,U_{j}}\\
+    &= \alpha(U_{i}\cap U_{j}) \circ \rho_{U_{j},U_{i}\cap U_{j}}\circ \rho_{U,U_{j}}(s)\\
+    &= \alpha(U_{i}\cap U_{j})\circ \rho_{U,U_{i}\cap U_{j}}(s)\\
+    &= \alpha(U_{i}\cap U_{j})(s|_{U_{i}\cap U_{j}})
+  \end{align*}
+  したがって，
+  \begin{equation*}
+    \alpha(U_{i})(s|_{U_{i}})|_{U_{i}\cap U_{j}} = \alpha(U_{j})(s|_{U_{j}})|_{U_{i}\cap U_{j}}
+  \end{equation*}
+  だからGlueing local sections条件より
+  \begin{equation*}
+    t|_{U_{i}} = \alpha(U_{i})(s|_{U_{i}})
+  \end{equation*}
+  となる$t\in \mathcal{G}(U)$がある．また，Uniqueness条件よりこれは一意である．
+  \begin{equation*}
+    \alpha(U)(s) = t
+  \end{equation*}
+  とすれば，
+  \begin{equation*}
+    \alpha(U)(s)|_{U_{i}} = \alpha(U_{i})(s|_{U_{i}})
+  \end{equation*}
+  で，これはつまり制限写像と可換であり，$t$の一意性から$\alpha:\mathcal{F}\to \mathcal{G}$は唯一である．
+}
+
 \Example{
   $\mathcal{F}$を$X$上の層とする．このとき
   \begin{equation*}
