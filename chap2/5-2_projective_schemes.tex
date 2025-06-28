@@ -91,19 +91,25 @@ $I$を$A$の任意のイデアルとすると，$I$に伴う斉次イデアル$I
   \begin{equation*}
     a = \sum_{i = 0}^{n} a_{i},\quad b = \sum_{j = 0}^{m}b_{j},\quad a_{d},b_{d} \in A_{d}
   \end{equation*}
-  とすると，$a,b\notin I^{h}$なのである$i,j$があって，$a_{k}\notin I\cap A_{k},b_{l}\notin I \cap A_{l}$である．
+  とすると，$a_{n},b_{m} \notin I^{h}$となるように$a,b$を取り直す事ができる．実際$0\leq k \leq n$を$a_{k} \notin I^h$となる最大のものとすると
   \begin{equation*}
-    ab = \sum_{i = 0}^{n + m}\left( \sum_{j = 0}^{i}a_{j}b_{i - j} \right)
+    (a-a_{n})b = ab - a_{n}b \in I^{h} 
   \end{equation*}
-  ただし$a_{n+1}=a_{n+2}=\cdots = 0, b_{m + 1} = b_{m + 2} = \cdots = 0$とする．
+  なので，繰り返すと，
   \begin{equation*}
-    \sum_{j = 0}^{i} a_{j}b_{i - j} \in I\cap A_{i}
+    (a - a_{n} - a_{n-1} - \cdots - a_{k+1})b \in I^{h}
   \end{equation*}
-  だから
-  よって$ab=a_{n}b_{m} + \{次数n+m未満の斉次元\}$だから$ab$の$n+m$次斉次元は$a_{n}b_{m}$で
-  $ab\in I^{h}$より，$a_{n}b_{m} \in I\cap A_{d} \subset I$．また，$I$は素イデアルなので
+  で，$b_{m}$についても同様で$0\leq l \leq m$を$b_{l} \notin I^h$となる最大のものとする．このとき，
+  \begin{equation*}
+    a_{0} = a - a_{n} - a_{n-1} - \cdots - a_{k+1},\quad b_{0} = b - b_{m} - b_{m-1} - \cdots - b_{l+1}
+  \end{equation*}
+  とすると，$a_{0}b_{0}\in I^{h}$で$a_{0},b_{0} \in I^{h}$である．ここで
+  \begin{equation*}
+    a_{0}b_{0} = a_{k}b_{l} + (k+l\text{次未満の項})
+  \end{equation*}
+  となり，$a_{0}b_{0}\in I^{h}$より$a_{k}b_{l} \in I^{h} \subset I$だから$I$が素イデアルということより$a_{k},b_{l}\in I$よって$a_{k},b_{l} \in I^{h}$となる．
+  よって矛盾する．
   \\
-  %わからん%
   (2)まず$(\Leftarrow)$を示す．つまり$J\cap A_{+}\subset \sqrt{I}$とする．
   任意の$\mathfrak{p}\in V_{+}(I)$に対して
   \begin{equation*}
