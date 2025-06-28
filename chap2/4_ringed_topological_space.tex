@@ -31,7 +31,7 @@ Prop:\ref{Prop:1.3.13}より
 \end{equation*}
 を考えることは
 \begin{equation*}
-  f^{\#} : f^{*}\mathcal{O}_Y \to \mathcal{O}_{X}
+  f^{\#} : f^{-1}\mathcal{O}_Y \to \mathcal{O}_{X}
 \end{equation*}
 を考えることに等しい．Def:\ref{Def:1.4.2}の$f^{\#}_{x}$は下の式で考えている．
 
@@ -62,10 +62,10 @@ $(X,\mathcal{O}_{X})$を局所環付き空間とする。$\mathcal{J}$を$\mathc
 $j:V(\mathcal{J}) \hookrightarrow X$を包含写像とする。すると
 \begin{itemize}
   \item[---] $V(\mathcal{J})$は$X$の閉集合
-  \item[---] $(V(\mathcal{J}),j^{*}(\mathcal{O}_{X}/\mathcal{J}))$は局所環付き空間
+  \item[---] $(V(\mathcal{J}),j^{-1}(\mathcal{O}_{X}/\mathcal{J}))$は局所環付き空間
   \item[---] $j^{\#}$は自然な全射
         \begin{equation*}
-          \mathcal{O}_{X} \longrightarrow \mathcal{O}_{X}/\mathcal{J} = j_{*}(j^{*}(\mathcal{O}_{X}/\mathcal{J}))
+          \mathcal{O}_{X} \longrightarrow \mathcal{O}_{X}/\mathcal{J} = j_{*}(j^{-1}(\mathcal{O}_{X}/\mathcal{J}))
         \end{equation*}
         で
         $(j,j^{\#}):(V(\mathcal{J}),j^{-1}(\mathcal{O}_{X}/\mathcal{J})) \to (X,\mathcal{O}_{X})$は閉はめ込みである。
@@ -78,10 +78,10 @@ $x\in X\mysetminus V(\mathcal{J}) = \{x\in X\ |\ \mathcal{J}_{x} = \mathcal{O}_{
 すると任意の$y \in V$に対して$f_{y} = 1 \in \mathcal{J}_{y}$となって,この$y$に対して
 $\mathcal{J}_{y} = \mathcal{O}_{X,y}$なので
 $V\subset X \mysetminus V(\mathcal{J})$となって$X\mysetminus V(\mathcal{J})$が開であることがわかる。\\
-\Claim{2}$(V(\mathcal{J}),j^{*}(\mathcal{O}_{X}/\mathcal{J}))$は局所環付き空間\\
+\Claim{2}$(V(\mathcal{J}),j^{-1}(\mathcal{O}_{X}/\mathcal{J}))$は局所環付き空間\\
 任意の$x\in V(\mathcal{J})$に対して
 \begin{equation*}
-  (j^{*}(\mathcal{O}_{X}/\mathcal{J}))_{x} = (\mathcal{O}_{X}/\mathcal{J})_{x} = \mathcal{O}_{X,x}/\mathcal{J}_{x}
+  (j^{-1}(\mathcal{O}_{X}/\mathcal{J}))_{x} = (\mathcal{O}_{X}/\mathcal{J})_{x} = \mathcal{O}_{X,x}/\mathcal{J}_{x}
 \end{equation*}
 は局所環。残りは自明。
 }

@@ -163,7 +163,7 @@ $\alpha:\mathcal{F} \to \mathcal{G}$を$X$上の前層の射とする.任意の$
 $\alpha$から自然に誘導される群準同型$\alpha_{x}:\mathcal{F}_{x} \to \mathcal{G}_{x}$で
 $(\alpha(U)(s))_{x} = \alpha_{x}(s_{x})$が$X$の任意の開集合$U,s\in \mathcal{F}(U),x\in U$で
 成り立つものが取れる.\\
-$\alpha_{x}$が任意の$x\in X$で全射なら$\alpha$が全射であるという.
+$\alpha_{x}$が任意の$x\in X$で全射なら$\alpha$が全射であるという.これは任意の$t_{x} \in \mathcal{G}_{x}$に対してある開集合$U$と$s\in \mathcal{F}(U)$があって$t_{x} = (\alpha(U)(s))_{x}$とかけることを意味する．
 
 \Example{
   $X=\mathbf{C} \mysetminus \{0\}$とし$\mathcal{F}$を$X$上の正則関数がなす層とし,
@@ -176,7 +176,35 @@ $\alpha_{x}$が任意の$x\in X$で全射なら$\alpha$が全射であるとい�
   \begin{center}
     $\alpha$が同型$\Leftrightarrow$ $\alpha_{x}$が同型$(\forall x \in X)$
   \end{center}
-}{}
+}{
+  $(\Rightarrow)$は自明である．逆を示そう．つまり，$\alpha_{x}$が任意の$x\in X$で同型だとする．
+  $s\in \mathcal{F}(U)$が$\alpha(U)(s) = 0$を満たすとすると，
+  \begin{equation*}
+    \alpha_{x}(s_{x}) = (\alpha(U)(s))_{x} = 0 \quad (\forall x \in U)
+  \end{equation*}
+  が成り立つ．よって，$s_{x} = 0(\forall x \in U)$である．よって，Lemma\ref{Lem:1.3.8}より$s = 0$となる．これは$\alpha$が単射であることを意味する．\\
+  各点$x\in U \subset X$で$\alpha_{x}$は全射なので，$t\in \mathcal{G}(U)$をとると，
+  ある$x$の開近傍$V_{x}$と$s_{V_{x}} \in \mathcal{F}(V_{x})$があって，
+  \begin{equation*}
+    t_{x} = (t|_{V_{x}})_{x} = (\alpha(V_{x})(s_{V_{x}}))_{x}
+  \end{equation*}
+  が成り立つ．芽の定義より，ある$x$の開近傍$U_{x} \subset V_{x}$があって，
+  \begin{equation*}
+    \alpha(V_{x})(s_{V_{x}})|_{U_{x}} = t|_{U_{x}}
+  \end{equation*}
+  となる．ここで層の射は制限写像と可換なので，$\alpha(V_{x})(s_{V_{x}})|_{U_{x}} = \alpha(U_{x})(s_{V_{x}}|_{U_{x}})$となる．従って，
+  \begin{equation*}
+    \alpha(U_{x})(s_{V_{x}}|_{U_{x}}) = t|_{U_{x}}
+  \end{equation*}
+  ここで，$s_{x} = s_{V_{x}}|_{U_{x}} \in \mathcal{F}(U_{x})$とすると，このような$\{U_{x}\}_{x}$を集めると，これは$U$の開被覆であり，ある$s_{x} \in \mathcal{F}(U_{x})$があって
+  $t|_{U_{x}} = \alpha(U_{x})(s_{x})$となるようにできる．
+  $\alpha$が単射なので$s_{x}|_{U_{x}\cap U_{y}} = s_{y}|_{U_{x}\cap U_{y}}$
+  が成り立つ．これら$s_{x}$を張り合わせることによって，$s\in \mathcal{F}(U)$で$s|_{U_{x}} = s_{x}$となるものが取れる．よって，
+  \begin{equation*}
+    \alpha(U)(s)|_{U_{x}} = \alpha(U_{x})(s_{x}) = t|_{U_{x}} \quad (\forall U_{x})
+  \end{equation*}
+  再び，張り合わせることによって，$\alpha(U)(s) = t$がわかる．
+}
 \Theorem{
 位相空間$X$上の前層$\mathcal{F}$に対して,\index{ぜんそう@前層!のそうか@の層化}\index{sheafification}
 前層$\mathcal{F}$の層化(sheafification)$\mathcal{F}^{\dagger}$は存在する.
@@ -389,7 +417,7 @@ $\mathcal{Q}(U) = \mathcal{F}(U)/\mathcal{F}'(U)$とおく。\\
     任意のx \in Xに対して\mathcal{F}_{x} \longrightarrow \mathcal{G}_{x} \longrightarrow \mathcal{H}_{x}が完全
   \end{equation*}
 }{
-  明らか。
+  Prop\ref{Prop:1.3.10}から明らか。
 }
 
 \Definition{
@@ -405,7 +433,7 @@ $\mathcal{Q}(U) = \mathcal{F}(U)/\mathcal{F}'(U)$とおく。\\
   \begin{equation*}
     U \mapsto \varinjlim_{V\supset f(U)}\mathcal{G}(V)
   \end{equation*}
-  で定義できる新たな$X$上の前層$f^{\cdot}\mathcal{G}$の層化$f^{*}\mathcal{G}$を
+  で定義できる新たな$X$上の前層$f^{\cdot}\mathcal{G}$の層化$f^{-1}\mathcal{G}$を
   \index{そう@層!のぎゃくぞう@の逆像}\index{sheaf!inverse image}
   \textbf{$\mathcal{G}$の逆像(inverse image of $\mathcal{G}$)}
   という。
@@ -414,11 +442,11 @@ $\mathcal{Q}(U) = \mathcal{F}(U)/\mathcal{F}'(U)$とおく。\\
 \Proposition{
   上の状況で
   \begin{equation*}
-    (f^{*}\mathcal{G})_{x} = \mathcal{G}_{f(x)} \qquad \forall x \in X
+    (f^{-1}\mathcal{G})_{x} = \mathcal{G}_{f(x)} \qquad \forall x \in X
   \end{equation*}
 }{
   \begin{equation*}
-    (f^{*}\mathcal{G})_{x} = \varinjlim_{x \in U}(f^{*}\mathcal{G})(U) = \varinjlim_{x \in U}\varinjlim_{f(U) \subset V}\mathcal{G}(V) = \mathcal{G}_{f(x)}
+    (f^{-1}\mathcal{G})_{x} = \varinjlim_{x \in U}(f^{-1}\mathcal{G})(U) = \varinjlim_{x \in U}\varinjlim_{f(U) \subset V}\mathcal{G}(V) = \mathcal{G}_{f(x)}
   \end{equation*}
   最後の等号は明らか．
 }
@@ -426,22 +454,22 @@ $\mathcal{Q}(U) = \mathcal{F}(U)/\mathcal{F}'(U)$とおく。\\
 \Remark{
   $V$を$Y$の開集合とする。このとき自然な単射$i:V \to Y$に対して
   \begin{equation*}
-    i^{*}\mathcal{G} = \mathcal{G}|_{V}
+    i^{-1}\mathcal{G} = \mathcal{G}|_{V}
   \end{equation*}
   が成り立つ。
 }{}
 \Proposition{
   $f:X \to Y$を位相空間の間の連続写像とし，$\mathcal{F}$を$X$上の層．$\mathcal{G}$を$Y$上の層とする．このとき
   \begin{equation*}
-    \hom{\text{Sh}(X)}{f^{*}\mathcal{G}}{\mathcal{F}}\simeq \hom{\text{Sh}(Y)}{\mathcal{G}}{f_{*}\mathcal{F}}
+    \hom{\text{Sh}(X)}{f^{-1}\mathcal{G}}{\mathcal{F}}\simeq \hom{\text{Sh}(Y)}{\mathcal{G}}{f_{*}\mathcal{F}}
   \end{equation*}
   ただし，$\hom{\mathcal{C}}{X}{Y}$は圏$\mathcal{C}$で$X \to Y$なる射全体を表し，$\text{Sh}(X)$は$X$上の層全体を表す．
 }{
-  層化の普遍性より$\theta:f^{\cdot}\mathcal{G} \to f^{*}\mathcal{G} = (f^{\cdot}\mathcal{G})^{\dagger}$
+  層化の普遍性より$\theta:f^{\cdot}\mathcal{G} \to f^{-1}\mathcal{G} = (f^{\cdot}\mathcal{G})^{\dagger}$
   を層化の射とすると，
   $$
     \begin{array}{rccc}
-        & \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}} & \stackrel{\simeq}{\longrightarrow} & \displaystyle \hom{\text{Ph(X)}}{f^{*}\mathcal{G}}{\mathcal{F}} \\
+        & \hom{\text{PreSh}(X)}{f^{\cdot}\mathcal{G}}{\mathcal{F}} & \stackrel{\simeq}{\longrightarrow} & \displaystyle \hom{\text{Ph(X)}}{f^{-1}\mathcal{G}}{\mathcal{F}} \\
         & \rotatebox{90}{$\in$}                                    &                                    & \rotatebox{90}{$\in$}                                           \\
         & \alpha                                                   & \longmapsto                        & \tilde{\alpha}\circ \theta
     \end{array}

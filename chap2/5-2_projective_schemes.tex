@@ -108,14 +108,22 @@ $I$を$A$の任意のイデアルとすると，$I$に伴う斉次イデアル$I
     a_{0}b_{0} = a_{k}b_{l} + (k+l\text{次未満の項})
   \end{equation*}
   となり，$a_{0}b_{0}\in I^{h}$より$a_{k}b_{l} \in I^{h} \subset I$だから$I$が素イデアルということより$a_{k},b_{l}\in I$よって$a_{k},b_{l} \in I^{h}$となる．
-  よって矛盾する．
-  \\
+  よって矛盾する．\\
   (2)まず$(\Leftarrow)$を示す．つまり$J\cap A_{+}\subset \sqrt{I}$とする．
   任意の$\mathfrak{p}\in V_{+}(I)$に対して
   \begin{equation*}
     \mathfrak{p}\supset J\cap A_{+} \supset JA_{+}
   \end{equation*}
-
+  ここで，$\mathfrak{p}$は素イデアルで，$A_{+}\not \subset \mathfrak{p}$だから$J\subset \mathfrak{p}$
+  となる．よって$\mathfrak{p} \in V_{+}(J)$が成り立つ．\\
+  次に$(\Rightarrow)$を示す．$V_{+}(I)\subset V_{+}(J)$とする．任意の$\mathfrak{p} \in V(I)$に対して，これに伴う斉次イデアル$\mathfrak{p}^{h}$は素イデアルで$I$を含む．
+  もし，$A_{+}\not \subset \mathfrak{p}^{h}$なら，$\mathfrak{p}^{h} \in V_{+}(I)$．
+  したがって，$\mathfrak{p} \supset \mathfrak{p}^{h} \supset J\cap A_{+}$．$A_{+}\subset \mathfrak{p}^{h}$であっても$\mathfrak{p}\supset \mathfrak{p}^{h} \supset J\cap A_{+}$となる．従って，
+  \begin{equation*}
+    J\cap A_{+} \subset \bigcap_{\mathfrak{p} \in V(I)}\mathfrak{p} = \sqrt{I}
+  \end{equation*}
+  となる．\\
+  (3)$\proj{A} = \varnothing$は$V_{+}(0) \subset V_{+}(A_{+})$と同値．(2)より，これは更に，$A_{+}\subset \sqrt{0}$と同値である．これは$A_{+}$が冪零ということである．
 }
 
 斉次元$f\in A$に対して
