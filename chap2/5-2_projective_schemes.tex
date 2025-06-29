@@ -132,11 +132,47 @@ $I$を$A$の任意のイデアルとすると，$I$に伴う斉次イデアル$I
 \end{equation*}
 これを\index{きほんかいしゅうごう@基本開集合}\index{principal open subset}
 \textbf{基本開集合(principal open subset)}
-という．基本開集合の族$\{D_{+}(f)\}_{f}$は$\proj{A}$の開基になっている．
-\\
+という．基本開集合の族$\{D_{+}(f)\}_{f}$は$\proj{A}$の開基になっている．実際，斉次イデアルは斉次元の集合で生成されるので，ある斉次元$f_{i}$があって，
+\begin{equation*}
+  \varnothing = V_{+}(A_{+}) = V_{+}(\sum_{i}f_{i}) = \bigcap_{i}V_{+}(f_{i})
+\end{equation*}
+となる．よって$\proj{A} = \bigcup_{i}D_{+}(f_{i})$となる．また，任意の斉次元$g\in A$に対して，$D_{+}(g) = \bigcup_{i}D_{+}(gf_{i})$で，$gf_{i} \in A_{+}$となる．\\
+斉次元$f\in A$に対して，
+\begin{equation*}
+  A_{(f)} = \left\{ \frac{a}{f^{N}}\ \middle\vert \ a\in A,\ N\geq 0,\ \deg{a} = N\deg{f} \right\}
+\end{equation*}
+とする．$A_{(f)}$の元を\textbf{$A_{f}$の次数$0$の元(elements of degree $0$ of $A_{f}$)}という．
+例えば，$A = k[T_{0},\cdots,T_{n}]$としたとき，$A_{(T_{i})} = k[T_{i}^{-1}T_{j}]_{0\leq j\leq n}$である．
 \Lemma{
-  3.36
-}{}
+  $f\in A_{+}$を次数$r$の斉次元とする．
+  \begin{itemize}
+    \item[(1)] 標準的な射$\theta:D_{+}(f) \to \spec{A_{(f)}}$がある．
+    \item[(2)] $D_{+}(g) \subset D_{+}(f)$で$\alpha = g^{r}f^{-\deg{g}}\in A_{(f)}$を満たすならば，$\theta(D_{+}(g)) = D(\alpha)$． 
+    \item[(3)] 同型$(A_{(f)})_{\alpha} \simeq A_{(g)}$から引き起こされる標準的な射$A_{(f)} \to A_{(g)}$がある．
+    \item[(4)] $I$を$A$の斉次イデアルとする．このとき$\theta(V_{+}(I)\cap D_{+}(f))=V(I_{(f)})$なる閉集合である．ただし，$I_{(f)} = IA_{f}\cap A_{(f)}$である．
+    \item[(5)] $\{h_{1},\cdots,h_{n}\}$を$I$を生成する斉次元の集合とする．
+    このとき，任意の$f\in B_{1}$に対して，$I_{(f)}$は$h_{i}/f^{\deg{h_{i}}}$で生成される．  
+  \end{itemize}
+}{
+  (1)$\proj{A}$は$\spec{A}$の部分集合である．更に，任意の$f\in A$に対して，
+  \begin{equation*}
+    V(f) \cap \proj{A} = V_{+}(f) = \bigcap_{i}V_{+}(f_{i})
+  \end{equation*}
+  となる．もし$f = f_{0} + f_{1} + \cdots + f_{d}\ (f_{i} \in A_{i})$ならば
+  \begin{equation*}
+    D(f) \cap \proj{A} = \bigcup_{i}D_{+}(f_{i})
+  \end{equation*}
+  となる．よって，$\proj{A}$の位相は$\spec{A}$の相対位相と一致する．$\theta:D_{+}(f)\to \spec{A_{(f)}}$
+  を，標準的な射$D(f) = \spec{A_{f}} \to \spec{A_{(f)}}$の$D_{+}(f)$への制限とする．これは連続である．\\
+  (2)$\theta$が全射であることを示そう．$A_{f}$の次数$n\ (n\in \mathbf{Z})$の斉次元は$af^{-N}\ (a\in A, \deg{a} = Nr+n)$の形になる．
+  $\mathfrak{q}\in \spec{A_{(f)}}$を取る．$A_{f}$は次数$A_{(f)}$代数であることに注意すれば，
+  $\sqrt{\mathfrak{q}A_{f}}$が$A_{f}$の素イデアルであることがわかる．
+  実際，$a,b\in A_{f}$で，$ab\in \mathfrak{q}A_{f}$とすると，$(a^{r}f^{-\deg{a}})(b^{r}f^{-\deg{b}})\in \mathfrak{q}$よって，
+  $\mathfrak{q}A_{f}$は斉次イデアルだからその根基$\sqrt{\mathfrak{q}A_{f}}$も斉次イデアルである．
+  $\rho:A\to A_{f}$を標準的な射とする．これは次数付き環の射である．
+  $\mathfrak{p} = \rho^{-1}(\sqrt{\mathfrak{q}A_{f}})$について考えると，これは
+  容易に$A$の斉次素イデアルで，$\mathfrak{p}\in D_{+}(f)$がわかる．
+}
 
 \Proposition{
   3.38
