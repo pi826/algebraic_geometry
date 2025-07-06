@@ -150,7 +150,7 @@ $I$を$A$の任意のイデアルとすると，$I$に伴う斉次イデアル$I
 \begin{equation*}
   \left\{ \frac{a}{f^{k}} \ \middle\vert \ a\in A，\deg{a} - k\deg{f} = 0\right\} = A_{(f)}
 \end{equation*}
-ということである．\\
+ということである．よって，$A_{f}$は次数環であり，次数$A_{(f)}$代数である．\\
 例えば，$A = k[T_{0},\cdots,T_{n}]$としたとき，$A_{(T_{i})} = k[T_{i}^{-1}T_{j}]_{0\leq j\leq n}$である．
 \Lemma{
   $f\in A_{+}$を次数$r$の斉次元とする．
@@ -175,12 +175,30 @@ $I$を$A$の任意のイデアルとすると，$I$に伴う斉次イデアル$I
   を，標準的な射$D(f) = \spec{A_{f}} \to \spec{A_{(f)}}$の$D_{+}(f)$への制限とする．これは連続である．\\
   次に，$\theta$が全射であることを示そう．$A_{f}$は次数$A_{(f)}$代数であること，また，次数$n\ (n\in \mathbf{Z})$の斉次元は$af^{-N}\ (a\in A, \deg{a} = Nr+n)$の形になることに注意しよう．(この命題の前に述べたことである．)
   $\mathfrak{q}\in \spec{A_{(f)}}$を取る．
-  $\sqrt{\mathfrak{q}A_{f}}$が$A_{f}$の素イデアルであることがわかる．
-  実際，$a,b\in A_{f}$で，$ab\in \mathfrak{q}A_{f}$とすると，$(a^{r}f^{-\deg{a}})(b^{r}f^{-\deg{b}})\in \mathfrak{q}$よって，
-  $\mathfrak{q}A_{f}$は斉次イデアルだからその根基$\sqrt{\mathfrak{q}A_{f}}$も斉次イデアルである．
-  $\rho:A\to A_{f}$を標準的な射とする．これは次数付き環の射である．
-  $\mathfrak{p} = \rho^{-1}(\sqrt{\mathfrak{q}A_{f}})$について考えると，これは
-  容易に$A$の斉次素イデアルで，$\mathfrak{p}\in D_{+}(f)$がわかる．
+  まず容易に$\sqrt{\mathfrak{q}A_{f}}$が$A_{f}$の素イデアルであることがわかる．
+  実際，$a,b\in A_{f}$で，$ab\in \sqrt{\mathfrak{q}A_{f}}$とすると，
+  定義から$(ab)^{k}\in \mathfrak{q}A_{f}$となる$k\geq 1$がある．
+  ここで，$a^{r}f^{-\deg{a}}$は次数$0$の元なので，
+  \begin{equation*}
+    (a^{r}f^{-\deg{a}})^{k}(b^{r}f^{-\deg{b}})^{k}\in \mathfrak{q}
+  \end{equation*}
+  である．いま，$\mathfrak{q}$は素イデアルなので，
+  \begin{equation*}
+    (a^{r}f^{-\deg{a}})^{k} \in \mathfrak{q}\ \text{or}\ (b^{r}f^{-\deg{b}})^{k} \in \mathfrak{q}
+  \end{equation*}
+  である．もし前者がなりたつとすると，$a^{r}f^{-\deg{a}}\in \mathfrak{q}$である．\\
+  よって，$(a^{r}f^{-\deg{a}})(f^{\deg{a}}) = a^{r} \in \mathfrak{q}A_{f}$である．
+  したがって，$a\in \sqrt{\mathfrak{q}A_{f}}$となる．
+  また，$\mathfrak{q}A_{f}$は斉次イデアルだから，その根基$\sqrt{\mathfrak{q}A_{f}}$も斉次イデアルである．
+  $\rho:A\to A_{f}$を標準的な射とする．これは次数付き環の射
+  \footnote{次数付き環の射とは$\deg$とその射が整合的つまり，斉次元$a$に対して$\deg{f(a)} = \deg{a}$となることであろう．}
+  である．
+  ここで，$\mathfrak{p} := \rho^{-1}(\sqrt{\mathfrak{q}A_{f}})$について考えると，これは
+  容易に$A$の斉次素イデアル
+  \footnote{斉次イデアルの次数付き環の射による逆像は斉次イデアルである．実際，$a \in f^{-1}(\mathfrak{p})$で，$a=\sum_{k}a_{k}$とすると，$f(a) = \sum_{k}f(a_{k})\in \mathfrak{p}$．$\mathfrak{p}$の斉次性より，$f(a_{k})\in \mathfrak{p}_{k}$．よって，$a_{k} \in f^{-1}(\mathfrak{p}_{k}) \subset f^{-1}(\mathfrak{p})$である．}
+  で，$\mathfrak{p}\in D_{+}(f)$となることがわかる．
+  \footnote{$\rho$は次数付き環の射なので，次数$0$の部分の引き戻しは次数$0$の部分に入る．よって，$A_{+}\not \subset \mathfrak{p}$}
+  
 }
 
 \Proposition{
